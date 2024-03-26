@@ -1,0 +1,13 @@
+
+Welcome to OYDID (Own Your Decentralized IDentifier)
+
+Installed components:
+* oydid - version: ${oydid}
+* jq - version: ${jq}
+
+More information: https://github.com/OwnYourData/oydid/
+
+Example:
+$ oydid read did:oyd:zQmaBZTghndXTgxNwfbdpVLWdFf6faYE4oeuN2zzXdQt1kh
+
+For a listing of options, use /usr/local/bin/oydid --help.

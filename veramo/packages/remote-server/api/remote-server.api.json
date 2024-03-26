@@ -1,0 +1,695 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.36.3",
+    "schemaVersion": 1011,
+    "oldestForwardsCompatibleVersion": 1001,
+    "tsdocConfig": {
+      "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+      "noStandardTags": true,
+      "tagDefinitions": [
+        {
+          "tagName": "@alpha",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@beta",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@defaultValue",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@decorator",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@deprecated",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@eventProperty",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@example",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@experimental",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@inheritDoc",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@internal",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@label",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@link",
+          "syntaxKind": "inline",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@override",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@packageDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@param",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@privateRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@public",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@readonly",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@remarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@returns",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@sealed",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@see",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@throws",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@typeParam",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@virtual",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@betaDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@internalRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@preapproved",
+          "syntaxKind": "modifier"
+        }
+      ],
+      "supportForTags": {
+        "@alpha": true,
+        "@beta": true,
+        "@defaultValue": true,
+        "@decorator": true,
+        "@deprecated": true,
+        "@eventProperty": true,
+        "@example": true,
+        "@experimental": true,
+        "@inheritDoc": true,
+        "@internal": true,
+        "@label": true,
+        "@link": true,
+        "@override": true,
+        "@packageDocumentation": true,
+        "@param": true,
+        "@privateRemarks": true,
+        "@public": true,
+        "@readonly": true,
+        "@remarks": true,
+        "@returns": true,
+        "@sealed": true,
+        "@see": true,
+        "@throws": true,
+        "@typeParam": true,
+        "@virtual": true,
+        "@betaDocumentation": true,
+        "@internalRemarks": true,
+        "@preapproved": true
+      },
+      "reportUnsupportedHtmlElements": false
+    }
+  },
+  "kind": "Package",
+  "canonicalReference": "@veramo/remote-server!",
+  "docComment": "/**\n * {@link https://expressjs.com | Express} router for exposing `@veramo/remote-client` OpenAPI schema\n *\n * @example\n * ```typescript\n * import express from 'express'\n * import { agent } from './agent'\n * import { AgentRouter, ApiSchemaRouter, WebDidDocRouter } from '@veramo/remote-server'\n *\n * const getAgentForRequest = async (req: express.Request) => agent\n * const exposedMethods = agent.availableMethods()\n * const basePath = '/agent'\n * const schemaPath = '/open-api.json'\n *\n * const agentRouter = AgentRouter({\n *   getAgentForRequest,\n *   exposedMethods,\n * })\n *\n * const schemaRouter = ApiSchemaRouter({\n *  basePath,\n *  getAgentForRequest,\n *  exposedMethods,\n * })\n *\n * const didDocRouter = WebDidDocRouter({\n *   getAgentForRequest\n * })\n *\n * const app = express()\n * app.use(basePath, agentRouter)\n * app.use(schemaPath, schemaRouter)\n * app.use(didDocRouter)\n * app.listen(3002)\n * ```\n *\n * @packageDocumentation\n */\n",
+  "name": "@veramo/remote-server",
+  "preserveMemberOrder": false,
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "@veramo/remote-server!",
+      "name": "",
+      "preserveMemberOrder": false,
+      "members": [
+        {
+          "kind": "Variable",
+          "canonicalReference": "@veramo/remote-server!AgentRouter:var",
+          "docComment": "/**\n * Creates a router that exposes {@link @veramo/core#Agent} methods remotely.\n *\n * This can be used by {@link @veramo/remote-client#AgentRestClient | AgentRestClient} to instantiate the methods of this agent on the client.\n *\n * @param options - Initialization option\n *\n * @returns Expressjs router\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "AgentRouter: "
+            },
+            {
+              "kind": "Content",
+              "text": "(options: "
+            },
+            {
+              "kind": "Reference",
+              "text": "AgentRouterOptions",
+              "canonicalReference": "@veramo/remote-server!AgentRouterOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "Router",
+              "canonicalReference": "@types/express!e.Router:interface"
+            }
+          ],
+          "fileUrlPath": "src/agent-router.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "AgentRouter",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/remote-server!AgentRouterOptions:interface",
+          "docComment": "/**\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface AgentRouterOptions "
+            }
+          ],
+          "fileUrlPath": "src/agent-router.ts",
+          "releaseTag": "Public",
+          "name": "AgentRouterOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/remote-server!AgentRouterOptions#exposedMethods:member",
+              "docComment": "/**\n * List of exposed methods\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "exposedMethods: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Array",
+                  "canonicalReference": "!Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "exposedMethods",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/remote-server!apiKeyAuth:function(1)",
+          "docComment": "/**\n * This provides a simple authorization mechanism based on a single pre-shared API key.\n *\n * @param apiKey - the pre-shared API key\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function apiKeyAuth({ apiKey }: "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    apiKey: string;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Router",
+              "canonicalReference": "@types/express!e.Router:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/api-key-auth.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "{ apiKey }",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "apiKeyAuth"
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@veramo/remote-server!ApiSchemaRouter:var",
+          "docComment": "/**\n * Creates a router that exposes {@link @veramo/core#Agent} OpenAPI schema\n *\n * @param options - Initialization option\n *\n * @returns Expressjs router\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "ApiSchemaRouter: "
+            },
+            {
+              "kind": "Content",
+              "text": "(options: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ApiSchemaRouterOptions",
+              "canonicalReference": "@veramo/remote-server!ApiSchemaRouterOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "Router",
+              "canonicalReference": "@types/express!e.Router:interface"
+            }
+          ],
+          "fileUrlPath": "src/api-schema-router.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "ApiSchemaRouter",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/remote-server!ApiSchemaRouterOptions:interface",
+          "docComment": "/**\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ApiSchemaRouterOptions "
+            }
+          ],
+          "fileUrlPath": "src/api-schema-router.ts",
+          "releaseTag": "Public",
+          "name": "ApiSchemaRouterOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/remote-server!ApiSchemaRouterOptions#apiName:member",
+              "docComment": "/**\n * Name used in OpenAPI schema\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "apiName?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "apiName",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/remote-server!ApiSchemaRouterOptions#apiVersion:member",
+              "docComment": "/**\n * Version used in OpenAPI schema\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "apiVersion?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "apiVersion",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/remote-server!ApiSchemaRouterOptions#basePath:member",
+              "docComment": "/**\n * Base path\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "basePath: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "basePath",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/remote-server!ApiSchemaRouterOptions#exposedMethods:member",
+              "docComment": "/**\n * List of exposed methods\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "exposedMethods?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Array",
+                  "canonicalReference": "!Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "exposedMethods",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/remote-server!ApiSchemaRouterOptions#securityScheme:member",
+              "docComment": "/**\n * Security scheme\n *\n * @example\n * ```\n * 'bearer'\n * ```\n *\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "securityScheme?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Public",
+              "name": "securityScheme",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/remote-server!createDefaultDid:function(1)",
+          "docComment": "/**\n * This can be used to automatically create a did:web with signing and encryption keys and listing messaging and DIDComm service endpoints.\n *\n * @param options - The options guiding the creation of the default DID\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function createDefaultDid(options: "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateDefaultDidOptions",
+              "canonicalReference": "@veramo/remote-server!~CreateDefaultDidOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<void>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/default-did.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "options",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "createDefaultDid"
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@veramo/remote-server!didDocEndpoint:var",
+          "docComment": "/**\n * The URL path to the DID document, used by did:web when the identifier is a hostname.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "didDocEndpoint = "
+            },
+            {
+              "kind": "Content",
+              "text": "\"/.well-known/did.json\""
+            }
+          ],
+          "fileUrlPath": "src/web-did-doc-router.ts",
+          "initializerTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          },
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "didDocEndpoint",
+          "variableTypeTokenRange": {
+            "startIndex": 0,
+            "endIndex": 0
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@veramo/remote-server!MessagingRouter:var",
+          "docComment": "/**\n * Creates a router for handling incoming messages.\n *\n * Messages posted to this router get sent to the `handleMessage` method of the associated agent where this is used.\n *\n * @param options - Initialization option\n *\n * @returns Expressjs router\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "MessagingRouter: "
+            },
+            {
+              "kind": "Content",
+              "text": "(options: "
+            },
+            {
+              "kind": "Reference",
+              "text": "MessagingRouterOptions",
+              "canonicalReference": "@veramo/remote-server!~MessagingRouterOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "Router",
+              "canonicalReference": "@types/express!e.Router:interface"
+            }
+          ],
+          "fileUrlPath": "src/messaging-router.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "MessagingRouter",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@veramo/remote-server!RequestWithAgentRouter:var",
+          "docComment": "/**\n * Creates an expressjs router that adds a Veramo agent to the request object.\n *\n * This is needed by all other routers provided by this package to be able to perform their functions.\n *\n * @param options - Initialization option\n *\n * @returns Expressjs router\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "RequestWithAgentRouter: "
+            },
+            {
+              "kind": "Content",
+              "text": "(options: "
+            },
+            {
+              "kind": "Reference",
+              "text": "RequestWithAgentRouterOptions",
+              "canonicalReference": "@veramo/remote-server!~RequestWithAgentRouterOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "Router",
+              "canonicalReference": "@types/express!e.Router:interface"
+            }
+          ],
+          "fileUrlPath": "src/request-agent-router.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "RequestWithAgentRouter",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@veramo/remote-server!WebDidDocRouter:var",
+          "docComment": "/**\n * Creates a router that serves `did:web` DID Documents\n *\n * @param options - Initialization option\n *\n * @returns Expressjs router\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "WebDidDocRouter: "
+            },
+            {
+              "kind": "Content",
+              "text": "(options: "
+            },
+            {
+              "kind": "Reference",
+              "text": "WebDidDocRouterOptions",
+              "canonicalReference": "@veramo/remote-server!~WebDidDocRouterOptions:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ") => "
+            },
+            {
+              "kind": "Reference",
+              "text": "Router",
+              "canonicalReference": "@types/express!e.Router:interface"
+            }
+          ],
+          "fileUrlPath": "src/web-did-doc-router.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "WebDidDocRouter",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          }
+        }
+      ]
+    }
+  ]
+}

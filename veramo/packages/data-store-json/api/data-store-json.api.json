@@ -1,0 +1,4359 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.36.3",
+    "schemaVersion": 1011,
+    "oldestForwardsCompatibleVersion": 1001,
+    "tsdocConfig": {
+      "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+      "noStandardTags": true,
+      "tagDefinitions": [
+        {
+          "tagName": "@alpha",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@beta",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@defaultValue",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@decorator",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@deprecated",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@eventProperty",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@example",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@experimental",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@inheritDoc",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@internal",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@label",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@link",
+          "syntaxKind": "inline",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@override",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@packageDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@param",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@privateRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@public",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@readonly",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@remarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@returns",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@sealed",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@see",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@throws",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@typeParam",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@virtual",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@betaDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@internalRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@preapproved",
+          "syntaxKind": "modifier"
+        }
+      ],
+      "supportForTags": {
+        "@alpha": true,
+        "@beta": true,
+        "@defaultValue": true,
+        "@decorator": true,
+        "@deprecated": true,
+        "@eventProperty": true,
+        "@example": true,
+        "@experimental": true,
+        "@inheritDoc": true,
+        "@internal": true,
+        "@label": true,
+        "@link": true,
+        "@override": true,
+        "@packageDocumentation": true,
+        "@param": true,
+        "@privateRemarks": true,
+        "@public": true,
+        "@readonly": true,
+        "@remarks": true,
+        "@returns": true,
+        "@sealed": true,
+        "@see": true,
+        "@throws": true,
+        "@typeParam": true,
+        "@virtual": true,
+        "@betaDocumentation": true,
+        "@internalRemarks": true,
+        "@preapproved": true
+      },
+      "reportUnsupportedHtmlElements": false
+    }
+  },
+  "kind": "Package",
+  "canonicalReference": "@veramo/data-store-json!",
+  "docComment": "/**\n * {@link @veramo/core#Agent} {@link @veramo/data-store-json#DataStoreJson | plugin} that implements {@link @veramo/core-types#IDataStore} and {@link @veramo/core-types#IDataStoreORM}interfaces and uses a JSON tree as a backend.\n *\n * The JSON tree backend can be persisted to any JSON compatible media using a callback that gets called when the agent data is updated.\n *\n * @packageDocumentation\n */\n",
+  "name": "@veramo/data-store-json",
+  "preserveMemberOrder": false,
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "@veramo/data-store-json!",
+      "name": "",
+      "preserveMemberOrder": false,
+      "members": [
+        {
+          "kind": "Class",
+          "canonicalReference": "@veramo/data-store-json!BrowserLocalStorageStore:class",
+          "docComment": "/**\n * Implementation of {@link VeramoJsonStore} that uses browser localStorage to store data.\n *\n * @example\n * ```\n * const dataStore = BrowserLocalStorageStore.fromLocalStorage('veramo-state')\n * const plugin = new DataStoreJson(dataStore)\n * ```\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class BrowserLocalStorageStore implements "
+            },
+            {
+              "kind": "Reference",
+              "text": "VeramoJsonStore",
+              "canonicalReference": "@veramo/data-store-json!VeramoJsonStore:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/browser-local-storage-store.ts",
+          "releaseTag": "Public",
+          "isAbstract": false,
+          "name": "BrowserLocalStorageStore",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Property",
+              "canonicalReference": "@veramo/data-store-json!BrowserLocalStorageStore#claims:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "claims: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ClaimTableEntry",
+                  "canonicalReference": "@veramo/data-store-json!ClaimTableEntry:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "claims",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@veramo/data-store-json!BrowserLocalStorageStore#credentials:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "credentials: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CredentialTableEntry",
+                  "canonicalReference": "@veramo/data-store-json!CredentialTableEntry:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "credentials",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@veramo/data-store-json!BrowserLocalStorageStore#dids:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dids: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IIdentifier",
+                  "canonicalReference": "@veramo/core-types!IIdentifier:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "dids",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!BrowserLocalStorageStore.fromLocalStorage:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "static fromLocalStorage(localStorageKey: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "BrowserLocalStorageStore",
+                  "canonicalReference": "@veramo/data-store-json!BrowserLocalStorageStore:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": true,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "localStorageKey",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "fromLocalStorage"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@veramo/data-store-json!BrowserLocalStorageStore#keys:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "keys: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedKeyInfo",
+                  "canonicalReference": "@veramo/core-types!ManagedKeyInfo:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "keys",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@veramo/data-store-json!BrowserLocalStorageStore#messages:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "messages: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMessage",
+                  "canonicalReference": "@veramo/core-types!IMessage:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "messages",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@veramo/data-store-json!BrowserLocalStorageStore#notifyUpdate:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "notifyUpdate: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "DiffCallback",
+                  "canonicalReference": "@veramo/data-store-json!DiffCallback:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "notifyUpdate",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@veramo/data-store-json!BrowserLocalStorageStore#presentations:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "presentations: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PresentationTableEntry",
+                  "canonicalReference": "@veramo/data-store-json!PresentationTableEntry:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "presentations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@veramo/data-store-json!BrowserLocalStorageStore#privateKeys:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "privateKeys: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedPrivateKey",
+                  "canonicalReference": "@veramo/key-manager!ManagedPrivateKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "privateKeys",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            }
+          ],
+          "implementsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/data-store-json!ClaimTableEntry:interface",
+          "docComment": "/**\n * This is used internally by {@link @veramo/data-store-json#DataStoreJson | DataStoreJson} to represent the claims contained in a Verifiable Credential in a way that facilitates querying using the {@link @veramo/core-types#IDataStoreORM} interface.\n *\n * This API may change in future versions without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ClaimTableEntry "
+            }
+          ],
+          "fileUrlPath": "src/types.ts",
+          "releaseTag": "Beta",
+          "name": "ClaimTableEntry",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!ClaimTableEntry#context:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "context: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "context",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!ClaimTableEntry#credentialHash:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "credentialHash: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "credentialHash",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!ClaimTableEntry#credentialType:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "credentialType: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "credentialType",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!ClaimTableEntry#expirationDate:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "expirationDate?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Date",
+                  "canonicalReference": "!Date:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "expirationDate",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!ClaimTableEntry#hash:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "hash: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "hash",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!ClaimTableEntry#issuanceDate:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "issuanceDate?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Date",
+                  "canonicalReference": "!Date:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "issuanceDate",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!ClaimTableEntry#issuer:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "issuer: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "issuer",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!ClaimTableEntry#subject:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "subject?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "subject",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!ClaimTableEntry#type:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "type: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "type",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!ClaimTableEntry#value:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "value: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "value",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/data-store-json!CredentialTableEntry:interface",
+          "docComment": "/**\n * This is used internally by {@link @veramo/data-store-json#DataStoreJson | DataStoreJson} to represent a Verifiable Credential in a way that facilitates querying using the {@link @veramo/core-types#IDataStoreORM} interface.\n *\n * This API may change in future versions without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface CredentialTableEntry "
+            }
+          ],
+          "fileUrlPath": "src/types.ts",
+          "releaseTag": "Beta",
+          "name": "CredentialTableEntry",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!CredentialTableEntry#canonicalCredential:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "canonicalCredential: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "W3CVerifiableCredential",
+                  "canonicalReference": "@veramo/core-types!W3CVerifiableCredential:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "canonicalCredential",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!CredentialTableEntry#context:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "context: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "context",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!CredentialTableEntry#expirationDate:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "expirationDate?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Date",
+                  "canonicalReference": "!Date:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "expirationDate",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!CredentialTableEntry#hash:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "hash: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "hash",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!CredentialTableEntry#id:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "id?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "id",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!CredentialTableEntry#issuanceDate:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "issuanceDate?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Date",
+                  "canonicalReference": "!Date:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "issuanceDate",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!CredentialTableEntry#issuer:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "issuer: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "issuer",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!CredentialTableEntry#parsedCredential:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "parsedCredential: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "VerifiableCredential",
+                  "canonicalReference": "@veramo/core-types!VerifiableCredential:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "parsedCredential",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!CredentialTableEntry#subject:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "subject?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "subject",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!CredentialTableEntry#type:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "type: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "type",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@veramo/data-store-json!DataStoreJson:class",
+          "docComment": "/**\n * A Veramo agent storage plugin that implements the {@link @veramo/core-types#IDataStore | IDataStore} and {@link @veramo/core-types#IDataStoreORM | IDataStoreORM} methods using one big JSON object as a backend.\n *\n * Each update operation triggers a callback that can be used to either save the latest state of the agent data or compute a diff and log only the changes.\n *\n * This plugin must be initialized with a {@link VeramoJsonStore}, which serves as the JSON object storing data in memory as well as providing an update notification callback to persist this data. The JSON object can be pre-populated with data from previous sessions.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class DataStoreJson implements "
+            },
+            {
+              "kind": "Reference",
+              "text": "IAgentPlugin",
+              "canonicalReference": "@veramo/core-types!IAgentPlugin:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/data-store-json.ts",
+          "releaseTag": "Beta",
+          "isAbstract": false,
+          "name": "DataStoreJson",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `DataStoreJson` class\n *\n * @param jsonStore - A reference to the JSON object that holds the data in memory and implements an update callback. This object can be pre-populated with data from previous sessions, and will be used by reference.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(jsonStore: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "VeramoJsonStore",
+                  "canonicalReference": "@veramo/data-store-json!VeramoJsonStore:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "jsonStore",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#dataStoreDeleteMessage:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dataStoreDeleteMessage(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDataStoreDeleteMessageArgs",
+                  "canonicalReference": "@veramo/core-types!IDataStoreDeleteMessageArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "dataStoreDeleteMessage"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#dataStoreDeleteVerifiableCredential:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dataStoreDeleteVerifiableCredential(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDataStoreDeleteVerifiableCredentialArgs",
+                  "canonicalReference": "@veramo/core-types!IDataStoreDeleteVerifiableCredentialArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "dataStoreDeleteVerifiableCredential"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#dataStoreGetMessage:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dataStoreGetMessage(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDataStoreGetMessageArgs",
+                  "canonicalReference": "@veramo/core-types!IDataStoreGetMessageArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMessage",
+                  "canonicalReference": "@veramo/core-types!IMessage:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "dataStoreGetMessage"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#dataStoreGetVerifiableCredential:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dataStoreGetVerifiableCredential(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDataStoreGetVerifiableCredentialArgs",
+                  "canonicalReference": "@veramo/core-types!IDataStoreGetVerifiableCredentialArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "VerifiableCredential",
+                  "canonicalReference": "@veramo/core-types!VerifiableCredential:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "dataStoreGetVerifiableCredential"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#dataStoreGetVerifiablePresentation:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dataStoreGetVerifiablePresentation(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDataStoreGetVerifiablePresentationArgs",
+                  "canonicalReference": "@veramo/core-types!IDataStoreGetVerifiablePresentationArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "VerifiablePresentation",
+                  "canonicalReference": "@veramo/core-types!VerifiablePresentation:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "dataStoreGetVerifiablePresentation"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#dataStoreORMGetIdentifiers:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dataStoreORMGetIdentifiers(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "FindArgs",
+                  "canonicalReference": "@veramo/core-types!FindArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "TIdentifiersColumns",
+                  "canonicalReference": "@veramo/core-types!TIdentifiersColumns:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AuthorizedDIDContext",
+                  "canonicalReference": "@veramo/core-types!AuthorizedDIDContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IIdentifier",
+                  "canonicalReference": "@veramo/core-types!IIdentifier:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 12
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 7
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "dataStoreORMGetIdentifiers"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#dataStoreORMGetIdentifiersCount:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dataStoreORMGetIdentifiersCount(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "FindArgs",
+                  "canonicalReference": "@veramo/core-types!FindArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "TIdentifiersColumns",
+                  "canonicalReference": "@veramo/core-types!TIdentifiersColumns:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AuthorizedDIDContext",
+                  "canonicalReference": "@veramo/core-types!AuthorizedDIDContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<number>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 10
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 7
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "dataStoreORMGetIdentifiersCount"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#dataStoreORMGetMessages:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dataStoreORMGetMessages(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "FindArgs",
+                  "canonicalReference": "@veramo/core-types!FindArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "TMessageColumns",
+                  "canonicalReference": "@veramo/core-types!TMessageColumns:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AuthorizedDIDContext",
+                  "canonicalReference": "@veramo/core-types!AuthorizedDIDContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMessage",
+                  "canonicalReference": "@veramo/core-types!IMessage:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 12
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 7
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "dataStoreORMGetMessages"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#dataStoreORMGetMessagesCount:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dataStoreORMGetMessagesCount(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "FindArgs",
+                  "canonicalReference": "@veramo/core-types!FindArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "TMessageColumns",
+                  "canonicalReference": "@veramo/core-types!TMessageColumns:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AuthorizedDIDContext",
+                  "canonicalReference": "@veramo/core-types!AuthorizedDIDContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<number>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 10
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 7
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "dataStoreORMGetMessagesCount"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#dataStoreORMGetVerifiableCredentials:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dataStoreORMGetVerifiableCredentials(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "FindArgs",
+                  "canonicalReference": "@veramo/core-types!FindArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "TCredentialColumns",
+                  "canonicalReference": "@veramo/core-types!TCredentialColumns:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AuthorizedDIDContext",
+                  "canonicalReference": "@veramo/core-types!AuthorizedDIDContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Array",
+                  "canonicalReference": "!Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "UniqueVerifiableCredential",
+                  "canonicalReference": "@veramo/core-types!UniqueVerifiableCredential:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 14
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 7
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "dataStoreORMGetVerifiableCredentials"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#dataStoreORMGetVerifiableCredentialsByClaims:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dataStoreORMGetVerifiableCredentialsByClaims(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "FindArgs",
+                  "canonicalReference": "@veramo/core-types!FindArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "TClaimsColumns",
+                  "canonicalReference": "@veramo/core-types!TClaimsColumns:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AuthorizedDIDContext",
+                  "canonicalReference": "@veramo/core-types!AuthorizedDIDContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Array",
+                  "canonicalReference": "!Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "UniqueVerifiableCredential",
+                  "canonicalReference": "@veramo/core-types!UniqueVerifiableCredential:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 14
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 7
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "dataStoreORMGetVerifiableCredentialsByClaims"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#dataStoreORMGetVerifiableCredentialsByClaimsCount:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dataStoreORMGetVerifiableCredentialsByClaimsCount(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "FindArgs",
+                  "canonicalReference": "@veramo/core-types!FindArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "TClaimsColumns",
+                  "canonicalReference": "@veramo/core-types!TClaimsColumns:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AuthorizedDIDContext",
+                  "canonicalReference": "@veramo/core-types!AuthorizedDIDContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<number>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 10
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 7
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "dataStoreORMGetVerifiableCredentialsByClaimsCount"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#dataStoreORMGetVerifiableCredentialsCount:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dataStoreORMGetVerifiableCredentialsCount(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "FindArgs",
+                  "canonicalReference": "@veramo/core-types!FindArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "TCredentialColumns",
+                  "canonicalReference": "@veramo/core-types!TCredentialColumns:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AuthorizedDIDContext",
+                  "canonicalReference": "@veramo/core-types!AuthorizedDIDContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<number>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 10
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 7
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "dataStoreORMGetVerifiableCredentialsCount"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#dataStoreORMGetVerifiablePresentations:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dataStoreORMGetVerifiablePresentations(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "FindArgs",
+                  "canonicalReference": "@veramo/core-types!FindArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "TPresentationColumns",
+                  "canonicalReference": "@veramo/core-types!TPresentationColumns:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AuthorizedDIDContext",
+                  "canonicalReference": "@veramo/core-types!AuthorizedDIDContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Array",
+                  "canonicalReference": "!Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "UniqueVerifiablePresentation",
+                  "canonicalReference": "@veramo/core-types!UniqueVerifiablePresentation:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 14
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 7
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "dataStoreORMGetVerifiablePresentations"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#dataStoreORMGetVerifiablePresentationsCount:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dataStoreORMGetVerifiablePresentationsCount(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "FindArgs",
+                  "canonicalReference": "@veramo/core-types!FindArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "TPresentationColumns",
+                  "canonicalReference": "@veramo/core-types!TPresentationColumns:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AuthorizedDIDContext",
+                  "canonicalReference": "@veramo/core-types!AuthorizedDIDContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<number>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 10
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 6,
+                    "endIndex": 7
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "dataStoreORMGetVerifiablePresentationsCount"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#dataStoreSaveMessage:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dataStoreSaveMessage(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDataStoreSaveMessageArgs",
+                  "canonicalReference": "@veramo/core-types!IDataStoreSaveMessageArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "dataStoreSaveMessage"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#dataStoreSaveVerifiableCredential:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dataStoreSaveVerifiableCredential(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDataStoreSaveVerifiableCredentialArgs",
+                  "canonicalReference": "@veramo/core-types!IDataStoreSaveVerifiableCredentialArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "dataStoreSaveVerifiableCredential"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#dataStoreSaveVerifiablePresentation:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dataStoreSaveVerifiablePresentation(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDataStoreSaveVerifiablePresentationArgs",
+                  "canonicalReference": "@veramo/core-types!IDataStoreSaveVerifiablePresentationArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "dataStoreSaveVerifiablePresentation"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#methods:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly methods: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDataStore",
+                  "canonicalReference": "@veramo/core-types!IDataStore:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": " & "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDataStoreORM",
+                  "canonicalReference": "@veramo/core-types!IDataStoreORM:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "methods",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 4
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@veramo/data-store-json!DataStoreJson#schema:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly schema: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        components: {\n            schemas: {\n                FindIdentifiersArgs: {\n                    $ref: string;\n                    description: string;\n                };\n                \"FindArgs-TIdentifiersColumns\": {\n                    type: string;\n                    properties: {\n                        where: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                            description: string;\n                        };\n                        order: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                            description: string;\n                        };\n                        skip: {\n                            type: string;\n                            description: string;\n                        };\n                        take: {\n                            type: string;\n                            description: string;\n                        };\n                    };\n                    description: string;\n                };\n                \"Where-TIdentifiersColumns\": {\n                    type: string;\n                    properties: {\n                        column: {\n                            $ref: string;\n                        };\n                        value: {\n                            type: string;\n                            items: {\n                                type: string;\n                            };\n                        };\n                        not: {\n                            type: string;\n                        };\n                        op: {\n                            type: string;\n                            enum: string[];\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                TIdentifiersColumns: {\n                    type: string;\n                    enum: string[];\n                    description: string;\n                    deprecated: string;\n                };\n                \"Order-TIdentifiersColumns\": {\n                    type: string;\n                    properties: {\n                        column: {\n                            $ref: string;\n                        };\n                        direction: {\n                            type: string;\n                            enum: string[];\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                PartialIdentifier: {\n                    type: string;\n                    properties: {\n                        did: {\n                            type: string;\n                            description: string;\n                        };\n                        alias: {\n                            type: string;\n                            description: string;\n                        };\n                        provider: {\n                            type: string;\n                            description: string;\n                        };\n                        controllerKeyId: {\n                            type: string;\n                            description: string;\n                        };\n                        keys: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                            description: string;\n                        };\n                        services: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                            description: string;\n                        };\n                    };\n                    description: string;\n                };\n                IKey: {\n                    type: string;\n                    properties: {\n                        kid: {\n                            type: string;\n                            description: string;\n                        };\n                        kms: {\n                            type: string;\n                            description: string;\n                        };\n                        type: {\n                            $ref: string;\n                            description: string;\n                        };\n                        publicKeyHex: {\n                            type: string;\n                            description: string;\n                        };\n                        privateKeyHex: {\n                            type: string;\n                            description: string;\n                        };\n                        meta: {\n                            anyOf: ({\n                                $ref: string;\n                                type?: undefined;\n                            } | {\n                                type: string;\n                                $ref?: undefined;\n                            })[];\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                TKeyType: {\n                    type: string;\n                    enum: string[];\n                    description: string;\n                };\n                KeyMetadata: {\n                    type: string;\n                    properties: {\n                        algorithms: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                        };\n                    };\n                    description: string;\n                };\n                TAlg: {\n                    type: string;\n                    description: string;\n                };\n                IService: {\n                    type: string;\n                    properties: {\n                        id: {\n                            type: string;\n                            description: string;\n                        };\n                        type: {\n                            type: string;\n                            description: string;\n                        };\n                        serviceEndpoint: {\n                            anyOf: ({\n                                $ref: string;\n                                type?: undefined;\n                                items?: undefined;\n                            } | {\n                                type: string;\n                                items: {\n                                    $ref: string;\n                                };\n                                $ref?: undefined;\n                            })[];\n                            description: string;\n                        };\n                        description: {\n                            type: string;\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                IServiceEndpoint: {\n                    anyOf: {\n                        type: string;\n                    }[];\n                    description: string;\n                };\n                FindMessagesArgs: {\n                    $ref: string;\n                    description: string;\n                };\n                \"FindArgs-TMessageColumns\": {\n                    type: string;\n                    properties: {\n                        where: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                            description: string;\n                        };\n                        order: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                            description: string;\n                        };\n                        skip: {\n                            type: string;\n                            description: string;\n                        };\n                        take: {\n                            type: string;\n                            description: string;\n                        };\n                    };\n                    description: string;\n                };\n                \"Where-TMessageColumns\": {\n                    type: string;\n                    properties: {\n                        column: {\n                            $ref: string;\n                        };\n                        value: {\n                            type: string;\n                            items: {\n                                type: string;\n                            };\n                        };\n                        not: {\n                            type: string;\n                        };\n                        op: {\n                            type: string;\n                            enum: string[];\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                TMessageColumns: {\n                    type: string;\n                    enum: string[];\n                    description: string;\n                };\n                \"Order-TMessageColumns\": {\n                    type: string;\n                    properties: {\n                        column: {\n                            $ref: string;\n                        };\n                        direction: {\n                            type: string;\n                            enum: string[];\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                IMessage: {\n                    type: string;\n                    properties: {\n                        id: {\n                            type: string;\n                            description: string;\n                        };\n                        type: {\n                            type: string;\n                            description: string;\n                        };\n                        createdAt: {\n                            type: string;\n                            description: string;\n                        };\n                        expiresAt: {\n                            type: string;\n                            description: string;\n                        };\n                        threadId: {\n                            type: string;\n                            description: string;\n                        };\n                        raw: {\n                            type: string;\n                            description: string;\n                        };\n                        data: {\n                            anyOf: {\n                                type: string;\n                            }[];\n                            description: string;\n                        };\n                        replyTo: {\n                            type: string;\n                            items: {\n                                type: string;\n                            };\n                            description: string;\n                        };\n                        replyUrl: {\n                            type: string;\n                            description: string;\n                        };\n                        from: {\n                            type: string;\n                            description: string;\n                        };\n                        to: {\n                            type: string;\n                            description: string;\n                        };\n                        metaData: {\n                            anyOf: ({\n                                type: string;\n                                items: {\n                                    $ref: string;\n                                };\n                            } | {\n                                type: string;\n                                items?: undefined;\n                            })[];\n                            description: string;\n                        };\n                        credentials: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                            description: string;\n                        };\n                        presentations: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                            description: string;\n                        };\n                        attachments: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                            description: string;\n                        };\n                        returnRoute: {\n                            type: string;\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                IMetaData: {\n                    type: string;\n                    properties: {\n                        type: {\n                            type: string;\n                            description: string;\n                        };\n                        value: {\n                            type: string;\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                VerifiableCredential: {\n                    type: string;\n                    properties: {\n                        proof: {\n                            $ref: string;\n                        };\n                        issuer: {\n                            $ref: string;\n                        };\n                        credentialSubject: {\n                            $ref: string;\n                        };\n                        type: {\n                            anyOf: ({\n                                type: string;\n                                items: {\n                                    type: string;\n                                };\n                            } | {\n                                type: string;\n                                items?: undefined;\n                            })[];\n                        };\n                        \"@context\": {\n                            $ref: string;\n                        };\n                        issuanceDate: {\n                            type: string;\n                        };\n                        expirationDate: {\n                            type: string;\n                        };\n                        credentialStatus: {\n                            $ref: string;\n                        };\n                        id: {\n                            type: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                ProofType: {\n                    type: string;\n                    properties: {\n                        type: {\n                            type: string;\n                        };\n                    };\n                    description: string;\n                };\n                IssuerType: {\n                    anyOf: ({\n                        type: string;\n                        properties: {\n                            id: {\n                                type: string;\n                            };\n                        };\n                        required: string[];\n                    } | {\n                        type: string;\n                        properties?: undefined;\n                        required?: undefined;\n                    })[];\n                    description: string;\n                };\n                CredentialSubject: {\n                    type: string;\n                    properties: {\n                        id: {\n                            type: string;\n                        };\n                    };\n                    description: string;\n                };\n                ContextType: {\n                    anyOf: ({\n                        type: string;\n                        items?: undefined;\n                    } | {\n                        type: string;\n                        items: {\n                            anyOf: {\n                                type: string;\n                            }[];\n                        };\n                    })[];\n                    description: string;\n                };\n                CredentialStatusReference: {\n                    type: string;\n                    properties: {\n                        id: {\n                            type: string;\n                        };\n                        type: {\n                            type: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                VerifiablePresentation: {\n                    type: string;\n                    properties: {\n                        proof: {\n                            $ref: string;\n                        };\n                        holder: {\n                            type: string;\n                        };\n                        verifiableCredential: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                        };\n                        type: {\n                            anyOf: ({\n                                type: string;\n                                items: {\n                                    type: string;\n                                };\n                            } | {\n                                type: string;\n                                items?: undefined;\n                            })[];\n                        };\n                        \"@context\": {\n                            $ref: string;\n                        };\n                        verifier: {\n                            type: string;\n                            items: {\n                                type: string;\n                            };\n                        };\n                        issuanceDate: {\n                            type: string;\n                        };\n                        expirationDate: {\n                            type: string;\n                        };\n                        id: {\n                            type: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                W3CVerifiableCredential: {\n                    anyOf: {\n                        $ref: string;\n                    }[];\n                    description: string;\n                };\n                CompactJWT: {\n                    type: string;\n                    description: string;\n                };\n                IMessageAttachment: {\n                    type: string;\n                    properties: {\n                        id: {\n                            type: string;\n                        };\n                        description: {\n                            type: string;\n                        };\n                        filename: {\n                            type: string;\n                        };\n                        media_type: {\n                            type: string;\n                        };\n                        format: {\n                            type: string;\n                        };\n                        lastmod_time: {\n                            type: string;\n                        };\n                        byte_count: {\n                            type: string;\n                        };\n                        data: {\n                            $ref: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                IMessageAttachmentData: {\n                    type: string;\n                    properties: {\n                        jws: {};\n                        hash: {\n                            type: string;\n                        };\n                        links: {\n                            type: string;\n                            items: {\n                                type: string;\n                            };\n                        };\n                        base64: {\n                            type: string;\n                        };\n                        json: {};\n                    };\n                    description: string;\n                };\n                FindCredentialsArgs: {\n                    $ref: string;\n                    description: string;\n                };\n                \"FindArgs-TCredentialColumns\": {\n                    type: string;\n                    properties: {\n                        where: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                            description: string;\n                        };\n                        order: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                            description: string;\n                        };\n                        skip: {\n                            type: string;\n                            description: string;\n                        };\n                        take: {\n                            type: string;\n                            description: string;\n                        };\n                    };\n                    description: string;\n                };\n                \"Where-TCredentialColumns\": {\n                    type: string;\n                    properties: {\n                        column: {\n                            $ref: string;\n                        };\n                        value: {\n                            type: string;\n                            items: {\n                                type: string;\n                            };\n                        };\n                        not: {\n                            type: string;\n                        };\n                        op: {\n                            type: string;\n                            enum: string[];\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                TCredentialColumns: {\n                    type: string;\n                    enum: string[];\n                    description: string;\n                };\n                \"Order-TCredentialColumns\": {\n                    type: string;\n                    properties: {\n                        column: {\n                            $ref: string;\n                        };\n                        direction: {\n                            type: string;\n                            enum: string[];\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                UniqueVerifiableCredential: {\n                    type: string;\n                    properties: {\n                        hash: {\n                            type: string;\n                        };\n                        verifiableCredential: {\n                            $ref: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                FindClaimsArgs: {\n                    $ref: string;\n                    description: string;\n                };\n                \"FindArgs-TClaimsColumns\": {\n                    type: string;\n                    properties: {\n                        where: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                            description: string;\n                        };\n                        order: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                            description: string;\n                        };\n                        skip: {\n                            type: string;\n                            description: string;\n                        };\n                        take: {\n                            type: string;\n                            description: string;\n                        };\n                    };\n                    description: string;\n                };\n                \"Where-TClaimsColumns\": {\n                    type: string;\n                    properties: {\n                        column: {\n                            $ref: string;\n                        };\n                        value: {\n                            type: string;\n                            items: {\n                                type: string;\n                            };\n                        };\n                        not: {\n                            type: string;\n                        };\n                        op: {\n                            type: string;\n                            enum: string[];\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                TClaimsColumns: {\n                    type: string;\n                    enum: string[];\n                    description: string;\n                };\n                \"Order-TClaimsColumns\": {\n                    type: string;\n                    properties: {\n                        column: {\n                            $ref: string;\n                        };\n                        direction: {\n                            type: string;\n                            enum: string[];\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                FindPresentationsArgs: {\n                    $ref: string;\n                    description: string;\n                };\n                \"FindArgs-TPresentationColumns\": {\n                    type: string;\n                    properties: {\n                        where: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                            description: string;\n                        };\n                        order: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                            description: string;\n                        };\n                        skip: {\n                            type: string;\n                            description: string;\n                        };\n                        take: {\n                            type: string;\n                            description: string;\n                        };\n                    };\n                    description: string;\n                };\n                \"Where-TPresentationColumns\": {\n                    type: string;\n                    properties: {\n                        column: {\n                            $ref: string;\n                        };\n                        value: {\n                            type: string;\n                            items: {\n                                type: string;\n                            };\n                        };\n                        not: {\n                            type: string;\n                        };\n                        op: {\n                            type: string;\n                            enum: string[];\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                TPresentationColumns: {\n                    type: string;\n                    enum: string[];\n                    description: string;\n                };\n                \"Order-TPresentationColumns\": {\n                    type: string;\n                    properties: {\n                        column: {\n                            $ref: string;\n                        };\n                        direction: {\n                            type: string;\n                            enum: string[];\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                UniqueVerifiablePresentation: {\n                    type: string;\n                    properties: {\n                        hash: {\n                            type: string;\n                        };\n                        verifiablePresentation: {\n                            $ref: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n            };\n            methods: {\n                dataStoreORMGetIdentifiers: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        type: string;\n                        items: {\n                            $ref: string;\n                        };\n                    };\n                };\n                dataStoreORMGetIdentifiersCount: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        type: string;\n                    };\n                };\n                dataStoreORMGetMessages: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        type: string;\n                        items: {\n                            $ref: string;\n                        };\n                    };\n                };\n                dataStoreORMGetMessagesCount: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        type: string;\n                    };\n                };\n                dataStoreORMGetVerifiableCredentials: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        type: string;\n                        items: {\n                            $ref: string;\n                        };\n                    };\n                };\n                dataStoreORMGetVerifiableCredentialsByClaims: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        type: string;\n                        items: {\n                            $ref: string;\n                        };\n                    };\n                };\n                dataStoreORMGetVerifiableCredentialsByClaimsCount: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        type: string;\n                    };\n                };\n                dataStoreORMGetVerifiableCredentialsCount: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        type: string;\n                    };\n                };\n                dataStoreORMGetVerifiablePresentations: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        type: string;\n                        items: {\n                            $ref: string;\n                        };\n                    };\n                };\n                dataStoreORMGetVerifiablePresentationsCount: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        type: string;\n                    };\n                };\n            };\n        };\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "schema",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            }
+          ],
+          "implementsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@veramo/data-store-json!DIDStoreJson:class",
+          "docComment": "/**\n * An implementation of {@link @veramo/did-manager#AbstractDIDStore | AbstractDIDStore} that uses a JSON object to store the relationships between DIDs, their providers and controllers and their keys and services as they are known and managed by a Veramo agent.\n *\n * An instance of this class can be used by {@link @veramo/did-manager#DIDManager} as the data storage layer.\n *\n * This class must be initialized with a {@link VeramoJsonStore}, which serves as the JSON object storing data in memory as well as providing an update notification callback to persist this data. For correct usage, this MUST use the same {@link VeramoJsonStore} instance as the one used by {@link @veramo/key-manager#KeyManager | KeyManager}.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class DIDStoreJson extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "AbstractDIDStore",
+              "canonicalReference": "@veramo/did-manager!AbstractDIDStore:class"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/identifier/did-store.ts",
+          "releaseTag": "Beta",
+          "isAbstract": false,
+          "name": "DIDStoreJson",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "@veramo/data-store-json!DIDStoreJson:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `DIDStoreJson` class\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(jsonStore: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "VeramoJsonStore",
+                  "canonicalReference": "@veramo/data-store-json!VeramoJsonStore:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "jsonStore",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DIDStoreJson#deleteDID:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "deleteDID({ did }: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        did: string;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ did }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "deleteDID"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DIDStoreJson#getDID:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getDID({ did, alias, provider, }: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        did?: string;\n        alias?: string;\n        provider?: string;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IIdentifier",
+                  "canonicalReference": "@veramo/core-types!IIdentifier:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ did, alias, provider, }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getDID"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DIDStoreJson#importDID:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "importDID(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IIdentifier",
+                  "canonicalReference": "@veramo/core-types!IIdentifier:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "importDID"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!DIDStoreJson#listDIDs:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "listDIDs(args: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        alias?: string;\n        provider?: string;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IIdentifier",
+                  "canonicalReference": "@veramo/core-types!IIdentifier:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "listDIDs"
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          },
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@veramo/data-store-json!DiffCallback:type",
+          "docComment": "/**\n * A callback method that is called when the data stored in a {@link VeramoJsonCache} is updated.\n *\n * @param oldState - The snapshot of the cache before the update.\n *\n * @param newState - The new cache object, after the update. This object may reference the underlying storage.\n *\n * This API may change in future versions without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type DiffCallback = "
+            },
+            {
+              "kind": "Content",
+              "text": "(oldState: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Partial",
+              "canonicalReference": "!Partial:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "VeramoJsonCache",
+              "canonicalReference": "@veramo/data-store-json!VeramoJsonCache:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">, newState: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Partial",
+              "canonicalReference": "!Partial:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "VeramoJsonCache",
+              "canonicalReference": "@veramo/data-store-json!VeramoJsonCache:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">) => "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<void>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/types.ts",
+          "releaseTag": "Beta",
+          "name": "DiffCallback",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 12
+          }
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@veramo/data-store-json!KeyStoreJson:class",
+          "docComment": "/**\n * An implementation of {@link @veramo/key-manager#AbstractKeyStore | AbstractKeyStore} that uses a JSON object to store the relationships between keys, their IDs, aliases and {@link @veramo/key-manager#AbstractKeyManagementSystem | KMS implementations}, as they are known and managed by a Veramo agent.\n *\n * An instance of this class can be used by {@link @veramo/key-manager#KeyManager} as the data storage layer.\n *\n * This class must be initialized with a {@link VeramoJsonStore}, which serves as the JSON object storing data in memory as well as providing an update notification callback to persist this data. For correct usage, this MUST use the same {@link VeramoJsonStore} instance as the one used by {@link @veramo/did-manager#DIDManager | DIDManager}.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class KeyStoreJson extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "AbstractKeyStore",
+              "canonicalReference": "@veramo/key-manager!AbstractKeyStore:class"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/identifier/key-store.ts",
+          "releaseTag": "Beta",
+          "isAbstract": false,
+          "name": "KeyStoreJson",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "@veramo/data-store-json!KeyStoreJson:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `KeyStoreJson` class\n *\n * @param jsonStore - Serves as the JSON object storing data in memory as well as providing an update notification callback to persist this data. For correct usage, this MUST use the same {@link VeramoJsonStore} instance as the one used by {@link @veramo/did-manager#DIDManager | DIDManager}.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(jsonStore: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "VeramoJsonStore",
+                  "canonicalReference": "@veramo/data-store-json!VeramoJsonStore:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "jsonStore",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!KeyStoreJson#deleteKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "deleteKey({ kid }: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        kid: string;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ kid }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "deleteKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!KeyStoreJson#getKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getKey({ kid }: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        kid: string;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKey",
+                  "canonicalReference": "@veramo/core-types!IKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ kid }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!KeyStoreJson#importKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "importKey(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKey",
+                  "canonicalReference": "@veramo/core-types!IKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "importKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!KeyStoreJson#listKeys:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "listKeys(args?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{}"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedKeyInfo",
+                  "canonicalReference": "@veramo/core-types!ManagedKeyInfo:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "listKeys"
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          },
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/data-store-json!PresentationTableEntry:interface",
+          "docComment": "/**\n * This is used internally by {@link @veramo/data-store-json#DataStoreJson | DataStoreJson} to represent a Verifiable Presentation in a way that facilitates querying using the {@link @veramo/core-types#IDataStoreORM} interface.\n *\n * This API may change in future versions without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface PresentationTableEntry "
+            }
+          ],
+          "fileUrlPath": "src/types.ts",
+          "releaseTag": "Beta",
+          "name": "PresentationTableEntry",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!PresentationTableEntry#canonicalPresentation:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "canonicalPresentation: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "W3CVerifiablePresentation",
+                  "canonicalReference": "@veramo/core-types!W3CVerifiablePresentation:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "canonicalPresentation",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!PresentationTableEntry#context:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "context: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "context",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!PresentationTableEntry#credentials:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "credentials: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "VerifiableCredential",
+                  "canonicalReference": "@veramo/core-types!VerifiableCredential:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "credentials",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!PresentationTableEntry#expirationDate:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "expirationDate?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Date",
+                  "canonicalReference": "!Date:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "expirationDate",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!PresentationTableEntry#hash:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "hash: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "hash",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!PresentationTableEntry#holder:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "holder: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "holder",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!PresentationTableEntry#id:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "id?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "String",
+                  "canonicalReference": "!String:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "id",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!PresentationTableEntry#issuanceDate:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "issuanceDate?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Date",
+                  "canonicalReference": "!Date:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "issuanceDate",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!PresentationTableEntry#parsedPresentation:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "parsedPresentation: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "VerifiablePresentation",
+                  "canonicalReference": "@veramo/core-types!VerifiablePresentation:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "parsedPresentation",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!PresentationTableEntry#type:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "type: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "type",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!PresentationTableEntry#verifier:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "verifier: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "verifier",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@veramo/data-store-json!PrivateKeyStoreJson:class",
+          "docComment": "/**\n * An implementation of {@link @veramo/key-manager#AbstractPrivateKeyStore | AbstractPrivateKeyStore} that uses a JSON object to store the private key material needed by {@link @veramo/kms-local#KeyManagementSystem | KeyManagementSystem}.\n *\n * This class must be initialized with a {@link VeramoJsonStore}, which serves as the JSON object storing data in memory as well as providing an update notification callback to persist this data. The JSON object does not have to be shared with other users of {@link VeramoJsonStore}, but it can be.\n *\n * If an {@link @veramo/key-manager#AbstractSecretBox | AbstractSecretBox} is used, then key material is encrypted, even in memory.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class PrivateKeyStoreJson extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "AbstractPrivateKeyStore",
+              "canonicalReference": "@veramo/key-manager!AbstractPrivateKeyStore:class"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/identifier/private-key-store.ts",
+          "releaseTag": "Beta",
+          "isAbstract": false,
+          "name": "PrivateKeyStoreJson",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "@veramo/data-store-json!PrivateKeyStoreJson:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `PrivateKeyStoreJson` class\n *\n * @param jsonStore - This serves as the JSON object storing data in memory as well as providing an update notification callback to persist this data. The JSON object does not have to be shared with other users of {@link VeramoJsonStore}, but it can be.\n *\n * @param secretBox - If this is used, then key material is encrypted, even in memory.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(jsonStore: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "VeramoJsonStore",
+                  "canonicalReference": "@veramo/data-store-json!VeramoJsonStore:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", secretBox?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AbstractSecretBox",
+                  "canonicalReference": "@veramo/key-manager!AbstractSecretBox:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "jsonStore",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "secretBox",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 5
+                  },
+                  "isOptional": true
+                }
+              ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!PrivateKeyStoreJson#deleteKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "deleteKey({ alias }: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        alias: string;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ alias }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "deleteKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!PrivateKeyStoreJson#getKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getKey({ alias }: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        alias: string;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedPrivateKey",
+                  "canonicalReference": "@veramo/key-manager!ManagedPrivateKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ alias }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!PrivateKeyStoreJson#importKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "importKey(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ImportablePrivateKey",
+                  "canonicalReference": "@veramo/key-manager!ImportablePrivateKey:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedPrivateKey",
+                  "canonicalReference": "@veramo/key-manager!ManagedPrivateKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "importKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/data-store-json!PrivateKeyStoreJson#listKeys:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "listKeys(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Array",
+                  "canonicalReference": "!Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedPrivateKey",
+                  "canonicalReference": "@veramo/key-manager!ManagedPrivateKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "listKeys"
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          },
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/data-store-json!VeramoJsonCache:interface",
+          "docComment": "/**\n * A JSON data layout for data-store-json implementations.\n *\n * This API may change in future versions without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface VeramoJsonCache "
+            }
+          ],
+          "fileUrlPath": "src/types.ts",
+          "releaseTag": "Beta",
+          "name": "VeramoJsonCache",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!VeramoJsonCache#claims:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "claims?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ClaimTableEntry",
+                  "canonicalReference": "@veramo/data-store-json!ClaimTableEntry:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "claims",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!VeramoJsonCache#credentials:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "credentials?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "CredentialTableEntry",
+                  "canonicalReference": "@veramo/data-store-json!CredentialTableEntry:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "credentials",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!VeramoJsonCache#dids:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "dids?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IIdentifier",
+                  "canonicalReference": "@veramo/core-types!IIdentifier:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "dids",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!VeramoJsonCache#keys:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "keys?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedKeyInfo",
+                  "canonicalReference": "@veramo/core-types!ManagedKeyInfo:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "keys",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!VeramoJsonCache#messages:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "messages?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMessage",
+                  "canonicalReference": "@veramo/core-types!IMessage:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "messages",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!VeramoJsonCache#presentations:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "presentations?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PresentationTableEntry",
+                  "canonicalReference": "@veramo/data-store-json!PresentationTableEntry:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "presentations",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!VeramoJsonCache#privateKeys:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "privateKeys?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedPrivateKey",
+                  "canonicalReference": "@veramo/key-manager!ManagedPrivateKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "privateKeys",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/data-store-json!VeramoJsonStore:interface",
+          "docComment": "/**\n * An extension to {@link VeramoJsonCache} that bundles an update notification callback that allows implementors to persist the {@link VeramoJsonCache} and any other data it may contain to another storage medium.\n *\n * This API may change in future versions without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface VeramoJsonStore extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "VeramoJsonCache",
+              "canonicalReference": "@veramo/data-store-json!VeramoJsonCache:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/types.ts",
+          "releaseTag": "Beta",
+          "name": "VeramoJsonStore",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/data-store-json!VeramoJsonStore#notifyUpdate:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "notifyUpdate: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "DiffCallback",
+                  "canonicalReference": "@veramo/data-store-json!DiffCallback:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "notifyUpdate",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

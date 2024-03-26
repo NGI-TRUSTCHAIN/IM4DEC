@@ -1,0 +1,1945 @@
+<!doctype html><html lang="en">
+ <head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Semantic Overlay Architecture</title>
+  <meta content="w3c/CG-DRAFT" name="w3c-status">
+  <link href="https://www.w3.org/StyleSheets/TR/2016/cg-draft" rel="stylesheet">
+  <link href="https://www.w3.org/2008/site/images/favicon.ico" rel="icon">
+  <meta content="Bikeshed version 5c6f15dd9, updated Tue Oct 19 12:13:31 2021 -0700" name="generator">
+  <link href="https://ownyourdata.github.io/soya/" rel="canonical">
+<style>
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: var(--bg);
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+<style>/* style-autolinks */
+
+.css.css, .property.property, .descriptor.descriptor {
+    color: var(--a-normal-text);
+    font-size: inherit;
+    font-family: inherit;
+}
+.css::before, .property::before, .descriptor::before {
+    content: "‘";
+}
+.css::after, .property::after, .descriptor::after {
+    content: "’";
+}
+.property, .descriptor {
+    /* Don't wrap property and descriptor names */
+    white-space: nowrap;
+}
+.type { /* CSS value <type> */
+    font-style: italic;
+}
+pre .property::before, pre .property::after {
+    content: "";
+}
+[data-link-type="property"]::before,
+[data-link-type="propdesc"]::before,
+[data-link-type="descriptor"]::before,
+[data-link-type="value"]::before,
+[data-link-type="function"]::before,
+[data-link-type="at-rule"]::before,
+[data-link-type="selector"]::before,
+[data-link-type="maybe"]::before {
+    content: "‘";
+}
+[data-link-type="property"]::after,
+[data-link-type="propdesc"]::after,
+[data-link-type="descriptor"]::after,
+[data-link-type="value"]::after,
+[data-link-type="function"]::after,
+[data-link-type="at-rule"]::after,
+[data-link-type="selector"]::after,
+[data-link-type="maybe"]::after {
+    content: "’";
+}
+
+[data-link-type].production::before,
+[data-link-type].production::after,
+.prod [data-link-type]::before,
+.prod [data-link-type]::after {
+    content: "";
+}
+
+[data-link-type=element],
+[data-link-type=element-attr] {
+    font-family: Menlo, Consolas, "DejaVu Sans Mono", monospace;
+    font-size: .9em;
+}
+[data-link-type=element]::before { content: "<" }
+[data-link-type=element]::after  { content: ">" }
+
+[data-link-type=biblio] {
+    white-space: pre;
+}</style>
+<style>/* style-colors */
+
+/* Any --*-text not paired with a --*-bg is assumed to have a transparent bg */
+:root {
+    color-scheme: light dark;
+
+    --text: black;
+    --bg: white;
+
+    --unofficial-watermark: url(https://www.w3.org/StyleSheets/TR/2016/logos/UD-watermark);
+
+    --logo-bg: #1a5e9a;
+    --logo-active-bg: #c00;
+    --logo-text: white;
+
+    --tocnav-normal-text: #707070;
+    --tocnav-normal-bg: var(--bg);
+    --tocnav-hover-text: var(--tocnav-normal-text);
+    --tocnav-hover-bg: #f8f8f8;
+    --tocnav-active-text: #c00;
+    --tocnav-active-bg: var(--tocnav-normal-bg);
+
+    --tocsidebar-text: var(--text);
+    --tocsidebar-bg: #f7f8f9;
+    --tocsidebar-shadow: rgba(0,0,0,.1);
+    --tocsidebar-heading-text: hsla(203,20%,40%,.7);
+
+    --toclink-text: var(--text);
+    --toclink-underline: #3980b5;
+    --toclink-visited-text: var(--toclink-text);
+    --toclink-visited-underline: #054572;
+
+    --heading-text: #005a9c;
+
+    --hr-text: var(--text);
+
+    --algo-border: #def;
+
+    --del-text: red;
+    --del-bg: transparent;
+    --ins-text: #080;
+    --ins-bg: transparent;
+
+    --a-normal-text: #034575;
+    --a-normal-underline: #bbb;
+    --a-visited-text: var(--a-normal-text);
+    --a-visited-underline: #707070;
+    --a-hover-bg: rgba(75%, 75%, 75%, .25);
+    --a-active-text: #c00;
+    --a-active-underline: #c00;
+
+    --blockquote-border: silver;
+    --blockquote-bg: transparent;
+    --blockquote-text: currentcolor;
+
+    --issue-border: #e05252;
+    --issue-bg: #fbe9e9;
+    --issue-text: var(--text);
+    --issueheading-text: #831616;
+
+    --example-border: #e0cb52;
+    --example-bg: #fcfaee;
+    --example-text: var(--text);
+    --exampleheading-text: #574b0f;
+
+    --note-border: #52e052;
+    --note-bg: #e9fbe9;
+    --note-text: var(--text);
+    --noteheading-text: hsl(120, 70%, 30%);
+    --notesummary-underline: silver;
+
+    --assertion-border: #aaa;
+    --assertion-bg: #eee;
+    --assertion-text: black;
+
+    --advisement-border: orange;
+    --advisement-bg: #fec;
+    --advisement-text: var(--text);
+    --advisementheading-text: #b35f00;
+
+    --warning-border: red;
+    --warning-bg: hsla(40,100%,50%,0.95);
+    --warning-text: var(--text);
+
+    --amendment-border: #330099;
+    --amendment-bg: #F5F0FF;
+    --amendment-text: var(--text);
+    --amendmentheading-text: #220066;
+
+    --def-border: #8ccbf2;
+    --def-bg: #def;
+    --def-text: var(--text);
+    --defrow-border: #bbd7e9;
+
+    --datacell-border: silver;
+
+    --indexinfo-text: #707070;
+
+    --indextable-hover-text: black;
+    --indextable-hover-bg: #f7f8f9;
+
+    --outdatedspec-bg: rgba(0, 0, 0, .5);
+    --outdatedspec-text: black;
+    --outdated-bg: maroon;
+    --outdated-text: white;
+    --outdated-shadow: red;
+
+    --editedrec-bg: darkorange;
+}</style>
+<style>/* style-counters */
+
+body {
+    counter-reset: example figure issue;
+}
+.issue {
+    counter-increment: issue;
+}
+.issue:not(.no-marker)::before {
+    content: "Issue " counter(issue);
+}
+
+.example {
+    counter-increment: example;
+}
+.example:not(.no-marker)::before {
+    content: "Example " counter(example);
+}
+.invalid.example:not(.no-marker)::before,
+.illegal.example:not(.no-marker)::before {
+    content: "Invalid Example" counter(example);
+}
+
+figcaption {
+    counter-increment: figure;
+}
+figcaption:not(.no-marker)::before {
+    content: "Figure " counter(figure) " ";
+}</style>
+<style>/* style-dfn-panel */
+
+:root {
+    --dfnpanel-bg: #ddd;
+    --dfnpanel-text: var(--text);
+}
+.dfn-panel {
+    position: absolute;
+    z-index: 35;
+    height: auto;
+    width: -webkit-fit-content;
+    width: fit-content;
+    max-width: 300px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 0.5em 0.75em;
+    font: small Helvetica Neue, sans-serif, Droid Sans Fallback;
+    background: var(--dfnpanel-bg);
+    color: var(--dfnpanel-text);
+    border: outset 0.2em;
+}
+.dfn-panel:not(.on) { display: none; }
+.dfn-panel * { margin: 0; padding: 0; text-indent: 0; }
+.dfn-panel > b { display: block; }
+.dfn-panel a { color: var(--dfnpanel-text); }
+.dfn-panel a:not(:hover) { text-decoration: none !important; border-bottom: none !important; }
+.dfn-panel > b + b { margin-top: 0.25em; }
+.dfn-panel ul { padding: 0; }
+.dfn-panel li { list-style: inside; }
+.dfn-panel.activated {
+    display: inline-block;
+    position: fixed;
+    left: .5em;
+    bottom: 2em;
+    margin: 0 auto;
+    max-width: calc(100vw - 1.5em - .4em - .5em);
+    max-height: 30vh;
+}
+
+.dfn-paneled { cursor: pointer; }
+</style>
+<style>/* style-issues */
+
+a[href].issue-return {
+    float: right;
+    float: inline-end;
+    color: var(--issueheading-text);
+    font-weight: bold;
+    text-decoration: none;
+}
+</style>
+<style>/* style-md-lists */
+
+/* This is a weird hack for me not yet following the commonmark spec
+   regarding paragraph and lists. */
+[data-md] > :first-child {
+    margin-top: 0;
+}
+[data-md] > :last-child {
+    margin-bottom: 0;
+}</style>
+<style>/* style-selflinks */
+
+:root {
+    --selflink-text: white;
+    --selflink-bg: gray;
+    --selflink-hover-text: black;
+}
+.heading, .issue, .note, .example, li, dt {
+    position: relative;
+}
+a.self-link {
+    position: absolute;
+    top: 0;
+    left: calc(-1 * (3.5rem - 26px));
+    width: calc(3.5rem - 26px);
+    height: 2em;
+    text-align: center;
+    border: none;
+    transition: opacity .2s;
+    opacity: .5;
+}
+a.self-link:hover {
+    opacity: 1;
+}
+.heading > a.self-link {
+    font-size: 83%;
+}
+li > a.self-link {
+    left: calc(-1 * (3.5rem - 26px) - 2em);
+}
+dfn > a.self-link {
+    top: auto;
+    left: auto;
+    opacity: 0;
+    width: 1.5em;
+    height: 1.5em;
+    background: var(--selflink-bg);
+    color: var(--selflink-text);
+    font-style: normal;
+    transition: opacity .2s, background-color .2s, color .2s;
+}
+dfn:hover > a.self-link {
+    opacity: 1;
+}
+dfn > a.self-link:hover {
+    color: var(--selflink-hover-text);
+}
+
+a.self-link::before            { content: "¶"; }
+.heading > a.self-link::before { content: "§"; }
+dfn > a.self-link::before      { content: "#"; }
+</style>
+<style>/* style-syntax-highlighting */
+
+code.highlight { padding: .1em; border-radius: .3em; }
+pre.highlight, pre > code.highlight { display: block; padding: 1em; margin: .5em 0; overflow: auto; border-radius: 0; }
+
+.highlight:not(.idl) { background: rgba(0, 0, 0, .03); }
+c-[a] { color: #990055 } /* Keyword.Declaration */
+c-[b] { color: #990055 } /* Keyword.Type */
+c-[c] { color: #708090 } /* Comment */
+c-[d] { color: #708090 } /* Comment.Multiline */
+c-[e] { color: #0077aa } /* Name.Attribute */
+c-[f] { color: #669900 } /* Name.Tag */
+c-[g] { color: #222222 } /* Name.Variable */
+c-[k] { color: #990055 } /* Keyword */
+c-[l] { color: #000000 } /* Literal */
+c-[m] { color: #000000 } /* Literal.Number */
+c-[n] { color: #0077aa } /* Name */
+c-[o] { color: #999999 } /* Operator */
+c-[p] { color: #999999 } /* Punctuation */
+c-[s] { color: #a67f59 } /* Literal.String */
+c-[t] { color: #a67f59 } /* Literal.String.Single */
+c-[u] { color: #a67f59 } /* Literal.String.Double */
+c-[cp] { color: #708090 } /* Comment.Preproc */
+c-[c1] { color: #708090 } /* Comment.Single */
+c-[cs] { color: #708090 } /* Comment.Special */
+c-[kc] { color: #990055 } /* Keyword.Constant */
+c-[kn] { color: #990055 } /* Keyword.Namespace */
+c-[kp] { color: #990055 } /* Keyword.Pseudo */
+c-[kr] { color: #990055 } /* Keyword.Reserved */
+c-[ld] { color: #000000 } /* Literal.Date */
+c-[nc] { color: #0077aa } /* Name.Class */
+c-[no] { color: #0077aa } /* Name.Constant */
+c-[nd] { color: #0077aa } /* Name.Decorator */
+c-[ni] { color: #0077aa } /* Name.Entity */
+c-[ne] { color: #0077aa } /* Name.Exception */
+c-[nf] { color: #0077aa } /* Name.Function */
+c-[nl] { color: #0077aa } /* Name.Label */
+c-[nn] { color: #0077aa } /* Name.Namespace */
+c-[py] { color: #0077aa } /* Name.Property */
+c-[ow] { color: #999999 } /* Operator.Word */
+c-[mb] { color: #000000 } /* Literal.Number.Bin */
+c-[mf] { color: #000000 } /* Literal.Number.Float */
+c-[mh] { color: #000000 } /* Literal.Number.Hex */
+c-[mi] { color: #000000 } /* Literal.Number.Integer */
+c-[mo] { color: #000000 } /* Literal.Number.Oct */
+c-[sb] { color: #a67f59 } /* Literal.String.Backtick */
+c-[sc] { color: #a67f59 } /* Literal.String.Char */
+c-[sd] { color: #a67f59 } /* Literal.String.Doc */
+c-[se] { color: #a67f59 } /* Literal.String.Escape */
+c-[sh] { color: #a67f59 } /* Literal.String.Heredoc */
+c-[si] { color: #a67f59 } /* Literal.String.Interpol */
+c-[sx] { color: #a67f59 } /* Literal.String.Other */
+c-[sr] { color: #a67f59 } /* Literal.String.Regex */
+c-[ss] { color: #a67f59 } /* Literal.String.Symbol */
+c-[vc] { color: #0077aa } /* Name.Variable.Class */
+c-[vg] { color: #0077aa } /* Name.Variable.Global */
+c-[vi] { color: #0077aa } /* Name.Variable.Instance */
+c-[il] { color: #000000 } /* Literal.Number.Integer.Long */
+</style>
+<style>/* style-darkmode */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #ddd;
+        --bg: black;
+
+        --unofficial-watermark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='400'%3E%3Cg fill='%23100808' transform='translate(200 200) rotate(-45) translate(-200 -200)' stroke='%23100808' stroke-width='3'%3E%3Ctext x='50%25' y='220' style='font: bold 70px sans-serif; text-anchor: middle; letter-spacing: 6px;'%3EUNOFFICIAL%3C/text%3E%3Ctext x='50%25' y='305' style='font: bold 70px sans-serif; text-anchor: middle; letter-spacing: 6px;'%3EDRAFT%3C/text%3E%3C/g%3E%3C/svg%3E");
+
+        --logo-bg: #1a5e9a;
+        --logo-active-bg: #c00;
+        --logo-text: white;
+
+        --tocnav-normal-text: #999;
+        --tocnav-normal-bg: var(--bg);
+        --tocnav-hover-text: var(--tocnav-normal-text);
+        --tocnav-hover-bg: #080808;
+        --tocnav-active-text: #f44;
+        --tocnav-active-bg: var(--tocnav-normal-bg);
+
+        --tocsidebar-text: var(--text);
+        --tocsidebar-bg: #080808;
+        --tocsidebar-shadow: rgba(255,255,255,.1);
+        --tocsidebar-heading-text: hsla(203,20%,40%,.7);
+
+        --toclink-text: var(--text);
+        --toclink-underline: #6af;
+        --toclink-visited-text: var(--toclink-text);
+        --toclink-visited-underline: #054572;
+
+        --heading-text: #8af;
+
+        --hr-text: var(--text);
+
+        --algo-border: #456;
+
+        --del-text: #f44;
+        --del-bg: transparent;
+        --ins-text: #4a4;
+        --ins-bg: transparent;
+
+        --a-normal-text: #6af;
+        --a-normal-underline: #555;
+        --a-visited-text: var(--a-normal-text);
+        --a-visited-underline: var(--a-normal-underline);
+        --a-hover-bg: rgba(25%, 25%, 25%, .2);
+        --a-active-text: #f44;
+        --a-active-underline: var(--a-active-text);
+
+        --borderedblock-bg: rgba(255, 255, 255, .05);
+
+        --blockquote-border: silver;
+        --blockquote-bg: var(--borderedblock-bg);
+        --blockquote-text: currentcolor;
+
+        --issue-border: #e05252;
+        --issue-bg: var(--borderedblock-bg);
+        --issue-text: var(--text);
+        --issueheading-text: hsl(0deg, 70%, 70%);
+
+        --example-border: hsl(50deg, 90%, 60%);
+        --example-bg: var(--borderedblock-bg);
+        --example-text: var(--text);
+        --exampleheading-text: hsl(50deg, 70%, 70%);
+
+        --note-border: hsl(120deg, 100%, 35%);
+        --note-bg: var(--borderedblock-bg);
+        --note-text: var(--text);
+        --noteheading-text: hsl(120, 70%, 70%);
+        --notesummary-underline: silver;
+
+        --assertion-border: #444;
+        --assertion-bg: var(--borderedblock-bg);
+        --assertion-text: var(--text);
+
+        --advisement-border: orange;
+        --advisement-bg: #222218;
+        --advisement-text: var(--text);
+        --advisementheading-text: #f84;
+
+        --warning-border: red;
+        --warning-bg: hsla(40,100%,20%,0.95);
+        --warning-text: var(--text);
+
+        --amendment-border: #330099;
+        --amendment-bg: #080010;
+        --amendment-text: var(--text);
+        --amendmentheading-text: #cc00ff;
+
+        --def-border: #8ccbf2;
+        --def-bg: #080818;
+        --def-text: var(--text);
+        --defrow-border: #136;
+
+        --datacell-border: silver;
+
+        --indexinfo-text: #aaa;
+
+        --indextable-hover-text: var(--text);
+        --indextable-hover-bg: #181818;
+
+        --outdatedspec-bg: rgba(255, 255, 255, .5);
+        --outdatedspec-text: black;
+        --outdated-bg: maroon;
+        --outdated-text: white;
+        --outdated-shadow: red;
+
+        --editedrec-bg: darkorange;
+    }
+    /* In case a transparent-bg image doesn't expect to be on a dark bg,
+       which is quite common in practice... */
+    img { background: white; }
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --selflink-text: black;
+        --selflink-bg: silver;
+        --selflink-hover-text: white;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .highlight:not(.idl) { background: rgba(255, 255, 255, .05); }
+
+    c-[a] { color: #d33682 } /* Keyword.Declaration */
+    c-[b] { color: #d33682 } /* Keyword.Type */
+    c-[c] { color: #2aa198 } /* Comment */
+    c-[d] { color: #2aa198 } /* Comment.Multiline */
+    c-[e] { color: #268bd2 } /* Name.Attribute */
+    c-[f] { color: #b58900 } /* Name.Tag */
+    c-[g] { color: #cb4b16 } /* Name.Variable */
+    c-[k] { color: #d33682 } /* Keyword */
+    c-[l] { color: #657b83 } /* Literal */
+    c-[m] { color: #657b83 } /* Literal.Number */
+    c-[n] { color: #268bd2 } /* Name */
+    c-[o] { color: #657b83 } /* Operator */
+    c-[p] { color: #657b83 } /* Punctuation */
+    c-[s] { color: #6c71c4 } /* Literal.String */
+    c-[t] { color: #6c71c4 } /* Literal.String.Single */
+    c-[u] { color: #6c71c4 } /* Literal.String.Double */
+    c-[ch] { color: #2aa198 } /* Comment.Hashbang */
+    c-[cp] { color: #2aa198 } /* Comment.Preproc */
+    c-[cpf] { color: #2aa198 } /* Comment.PreprocFile */
+    c-[c1] { color: #2aa198 } /* Comment.Single */
+    c-[cs] { color: #2aa198 } /* Comment.Special */
+    c-[kc] { color: #d33682 } /* Keyword.Constant */
+    c-[kn] { color: #d33682 } /* Keyword.Namespace */
+    c-[kp] { color: #d33682 } /* Keyword.Pseudo */
+    c-[kr] { color: #d33682 } /* Keyword.Reserved */
+    c-[ld] { color: #657b83 } /* Literal.Date */
+    c-[nc] { color: #268bd2 } /* Name.Class */
+    c-[no] { color: #268bd2 } /* Name.Constant */
+    c-[nd] { color: #268bd2 } /* Name.Decorator */
+    c-[ni] { color: #268bd2 } /* Name.Entity */
+    c-[ne] { color: #268bd2 } /* Name.Exception */
+    c-[nf] { color: #268bd2 } /* Name.Function */
+    c-[nl] { color: #268bd2 } /* Name.Label */
+    c-[nn] { color: #268bd2 } /* Name.Namespace */
+    c-[py] { color: #268bd2 } /* Name.Property */
+    c-[ow] { color: #657b83 } /* Operator.Word */
+    c-[mb] { color: #657b83 } /* Literal.Number.Bin */
+    c-[mf] { color: #657b83 } /* Literal.Number.Float */
+    c-[mh] { color: #657b83 } /* Literal.Number.Hex */
+    c-[mi] { color: #657b83 } /* Literal.Number.Integer */
+    c-[mo] { color: #657b83 } /* Literal.Number.Oct */
+    c-[sa] { color: #6c71c4 } /* Literal.String.Affix */
+    c-[sb] { color: #6c71c4 } /* Literal.String.Backtick */
+    c-[sc] { color: #6c71c4 } /* Literal.String.Char */
+    c-[dl] { color: #6c71c4 } /* Literal.String.Delimiter */
+    c-[sd] { color: #6c71c4 } /* Literal.String.Doc */
+    c-[se] { color: #6c71c4 } /* Literal.String.Escape */
+    c-[sh] { color: #6c71c4 } /* Literal.String.Heredoc */
+    c-[si] { color: #6c71c4 } /* Literal.String.Interpol */
+    c-[sx] { color: #6c71c4 } /* Literal.String.Other */
+    c-[sr] { color: #6c71c4 } /* Literal.String.Regex */
+    c-[ss] { color: #6c71c4 } /* Literal.String.Symbol */
+    c-[fm] { color: #268bd2 } /* Name.Function.Magic */
+    c-[vc] { color: #cb4b16 } /* Name.Variable.Class */
+    c-[vg] { color: #cb4b16 } /* Name.Variable.Global */
+    c-[vi] { color: #cb4b16 } /* Name.Variable.Instance */
+    c-[vm] { color: #cb4b16 } /* Name.Variable.Magic */
+    c-[il] { color: #657b83 } /* Literal.Number.Integer.Long */
+}
+</style>
+ <body class="h-entry">
+  <div class="head">
+   <p data-fill-with="logo"><a class="logo" href="https://www.w3.org/"> <img alt="W3C" height="48" src="https://www.w3.org/StyleSheets/TR/2016/logos/W3C" width="72"> </a> </p>
+   <h1 class="p-name no-ref" id="title">Semantic Overlay Architecture</h1>
+   <h2 class="no-num no-toc no-ref heading settled" id="profile-and-date"><span class="content">Draft Community Group Report, <time class="dt-updated" datetime="2022-07-07">7 July 2022</time></span></h2>
+   <div data-fill-with="spec-metadata">
+    <dl>
+     <dt>This version:
+     <dd><a class="u-url" href="https://ownyourdata.github.io/soya/">https://ownyourdata.github.io/soya/</a>
+     <dt class="editor">Editors:
+     <dd class="editor p-author h-card vcard"><a class="p-name fn u-url url" href="https://www.linkedin.com/in/fabianek/">Christoph Fabianek</a> (<a class="p-org org" href="https://OwnYourData.eu">OwnYourData</a>) <a class="u-email email" href="mailto:christoph@ownyourdata.eu">christoph@ownyourdata.eu</a>
+     <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:fajar.ekaputra@tuwien.ac.at">Fajar J. Ekaputra</a> (<a class="p-org org" href="https://OwnYourData.eu">OwnYourData</a>)
+     <dd class="editor p-author h-card vcard"><a class="p-name fn u-email email" href="mailto:gabriel.unterholzer@dec112.at">Gabriel Unterholzer</a> (<a class="p-org org" href="https://OwnYourData.eu">OwnYourData</a>)
+    </dl>
+   </div>
+   <div data-fill-with="warning"></div>
+   <p class="copyright" data-fill-with="copyright"><a href="https://www.w3.org/Consortium/Legal/ipr-notice#Copyright">Copyright</a> © 2022 <a href="https://www.w3.org/"><abbr title="World Wide Web Consortium">W3C</abbr></a><sup>®</sup> (<a href="https://www.csail.mit.edu/"><abbr title="Massachusetts Institute of Technology">MIT</abbr></a>, <a href="https://www.ercim.eu/"><abbr title="European Research Consortium for Informatics and Mathematics">ERCIM</abbr></a>, <a href="https://www.keio.ac.jp/">Keio</a>, <a href="https://ev.buaa.edu.cn/">Beihang</a>). W3C <a href="https://www.w3.org/Consortium/Legal/ipr-notice#Legal_Disclaimer">liability</a>, <a href="https://www.w3.org/Consortium/Legal/ipr-notice#W3C_Trademarks">trademark</a> and <a href="https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document" rel="license">permissive document license</a> rules apply. </p>
+   <hr title="Separator for header">
+  </div>
+  <div class="p-summary" data-fill-with="abstract">
+   <h2 class="no-num no-toc no-ref heading settled" id="abstract"><span class="content">Abstract</span></h2>
+   <p>Draft recommendations for data model authoring and publishing platform</p>
+  </div>
+  <h2 class="no-num no-toc no-ref heading settled" id="sotd"><span class="content">Status of this document</span></h2>
+  <div data-fill-with="status">
+   <p></p>
+  </div>
+  <div data-fill-with="at-risk"></div>
+  <nav data-fill-with="table-of-contents" id="toc">
+   <h2 class="no-num no-toc no-ref" id="contents">Table of Contents</h2>
+   <ol class="toc" role="directory">
+    <li>
+     <a href="#intro"><span class="secno">1</span> <span class="content">Introduction</span></a>
+     <ol class="toc">
+      <li><a href="#terminology"><span class="secno">1.1</span> <span class="content">Terminology</span></a>
+      <li><a href="#goals"><span class="secno">1.2</span> <span class="content">Design Goals and Rationale</span></a>
+      <li><a href="#motivation"><span class="secno">1.3</span> <span class="content">Motivation</span></a>
+      <li><a href="#lifecycle"><span class="secno">1.4</span> <span class="content">Lifecycle of RDF Data Engineering</span></a>
+     </ol>
+    <li>
+     <a href="#composition"><span class="secno">2</span> <span class="content">Composition</span></a>
+     <ol class="toc">
+      <li>
+       <a href="#structure_element"><span class="secno">2.1</span> <span class="content">Structures</span></a>
+       <ol class="toc">
+        <li><a href="#meta_element"><span class="secno">2.1.1</span> <span class="content">Meta</span></a>
+        <li><a href="#base_element"><span class="secno">2.1.2</span> <span class="content">Base</span></a>
+        <li><a href="#overlay_element"><span class="secno">2.1.3</span> <span class="content">Overlay</span></a>
+       </ol>
+      <li>
+       <a href="#semantic_web"><span class="secno">2.2</span> <span class="content">Semantic Web Standards Adoption</span></a>
+       <ol class="toc">
+        <li><a href="#rdfs_owl"><span class="secno">2.2.1</span> <span class="content">Data Model: RDFS/OWL</span></a>
+        <li><a href="#jsonld"><span class="secno">2.2.2</span> <span class="content">Data Serialization: JSON-LD</span></a>
+       </ol>
+      <li>
+       <a href="#sw-stack"><span class="secno">2.3</span> <span class="content">SW Stack</span></a>
+       <ol class="toc">
+        <li><a href="#shacl"><span class="secno">2.3.1</span> <span class="content">SHACL</span></a>
+        <li><a href="#jq"><span class="secno">2.3.2</span> <span class="content">jq</span></a>
+        <li><a href="#jolt"><span class="secno">2.3.3</span> <span class="content">Jolt</span></a>
+        <li><a href="#semcon"><span class="secno">2.3.4</span> <span class="content">Semantic Container</span></a>
+       </ol>
+     </ol>
+    <li>
+     <a href="#features"><span class="secno">3</span> <span class="content">Features</span></a>
+     <ol class="toc">
+      <li><a href="#authoring"><span class="secno">3.1</span> <span class="content">Authoring</span></a>
+      <li><a href="#publishing"><span class="secno">3.2</span> <span class="content">Publishing</span></a>
+      <li><a href="#acquisition"><span class="secno">3.3</span> <span class="content">Acquisition</span></a>
+      <li><a href="#validation"><span class="secno">3.4</span> <span class="content">Validation</span></a>
+      <li><a href="#transformation"><span class="secno">3.5</span> <span class="content">Transformation</span></a>
+      <li><a href="#forms"><span class="secno">3.6</span> <span class="content">Forms</span></a>
+     </ol>
+    <li>
+     <a href="#tools"><span class="secno">4</span> <span class="content">Tools</span></a>
+     <ol class="toc">
+      <li><a href="#library"><span class="secno">4.1</span> <span class="content"><code>soya-js</code> Library</span></a>
+      <li><a href="#cli"><span class="secno">4.2</span> <span class="content">Command Line Tool</span></a>
+      <li><a href="#repository"><span class="secno">4.3</span> <span class="content">Repository</span></a>
+     </ol>
+    <li><a href="#implementation"><span class="secno">5</span> <span class="content">Reference Implementation</span></a>
+    <li>
+     <a href="#w3c-conformance"><span class="secno"></span> <span class="content">Conformance</span></a>
+     <ol class="toc">
+      <li><a href="#w3c-conventions"><span class="secno"></span> <span class="content">Document conventions</span></a>
+      <li><a href="#w3c-conformant-algorithms"><span class="secno"></span> <span class="content">Conformant Algorithms</span></a>
+     </ol>
+    <li>
+     <a href="#index"><span class="secno"></span> <span class="content">Index</span></a>
+     <ol class="toc">
+      <li><a href="#index-defined-here"><span class="secno"></span> <span class="content">Terms defined by this specification</span></a>
+     </ol>
+    <li>
+     <a href="#references"><span class="secno"></span> <span class="content">References</span></a>
+     <ol class="toc">
+      <li><a href="#normative"><span class="secno"></span> <span class="content">Normative References</span></a>
+      <li><a href="#informative"><span class="secno"></span> <span class="content">Informative References</span></a>
+     </ol>
+   </ol>
+  </nav>
+  <main>
+   <p>This specification is not a W3C Standard nor is it on the W3C Standards Track. Learn more about <a href="https://www.w3.org/community/">W3C Community and Business Groups</a>. <a href="https://github.com/OwnYourData/soya/issues">GitHub Issues</a> are preferred for discussion of this specification.</p>
+   <h3 class="heading settled" id="history"><span class="content">History</span></h3>
+   <ul>
+    <li data-md>
+     <p>Version 0.1: 19 October 2021 (initial draft, <a href="https://github.com/OwnYourData/soya/blob/main/docs/https://github.com/OwnYourData/soya/blob/main/docs/SOyA_WhitePaper_Nov21.pdf">link</a>)</p>
+    <li data-md>
+     <p>Version 0.2: 28 February 2022 (current version)</p>
+   </ul>
+   <h2 class="heading settled" data-level="1" id="intro"><span class="secno">1. </span><span class="content">Introduction</span><a class="self-link" href="#intro"></a></h2>
+   <p>SOyA is a data model authoring and publishing platform and also provides functionalities for validation and transformation. It includes a libray for integration in other projects, a command line tool for interactive data model management, and an online repository for hosting data models.</p>
+   <p align="center"> <img src="res/overview.png" width="800"><br> <em>Figure 1: Building blocks in SOyA</em> </p>
+   <h3 class="heading settled" data-level="1.1" id="terminology"><span class="secno">1.1. </span><span class="content">Terminology</span><a class="self-link" href="#terminology"></a></h3>
+   <p>This document uses the following terms as defined in external specifications and defines terms specific to SOyA.</p>
+   <div>
+    <dl>
+     <dt data-md><dfn class="dfn-paneled" data-dfn-for="terms" data-dfn-type="dfn" data-export data-lt="Attributes" id="terms-attributes">Attribute</dfn>
+     <dd data-md>
+      <p>in a <a data-link-type="dfn" href="#terms-base" id="ref-for-terms-base">Base</a> a single field with a name and associated type<br> <em>in RDF:</em> a single data type or object property</p>
+     <dt data-md><dfn class="dfn-paneled" data-dfn-for="terms" data-dfn-type="dfn" data-export data-lt="base|bases|Bases" id="terms-base">Base</dfn>
+     <dd data-md>
+      <p>has a name and a list of <a data-link-type="dfn" href="#terms-attributes" id="ref-for-terms-attributes">Attributes</a> with associated type<br> <em>in RDF:</em> an RDF Class with one or more properties</p>
+     <dt data-md><dfn class="dfn-paneled" data-dfn-for="terms" data-dfn-type="dfn" data-export data-lt="DRIs" id="terms-dris">DRI</dfn>
+     <dd data-md>
+      <p>A <strong>D</strong>ecentralized <strong>R</strong>esource <strong>I</strong>dentifier represents a content based address for a [=terms/structure]. Within SOyA Multihash <a data-link-type="biblio" href="#biblio-multihash">[MULTIHASH]</a> (default: <code>sha2-256</code>) is used for hashing a JSON object and Multibase <a data-link-type="biblio" href="#biblio-multibase">[MULTIBASE]</a> (default: <code>base58-btc</code>) for encoding the hash value.</p>
+     <dt data-md><dfn data-dfn-for="terms" data-dfn-type="dfn" data-export id="terms-instance">Instance<a class="self-link" href="#terms-instance"></a></dfn>
+     <dd data-md>
+      <p>is a data record (e.g. an data describing an employee) with a set of properties as defined in a <a data-link-type="dfn" href="#terms-base" id="ref-for-terms-base①">Base</a> or <a data-link-type="dfn" href="#terms-structures" id="ref-for-terms-structures">Structure</a><br> <em>in RDF:</em> instance of an RDF Class</p>
+     <dt data-md><dfn class="dfn-paneled" data-dfn-for="terms" data-dfn-type="dfn" data-export data-lt="overlay|overlays|Overlays" id="terms-overlay">Overlay</dfn>
+     <dd data-md>
+      <p>additional information about a <a data-link-type="dfn" href="#terms-base" id="ref-for-terms-base②">Base</a><br> <em>in RDF:</em> annotation properties attached to an RDF Class or Property</p>
+     <dt data-md><dfn data-dfn-for="terms" data-dfn-type="dfn" data-export id="terms-repository">Repository<a class="self-link" href="#terms-repository"></a></dfn>
+     <dd data-md>
+      <p>online storage for <a data-link-type="dfn" href="#terms-structures" id="ref-for-terms-structures①">Structures</a> with versioning capabilities</p>
+     <dt data-md><dfn class="dfn-paneled" data-dfn-for="terms" data-dfn-type="dfn" data-export data-lt="Structures|structure" id="terms-structures">Structure</dfn>
+     <dd data-md>
+      <p>a combination of <a data-link-type="dfn" href="#terms-base" id="ref-for-terms-base③">Bases</a> and <a data-link-type="dfn" href="#terms-overlay" id="ref-for-terms-overlay">Overlays</a><br> <em>in RDF:</em> an ontology</p>
+    </dl>
+   </div>
+   <h3 class="heading settled" data-level="1.2" id="goals"><span class="secno">1.2. </span><span class="content">Design Goals and Rationale</span><a class="self-link" href="#goals"></a></h3>
+   <p>SOyA satisfies the following design goals:</p>
+   <ul>
+    <li data-md>
+     <p><strong>Open:</strong> all components are open source, free to use (incl. commercially), and publicly accessible (Github, public Repository)</p>
+    <li data-md>
+     <p><strong>Extensible:</strong> design is inherently supposed to be extended through own definitions, extensions, concepts</p>
+    <li data-md>
+     <p><strong>Compatible:</strong> allow seamlessly switching between data formats to use the best technology for the given use case</p>
+    <li data-md>
+     <p><strong>Ease of use:</strong> make it as simple as possible (but not simpler!) through documentation (e.g., tutorials, examples), authoring tools (e.g., YAML for initial description), UI components (web form), and integration (e.g., Semantic Containers)</p>
+    <li data-md>
+     <p><strong>Focus on Semantic Web:</strong> build on top of and make use of the Semantic Web Stack</p>
+    <li data-md>
+     <p><strong>Decentralised:</strong> avoid any centralized components or addressing (i.e., use decentralized resource identifiers - <a data-link-type="dfn" href="#terms-dris" id="ref-for-terms-dris">DRIs</a> - where possible)</p>
+   </ul>
+   <h3 class="heading settled" data-level="1.3" id="motivation"><span class="secno">1.3. </span><span class="content">Motivation</span><a class="self-link" href="#motivation"></a></h3>
+   <p>The growing importance of data over the last two decades has encourage organizations across all sectors to undergo transformations towards data-driven operations. For many years, these organizations used relational databases as their main data solutions. However, the exponential growth of data has exposed the limitations of relational databases, such as the costly adaptation of database schemas and applications in response to evolving application needs and the lack of support for interoperability and exchange between heterogeneous data sources.</p>
+   <p>RDF and the related semantic web technologies are appealing as a vendor neutral framework for using graph data as alternative solution to address the issues with relational databases. However, the perceived difficulty of use has made RDF and related semantic web technologies to be categorized as a niche technology. This is unfortunate because it restricts uptake and inhibit RDF from being viewed as a feasible choice for many use cases.</p>
+   <p>To address these challenges, Semantic Overlay Architecture (SOyA), is proposed as a lightweight, semantic-web based approach for data integration and exchange. At the core of this approach is the SOyA structure, a YAML-based data model for describing graph data that is RDF-compatible, which consists of one or more soya:<a data-link-type="dfn" href="#terms-base" id="ref-for-terms-base④">Base</a>, which represent RDF classes and their properties, and zero or more soya:<a data-link-type="dfn" href="#terms-overlay" id="ref-for-terms-overlay①">Overlay</a>, which provides additional information and context to soya:Base as well as processing definitions. Furthermore, to support developers in conducting the most common data processing for graph data, a number of predefined soya:Overlay are defined, e.g., such as soya:AnnotationOverlay for data model description and soya:ValidationOverlay for constraint checking.</p>
+   <h3 class="heading settled" data-level="1.4" id="lifecycle"><span class="secno">1.4. </span><span class="content">Lifecycle of RDF Data Engineering</span><a class="self-link" href="#lifecycle"></a></h3>
+   <p>A generic lifecycle for construction and maintaining knowledge for knowledge graphs consists of four phases: (i) knowledge creation, (ii) knowledge hosting, (iii) knowledge curation, and (iv) knowledge deployment. The lifecycle is proposed to address two main challenges, which are (a) integrating data from heterogeneous sources in a scalable manner, and (b) to build a high-quality resource given the applications at hand. Complementary to this lifecycle three main roles can be identified in data-driven organizations: Data Engineers, who mainly focus on harnessing and collecting data, Knowledge Scientists, who aim to make reliable data, and Data Scientists, focusing on drawing value from data.</p>
+   <p>The Semantic Overlay Architecture (SOyA) approach aims to reduce the barrier of entries for non-semantic web experts in utilizing semantic web technologies for addressing their data interoperability and exchange needs. More precisely, SOyA aims to support stakeholders in conducting the steps in the Knowledge Graph lifecycle described above.</p>
+   <p align="center"> <img src="res/concept.png" width="800"><br> <em>Figure 2: Conceptual view of SOyA</em> </p>
+   <p>A <strong>Knowledge Scientist</strong> is responsible for designing the data model for certain applications. This person has considerable experience in data modeling, however, does not necessarily have the knowledge of Semantic Web technologies. Unlike Data Engineers, the focus is mainly on the data model and does not concern with populating the data model with data instances. The following requirements are identified:</p>
+   <ul>
+    <li data-md>
+     <p><em>Data Modeling and Constraint Definition:</em> In order to speed up the engineering process, its necessary to easily describe the structure and properties of a dataset to create a semantically well-defined model. This includes possibilities to define constraints on the data model.</p>
+    <li data-md>
+     <p><em>Data Model Alignment:</em> to achieve interoperability between data from heterogeneous data sources, it is paramount to be able to map data models to existing other data models, e.g., existing ontologies.</p>
+    <li data-md>
+     <p><em>Data Model Management:</em> to re-use existing data models it is beneficial to search and browse online repositories, as well as be ableto pull data models to a local repository. Furthermore, it is important to efficiently manage data models in respect to versioning and comparison between models.</p>
+   </ul>
+   <p>A <strong>Data Engineer</strong> works in a variety of settings to build systems that collect, manage, and convert raw data into usable information for other stakeholders to interpret and use.  The following requirements are identified:</p>
+   <ul>
+    <li data-md>
+     <p><em>Data Acquisition and Validation</em>: includes acquiring data from legacy sources into a common data model used by the organization; furthermore, it should be possible to ensure that acquired data is valid according to certain validation rules.</p>
+    <li data-md>
+     <p><em>Data Instance Management:</em> ensure that the acquired data is stored and available for further use, i.e., a mechanism to store and retrieve data.</p>
+    <li data-md>
+     <p><em>Data Transformation and Serialization:</em> a common use case is to transform and serialize data from one data model to others, as well as export it in different formats.</p>
+   </ul>
+   <h2 class="heading settled" data-level="2" id="composition"><span class="secno">2. </span><span class="content">Composition</span><a class="self-link" href="#composition"></a></h2>
+   <p>The Semantic Overlay Architecture (SOyA) is built on the following core components to describe and manage data models. Those components are:</p>
+   <ul>
+    <li data-md>
+     <p><strong>Structures:</strong> description of a data model using bases and overlays together with some meta attributes</p>
+    <li data-md>
+     <p><strong>Ontologies:</strong> OWL2 compliant representation of data models (that can be generated automatically from structures)</p>
+    <li data-md>
+     <p><strong>SW Stack:</strong> integration of established technologies to handle instances of data and data models - SHACL, jq, jolt, Semantic Container</p>
+   </ul>
+   <p align="center"> <img src="res/components.png" width="800"><br> <em>Figure 3: SOyA Components</em> </p>
+   <h3 class="heading settled" data-level="2.1" id="structure_element"><span class="secno">2.1. </span><span class="content">Structures</span><a class="self-link" href="#structure_element"></a></h3>
+   <p>All artefacts (<a data-link-type="dfn" href="#terms-base" id="ref-for-terms-base⑤">bases</a> and <a data-link-type="dfn" href="#terms-overlay" id="ref-for-terms-overlay②">overlays</a>) in SOyA are declared in a <a data-link-type="dfn" href="#terms-structures" id="ref-for-terms-structures②">structure</a> and it holds the following information:</p>
+   <ul>
+    <li data-md>
+     <p>meta</p>
+     <ul>
+      <li data-md>
+       <p>name</p>
+      <li data-md>
+       <p>context</p>
+      <li data-md>
+       <p>namespace</p>
+     </ul>
+    <li data-md>
+     <p>content</p>
+     <ul>
+      <li data-md>
+       <p>bases</p>
+      <li data-md>
+       <p>overlays</p>
+     </ul>
+   </ul>
+   <div class="example" id="structure_example">
+    <a class="self-link" href="#structure_example"></a> An example structure. 
+    <div class="tab">
+     <button class="tablinks" onclick="openTab(event, &apos;structure_yml&apos;)">YML</button>
+     <button class="tablinks" onclick="openTab(event, &apos;structure_jsonld&apos;)">JSON-LD</button>
+      <a href="https://json-ld.org/playground/#json-ld=%7B%0A%20%20%22%40context%22%3A%20%7B%0A%20%20%20%20%22%40version%22%3A%201.1%2C%0A%20%20%20%20%22%40import%22%3A%20%22https%3A%2F%2Fns.ownyourdata.eu%2Fns%2Fsoya-context.json%22%2C%0A%20%20%20%20%22%40base%22%3A%20%22https%3A%2F%2Fsoya.data-container.net%2FFoaf%2F%22%2C%0A%20%20%20%20%22foaf%22%3A%20%22http%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2F%22%0A%20%20%7D%2C%0A%20%20%22%40graph%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22Agent%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22owl%3AClass%22%2C%0A%20%20%20%20%20%20%22subClassOf%22%3A%20%22foaf%3Aagent%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22Person%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22owl%3AClass%22%2C%0A%20%20%20%20%20%20%22subClassOf%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%22Agent%22%0A%20%20%20%20%20%20%5D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22firstName%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22owl%3ADatatypeProperty%22%2C%0A%20%20%20%20%20%20%22domain%22%3A%20%22Person%22%2C%0A%20%20%20%20%20%20%22range%22%3A%20%22xsd%3Astring%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22lastName%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22owl%3ADatatypeProperty%22%2C%0A%20%20%20%20%20%20%22domain%22%3A%20%22Person%22%2C%0A%20%20%20%20%20%20%22range%22%3A%20%22xsd%3Astring%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22did%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22owl%3ADatatypeProperty%22%2C%0A%20%20%20%20%20%20%22domain%22%3A%20%22Person%22%2C%0A%20%20%20%20%20%20%22range%22%3A%20%22xsd%3Astring%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22Agent%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22gender%22%2C%0A%20%20%20%20%20%20%22comment%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22en%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%22The%20gender%20of%20this%20Agent%20(typically%20but%20not%20necessarily%20male%20or%20female).%22%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22birthday%22%2C%0A%20%20%20%20%20%20%22comment%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22en%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%22The%20birthday%20of%20this%20Agent.%22%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22made%22%2C%0A%20%20%20%20%20%20%22comment%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22en%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%22Something%20that%20was%20made%20by%20this%20agent.%22%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22age%22%2C%0A%20%20%20%20%20%20%22comment%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22en%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%22The%20age%20in%20years%20of%20some%20agent.%22%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22OverlayAnnotation%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22OverlayAnnotation%22%2C%0A%20%20%20%20%20%20%22onBase%22%3A%20%22Agent%22%2C%0A%20%20%20%20%20%20%22name%22%3A%20%22AgentAnnotationOverlay%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22Person%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22firstName%22%2C%0A%20%20%20%20%20%20%22comment%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22en%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%22The%20first%20name%20of%20a%20person.%22%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22lastName%22%2C%0A%20%20%20%20%20%20%22comment%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22en%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%22The%20last%20name%20of%20a%20person.%22%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22did%22%2C%0A%20%20%20%20%20%20%22comment%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22en%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%22Identifier%20with%20keys%20and%20service%20endpoints%22%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22OverlayAnnotation%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22OverlayAnnotation%22%2C%0A%20%20%20%20%20%20%22onBase%22%3A%20%22Person%22%2C%0A%20%20%20%20%20%20%22name%22%3A%20%22PersonAnnotationOverlay%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22firstName%22%2C%0A%20%20%20%20%20%20%22rdfs%3AsubPropertyOf%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%22foaf%3AgivenName%22%0A%20%20%20%20%20%20%5D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22lastName%22%2C%0A%20%20%20%20%20%20%22rdfs%3AsubPropertyOf%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%22foaf%3AfamilyName%22%2C%0A%20%20%20%20%20%20%20%20%22foaf%3Asurname%22%0A%20%20%20%20%20%20%5D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22OverlayAlignment%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22OverlayAlignment%22%2C%0A%20%20%20%20%20%20%22onBase%22%3A%20%22Person%22%2C%0A%20%20%20%20%20%20%22name%22%3A%20%22PersonAlignmentOverlay%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22PersonShape%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22sh%3ANodeShape%22%2C%0A%20%20%20%20%20%20%22sh%3AtargetClass%22%3A%20%22Person%22%2C%0A%20%20%20%20%20%20%22sh%3Aproperty%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22sh%3Apath%22%3A%20%22firstName%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22sh%3AmaxCount%22%3A%201%2C%0A%20%20%20%20%20%20%20%20%20%20%22sh%3AmaxLength%22%3A%2030%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22sh%3Apath%22%3A%20%22lastName%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22sh%3AminCount%22%3A%201%2C%0A%20%20%20%20%20%20%20%20%20%20%22sh%3AmaxCount%22%3A%201%2C%0A%20%20%20%20%20%20%20%20%20%20%22sh%3AmaxLength%22%3A%2040%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%5D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22OverlayValidation%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22OverlayValidation%22%2C%0A%20%20%20%20%20%20%22onBase%22%3A%20%22Person%22%2C%0A%20%20%20%20%20%20%22name%22%3A%20%22PersonValidationOverlay%22%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D%0A" target="_blank"><button class="tablinks">Open in playground</button></a> 
+    </div>
+    <div class="tabcontent" id="structure_yml">
+      <span onclick="this.parentElement.style.display=&apos;none&apos;" style="float: right;">❌</span> 
+<pre class="language-yaml highlight"><c- f>meta</c-><c- p>:</c->
+  <c- f>name</c-><c- p>:</c-> Foaf
+  <c- f>namespace</c-><c- p>:</c->
+    <c- f>foaf</c-><c- p>:</c-> <c- s>"http://xmlns.com/foaf/0.1/"</c->
+
+<c- f>content</c-><c- p>:</c->
+  <c- f>bases</c-><c- p>:</c->
+    - <c- f>name</c-><c- p>:</c-> Agent
+      <c- f>subClassOf</c-><c- p>:</c-> foaf:agent
+    - <c- f>name</c-><c- p>:</c-> Person
+      <c- f>subClassOf</c-><c- p>:</c-> 
+        - Agent
+      <c- f>attributes</c-><c- p>:</c->
+        <c- f>firstName</c-><c- p>:</c-> String
+        <c- f>lastName</c-><c- p>:</c-> String
+        <c- f>did</c-><c- p>:</c-> string
+  <c- f>overlays</c-><c- p>:</c-> 
+    - <c- f>type</c-><c- p>:</c-> OverlayAnnotation
+      <c- f>base</c-><c- p>:</c-> Agent
+      <c- f>name</c-><c- p>:</c-> AgentAnnotationOverlay
+      <c- f>attributes</c-><c- p>:</c->
+        <c- f>gender</c-><c- p>:</c-> 
+          <c- f>comment</c-><c- p>:</c-> 
+            <c- f>en</c-><c- p>:</c-> The gender of this Agent (typically but not necessarily 'male' or 'female').
+        <c- f>birthday</c-><c- p>:</c->
+          <c- f>comment</c-><c- p>:</c->
+            <c- f>en</c-><c- p>:</c-> The birthday of this Agent.
+        <c- f>made</c-><c- p>:</c->
+          <c- f>comment</c-><c- p>:</c->
+            <c- f>en</c-><c- p>:</c-> Something that was made by this agent.
+        <c- f>age</c-><c- p>:</c->
+          <c- f>comment</c-><c- p>:</c->
+            <c- f>en</c-><c- p>:</c-> The age in years of some agent.
+    - <c- f>type</c-><c- p>:</c-> OverlayAnnotation
+      <c- f>base</c-><c- p>:</c-> Person
+      <c- f>name</c-><c- p>:</c-> PersonAnnotationOverlay
+      <c- f>attributes</c-><c- p>:</c->
+        <c- f>firstName</c-><c- p>:</c-> 
+          <c- f>comment</c-><c- p>:</c-> 
+            <c- f>en</c-><c- p>:</c-> The first name of a person.
+        <c- f>lastName</c-><c- p>:</c->
+          <c- f>comment</c-><c- p>:</c->
+            <c- f>en</c-><c- p>:</c-> The last name of a person.
+        <c- f>did</c-><c- p>:</c->
+          <c- f>comment</c-><c- p>:</c->
+            <c- f>en</c-><c- p>:</c-> Identifier with keys and service endpoints
+    - <c- f>type</c-><c- p>:</c-> OverlayAlignment
+      <c- f>base</c-><c- p>:</c-> Person
+      <c- f>name</c-><c- p>:</c-> PersonAlignmentOverlay
+      <c- f>attributes</c-><c- p>:</c->
+        <c- f>firstName</c-><c- p>:</c-> 
+          - foaf:givenName
+        <c- f>lastName</c-><c- p>:</c->
+          - foaf:familyName
+          - foaf:surname
+    - <c- f>type</c-><c- p>:</c-> OverlayValidation
+      <c- f>base</c-><c- p>:</c-> Person
+      <c- f>name</c-><c- p>:</c-> PersonValidationOverlay
+      <c- f>attributes</c-><c- p>:</c->
+        <c- f>firstName</c-><c- p>:</c-> 
+          <c- f>cardinality</c-><c- p>:</c-> <c- s>"0..1"</c->
+          <c- f>length</c-><c- p>:</c-> <c- s>"(0..30]"</c->
+        <c- f>lastName</c-><c- p>:</c->
+          <c- f>cardinality</c-><c- p>:</c-> <c- s>"1..1"</c->
+          <c- f>length</c-><c- p>:</c-> <c- s>"(0..40]"</c->
+</pre>
+     <a href="#structure_example" onclick="this.parentElement.style.display=&apos;none&apos;">close</a> 
+    </div>
+    <div class="tabcontent" id="structure_jsonld">
+      <span onclick="this.parentElement.style.display=&apos;none&apos;" style="float: right;">❌</span> 
+<pre class="language-json highlight"><c- p>{</c->
+  <c- f>"@context"</c-><c- p>:</c-> <c- p>{</c->
+    <c- f>"@version"</c-><c- p>:</c-> <c- mf>1.1</c-><c- p>,</c->
+    <c- f>"@import"</c-><c- p>:</c-> <c- u>"https://ns.ownyourdata.eu/ns/soya-context.json"</c-><c- p>,</c->
+    <c- f>"@base"</c-><c- p>:</c-> <c- u>"https://soya.data-container.net/Foaf/"</c-><c- p>,</c->
+    <c- f>"foaf"</c-><c- p>:</c-> <c- u>"http://xmlns.com/foaf/0.1/"</c->
+  <c- p>},</c->
+  <c- f>"@graph"</c-><c- p>:</c-> <c- p>[</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"Agent"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"owl:Class"</c-><c- p>,</c->
+      <c- f>"subClassOf"</c-><c- p>:</c-> <c- u>"foaf:agent"</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"Person"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"owl:Class"</c-><c- p>,</c->
+      <c- f>"subClassOf"</c-><c- p>:</c-> <c- p>[</c->
+        <c- u>"Agent"</c->
+      <c- p>]</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"firstName"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"owl:DatatypeProperty"</c-><c- p>,</c->
+      <c- f>"domain"</c-><c- p>:</c-> <c- u>"Person"</c-><c- p>,</c->
+      <c- f>"range"</c-><c- p>:</c-> <c- u>"xsd:string"</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"lastName"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"owl:DatatypeProperty"</c-><c- p>,</c->
+      <c- f>"domain"</c-><c- p>:</c-> <c- u>"Person"</c-><c- p>,</c->
+      <c- f>"range"</c-><c- p>:</c-> <c- u>"xsd:string"</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"did"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"owl:DatatypeProperty"</c-><c- p>,</c->
+      <c- f>"domain"</c-><c- p>:</c-> <c- u>"Person"</c-><c- p>,</c->
+      <c- f>"range"</c-><c- p>:</c-> <c- u>"xsd:string"</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"Agent"</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"gender"</c-><c- p>,</c->
+      <c- f>"comment"</c-><c- p>:</c-> <c- p>{</c->
+        <c- f>"en"</c-><c- p>:</c-> <c- p>[</c->
+          <c- u>"The gender of this Agent (typically but not necessarily male or female)."</c->
+        <c- p>]</c->
+      <c- p>}</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"birthday"</c-><c- p>,</c->
+      <c- f>"comment"</c-><c- p>:</c-> <c- p>{</c->
+        <c- f>"en"</c-><c- p>:</c-> <c- p>[</c->
+          <c- u>"The birthday of this Agent."</c->
+        <c- p>]</c->
+      <c- p>}</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"made"</c-><c- p>,</c->
+      <c- f>"comment"</c-><c- p>:</c-> <c- p>{</c->
+        <c- f>"en"</c-><c- p>:</c-> <c- p>[</c->
+          <c- u>"Something that was made by this agent."</c->
+        <c- p>]</c->
+      <c- p>}</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"age"</c-><c- p>,</c->
+      <c- f>"comment"</c-><c- p>:</c-> <c- p>{</c->
+        <c- f>"en"</c-><c- p>:</c-> <c- p>[</c->
+          <c- u>"The age in years of some agent."</c->
+        <c- p>]</c->
+      <c- p>}</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"OverlayAnnotation"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"OverlayAnnotation"</c-><c- p>,</c->
+      <c- f>"onBase"</c-><c- p>:</c-> <c- u>"Agent"</c-><c- p>,</c->
+      <c- f>"name"</c-><c- p>:</c-> <c- u>"AgentAnnotationOverlay"</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"Person"</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"firstName"</c-><c- p>,</c->
+      <c- f>"comment"</c-><c- p>:</c-> <c- p>{</c->
+        <c- f>"en"</c-><c- p>:</c-> <c- p>[</c->
+          <c- u>"The first name of a person."</c->
+        <c- p>]</c->
+      <c- p>}</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"lastName"</c-><c- p>,</c->
+      <c- f>"comment"</c-><c- p>:</c-> <c- p>{</c->
+        <c- f>"en"</c-><c- p>:</c-> <c- p>[</c->
+          <c- u>"The last name of a person."</c->
+        <c- p>]</c->
+      <c- p>}</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"did"</c-><c- p>,</c->
+      <c- f>"comment"</c-><c- p>:</c-> <c- p>{</c->
+        <c- f>"en"</c-><c- p>:</c-> <c- p>[</c->
+          <c- u>"Identifier with keys and service endpoints"</c->
+        <c- p>]</c->
+      <c- p>}</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"OverlayAnnotation"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"OverlayAnnotation"</c-><c- p>,</c->
+      <c- f>"onBase"</c-><c- p>:</c-> <c- u>"Person"</c-><c- p>,</c->
+      <c- f>"name"</c-><c- p>:</c-> <c- u>"PersonAnnotationOverlay"</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"firstName"</c-><c- p>,</c->
+      <c- f>"rdfs:subPropertyOf"</c-><c- p>:</c-> <c- p>[</c->
+        <c- u>"foaf:givenName"</c->
+      <c- p>]</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"lastName"</c-><c- p>,</c->
+      <c- f>"rdfs:subPropertyOf"</c-><c- p>:</c-> <c- p>[</c->
+        <c- u>"foaf:familyName"</c-><c- p>,</c->
+        <c- u>"foaf:surname"</c->
+      <c- p>]</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"OverlayAlignment"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"OverlayAlignment"</c-><c- p>,</c->
+      <c- f>"onBase"</c-><c- p>:</c-> <c- u>"Person"</c-><c- p>,</c->
+      <c- f>"name"</c-><c- p>:</c-> <c- u>"PersonAlignmentOverlay"</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"PersonShape"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"sh:NodeShape"</c-><c- p>,</c->
+      <c- f>"sh:targetClass"</c-><c- p>:</c-> <c- u>"Person"</c-><c- p>,</c->
+      <c- f>"sh:property"</c-><c- p>:</c-> <c- p>[</c->
+        <c- p>{</c->
+          <c- f>"sh:path"</c-><c- p>:</c-> <c- u>"firstName"</c-><c- p>,</c->
+          <c- f>"sh:maxCount"</c-><c- p>:</c-> <c- mi>1</c-><c- p>,</c->
+          <c- f>"sh:maxLength"</c-><c- p>:</c-> <c- mi>30</c->
+        <c- p>},</c->
+        <c- p>{</c->
+          <c- f>"sh:path"</c-><c- p>:</c-> <c- u>"lastName"</c-><c- p>,</c->
+          <c- f>"sh:minCount"</c-><c- p>:</c-> <c- mi>1</c-><c- p>,</c->
+          <c- f>"sh:maxCount"</c-><c- p>:</c-> <c- mi>1</c-><c- p>,</c->
+          <c- f>"sh:maxLength"</c-><c- p>:</c-> <c- mi>40</c->
+        <c- p>}</c->
+      <c- p>]</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"OverlayValidation"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"OverlayValidation"</c-><c- p>,</c->
+      <c- f>"onBase"</c-><c- p>:</c-> <c- u>"Person"</c-><c- p>,</c->
+      <c- f>"name"</c-><c- p>:</c-> <c- u>"PersonValidationOverlay"</c->
+    <c- p>}</c->
+  <c- p>]</c->
+<c- p>}</c->
+</pre>
+     <a href="#structure_example" onclick="this.parentElement.style.display=&apos;none&apos;">close</a> 
+    </div>
+   </div>
+   <h4 class="heading settled" data-level="2.1.1" id="meta_element"><span class="secno">2.1.1. </span><span class="content">Meta</span><a class="self-link" href="#meta_element"></a></h4>
+   <p>The <code>meta</code> section in a structure defines the name of the structure, specifies an optional context (default: https://ns.ownyourdata.eu/soya/soya-context.json), and allows to reference namespaces (exiting ontologies).</p>
+   <h4 class="heading settled" data-level="2.1.2" id="base_element"><span class="secno">2.1.2. </span><span class="content">Base</span><a class="self-link" href="#base_element"></a></h4>
+   <p>A <a data-link-type="dfn" href="#terms-base" id="ref-for-terms-base⑥">base</a> declares a dataset and holds the following information:</p>
+   <ul>
+    <li data-md>
+     <p>name</p>
+    <li data-md>
+     <p>subClassOf (optional)</p>
+    <li data-md>
+     <p>list of attribute names and associated type</p>
+   </ul>
+   <p>When a base is represented in RDF it is a class with one or more properties. Each property itself is a single data type or an object property referencing another base. <code>subClassOf</code> optionally allows to inherit properties/attributes from other existing classes.  Multiple bases can be combined in a structure for related concepts.</p>
+   <div class="example" id="base_example">
+    <a class="self-link" href="#base_example"></a> An example base. 
+    <div class="tab">
+     <button class="tablinks" onclick="openTab(event, &apos;base_yml&apos;)">YML</button>
+     <button class="tablinks" onclick="openTab(event, &apos;base_jsonld&apos;)">JSON-LD</button>
+     <button class="tablinks" onclick="openTab(event, &apos;base_graph&apos;)">Graph</button>
+      <a href="https://json-ld.org/playground/#json-ld=%7B%0A%20%20%22%40context%22%3A%20%7B%0A%20%20%20%20%22%40version%22%3A%201.1%2C%0A%20%20%20%20%22%40import%22%3A%20%22https%3A%2F%2Fns.ownyourdata.eu%2Fns%2Fsoya-context.json%22%2C%0A%20%20%20%20%22%40base%22%3A%20%22https%3A%2F%2Fsoya.data-container.net%2FPerson%2F%22%0A%20%20%7D%2C%0A%20%20%22%40graph%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22Person%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22owl%3AClass%22%2C%0A%20%20%20%20%20%20%22subClassOf%22%3A%20%22Base%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22name%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22owl%3ADatatypeProperty%22%2C%0A%20%20%20%20%20%20%22domain%22%3A%20%22Person%22%2C%0A%20%20%20%20%20%20%22range%22%3A%20%22xsd%3Astring%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22dateOfBirth%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22owl%3ADatatypeProperty%22%2C%0A%20%20%20%20%20%20%22domain%22%3A%20%22Person%22%2C%0A%20%20%20%20%20%20%22range%22%3A%20%22xsd%3Adate%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22age%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22owl%3ADatatypeProperty%22%2C%0A%20%20%20%20%20%20%22domain%22%3A%20%22Person%22%2C%0A%20%20%20%20%20%20%22range%22%3A%20%22xsd%3Ainteger%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22sex%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22owl%3ADatatypeProperty%22%2C%0A%20%20%20%20%20%20%22domain%22%3A%20%22Person%22%2C%0A%20%20%20%20%20%20%22range%22%3A%20%22xsd%3Astring%22%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D%0A" target="_blank"><button class="tablinks">Open in playground</button></a> 
+    </div>
+    <div class="tabcontent" id="base_yml">
+     <p>use <code>soya template base</code> to show this example on the command line</p>
+      <span onclick="this.parentElement.style.display=&apos;none&apos;" style="float: right;">❌</span> 
+<pre class="language-yaml highlight"><c- f>meta</c-><c- p>:</c->
+  <c- f>name</c-><c- p>:</c-> Person
+
+<c- f>content</c-><c- p>:</c->
+  <c- f>bases</c-><c- p>:</c-> 
+    - <c- f>name</c-><c- p>:</c-> Person
+      <c- f>attributes</c-><c- p>:</c->
+        <c- f>name</c-><c- p>:</c-> String
+        <c- f>dateOfBirth</c-><c- p>:</c-> Date
+        <c- f>age</c-><c- p>:</c-> Integer
+        <c- f>sex</c-><c- p>:</c-> String
+</pre>
+     <a href="#base_example" onclick="this.parentElement.style.display=&apos;none&apos;">close</a> 
+    </div>
+    <div class="tabcontent" id="base_jsonld">
+     <p>use <code>soya template base | soya init</code> to show this example on the command line</p>
+      <span onclick="this.parentElement.style.display=&apos;none&apos;" style="float: right;">❌</span> 
+<pre class="language-json highlight"><c- p>{</c->
+  <c- f>"@context"</c-><c- p>:</c-> <c- p>{</c->
+    <c- f>"@version"</c-><c- p>:</c-> <c- mf>1.1</c-><c- p>,</c->
+    <c- f>"@import"</c-><c- p>:</c-> <c- u>"https://ns.ownyourdata.eu/ns/soya-context.json"</c-><c- p>,</c->
+    <c- f>"@base"</c-><c- p>:</c-> <c- u>"https://soya.data-container.net/Person/"</c->
+  <c- p>},</c->
+  <c- f>"@graph"</c-><c- p>:</c-> <c- p>[</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"Person"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"owl:Class"</c-><c- p>,</c->
+      <c- f>"subClassOf"</c-><c- p>:</c-> <c- u>"Base"</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"name"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"owl:DatatypeProperty"</c-><c- p>,</c->
+      <c- f>"domain"</c-><c- p>:</c-> <c- u>"Person"</c-><c- p>,</c->
+      <c- f>"range"</c-><c- p>:</c-> <c- u>"xsd:string"</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"dateOfBirth"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"owl:DatatypeProperty"</c-><c- p>,</c->
+      <c- f>"domain"</c-><c- p>:</c-> <c- u>"Person"</c-><c- p>,</c->
+      <c- f>"range"</c-><c- p>:</c-> <c- u>"xsd:date"</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"age"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"owl:DatatypeProperty"</c-><c- p>,</c->
+      <c- f>"domain"</c-><c- p>:</c-> <c- u>"Person"</c-><c- p>,</c->
+      <c- f>"range"</c-><c- p>:</c-> <c- u>"xsd:integer"</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"sex"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"owl:DatatypeProperty"</c-><c- p>,</c->
+      <c- f>"domain"</c-><c- p>:</c-> <c- u>"Person"</c-><c- p>,</c->
+      <c- f>"range"</c-><c- p>:</c-> <c- u>"xsd:string"</c->
+    <c- p>}</c->
+  <c- p>]</c->
+<c- p>}</c->
+</pre>
+     <a href="#base_example" onclick="this.parentElement.style.display=&apos;none&apos;">close</a> 
+    </div>
+    <div class="tabcontent" id="base_graph">
+      <span onclick="this.parentElement.style.display=&apos;none&apos;" style="float: right;">❌</span> 
+     <p align="center"> <img src="res/base_graph.png" width="750"><br> </p>
+      <a href="#base_example" onclick="this.parentElement.style.display=&apos;none&apos;">close</a> 
+    </div>
+   </div>
+   <h4 class="heading settled" data-level="2.1.3" id="overlay_element"><span class="secno">2.1.3. </span><span class="content">Overlay</span><a class="self-link" href="#overlay_element"></a></h4>
+   <p>Overlays provide addtional information for a defined base. This information can either be directly included in a structure together with a base or is provided independently and linked to the relevant base. The following types of overlays are pre-defined in default <code>context</code> (https://ns.ownyourdata.eu/soya/soya-context.json):</p>
+   <ul>
+    <li data-md>
+     <p><strong>Alignment:</strong> reference existing RDF definitions (e.g. foaf); this also includes declaring a derived base so that attributes can be pre-filled from a data store holding a record with that base (e.g.,  don’t require first name, last name to be entered but filled out automatically)</p>
+    <li data-md>
+     <p><strong>Annotation:</strong> translations in different languages for name and descriptions of base names, labels, and descriptions</p>
+    <li data-md>
+     <p><strong>Classification:</strong> select a subset of the attributes (e.g., personally identifiable information - PII, configuring list views)</p>
+    <li data-md>
+     <p><strong>Encoding:</strong> specify the character set encoding used in storing the data of an instance (e.g., UTF-8)</p>
+    <li data-md>
+     <p><strong>Form:</strong> configure rendering HTML forms for visualizing and editing instances</p>
+    <li data-md>
+     <p><strong>Format:</strong> defines how data is presented to the user</p>
+    <li data-md>
+     <p><strong>Transformation:</strong> define a set of transformation rules for a data record</p>
+    <li data-md>
+     <p><strong>Validation:</strong> predefined entries, range selection, any other validation incl. input methods</p>
+   </ul>
+   <p>It is possible to create additional overlay types by using another context.</p>
+   <div class="example" id="overlay_example">
+    <a class="self-link" href="#overlay_example"></a> An overlay example. 
+    <div class="tab">
+     <button class="tablinks" onclick="openTab(event, &apos;overlay_yml&apos;)">YML</button>
+     <button class="tablinks" onclick="openTab(event, &apos;overlay_jsonld&apos;)">JSON-LD</button>
+      <a href="https://json-ld.org/playground/#json-ld=%7B%0A%20%20%22%40context%22%3A%20%7B%0A%20%20%20%20%22%40version%22%3A%201.1%2C%0A%20%20%20%20%22%40import%22%3A%20%22https%3A%2F%2Fns.ownyourdata.eu%2Fns%2Fsoya-context.json%22%2C%0A%20%20%20%20%22%40base%22%3A%20%22https%3A%2F%2Fsoya.data-container.net%2FPersonAnnotation%2F%22%0A%20%20%7D%2C%0A%20%20%22%40graph%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22https%3A%2F%2Fsoya.data-container.net%2FPerson%22%2C%0A%20%20%20%20%20%20%22label%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22en%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%22Person%22%0A%20%20%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%20%20%22de%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%22die%20Person%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22der%20Mensch%22%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22name%22%2C%0A%20%20%20%20%20%20%22label%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22en%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%22Name%22%0A%20%20%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%20%20%22de%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%22Name%22%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22dateOfBirth%22%2C%0A%20%20%20%20%20%20%22label%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22en%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%22Date%20of%20Birth%22%0A%20%20%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%20%20%22de%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%22Geburtsdatum%22%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%22comment%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22en%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%22Birthdate%20of%20Person%22%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22sex%22%2C%0A%20%20%20%20%20%20%22label%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22en%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%22Gender%22%0A%20%20%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%20%20%22de%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%22Geschlecht%22%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%22comment%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22en%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%22Gender%20(male%20or%20female)%22%0A%20%20%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%20%20%22de%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%22Geschlecht%20(m%C3%A4nnlich%20oder%20weiblich)%22%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22OverlayAnnotation%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22OverlayAnnotation%22%2C%0A%20%20%20%20%20%20%22onBase%22%3A%20%22https%3A%2F%2Fsoya.data-container.net%2FPerson%22%2C%0A%20%20%20%20%20%20%22name%22%3A%20%22PersonAnnotationOverlay%22%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D%0A" target="_blank"><button class="tablinks">Open in playground</button></a> 
+    </div>
+    <div class="tabcontent" id="overlay_yml">
+     <p>use <code>soya template annotation</code> to show this example on the command line</p>
+     <p>with <code>soya template --help</code> all available overlay examples are displayed</p>
+      <span onclick="this.parentElement.style.display=&apos;none&apos;" style="float: right;">❌</span> 
+<pre class="language-yaml highlight"><c- f>meta</c-><c- p>:</c->
+  <c- f>name</c-><c- p>:</c-> PersonAnnotation
+
+<c- f>content</c-><c- p>:</c->
+  <c- f>overlays</c-><c- p>:</c-> 
+    - <c- f>type</c-><c- p>:</c-> OverlayAnnotation
+      <c- f>base</c-><c- p>:</c-> https://soya.data-container.net/Person
+      <c- f>name</c-><c- p>:</c-> PersonAnnotationOverlay
+      <c- f>class</c-><c- p>:</c-> 
+        <c- f>label</c-><c- p>:</c-> 
+          <c- f>en</c-><c- p>:</c-> Person
+          <c- f>de</c-><c- p>:</c-> 
+            - die Person
+            - der Mensch
+      <c- f>attributes</c-><c- p>:</c->
+        <c- f>name</c-><c- p>:</c-> 
+          <c- f>label</c-><c- p>:</c-> 
+            <c- f>en</c-><c- p>:</c-> Name
+            <c- f>de</c-><c- p>:</c-> Name
+        <c- f>dateOfBirth</c-><c- p>:</c-> 
+          <c- f>label</c-><c- p>:</c-> 
+            <c- f>en</c-><c- p>:</c-> Date of Birth 
+            <c- f>de</c-><c- p>:</c-> Geburtsdatum
+          <c- f>comment</c-><c- p>:</c-> 
+            <c- f>en</c-><c- p>:</c-> Birthdate of Person
+        <c- f>sex</c-><c- p>:</c-> 
+          <c- f>label</c-><c- p>:</c-> 
+            <c- f>en</c-><c- p>:</c-> Gender
+            <c- f>de</c-><c- p>:</c-> Geschlecht
+          <c- f>comment</c-><c- p>:</c-> 
+            <c- f>en</c-><c- p>:</c-> Gender (male or female)
+            <c- f>de</c-><c- p>:</c-> Geschlecht (männlich oder weiblich)
+</pre>
+     <a href="#overlay_example" onclick="this.parentElement.style.display=&apos;none&apos;">close</a> 
+    </div>
+    <div class="tabcontent" id="overlay_jsonld">
+     <p>use <code>soya template annotation | soya init</code> to show this example on the command line</p>
+      <span onclick="this.parentElement.style.display=&apos;none&apos;" style="float: right;">❌</span> 
+<pre class="language-json highlight"><c- p>{</c->
+  <c- f>"@context"</c-><c- p>:</c-> <c- p>{</c->
+    <c- f>"@version"</c-><c- p>:</c-> <c- mf>1.1</c-><c- p>,</c->
+    <c- f>"@import"</c-><c- p>:</c-> <c- u>"https://ns.ownyourdata.eu/ns/soya-context.json"</c-><c- p>,</c->
+    <c- f>"@base"</c-><c- p>:</c-> <c- u>"https://soya.data-container.net/PersonAnnotation/"</c->
+  <c- p>},</c->
+  <c- f>"@graph"</c-><c- p>:</c-> <c- p>[</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"https://soya.data-container.net/Person"</c-><c- p>,</c->
+      <c- f>"label"</c-><c- p>:</c-> <c- p>{</c->
+        <c- f>"en"</c-><c- p>:</c-> <c- p>[</c->
+          <c- u>"Person"</c->
+        <c- p>],</c->
+        <c- f>"de"</c-><c- p>:</c-> <c- p>[</c->
+          <c- u>"die Person"</c-><c- p>,</c->
+          <c- u>"der Mensch"</c->
+        <c- p>]</c->
+      <c- p>}</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"name"</c-><c- p>,</c->
+      <c- f>"label"</c-><c- p>:</c-> <c- p>{</c->
+        <c- f>"en"</c-><c- p>:</c-> <c- p>[</c->
+          <c- u>"Name"</c->
+        <c- p>],</c->
+        <c- f>"de"</c-><c- p>:</c-> <c- p>[</c->
+          <c- u>"Name"</c->
+        <c- p>]</c->
+      <c- p>}</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"dateOfBirth"</c-><c- p>,</c->
+      <c- f>"label"</c-><c- p>:</c-> <c- p>{</c->
+        <c- f>"en"</c-><c- p>:</c-> <c- p>[</c->
+          <c- u>"Date of Birth"</c->
+        <c- p>],</c->
+        <c- f>"de"</c-><c- p>:</c-> <c- p>[</c->
+          <c- u>"Geburtsdatum"</c->
+        <c- p>]</c->
+      <c- p>},</c->
+      <c- f>"comment"</c-><c- p>:</c-> <c- p>{</c->
+        <c- f>"en"</c-><c- p>:</c-> <c- p>[</c->
+          <c- u>"Birthdate of Person"</c->
+        <c- p>]</c->
+      <c- p>}</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"sex"</c-><c- p>,</c->
+      <c- f>"label"</c-><c- p>:</c-> <c- p>{</c->
+        <c- f>"en"</c-><c- p>:</c-> <c- p>[</c->
+          <c- u>"Gender"</c->
+        <c- p>],</c->
+        <c- f>"de"</c-><c- p>:</c-> <c- p>[</c->
+          <c- u>"Geschlecht"</c->
+        <c- p>]</c->
+      <c- p>},</c->
+      <c- f>"comment"</c-><c- p>:</c-> <c- p>{</c->
+        <c- f>"en"</c-><c- p>:</c-> <c- p>[</c->
+          <c- u>"Gender (male or female)"</c->
+        <c- p>],</c->
+        <c- f>"de"</c-><c- p>:</c-> <c- p>[</c->
+          <c- u>"Geschlecht (männlich oder weiblich)"</c->
+        <c- p>]</c->
+      <c- p>}</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"OverlayAnnotation"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"OverlayAnnotation"</c-><c- p>,</c->
+      <c- f>"onBase"</c-><c- p>:</c-> <c- u>"https://soya.data-container.net/Person"</c-><c- p>,</c->
+      <c- f>"name"</c-><c- p>:</c-> <c- u>"PersonAnnotationOverlay"</c->
+    <c- p>}</c->
+  <c- p>]</c->
+<c- p>}</c->
+</pre>
+     <a href="#overlay_example" onclick="this.parentElement.style.display=&apos;none&apos;">close</a> 
+    </div>
+   </div>
+   <h3 class="heading settled" data-level="2.2" id="semantic_web"><span class="secno">2.2. </span><span class="content">Semantic Web Standards Adoption</span><a class="self-link" href="#semantic_web"></a></h3>
+   <h4 class="heading settled" data-level="2.2.1" id="rdfs_owl"><span class="secno">2.2.1. </span><span class="content">Data Model: RDFS/OWL</span><a class="self-link" href="#rdfs_owl"></a></h4>
+   <p>A SOyA structure is designed to comply with the semantic web standards (i.e., RDFS/OWL) for data model representations. The goal is to ensure compatibility and reusability of SOyA data and data models with the established semantic web technology stack, e.g., SOLID and schema.org, as well as opening up the possibility to use relevant tools and methods, e.g., SHACL, RML, Triplestores. Furthermore, this decision would allow for higher interoperability with the currently available linked (open) data.</p>
+   <h4 class="heading settled" data-level="2.2.2" id="jsonld"><span class="secno">2.2.2. </span><span class="content">Data Serialization: JSON-LD</span><a class="self-link" href="#jsonld"></a></h4>
+   <p>We chose <a data-link-type="biblio" href="#biblio-json-ld">[JSON-LD]</a> as the default serialization in SOyA for the following reasons:</p>
+   <p>i) JSON-LD status as a W3C recommendation ensures a stable standard for the foreseeable future
+ii) Rich supports of tools    
+iii) Ease of use by both developers and knowledge engineers    
+iv) Compatibility to RDF</p>
+   <p>Furthermore, tools supporting JSON data manipulation and visualizations are widely available.</p>
+   <p>With the above stated it is also important to note that it is possible to support with SOyA also other serialization formats like Turtle, N-Quads, or even Labeled Property Graphs.</p>
+   <h3 class="heading settled" data-level="2.3" id="sw-stack"><span class="secno">2.3. </span><span class="content">SW Stack</span><a class="self-link" href="#sw-stack"></a></h3>
+   <p>SOyA integrates with a number of established tools to provide its functionalities.</p>
+   <h4 class="heading settled" data-level="2.3.1" id="shacl"><span class="secno">2.3.1. </span><span class="content">SHACL</span><a class="self-link" href="#shacl"></a></h4>
+   <p>SHACL (Shapes Constraint Language) is a language for validating RDF graphs against a set of conditions - find <a href="https://www.w3.org/TR/shacl/">more information here</a>. It is used in Validation overlays.</p>
+   <p><em>Note: use the <a href="https://shacl-playground.zazuko.com/">online SHACL Playground</a> to test your validations</em></p>
+   <div class="example" id="shacl_example">
+    <a class="self-link" href="#shacl_example"></a> A validation overlay example with SHACL notation. 
+    <div class="tab">
+     <button class="tablinks" onclick="openTab(event, &apos;shacl_yml&apos;)">YML</button>
+     <button class="tablinks" onclick="openTab(event, &apos;shacl_jsonld&apos;)">JSON-LD</button>
+      <a href="https://json-ld.org/playground/#json-ld=%7B%0A%20%20%22%40context%22%3A%20%7B%0A%20%20%20%20%22%40version%22%3A%201.1%2C%0A%20%20%20%20%22%40import%22%3A%20%22https%3A%2F%2Fns.ownyourdata.eu%2Fns%2Fsoya-context.json%22%2C%0A%20%20%20%20%22%40base%22%3A%20%22https%3A%2F%2Fsoya.data-container.net%2FPersonValidation%2F%22%0A%20%20%7D%2C%0A%20%20%22%40graph%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22PersonShape%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22sh%3ANodeShape%22%2C%0A%20%20%20%20%20%20%22sh%3AtargetClass%22%3A%20%22https%3A%2F%2Fsoya.data-container.net%2FPerson%22%2C%0A%20%20%20%20%20%20%22sh%3Aproperty%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22sh%3Apath%22%3A%20%22name%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22sh%3AminCount%22%3A%201%2C%0A%20%20%20%20%20%20%20%20%20%20%22sh%3AmaxCount%22%3A%201%2C%0A%20%20%20%20%20%20%20%20%20%20%22sh%3AmaxLength%22%3A%2019%2C%0A%20%20%20%20%20%20%20%20%20%20%22sh%3Apattern%22%3A%20%22%5E%5Ba-z%20%2C.&apos;-%5D%2B%24%22%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22sh%3Apath%22%3A%20%22dateOfBirth%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22sh%3AminCount%22%3A%201%2C%0A%20%20%20%20%20%20%20%20%20%20%22sh%3AmaxCount%22%3A%201%2C%0A%20%20%20%20%20%20%20%20%20%20%22sh%3AminRange%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22%40type%22%3A%20%22xsd%3Adate%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22%40value%22%3A%20%221900-01-01%22%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22sh%3Apath%22%3A%20%22age%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22sh%3AmaxCount%22%3A%201%0A%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22sh%3Apath%22%3A%20%22sex%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22sh%3AmaxCount%22%3A%201%2C%0A%20%20%20%20%20%20%20%20%20%20%22sh%3Ain%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22%40list%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22male%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22female%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22other%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%5D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22OverlayValidation%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22OverlayValidation%22%2C%0A%20%20%20%20%20%20%22onBase%22%3A%20%22https%3A%2F%2Fsoya.data-container.net%2FPerson%22%2C%0A%20%20%20%20%20%20%22name%22%3A%20%22PersonValidationOverlay%22%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D%0A" target="_blank"><button class="tablinks">Open in playground</button></a> 
+    </div>
+    <div class="tabcontent" id="shacl_yml">
+     <p>use <code>soya template validation</code> to show this example on the command line</p>
+      <span onclick="this.parentElement.style.display=&apos;none&apos;" style="float: right;">❌</span> 
+<pre class="language-yaml highlight"><c- f>meta</c-><c- p>:</c->
+  <c- f>name</c-><c- p>:</c-> PersonValidation
+
+<c- f>content</c-><c- p>:</c->
+  <c- f>overlays</c-><c- p>:</c-> 
+    - <c- f>type</c-><c- p>:</c-> OverlayValidation
+      <c- f>base</c-><c- p>:</c-> https://soya.data-container.net/Person
+      <c- f>name</c-><c- p>:</c-> PersonValidationOverlay
+      <c- f>attributes</c-><c- p>:</c->
+        <c- f>name</c-><c- p>:</c-> 
+          <c- f>cardinality</c-><c- p>:</c-> <c- s>"1..1"</c->
+          <c- f>length</c-><c- p>:</c-> <c- s>"[0..20)"</c->
+          <c- f>pattern</c-><c- p>:</c-> <c- s>"^[a-z</c-><c- g> </c-><c- s>,.'-]+$"</c->
+        <c- f>dateOfBirth</c-><c- p>:</c->
+          <c- f>cardinality</c-><c- p>:</c-> <c- s>"1..1"</c->
+          <c- f>valueRange</c-><c- p>:</c-> <c- s>"[1900-01-01..*]"</c->                    
+        <c- f>age</c-><c- p>:</c-> 
+          <c- f>cardinality</c-><c- p>:</c-> <c- s>"0..1"</c->
+          <c- f>valueRange</c-><c- p>:</c-> <c- s>"[0..*]"</c->
+        <c- f>sex</c-><c- p>:</c->
+          <c- f>cardinality</c-><c- p>:</c-> <c- s>"0..1"</c->
+          <c- f>valueOption</c-><c- p>:</c->
+            - male
+            - female
+            - other
+</pre>
+     <a href="#shacl_example" onclick="this.parentElement.style.display=&apos;none&apos;">close</a> 
+    </div>
+    <div class="tabcontent" id="shacl_jsonld">
+     <p>use <code>soya template valiation | soya init</code> to show this example on the command line</p>
+      <span onclick="this.parentElement.style.display=&apos;none&apos;" style="float: right;">❌</span> 
+<pre class="language-json highlight"><c- p>{</c->
+  <c- f>"@context"</c-><c- p>:</c-> <c- p>{</c->
+    <c- f>"@version"</c-><c- p>:</c-> <c- mf>1.1</c-><c- p>,</c->
+    <c- f>"@import"</c-><c- p>:</c-> <c- u>"https://ns.ownyourdata.eu/ns/soya-context.json"</c-><c- p>,</c->
+    <c- f>"@base"</c-><c- p>:</c-> <c- u>"https://soya.data-container.net/PersonValidation/"</c->
+  <c- p>},</c->
+  <c- f>"@graph"</c-><c- p>:</c-> <c- p>[</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"PersonShape"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"sh:NodeShape"</c-><c- p>,</c->
+      <c- f>"sh:targetClass"</c-><c- p>:</c-> <c- u>"https://soya.data-container.net/Person"</c-><c- p>,</c->
+      <c- f>"sh:property"</c-><c- p>:</c-> <c- p>[</c->
+        <c- p>{</c->
+          <c- f>"sh:path"</c-><c- p>:</c-> <c- u>"name"</c-><c- p>,</c->
+          <c- f>"sh:minCount"</c-><c- p>:</c-> <c- mi>1</c-><c- p>,</c->
+          <c- f>"sh:maxCount"</c-><c- p>:</c-> <c- mi>1</c-><c- p>,</c->
+          <c- f>"sh:maxLength"</c-><c- p>:</c-> <c- mi>19</c-><c- p>,</c->
+          <c- f>"sh:pattern"</c-><c- p>:</c-> <c- u>"^[a-z ,.'-]+$"</c->
+        <c- p>},</c->
+        <c- p>{</c->
+          <c- f>"sh:path"</c-><c- p>:</c-> <c- u>"dateOfBirth"</c-><c- p>,</c->
+          <c- f>"sh:minCount"</c-><c- p>:</c-> <c- mi>1</c-><c- p>,</c->
+          <c- f>"sh:maxCount"</c-><c- p>:</c-> <c- mi>1</c-><c- p>,</c->
+          <c- f>"sh:minRange"</c-><c- p>:</c-> <c- p>{</c->
+            <c- f>"@type"</c-><c- p>:</c-> <c- u>"xsd:date"</c-><c- p>,</c->
+            <c- f>"@value"</c-><c- p>:</c-> <c- u>"1900-01-01"</c->
+          <c- p>}</c->
+        <c- p>},</c->
+        <c- p>{</c->
+          <c- f>"sh:path"</c-><c- p>:</c-> <c- u>"age"</c-><c- p>,</c->
+          <c- f>"sh:maxCount"</c-><c- p>:</c-> <c- mi>1</c->
+        <c- p>},</c->
+        <c- p>{</c->
+          <c- f>"sh:path"</c-><c- p>:</c-> <c- u>"sex"</c-><c- p>,</c->
+          <c- f>"sh:maxCount"</c-><c- p>:</c-> <c- mi>1</c-><c- p>,</c->
+          <c- f>"sh:in"</c-><c- p>:</c-> <c- p>{</c->
+            <c- f>"@list"</c-><c- p>:</c-> <c- p>[</c->
+              <c- u>"male"</c-><c- p>,</c->
+              <c- u>"female"</c-><c- p>,</c->
+              <c- u>"other"</c->
+            <c- p>]</c->
+          <c- p>}</c->
+        <c- p>}</c->
+      <c- p>]</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"OverlayValidation"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"OverlayValidation"</c-><c- p>,</c->
+      <c- f>"onBase"</c-><c- p>:</c-> <c- u>"https://soya.data-container.net/Person"</c-><c- p>,</c->
+      <c- f>"name"</c-><c- p>:</c-> <c- u>"PersonValidationOverlay"</c->
+    <c- p>}</c->
+  <c- p>]</c->
+<c- p>}</c->
+</pre>
+     <a href="#shacl_example" onclick="this.parentElement.style.display=&apos;none&apos;">close</a> 
+    </div>
+   </div>
+   <h4 class="heading settled" data-level="2.3.2" id="jq"><span class="secno">2.3.2. </span><span class="content">jq</span><a class="self-link" href="#jq"></a></h4>
+   <p><code>jq</code> is a lightweight and flexible command-line JSON processor - find <a href="https://stedolan.github.io/jq/">more information here</a>. It can be used in Transformation overlays.</p>
+   <p><em>Note: use the <a href="https://jqplay.org/">online jq playground</a> to test your jq transformation</em></p>
+   <div class="example" id="jq_example">
+    <a class="self-link" href="#jq_example"></a> A transformation overlay example using jq. 
+    <div class="tab">
+     <button class="tablinks" onclick="openTab(event, &apos;jq_yml&apos;)">YML</button>
+     <button class="tablinks" onclick="openTab(event, &apos;jq_jsonld&apos;)">JSON-LD</button>
+      <a href="https://json-ld.org/playground/#json-ld=%7B%0A%20%20%22%40context%22%3A%20%7B%0A%20%20%20%20%22%40version%22%3A%201.1%2C%0A%20%20%20%20%22%40import%22%3A%20%22https%3A%2F%2Fns.ownyourdata.eu%2Fns%2Fsoya-context.json%22%2C%0A%20%20%20%20%22%40base%22%3A%20%22https%3A%2F%2Fsoya.data-container.net%2FPersonA_jq_transformation%2F%22%0A%20%20%7D%2C%0A%20%20%22%40graph%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22https%3A%2F%2Fsoya.data-container.net%2FPersonATransformation%22%2C%0A%20%20%20%20%20%20%22engine%22%3A%20%22jq%22%2C%0A%20%20%20%20%20%20%22value%22%3A%20%22.%5B%5C%22%40graph%5C%22%5D%20%7C%20%5Cn%7B%5Cn%20%20%5C%22%40context%5C%22%3A%20%7B%5Cn%20%20%20%20%5C%22%40version%5C%22%3A1.1%2C%5Cn%20%20%20%20%5C%22%40vocab%5C%22%3A%5C%22https%3A%2F%2Fsoya.data-container.net%2FPersonB%2F%5C%22%7D%2C%5Cn%20%20%5C%22%40graph%5C%22%3A%20map(%20%5Cn%20%20%20%20%7B%5C%22%40id%5C%22%3A.%5B%5C%22%40id%5C%22%5D%2C%20%5Cn%20%20%20%20%5C%22%40type%5C%22%3A%5C%22PersonB%5C%22%2C%20%5Cn%20%20%20%20%5C%22first_name%5C%22%3A.%5B%5C%22basePerson%3Afirstname%5C%22%5D%2C%20%5Cn%20%20%20%20%5C%22surname%5C%22%3A.%5B%5C%22basePerson%3Alastname%5C%22%5D%2C%20%5Cn%20%20%20%20%5C%22birthdate%5C%22%3A.%5B%5C%22basePerson%3AdateOfBirth%5C%22%5D%2C%20%5Cn%20%20%20%20%5C%22gender%5C%22%3A.%5B%5C%22basePerson%3Asex%5C%22%5D%7D%5Cn%20%20)%5Cn%7D%5Cn%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22OverlayTransformation%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22OverlayTransformation%22%2C%0A%20%20%20%20%20%20%22onBase%22%3A%20%22https%3A%2F%2Fsoya.data-container.net%2FPersonA%22%2C%0A%20%20%20%20%20%20%22name%22%3A%20%22TransformationOverlay%22%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D%0A" target="_blank"><button class="tablinks">Open in playground</button></a> 
+    </div>
+    <div class="tabcontent" id="jq_yml">
+     <p>use <code>soya template transformation.jq</code> to show this example on the command line</p>
+      <span onclick="this.parentElement.style.display=&apos;none&apos;" style="float: right;">❌</span> 
+<pre class="language-yaml highlight"><c- f>meta</c-><c- p>:</c->
+  <c- f>name</c-><c- p>:</c-> PersonA_jq_transformation
+
+<c- f>content</c-><c- p>:</c->
+  <c- f>overlays</c-><c- p>:</c-> 
+    - <c- f>type</c-><c- p>:</c-> OverlayTransformation
+      <c- f>name</c-><c- p>:</c-> TransformationOverlay
+      <c- f>base</c-><c- p>:</c-> https://soya.data-container.net/PersonA
+      <c- f>engine</c-><c- p>:</c-> jq
+      <c- f>value</c-><c- p>:</c-> |
+        <c- no>.["@graph"] | </c->
+        <c- no>{</c->
+          <c- no>"@context": {</c->
+            <c- no>"@version":1.1,</c->
+            <c- no>"@vocab":"https://soya.data-container.net/PersonB/"},</c->
+          <c- no>"@graph": map( </c->
+            <c- no>{"@id":.["@id"], </c->
+            <c- no>"@type":"PersonB", </c->
+            <c- no>"first_name":.["basePerson:firstname"], </c->
+            <c- no>"surname":.["basePerson:lastname"], </c->
+            <c- no>"birthdate":.["basePerson:dateOfBirth"], </c->
+            <c- no>"gender":.["basePerson:sex"]}</c->
+          <c- no>)</c->
+        <c- no>}</c->
+</pre>
+     <a href="#jq_example" onclick="this.parentElement.style.display=&apos;none&apos;">close</a> 
+    </div>
+    <div class="tabcontent" id="jq_jsonld">
+     <p>use <code>soya template transformation.jq | soya init</code> to show this example on the command line</p>
+      <span onclick="this.parentElement.style.display=&apos;none&apos;" style="float: right;">❌</span> 
+<pre class="language-json highlight"><c- p>{</c->
+  <c- f>"@context"</c-><c- p>:</c-> <c- p>{</c->
+    <c- f>"@version"</c-><c- p>:</c-> <c- mf>1.1</c-><c- p>,</c->
+    <c- f>"@import"</c-><c- p>:</c-> <c- u>"https://ns.ownyourdata.eu/ns/soya-context.json"</c-><c- p>,</c->
+    <c- f>"@base"</c-><c- p>:</c-> <c- u>"https://soya.data-container.net/PersonA_jq_transformation/"</c->
+  <c- p>},</c->
+  <c- f>"@graph"</c-><c- p>:</c-> <c- p>[</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"https://soya.data-container.net/PersonATransformation"</c-><c- p>,</c->
+      <c- f>"engine"</c-><c- p>:</c-> <c- u>"jq"</c-><c- p>,</c->
+      <c- f>"value"</c-><c- p>:</c-> <c- u>".[\"@graph\"] | \n{\n \"@context\": {\n \"@version\":1.1,\n \"@vocab\":\"https://soya.data-container.net/PersonB/\"},\n  \"@graph\": map( \n {\"@id\":.[\"@id\"], \n \"@type\":\"PersonB\", \n \"first_name\":.[\"basePerson:firstname\"], \n \"surname\":.[\"basePerson:lastname\"], \n \"birthdate\":.[\"basePerson:dateOfBirth\"], \n \"gender\":.[\"basePerson:sex\"]}\n )\n}\n"</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"OverlayTransformation"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"OverlayTransformation"</c-><c- p>,</c->
+      <c- f>"onBase"</c-><c- p>:</c-> <c- u>"https://soya.data-container.net/PersonA"</c-><c- p>,</c->
+      <c- f>"name"</c-><c- p>:</c-> <c- u>"TransformationOverlay"</c->
+    <c- p>}</c->
+  <c- p>]</c->
+<c- p>}</c->
+</pre>
+     <a href="#jq_example" onclick="this.parentElement.style.display=&apos;none&apos;">close</a> 
+    </div>
+   </div>
+   <h4 class="heading settled" data-level="2.3.3" id="jolt"><span class="secno">2.3.3. </span><span class="content">Jolt</span><a class="self-link" href="#jolt"></a></h4>
+   <p>Jolt is a library for JSON to JSON transformation where the "specification" for the transform is itself a JSON document - find <a href="https://github.com/bazaarvoice/jolt/#jolt">more information here</a>. It can be used in Transformation overlays.</p>
+   <p><em>Note: use the <a href="http://jolt-demo.appspot.com/#inception">online Jolt Transformation Demo</a> to test your jolt transformation</em></p>
+   <div class="example" id="jolt_example">
+    <a class="self-link" href="#jolt_example"></a> A transformation overlay example using Jolt. 
+    <div class="tab">
+     <button class="tablinks" onclick="openTab(event, &apos;jolt_yml&apos;)">YML</button>
+     <button class="tablinks" onclick="openTab(event, &apos;jolt_jsonld&apos;)">JSON-LD</button>
+      <a href="https://json-ld.org/playground/#json-ld=%7B%0A%20%20%22%40context%22%3A%20%7B%0A%20%20%20%20%22%40version%22%3A%201.1%2C%0A%20%20%20%20%22%40import%22%3A%20%22https%3A%2F%2Fns.ownyourdata.eu%2Fns%2Fsoya-context.json%22%2C%0A%20%20%20%20%22%40base%22%3A%20%22https%3A%2F%2Fsoya.data-container.net%2FPersonA_jolt_Transformation%2F%22%0A%20%20%7D%2C%0A%20%20%22%40graph%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22https%3A%2F%2Fsoya.data-container.net%2FPersonATransformation%22%2C%0A%20%20%20%20%20%20%22engine%22%3A%20%22jolt%22%2C%0A%20%20%20%20%20%20%22value%22%3A%20%5B%0A%20%20%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%20%20%22operation%22%3A%20%22shift%22%2C%0A%20%20%20%20%20%20%20%20%20%20%22spec%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%22%5C%5C%40context%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%5C%5C%40version%22%3A%20%22%5C%5C%40context.%5C%5C%40version%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%23https%3A%2F%2Fsoya.data-container.net%2FPersonB%2F%22%3A%20%22%5C%5C%40context.%5C%5C%40vocab%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%22%5C%5C%40graph%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22*%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%23PersonB%22%3A%20%22%5C%5C%40graph%5B%232%5D.%5C%5C%40type%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22%5C%5C%40id%22%3A%20%22%5C%5C%40graph%5B%232%5D.%5C%5C%40id%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22basePerson%3Afirstname%22%3A%20%22%5C%5C%40graph%5B%232%5D.first_name%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22basePerson%3Alastname%22%3A%20%22%5C%5C%40graph%5B%232%5D.surname%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22basePerson%3AdateOfBirth%22%3A%20%22%5C%5C%40graph%5B%232%5D.birthdate%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%22basePerson%3Asex%22%3A%20%22%5C%5C%40graph%5B%232%5D.gender%22%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%5D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22%40id%22%3A%20%22OverlayTransformation%22%2C%0A%20%20%20%20%20%20%22%40type%22%3A%20%22OverlayTransformation%22%2C%0A%20%20%20%20%20%20%22onBase%22%3A%20%22https%3A%2F%2Fsoya.data-container.net%2FPersonA%22%2C%0A%20%20%20%20%20%20%22name%22%3A%20%22TransformationOverlay%22%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D%0A" target="_blank"><button class="tablinks">Open in playground</button></a> 
+    </div>
+    <div class="tabcontent" id="jolt_yml">
+     <p>use <code>soya template transformation.jolt</code> to show this example on the command line</p>
+      <span onclick="this.parentElement.style.display=&apos;none&apos;" style="float: right;">❌</span> 
+<pre class="language-yaml highlight"><c- f>meta</c-><c- p>:</c->
+  <c- f>name</c-><c- p>:</c-> PersonA_jolt_Transformation
+
+<c- f>content</c-><c- p>:</c->
+  <c- f>overlays</c-><c- p>:</c-> 
+    - <c- f>type</c-><c- p>:</c-> OverlayTransformation
+      <c- f>name</c-><c- p>:</c-> TransformationOverlay
+      <c- f>base</c-><c- p>:</c-> https://soya.data-container.net/PersonA
+      <c- f>engine</c-><c- p>:</c-> jolt
+      <c- f>value</c-><c- p>:</c->
+        - <c- f>operation</c-><c- p>:</c-> shift
+          <c- f>spec</c-><c- p>:</c-> 
+            <c- s>"\\@context"</c->:
+              <c- s>"\\@version"</c->: <c- s>"\\@context.\\@version"</c->
+              <c- s>"#https://soya.data-container.net/PersonB/"</c->: <c- s>"\\@context.\\@vocab"</c->
+            <c- s>"\\@graph"</c->: 
+              <c- s>"*"</c->: 
+                <c- s>"#PersonB"</c->: <c- s>"\\@graph[#2].\\@type"</c->
+                <c- s>"\\@id"</c->: <c- s>"\\@graph[#2].\\@id"</c->
+                <c- s>"basePerson:firstname"</c->: <c- s>"\\@graph[#2].first_name"</c->
+                <c- s>"basePerson:lastname"</c->: <c- s>"\\@graph[#2].surname"</c->
+                <c- s>"basePerson:dateOfBirth"</c->: <c- s>"\\@graph[#2].birthdate"</c->
+                <c- s>"basePerson:sex"</c->: <c- s>"\\@graph[#2].gender"</c->
+</pre>
+     <a href="#jolt_example" onclick="this.parentElement.style.display=&apos;none&apos;">close</a> 
+    </div>
+    <div class="tabcontent" id="jolt_jsonld">
+     <p>use <code>soya template transformation.jolt | soya init</code> to show this example on the command line</p>
+      <span onclick="this.parentElement.style.display=&apos;none&apos;" style="float: right;">❌</span> 
+<pre class="language-json highlight"><c- p>{</c->
+  <c- f>"@context"</c-><c- p>:</c-> <c- p>{</c->
+    <c- f>"@version"</c-><c- p>:</c-> <c- mf>1.1</c-><c- p>,</c->
+    <c- f>"@import"</c-><c- p>:</c-> <c- u>"https://ns.ownyourdata.eu/ns/soya-context.json"</c-><c- p>,</c->
+    <c- f>"@base"</c-><c- p>:</c-> <c- u>"https://soya.data-container.net/PersonA_jolt_Transformation/"</c->
+  <c- p>},</c->
+  <c- f>"@graph"</c-><c- p>:</c-> <c- p>[</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"https://soya.data-container.net/PersonATransformation"</c-><c- p>,</c->
+      <c- f>"engine"</c-><c- p>:</c-> <c- u>"jolt"</c-><c- p>,</c->
+      <c- f>"value"</c-><c- p>:</c-> <c- p>[</c->
+        <c- p>{</c->
+          <c- f>"operation"</c-><c- p>:</c-> <c- u>"shift"</c-><c- p>,</c->
+          <c- f>"spec"</c-><c- p>:</c-> <c- p>{</c->
+            <c- f>"\\@context"</c-><c- p>:</c-> <c- p>{</c->
+              <c- f>"\\@version"</c-><c- p>:</c-> <c- u>"\\@context.\\@version"</c-><c- p>,</c->
+              <c- f>"#https://soya.data-container.net/PersonB/"</c-><c- p>:</c-> <c- u>"\\@context.\\@vocab"</c->
+            <c- p>},</c->
+            <c- f>"\\@graph"</c-><c- p>:</c-> <c- p>{</c->
+              <c- f>"*"</c-><c- p>:</c-> <c- p>{</c->
+                <c- f>"#PersonB"</c-><c- p>:</c-> <c- u>"\\@graph[#2].\\@type"</c-><c- p>,</c->
+                <c- f>"\\@id"</c-><c- p>:</c-> <c- u>"\\@graph[#2].\\@id"</c-><c- p>,</c->
+                <c- f>"basePerson:firstname"</c-><c- p>:</c-> <c- u>"\\@graph[#2].first_name"</c-><c- p>,</c->
+                <c- f>"basePerson:lastname"</c-><c- p>:</c-> <c- u>"\\@graph[#2].surname"</c-><c- p>,</c->
+                <c- f>"basePerson:dateOfBirth"</c-><c- p>:</c-> <c- u>"\\@graph[#2].birthdate"</c-><c- p>,</c->
+                <c- f>"basePerson:sex"</c-><c- p>:</c-> <c- u>"\\@graph[#2].gender"</c->
+              <c- p>}</c->
+            <c- p>}</c->
+          <c- p>}</c->
+        <c- p>}</c->
+      <c- p>]</c->
+    <c- p>},</c->
+    <c- p>{</c->
+      <c- f>"@id"</c-><c- p>:</c-> <c- u>"OverlayTransformation"</c-><c- p>,</c->
+      <c- f>"@type"</c-><c- p>:</c-> <c- u>"OverlayTransformation"</c-><c- p>,</c->
+      <c- f>"onBase"</c-><c- p>:</c-> <c- u>"https://soya.data-container.net/PersonA"</c-><c- p>,</c->
+      <c- f>"name"</c-><c- p>:</c-> <c- u>"TransformationOverlay"</c->
+    <c- p>}</c->
+  <c- p>]</c->
+<c- p>}</c->
+</pre>
+     <a href="#jolt_example" onclick="this.parentElement.style.display=&apos;none&apos;">close</a> 
+    </div>
+   </div>
+   <h4 class="heading settled" data-level="2.3.4" id="semcon"><span class="secno">2.3.4. </span><span class="content">Semantic Container</span><a class="self-link" href="#semcon"></a></h4>
+   <p>Semantic Container are transient data stores and provide interoperability and traceability features. For SOyA Semantic Containers provide the framework to store instances (data records associated with a structure through a schema DRI) and host the SOyA form feature for editing instances - find <a href="https://www.OwnYourData.eu/semcon">more information here</a>.</p>
+   <h2 class="heading settled" data-level="3" id="features"><span class="secno">3. </span><span class="content">Features</span><a class="self-link" href="#features"></a></h2>
+   <h3 class="heading settled" data-level="3.1" id="authoring"><span class="secno">3.1. </span><span class="content">Authoring</span><a class="self-link" href="#authoring"></a></h3>
+   <p>SOyA as authoring platform for data models allows to describe a dataset using a simple notation in YML. Listing attributes and data types in an easy and human-readable form and providing meta attributes defines a <a data-link-type="dfn" href="#terms-base" id="ref-for-terms-base⑦">base</a> (data model). Additionally, a number of optionally associated <a data-link-type="dfn" href="#terms-overlay" id="ref-for-terms-overlay③">overlays</a> can define specific behaviour. This input (YML) is then transformed using the <a href="#cli">SOyA CLI</a> into JSON-LD for a standards-based representation.</p>
+   <p><strong>Specific Authoring Functions:</strong></p>
+   <ul>
+    <li data-md>
+     <p>predefined <a data-link-type="dfn" href="#terms-overlay" id="ref-for-terms-overlay④">Overlay</a> types: alignment, annotation, classification, encoding, format, transformation, transformation, validation</p>
+    <li data-md>
+     <p><code>subClassOf</code>: referencing base classes</p>
+    <li data-md>
+     <p>nesting: use intendation to implicitly use <code>subClassOf</code> property</p>
+   </ul>
+   <h3 class="heading settled" data-level="3.2" id="publishing"><span class="secno">3.2. </span><span class="content">Publishing</span><a class="self-link" href="#publishing"></a></h3>
+   <p>An important aspect of SOyA is the collaboration on developing data models. A repository to host SOyA structures is an integral part of the workflow and the <a href="#cli">SOyA CLI</a> provides a number of functions to interact with a repository. A default, public repository is hosted at <code>soya.ownyourdata.eu</code> with the <a href="https://api-docs.ownyourdata.eu/soya/">OpenAPI Specification available</a>. Private repositories can be hosted using <a href="https://github.com/OwnYourData/soya/tree/main/repository">sources on Github</a> or <a href="https://hub.docker.com/r/oydeu/soya-base">pre-built Docker images</a>.</p>
+   <p><strong>Specific Publishing Functions:</strong></p>
+   <ul>
+    <li data-md>
+     <p><code>soya push</code> reads a valid SOyA structure from STDIN and stores it in the repository</p>
+    <li data-md>
+     <p>every stored SOyA structure can be accessed through the defined human-readable name and is additionally available using a content-based address (<a data-link-type="dfn" href="#terms-dris" id="ref-for-terms-dris①">DRI</a>); the human-readable version can be overwritten by a new version, while the version with the content-based address is kept unchanged and continues to be available for interoperability</p>
+    <li data-md>
+     <p><code>soya pull</code> retrieves the specified SOyA structures and writes to STDOUT</p>
+    <li data-md>
+     <p><code>soya similar</code> compares a valid SOyA structure read from STDIN with other structures in the repository and displays the top 20 matching structures in decreasing order of similarity</p>
+    <li data-md>
+     <p><code>soya info</code> show detailed information (bases, overlays, history, DRI version) for a specifed SOyA structure</p>
+    <li data-md>
+     <p>search for structures based on parts of the name (only available via API)</p>
+   </ul>
+   <h3 class="heading settled" data-level="3.3" id="acquisition"><span class="secno">3.3. </span><span class="content">Acquisition</span><a class="self-link" href="#acquisition"></a></h3>
+   <p>The acquisition feature allows to transform flat JSON data into linked data (in JSON-LD) based on matching attribute names.</p>
+   <div class="example" id="acquire_example">
+    <a class="self-link" href="#acquire_example"></a> An acquisition example. 
+    <div class="tab">
+     <button class="tablinks" onclick="openTab(event, &apos;acquire_input&apos;)">Input</button>
+     <button class="tablinks" onclick="openTab(event, &apos;acquire_base&apos;)">Base</button>
+     <button class="tablinks" onclick="openTab(event, &apos;acquire_output&apos;)">Output</button>
+      <a href="https://json-ld.org/playground/#json-ld=%7B%0A%20%20%22%40context%22%3A%20%7B%0A%20%20%20%20%22%40version%22%3A%201.1%2C%0A%20%20%20%20%22%40vocab%22%3A%20%22https%3A%2F%2Fsoya.data-container.net%2FEmployee%2F%22%0A%20%20%7D%2C%0A%20%20%22%40graph%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22name%22%3A%20%22Christoph%20Fabianek%22%2C%0A%20%20%20%20%20%20%22dateOfBirth%22%3A%20%221977-07-21%22%2C%0A%20%20%20%20%20%20%22gender%22%3A%20%22male%22%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D%0A" target="_blank"><button class="tablinks">Open in playground</button></a> 
+    </div>
+    <div class="tabcontent" id="acquire_input">
+     <p>The following record is an example flat JSON to be transformed into linked data - also <a href="https://playground.data-container.net/cfa" target="_blank">availabel via <code>curl https://playground.data-container.net/cfa</code></a>.<br>Run the following command to test acquire:<br><code>curl https://playground.data-container.net/cfa | soya acquire Employee</code></p>
+      <span onclick="this.parentElement.style.display=&apos;none&apos;" style="float: right;">❌</span> 
+<pre class="language-json highlight"><c- p>{</c->
+    <c- f>"name"</c-><c- p>:</c-> <c- u>"Christoph Fabianek"</c-><c- p>,</c->
+    <c- f>"dateOfBirth"</c-><c- p>:</c-> <c- u>"1977-07-21"</c-><c- p>,</c->
+    <c- f>"gender"</c-><c- p>:</c-> <c- u>"male"</c-><c- p>,</c->
+    <c- f>"employer"</c-><c- p>:</c-> <c- p>{</c->
+        <c- f>"Company"</c-><c- p>:</c-> <c- u>"OwnYourdata"</c-><c- p>,</c->
+        <c- f>"country"</c-><c- p>:</c-> <c- u>"Austria"</c->
+    <c- p>}</c->
+<c- p>}</c->
+</pre>
+     <a href="#acquisition" onclick="this.parentElement.style.display=&apos;none&apos;">close</a> 
+    </div>
+    <div class="tabcontent" id="acquire_base">
+     <p>The following base from the SOyA structure <code>Employee</code> is used in the example.<br>Run the following command to test acquire:<br><code>curl https://playground.data-container.net/cfa | soya acquire Employee</code></p>
+      <span onclick="this.parentElement.style.display=&apos;none&apos;" style="float: right;">❌</span> 
+<pre class="language-yaml highlight"><c- f>meta</c-><c- p>:</c->
+  <c- f>name</c-><c- p>:</c-> Employee
+
+<c- f>content</c-><c- p>:</c->
+  <c- f>base</c-><c- p>:</c->
+    - <c- f>name</c-><c- p>:</c-> Employee
+      <c- f>attributes</c-><c- p>:</c->
+        <c- f>name</c-><c- p>:</c-> String
+        <c- f>dateOfBirth</c-><c- p>:</c-> Date
+        <c- f>gender</c-><c- p>:</c-> String
+        <c- f>employer</c-><c- p>:</c-> Company
+    - <c- f>name</c-><c- p>:</c-> Company
+      <c- f>attributes</c-><c- p>:</c->
+        <c- f>company</c-><c- p>:</c-> string
+        <c- f>country</c-><c- p>:</c-> string
+</pre>
+     <a href="#acquisition" onclick="this.parentElement.style.display=&apos;none&apos;">close</a> 
+    </div>
+    <div class="tabcontent" id="acquire_output">
+     <p>The output of the acquire in the example.<br>Run the following command to test acquire:<br><code>curl https://playground.data-container.net/cfa | soya acquire Employee</code></p>
+      <span onclick="this.parentElement.style.display=&apos;none&apos;" style="float: right;">❌</span> 
+<pre class="language-json-ld highlight"><c- p>{</c->
+  <c- f>"@context"</c-><c- p>:</c-> <c- p>{</c->
+    <c- f>"@version"</c-><c- p>:</c-> <c- mf>1.1</c-><c- p>,</c->
+    <c- f>"@vocab"</c-><c- p>:</c-> <c- u>"https://soya.data-container.net/Employee/"</c->
+  <c- p>},</c->
+  <c- f>"@graph"</c-><c- p>:</c-> <c- p>[</c->
+    <c- p>{</c->
+      <c- f>"name"</c-><c- p>:</c-> <c- u>"Christoph Fabianek"</c-><c- p>,</c->
+      <c- f>"dateOfBirth"</c-><c- p>:</c-> <c- u>"1977-07-21"</c-><c- p>,</c->
+      <c- f>"gender"</c-><c- p>:</c-> <c- u>"male"</c->
+    <c- p>}</c->
+  <c- p>]</c->
+<c- p>}</c->
+</pre>
+     <a href="#acquisition" onclick="this.parentElement.style.display=&apos;none&apos;">close</a> 
+    </div>
+   </div>
+   <h3 class="heading settled" data-level="3.4" id="validation"><span class="secno">3.4. </span><span class="content">Validation</span><a class="self-link" href="#validation"></a></h3>
+   <p>Through validation a given JSON-LD record (or an array of records) can be validated against a SOyA structure that includes an validation <a data-link-type="dfn" href="#terms-overlay" id="ref-for-terms-overlay⑤">overlay</a>. (Currently, <a href="#shacl">\SHACL</a> (Shapes Constraint Language) is used in validation overlays.)</p>
+   <div class="example" id="validation_feature_example">
+    <a class="self-link" href="#validation_feature_example"></a> An example command to perform a validation. 
+<pre>curl -s https://playground.data-container.net/cfa | soya acquire Employee | soya validate Employee
+</pre>
+   </div>
+   <h3 class="heading settled" data-level="3.5" id="transformation"><span class="secno">3.5. </span><span class="content">Transformation</span><a class="self-link" href="#transformation"></a></h3>
+   <p>Transformations allow to convert a JSON-LD record (or an array of records) with a well-defined data model (based on a SOyA structure) into another data model using information from a tranformation <a data-link-type="dfn" href="#terms-overlay" id="ref-for-terms-overlay⑥">overlay</a>. (Currently, <a href="#jq">jq</a> and <a href="#jolt">Jolt</a> are available engines for transformation overlays.)</p>
+   <div class="example" id="transformation_feature_example">
+    <a class="self-link" href="#transformation_feature_example"></a> An example command to perform a transformation. 
+<pre>curl -s https://playground.data-container.net/PersonAinstance | soya transform PersonB
+</pre>
+   </div>
+   <h3 class="heading settled" data-level="3.6" id="forms"><span class="secno">3.6. </span><span class="content">Forms</span><a class="self-link" href="#forms"></a></h3>
+   <p>Based on SOyA structures forms can be generated automatically, allowing for visulization and editing of data records. While basic editing functionality relies on SOyA bases only, more complex forms can be achieved by providing additional overlays, like validation overlays for enhanced form validation. Furthermore, annotation overlays allow for internationalization of SOyA forms, providing multi-language display. Finally, a form overlay provides extensive configuraiton to fine-tune arranging and displaying controls.</p>
+   <p>SOyA forms are based on the <a href="https://jsonforms.io/">JSON-Forms framework</a> and therefore come with adapters for different UI libraries and frameworks, allowing for easy integration in already existing projects.</p>
+   <div class="example" id="forms_feature_example">
+    <a class="self-link" href="#forms_feature_example"></a> An example command to generate a form for a SOyA structure. 
+<pre>soya pull Employee | soya form
+</pre>
+   </div>
+   <h2 class="heading settled" data-level="4" id="tools"><span class="secno">4. </span><span class="content">Tools</span><a class="self-link" href="#tools"></a></h2>
+   <h3 class="heading settled" data-level="4.1" id="library"><span class="secno">4.1. </span><span class="content"><code>soya-js</code> Library</span><a class="self-link" href="#library"></a></h3>
+   <p><a href="https://github.com/OwnYourData/soya/tree/main/lib">soya-js</a> provides interfaces in JavaScript for handling SOyA structures and interacting with SOyA respositories.</p>
+   <ul>
+    <li data-md>
+     <p>Creation of SOyA JSON-LD structures using simple YAML files</p>
+    <li data-md>
+     <p>Finding similarly shaped SOyA structures</p>
+    <li data-md>
+     <p>Communication with <a href="https://github.com/OwnYourData/soya/tree/main/repository">SOyA repositories</a> (e.g. for pushing and pulling SOyA structures and data)</p>
+    <li data-md>
+     <p>Data validation through <a href="https://www.w3.org/TR/shacl/">\SHACL</a></p>
+    <li data-md>
+     <p>Data acquisition (transforming flat JSON data into rich JSON-LD data)</p>
+    <li data-md>
+     <p>Data transformation using popular <a href="https://stedolan.github.io/jq/">jq</a> processor</p>
+    <li data-md>
+     <p>Forms generation based on SOyA structures using <a href="https://jsonforms.io/">JSONForms</a> (React, Angular, Vue, and other UI toolkits)</p>
+   </ul>
+   <h3 class="heading settled" data-level="4.2" id="cli"><span class="secno">4.2. </span><span class="content">Command Line Tool</span><a class="self-link" href="#cli"></a></h3>
+   <p>The Command Line Tool provides a set of utilities for handling SOyA structures and interacting with SOyA respositories.</p>
+   <p><a href="https://github.com/OwnYourData/soya/blob/main/cli/README.md">soya-cli</a> is built on top of <a href="https://github.com/OwnYourData/soya/tree/main/lib">soya-js</a> and exposes most of its <a href="https://github.com/OwnYourData/soya/blob/main/lib/README.md">features</a> as commands on the command line. In addition there are features like:</p>
+   <ul>
+    <li data-md>
+     <p><a data-link-type="dfn" href="#terms-dris" id="ref-for-terms-dris②">DRI</a> calculation for SOyA structures</p>
+    <li data-md>
+     <p>Data transformation using</p>
+     <ul>
+      <li data-md>
+       <p><a href="https://stedolan.github.io/jq/">jq</a></p>
+      <li data-md>
+       <p><a href="https://github.com/bazaarvoice/jolt">jolt</a></p>
+     </ul>
+    <li data-md>
+     <p>Fast prototyping with quick links to <a href="https://json-ld.org/playground/">JSON-LD Playground</a></p>
+   </ul>
+   <h3 class="heading settled" data-level="4.3" id="repository"><span class="secno">4.3. </span><span class="content">Repository</span><a class="self-link" href="#repository"></a></h3>
+   <p>The SOyA Repository is a storage for SOyA structures and provides the follwowing functionalities:</p>
+   <ul>
+    <li data-md>
+     <p><strong>Read (<code>soya pull [name]</code>):</strong> retrieve the SOyA structure with the given name</p>
+    <li data-md>
+     <p><strong>Information (<code>soya info [name]</code>):</strong> retrieve information about a SOyA structure (history, included bases and overlays) for the given name</p>
+    <li data-md>
+     <p><strong>Query:</strong> get a list of all SOyA structure that include bases containing the given string
+(available as API endpoint <code>GET /api/soya/query?name=[string]</code>)</p>
+    <li data-md>
+     <p><strong>Write (<code>cat file.jsonld | soya push</code>):</strong> stores the provided SOyA structure in the repository
+a <em>frozen</em> version (duplicate) is also created and accessible via corresponding DRI</p>
+    <li data-md>
+     <p><strong>Find Similar (<code>cat file.jsonld | soya similar</code>):</strong> list similar entries in the SOyA repository for a given SOyA structure</p>
+   </ul>
+   <p>Further information:</p>
+   <ul>
+    <li data-md>
+     <p>Swagger Informaiton: https://api-docs.ownyourdata.eu/soya/</p>
+    <li data-md>
+     <p>Docker Image: https://hub.docker.com/r/oydeu/soya-base</p>
+   </ul>
+   <h2 class="heading settled" data-level="5" id="implementation"><span class="secno">5. </span><span class="content">Reference Implementation</span><a class="self-link" href="#implementation"></a></h2>
+   <p>Work in progress as part of a research project funded by the “IKT der Zukunft” program from the Federal Ministry for Transport, Innovation and Technology in Austria – <a href="https://projekte.ffg.at/projekt/4125456">FFG Projekt 887052</a>.</p>
+   <p>The following implementation artefacts are available (published under the open source MIT License):</p>
+   <ul>
+    <li data-md>
+     <p>Command line tool <code>soya</code>: <a href="https://github.com/OwnYourData/soya/tree/main/cli">https://github.com/OwnYourData/soya/tree/main/cli</a></p>
+     <ul>
+      <li data-md>
+       <p>also available as Docker Image: <a href="https://hub.docker.com/r/oydeu/soya-cli">https://hub.docker.com/r/oydeu/soya-cli</a></p>
+      <li data-md>
+       <p>find example usage scenarios in this Tutorial: <a href="https://github.com/OwnYourData/soya/tree/main/tutorial">https://github.com/OwnYourData/soya/tree/main/tutorial</a></p>
+     </ul>
+    <li data-md>
+     <p>Repository for hosting: <a href="https://github.com/OwnYourData/soya/tree/main/repository">https://github.com/OwnYourData/soya/tree/main/repository</a></p>
+     <ul>
+      <li data-md>
+       <p>API documentation in Swagger: <a href="https://api-docs.ownyourdata.eu/soya/">https://api-docs.ownyourdata.eu/soya/</a></p>
+     </ul>
+   </ul>
+<script>
+function openTab(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>
+  </main>
+  <div data-fill-with="conformance">
+   <h2 class="no-ref no-num heading settled" id="w3c-conformance"><span class="content">Conformance</span><a class="self-link" href="#w3c-conformance"></a></h2>
+   <h3 class="no-ref no-num heading settled" id="w3c-conventions"><span class="content">Document conventions</span><a class="self-link" href="#w3c-conventions"></a></h3>
+   <p>Conformance requirements are expressed
+    with a combination of descriptive assertions
+    and RFC 2119 terminology.
+    The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL”
+    in the normative parts of this document
+    are to be interpreted as described in RFC 2119.
+    However, for readability,
+    these words do not appear in all uppercase letters in this specification. </p>
+   <p>All of the text of this specification is normative
+    except sections explicitly marked as non-normative, examples, and notes. <a data-link-type="biblio" href="#biblio-rfc2119">[RFC2119]</a> </p>
+   <p>Examples in this specification are introduced with the words “for example”
+    or are set apart from the normative text
+    with <code>class="example"</code>,
+    like this: </p>
+   <div class="example" id="w3c-example">
+    <a class="self-link" href="#w3c-example"></a> 
+    <p>This is an example of an informative example. </p>
+   </div>
+   <p>Informative notes begin with the word “Note”
+    and are set apart from the normative text
+    with <code>class="note"</code>,
+    like this: </p>
+   <p class="note" role="note">Note, this is an informative note. </p>
+   <h3 class="no-ref no-num heading settled" id="w3c-conformant-algorithms"><span class="content">Conformant Algorithms</span><a class="self-link" href="#w3c-conformant-algorithms"></a></h3>
+   <p>Requirements phrased in the imperative as part of algorithms
+    (such as "strip any leading space characters"
+    or "return false and abort these steps")
+    are to be interpreted with the meaning of the key word
+    ("must", "should", "may", etc)
+    used in introducing the algorithm. </p>
+   <p>Conformance requirements phrased as algorithms or specific steps
+    can be implemented in any manner,
+    so long as the end result is equivalent.
+    In particular, the algorithms defined in this specification
+    are intended to be easy to understand
+    and are not intended to be performant.
+    Implementers are encouraged to optimize. </p>
+  </div>
+<script src="https://www.w3.org/scripts/TR/2016/fixup.js"></script>
+  <h2 class="no-num no-ref heading settled" id="index"><span class="content">Index</span><a class="self-link" href="#index"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="index-defined-here"><span class="content">Terms defined by this specification</span><a class="self-link" href="#index-defined-here"></a></h3>
+  <ul class="index">
+   <li><a href="#terms-attributes">Attributes</a><span>, in § 1.1</span>
+   <li><a href="#terms-base">base</a><span>, in § 1.1</span>
+   <li><a href="#terms-base">Bases</a><span>, in § 1.1</span>
+   <li><a href="#terms-base">bases</a><span>, in § 1.1</span>
+   <li><a href="#terms-dris">DRIs</a><span>, in § 1.1</span>
+   <li><a href="#terms-instance">Instance</a><span>, in § 1.1</span>
+   <li><a href="#terms-overlay">overlay</a><span>, in § 1.1</span>
+   <li><a href="#terms-overlay">Overlays</a><span>, in § 1.1</span>
+   <li><a href="#terms-overlay">overlays</a><span>, in § 1.1</span>
+   <li><a href="#terms-repository">Repository</a><span>, in § 1.1</span>
+   <li><a href="#terms-structures">structure</a><span>, in § 1.1</span>
+   <li><a href="#terms-structures">Structures</a><span>, in § 1.1</span>
+  </ul>
+  <h2 class="no-num no-ref heading settled" id="references"><span class="content">References</span><a class="self-link" href="#references"></a></h2>
+  <h3 class="no-num no-ref heading settled" id="normative"><span class="content">Normative References</span><a class="self-link" href="#normative"></a></h3>
+  <dl>
+   <dt id="biblio-rfc2119">[RFC2119]
+   <dd>S. Bradner. <a href="https://datatracker.ietf.org/doc/html/rfc2119"><cite>Key words for use in RFCs to Indicate Requirement Levels</cite></a>. March 1997. Best Current Practice. URL: <a href="https://datatracker.ietf.org/doc/html/rfc2119">https://datatracker.ietf.org/doc/html/rfc2119</a>
+  </dl>
+  <h3 class="no-num no-ref heading settled" id="informative"><span class="content">Informative References</span><a class="self-link" href="#informative"></a></h3>
+  <dl>
+   <dt id="biblio-json-ld">[JSON-LD]
+   <dd>Gregg Kellogg; Pierre-Antoine Champin; Dave Longley. <a href="https://www.w3.org/TR/json-ld/"><cite>JSON-LD 1.1</cite></a>. W3C Recommendation. URL: <a href="https://www.w3.org/TR/json-ld/">https://www.w3.org/TR/json-ld/</a>
+   <dt id="biblio-multibase">[MULTIBASE]
+   <dd><a href="https://tools.ietf.org/html/draft-multiformats-multibase"><cite>IETF Multibase Data Format specification</cite></a>. URL: <a href="https://tools.ietf.org/html/draft-multiformats-multibase">https://tools.ietf.org/html/draft-multiformats-multibase</a>
+   <dt id="biblio-multihash">[MULTIHASH]
+   <dd><a href="https://github.com/multiformats/multihash"><cite>Multihash - protocol for differentiating outputs from various well-established cryptographic hash functions</cite></a>. URL: <a href="https://github.com/multiformats/multihash">https://github.com/multiformats/multihash</a>
+  </dl>
+  <aside class="dfn-panel" data-for="terms-attributes">
+   <b><a href="#terms-attributes">#terms-attributes</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-terms-attributes">1.1. Terminology</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="terms-base">
+   <b><a href="#terms-base">#terms-base</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-terms-base">1.1. Terminology</a> <a href="#ref-for-terms-base①">(2)</a> <a href="#ref-for-terms-base②">(3)</a> <a href="#ref-for-terms-base③">(4)</a>
+    <li><a href="#ref-for-terms-base④">1.3. Motivation</a>
+    <li><a href="#ref-for-terms-base⑤">2.1. Structures</a>
+    <li><a href="#ref-for-terms-base⑥">2.1.2. Base</a>
+    <li><a href="#ref-for-terms-base⑦">3.1. Authoring</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="terms-dris">
+   <b><a href="#terms-dris">#terms-dris</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-terms-dris">1.2. Design Goals and Rationale</a>
+    <li><a href="#ref-for-terms-dris①">3.2. Publishing</a>
+    <li><a href="#ref-for-terms-dris②">4.2. Command Line Tool</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="terms-overlay">
+   <b><a href="#terms-overlay">#terms-overlay</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-terms-overlay">1.1. Terminology</a>
+    <li><a href="#ref-for-terms-overlay①">1.3. Motivation</a>
+    <li><a href="#ref-for-terms-overlay②">2.1. Structures</a>
+    <li><a href="#ref-for-terms-overlay③">3.1. Authoring</a> <a href="#ref-for-terms-overlay④">(2)</a>
+    <li><a href="#ref-for-terms-overlay⑤">3.4. Validation</a>
+    <li><a href="#ref-for-terms-overlay⑥">3.5. Transformation</a>
+   </ul>
+  </aside>
+  <aside class="dfn-panel" data-for="terms-structures">
+   <b><a href="#terms-structures">#terms-structures</a></b><b>Referenced in:</b>
+   <ul>
+    <li><a href="#ref-for-terms-structures">1.1. Terminology</a> <a href="#ref-for-terms-structures①">(2)</a>
+    <li><a href="#ref-for-terms-structures②">2.1. Structures</a>
+   </ul>
+  </aside>
+<script>/* script-dfn-panel */
+
+document.body.addEventListener("click", function(e) {
+    var queryAll = function(sel) { return [].slice.call(document.querySelectorAll(sel)); }
+    // Find the dfn element or panel, if any, that was clicked on.
+    var el = e.target;
+    var target;
+    var hitALink = false;
+    while(el.parentElement) {
+        if(el.tagName == "A") {
+            // Clicking on a link in a <dfn> shouldn't summon the panel
+            hitALink = true;
+        }
+        if(el.classList.contains("dfn-paneled")) {
+            target = "dfn";
+            break;
+        }
+        if(el.classList.contains("dfn-panel")) {
+            target = "dfn-panel";
+            break;
+        }
+        el = el.parentElement;
+    }
+    if(target != "dfn-panel") {
+        // Turn off any currently "on" or "activated" panels.
+        queryAll(".dfn-panel.on, .dfn-panel.activated").forEach(function(el){
+            el.classList.remove("on");
+            el.classList.remove("activated");
+        });
+    }
+    if(target == "dfn" && !hitALink) {
+        // open the panel
+        var dfnPanel = document.querySelector(".dfn-panel[data-for='" + el.id + "']");
+        if(dfnPanel) {
+            dfnPanel.classList.add("on");
+            var rect = el.getBoundingClientRect();
+            dfnPanel.style.left = window.scrollX + rect.right + 5 + "px";
+            dfnPanel.style.top = window.scrollY + rect.top + "px";
+            var panelRect = dfnPanel.getBoundingClientRect();
+            var panelWidth = panelRect.right - panelRect.left;
+            if(panelRect.right > document.body.scrollWidth && (rect.left - (panelWidth + 5)) > 0) {
+                // Reposition, because the panel is overflowing
+                dfnPanel.style.left = window.scrollX + rect.left - (panelWidth + 5) + "px";
+            }
+        } else {
+            console.log("Couldn't find .dfn-panel[data-for='" + el.id + "']");
+        }
+    } else if(target == "dfn-panel") {
+        // Switch it to "activated" state, which pins it.
+        el.classList.add("activated");
+        el.style.left = null;
+        el.style.top = null;
+    }
+
+});
+</script>

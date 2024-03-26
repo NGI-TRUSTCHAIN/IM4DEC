@@ -1,0 +1,1 @@
+{"version":3,"file":"1.createDatabase.d.ts","sourceRoot":"","sources":["../../src/migrations/1.createDatabase.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,kBAAkB,EAAE,WAAW,EAAS,MAAM,SAAS,CAAA;AAMhE;;;;GAIG;AACH,qBAAa,2BAA4B,YAAW,kBAAkB;IACpE,IAAI,SAAgC;IAE9B,EAAE,CAAC,WAAW,EAAE,WAAW,GAAG,OAAO,CAAC,IAAI,CAAC;IA+V3C,IAAI,CAAC,WAAW,EAAE,WAAW,GAAG,OAAO,CAAC,IAAI,CAAC;CAGpD"}

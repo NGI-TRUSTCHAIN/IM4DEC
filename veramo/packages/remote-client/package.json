@@ -1,0 +1,55 @@
+{
+  "name": "@veramo/remote-client",
+  "description": "A remote client plugin for Veramo. Call the methods of a remote agent locally",
+  "version": "5.5.3",
+  "main": "build/index.js",
+  "exports": "./build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "extract-api": "node ../cli/bin/veramo.js dev extract-api"
+  },
+  "dependencies": {
+    "@veramo/core-types": "workspace:^",
+    "cross-fetch": "^4.0.0",
+    "debug": "^4.3.3",
+    "openapi-types": "12.1.3"
+  },
+  "devDependencies": {
+    "@types/debug": "4.1.8",
+    "typescript": "5.2.2"
+  },
+  "files": [
+    "build/**/*",
+    "src/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/decentralized-identity/veramo.git",
+    "directory": "packages/remote-client"
+  },
+  "author": "Consensys Mesh R&D <hello@veramo.io>",
+  "contributors": [
+    "Simonas Karuzas <simonas.karuzas@mesh.xyz>",
+    "Mircea Nistor <mircea.nistor@mesh.xyz>"
+  ],
+  "keywords": [
+    "Veramo",
+    "DID",
+    "Verifiable Credential",
+    "veramo-plugin",
+    "remote",
+    "OpenAPI"
+  ],
+  "license": "Apache-2.0",
+  "type": "module",
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ]
+}

@@ -1,0 +1,2231 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.36.3",
+    "schemaVersion": 1011,
+    "oldestForwardsCompatibleVersion": 1001,
+    "tsdocConfig": {
+      "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+      "noStandardTags": true,
+      "tagDefinitions": [
+        {
+          "tagName": "@alpha",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@beta",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@defaultValue",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@decorator",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@deprecated",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@eventProperty",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@example",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@experimental",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@inheritDoc",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@internal",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@label",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@link",
+          "syntaxKind": "inline",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@override",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@packageDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@param",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@privateRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@public",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@readonly",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@remarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@returns",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@sealed",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@see",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@throws",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@typeParam",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@virtual",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@betaDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@internalRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@preapproved",
+          "syntaxKind": "modifier"
+        }
+      ],
+      "supportForTags": {
+        "@alpha": true,
+        "@beta": true,
+        "@defaultValue": true,
+        "@decorator": true,
+        "@deprecated": true,
+        "@eventProperty": true,
+        "@example": true,
+        "@experimental": true,
+        "@inheritDoc": true,
+        "@internal": true,
+        "@label": true,
+        "@link": true,
+        "@override": true,
+        "@packageDocumentation": true,
+        "@param": true,
+        "@privateRemarks": true,
+        "@public": true,
+        "@readonly": true,
+        "@remarks": true,
+        "@returns": true,
+        "@sealed": true,
+        "@see": true,
+        "@throws": true,
+        "@typeParam": true,
+        "@virtual": true,
+        "@betaDocumentation": true,
+        "@internalRemarks": true,
+        "@preapproved": true
+      },
+      "reportUnsupportedHtmlElements": false
+    }
+  },
+  "kind": "Package",
+  "canonicalReference": "@veramo/selective-disclosure!",
+  "docComment": "/**\n * Provides a {@link @veramo/selective-disclosure#ISelectiveDisclosure | plugin} for the {@link @veramo/core#Agent} that implements {@link @veramo/selective-disclosure#SelectiveDisclosure} interface.\n *\n * Provides a {@link @veramo/selective-disclosure#SdrMessageHandler | plugin} for the {@link @veramo/message-handler#MessageHandler} that detects Selective Disclosure Request in a message\n *\n * @packageDocumentation\n */\n",
+  "name": "@veramo/selective-disclosure",
+  "preserveMemberOrder": false,
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "@veramo/selective-disclosure!",
+      "name": "",
+      "preserveMemberOrder": false,
+      "members": [
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/selective-disclosure!ICreateProfileCredentialsArgs:interface",
+          "docComment": "/**\n * Profile data\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ICreateProfileCredentialsArgs "
+            }
+          ],
+          "fileUrlPath": "src/types.ts",
+          "releaseTag": "Beta",
+          "name": "ICreateProfileCredentialsArgs",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ICreateProfileCredentialsArgs#holder:member",
+              "docComment": "/**\n * Holder DID\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "holder: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "holder",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ICreateProfileCredentialsArgs#name:member",
+              "docComment": "/**\n * Optional. Name\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "name?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "name",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ICreateProfileCredentialsArgs#picture:member",
+              "docComment": "/**\n * Optional. Picture URL\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "picture?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "picture",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ICreateProfileCredentialsArgs#save:member",
+              "docComment": "/**\n * Save presentation\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "save: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "save",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ICreateProfileCredentialsArgs#send:member",
+              "docComment": "/**\n * Send presentation\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "send: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "send",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ICreateProfileCredentialsArgs#url:member",
+              "docComment": "/**\n * Optional. URL\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "url?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "url",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ICreateProfileCredentialsArgs#verifier:member",
+              "docComment": "/**\n * Optional. Verifier DID\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "verifier?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "verifier",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/selective-disclosure!ICreateSelectiveDisclosureRequestArgs:interface",
+          "docComment": "/**\n * Contains the parameters of a Selective Disclosure Request.\n *\n * @remarks\n *\n * See {@link https://github.com/uport-project/specs/blob/develop/messages/sharereq.md | Selective Disclosure Request} specs\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ICreateSelectiveDisclosureRequestArgs "
+            }
+          ],
+          "fileUrlPath": "src/types.ts",
+          "releaseTag": "Beta",
+          "name": "ICreateSelectiveDisclosureRequestArgs",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ICreateSelectiveDisclosureRequestArgs#data:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "data: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ISelectiveDisclosureRequest",
+                  "canonicalReference": "@veramo/selective-disclosure!ISelectiveDisclosureRequest:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "data",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/selective-disclosure!ICredentialRequestInput:interface",
+          "docComment": "/**\n * Describes a particular credential that is being requested\n *\n * @remarks\n *\n * See {@link https://github.com/uport-project/specs/blob/develop/messages/sharereq.md | Selective Disclosure Request}\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ICredentialRequestInput "
+            }
+          ],
+          "fileUrlPath": "src/types.ts",
+          "releaseTag": "Beta",
+          "name": "ICredentialRequestInput",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ICredentialRequestInput#claimType:member",
+              "docComment": "/**\n * The name of the claim property that the credential should express.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "claimType: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "claimType",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ICredentialRequestInput#claimValue:member",
+              "docComment": "/**\n * The value of the claim that the credential should express.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "claimValue?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "claimValue",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ICredentialRequestInput#credentialContext:member",
+              "docComment": "/**\n * The credential context. See {@link https://www.w3.org/TR/vc-data-model/#contexts | W3C Credential Context}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "credentialContext?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "credentialContext",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ICredentialRequestInput#credentialType:member",
+              "docComment": "/**\n * The credential type. See {@link https://www.w3.org/TR/vc-data-model/#types | W3C Credential Types}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "credentialType?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "credentialType",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ICredentialRequestInput#essential:member",
+              "docComment": "/**\n * If it is essential. A response that does not include this credential is not sufficient.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "essential?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "essential",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ICredentialRequestInput#issuers:member",
+              "docComment": "/**\n * A list of accepted Issuers for this credential.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "issuers?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Issuer",
+                  "canonicalReference": "@veramo/selective-disclosure!Issuer:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "issuers",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ICredentialRequestInput#reason:member",
+              "docComment": "/**\n * Motive for requiring this credential.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "reason?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "reason",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/selective-disclosure!ICredentialsForSdr:interface",
+          "docComment": "/**\n * The credentials that make up a response of a Selective Disclosure\n *\n * @remarks\n *\n * See {@link https://github.com/uport-project/specs/blob/develop/messages/sharereq.md | Selective Disclosure Request}\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ICredentialsForSdr extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ICredentialRequestInput",
+              "canonicalReference": "@veramo/selective-disclosure!ICredentialRequestInput:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/types.ts",
+          "releaseTag": "Beta",
+          "name": "ICredentialsForSdr",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ICredentialsForSdr#credentials:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "credentials: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "UniqueVerifiableCredential",
+                  "canonicalReference": "@veramo/core-types!UniqueVerifiableCredential:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "credentials",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/selective-disclosure!IGetVerifiableCredentialsForSdrArgs:interface",
+          "docComment": "/**\n * Encapsulates the params needed to gather credentials to fulfill a Selective disclosure request.\n *\n * @remarks\n *\n * See {@link https://github.com/uport-project/specs/blob/develop/messages/sharereq.md | Selective Disclosure Request} specs\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IGetVerifiableCredentialsForSdrArgs "
+            }
+          ],
+          "fileUrlPath": "src/types.ts",
+          "releaseTag": "Beta",
+          "name": "IGetVerifiableCredentialsForSdrArgs",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!IGetVerifiableCredentialsForSdrArgs#did:member",
+              "docComment": "/**\n * The DID of the subject\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "did?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "did",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!IGetVerifiableCredentialsForSdrArgs#sdr:member",
+              "docComment": "/**\n * The Selective Disclosure Request (issuer is omitted)\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "sdr: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Omit",
+                  "canonicalReference": "!Omit:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ISelectiveDisclosureRequest",
+                  "canonicalReference": "@veramo/selective-disclosure!ISelectiveDisclosureRequest:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", 'issuer'>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "sdr",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/selective-disclosure!IPresentationValidationResult:interface",
+          "docComment": "/**\n * The result of a selective disclosure response validation.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IPresentationValidationResult "
+            }
+          ],
+          "fileUrlPath": "src/types.ts",
+          "releaseTag": "Beta",
+          "name": "IPresentationValidationResult",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!IPresentationValidationResult#claims:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "claims: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ICredentialsForSdr",
+                  "canonicalReference": "@veramo/selective-disclosure!ICredentialsForSdr:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "claims",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!IPresentationValidationResult#valid:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "valid: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "valid",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/selective-disclosure!ISelectiveDisclosure:interface",
+          "docComment": "/**\n * Describes the interface of a Selective Disclosure plugin.\n *\n * @remarks\n *\n * See {@link https://github.com/uport-project/specs/blob/develop/messages/sharereq.md | Selective Disclosure Request}\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ISelectiveDisclosure extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "IPluginMethodMap",
+              "canonicalReference": "@veramo/core-types!IPluginMethodMap:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/types.ts",
+          "releaseTag": "Beta",
+          "name": "ISelectiveDisclosure",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/selective-disclosure!ISelectiveDisclosure#createProfilePresentation:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "createProfilePresentation(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ICreateProfileCredentialsArgs",
+                  "canonicalReference": "@veramo/selective-disclosure!ICreateProfileCredentialsArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IAgentContext",
+                  "canonicalReference": "@veramo/core-types!IAgentContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ICredentialIssuer",
+                  "canonicalReference": "@veramo/core-types!ICredentialIssuer:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": " & "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDIDManager",
+                  "canonicalReference": "@veramo/core-types!IDIDManager:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "VerifiablePresentation",
+                  "canonicalReference": "@veramo/core-types!VerifiablePresentation:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 10,
+                "endIndex": 14
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 9
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "createProfilePresentation"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/selective-disclosure!ISelectiveDisclosure#createSelectiveDisclosureRequest:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "createSelectiveDisclosureRequest(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ICreateSelectiveDisclosureRequestArgs",
+                  "canonicalReference": "@veramo/selective-disclosure!ICreateSelectiveDisclosureRequestArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IAgentContext",
+                  "canonicalReference": "@veramo/core-types!IAgentContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDIDManager",
+                  "canonicalReference": "@veramo/core-types!IDIDManager:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": " & "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyManager",
+                  "canonicalReference": "@veramo/core-types!IKeyManager:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 10,
+                "endIndex": 12
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 9
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "createSelectiveDisclosureRequest"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/selective-disclosure!ISelectiveDisclosure#getVerifiableCredentialsForSdr:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getVerifiableCredentialsForSdr(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IGetVerifiableCredentialsForSdrArgs",
+                  "canonicalReference": "@veramo/selective-disclosure!IGetVerifiableCredentialsForSdrArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IAgentContext",
+                  "canonicalReference": "@veramo/core-types!IAgentContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDataStoreORM",
+                  "canonicalReference": "@veramo/core-types!IDataStoreORM:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Array",
+                  "canonicalReference": "!Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ICredentialsForSdr",
+                  "canonicalReference": "@veramo/selective-disclosure!ICredentialsForSdr:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 14
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 7
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "getVerifiableCredentialsForSdr"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/selective-disclosure!ISelectiveDisclosure#validatePresentationAgainstSdr:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "validatePresentationAgainstSdr(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IValidatePresentationAgainstSdrArgs",
+                  "canonicalReference": "@veramo/selective-disclosure!IValidatePresentationAgainstSdrArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IAgentContext",
+                  "canonicalReference": "@veramo/core-types!IAgentContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<{}>"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IPresentationValidationResult",
+                  "canonicalReference": "@veramo/selective-disclosure!IPresentationValidationResult:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 10
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "validatePresentationAgainstSdr"
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/selective-disclosure!ISelectiveDisclosureRequest:interface",
+          "docComment": "/**\n * Represents the Selective Disclosure request parameters.\n *\n * @remarks\n *\n * See {@link https://github.com/uport-project/specs/blob/develop/messages/sharereq.md | Selective Disclosure Request}\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ISelectiveDisclosureRequest "
+            }
+          ],
+          "fileUrlPath": "src/types.ts",
+          "releaseTag": "Beta",
+          "name": "ISelectiveDisclosureRequest",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ISelectiveDisclosureRequest#claims:member",
+              "docComment": "/**\n * A list of claims that are being requested\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "claims: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ICredentialRequestInput",
+                  "canonicalReference": "@veramo/selective-disclosure!ICredentialRequestInput:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "claims",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ISelectiveDisclosureRequest#credentials:member",
+              "docComment": "/**\n * A list of issuer credentials that the target will use to establish trust\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "credentials?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "credentials",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ISelectiveDisclosureRequest#issuer:member",
+              "docComment": "/**\n * The issuer of the request\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "issuer: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "issuer",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ISelectiveDisclosureRequest#replyUrl:member",
+              "docComment": "/**\n * The URL where the response should be sent back\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "replyUrl?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "replyUrl",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ISelectiveDisclosureRequest#subject:member",
+              "docComment": "/**\n * The target of the request\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "subject?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "subject",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!ISelectiveDisclosureRequest#tag:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "tag?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "tag",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/selective-disclosure!Issuer:interface",
+          "docComment": "/**\n * Used for requesting Credentials using Selective Disclosure. Represents an accepted issuer of a credential.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface Issuer "
+            }
+          ],
+          "fileUrlPath": "src/types.ts",
+          "releaseTag": "Beta",
+          "name": "Issuer",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!Issuer#did:member",
+              "docComment": "/**\n * The DID of the issuer of a requested credential.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "did: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "did",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!Issuer#url:member",
+              "docComment": "/**\n * A URL where a credential of that type can be obtained.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "url: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "url",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/selective-disclosure!IValidatePresentationAgainstSdrArgs:interface",
+          "docComment": "/**\n * A tuple used to verify a Selective Disclosure Response. Encapsulates the response(`presentation`) and the corresponding request (`sdr`) that made it.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IValidatePresentationAgainstSdrArgs "
+            }
+          ],
+          "fileUrlPath": "src/types.ts",
+          "releaseTag": "Beta",
+          "name": "IValidatePresentationAgainstSdrArgs",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!IValidatePresentationAgainstSdrArgs#presentation:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "presentation: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "VerifiablePresentation",
+                  "canonicalReference": "@veramo/core-types!VerifiablePresentation:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "presentation",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/selective-disclosure!IValidatePresentationAgainstSdrArgs#sdr:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "sdr: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ISelectiveDisclosureRequest",
+                  "canonicalReference": "@veramo/selective-disclosure!ISelectiveDisclosureRequest:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "sdr",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@veramo/selective-disclosure!MessageTypes:var",
+          "docComment": "/**\n * Identifies a {@link @veramo/core-types#IMessage} that represents a Selective Disclosure Request\n *\n * @remarks\n *\n * See {@link https://github.com/uport-project/specs/blob/develop/messages/sharereq.md | Selective Disclosure Request} This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "MessageTypes: "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    sdr: string;\n}"
+            }
+          ],
+          "fileUrlPath": "src/message-handler.ts",
+          "isReadonly": true,
+          "releaseTag": "Beta",
+          "name": "MessageTypes",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@veramo/selective-disclosure!SdrMessageHandler:class",
+          "docComment": "/**\n * A Veramo message handler plugin that can decode an incoming Selective Disclosure Response into the internal Message representation.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class SdrMessageHandler extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "AbstractMessageHandler",
+              "canonicalReference": "@veramo/message-handler!AbstractMessageHandler:class"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/message-handler.ts",
+          "releaseTag": "Beta",
+          "isAbstract": false,
+          "name": "SdrMessageHandler",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/selective-disclosure!SdrMessageHandler#handle:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "handle(message: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Message",
+                  "canonicalReference": "@veramo/message-handler!Message:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IAgentContext",
+                  "canonicalReference": "@veramo/core-types!IAgentContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMessageHandler",
+                  "canonicalReference": "@veramo/core-types!IMessageHandler:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Message",
+                  "canonicalReference": "@veramo/message-handler!Message:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 12
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "message",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 7
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "handle"
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          },
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@veramo/selective-disclosure!SelectiveDisclosure:class",
+          "docComment": "/**\n * This class adds support for creating {@link https://github.com/uport-project/specs/blob/develop/flows/selectivedisclosure.md | Selective Disclosure} requests and interpret the responses received.\n *\n * This implementation of the uPort protocol uses {@link https://www.w3.org/TR/vc-data-model/#presentations | W3C Presentation} as the response encoding instead of a `shareReq`.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class SelectiveDisclosure implements "
+            },
+            {
+              "kind": "Reference",
+              "text": "IAgentPlugin",
+              "canonicalReference": "@veramo/core-types!IAgentPlugin:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/action-handler.ts",
+          "releaseTag": "Beta",
+          "isAbstract": false,
+          "name": "SelectiveDisclosure",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "@veramo/selective-disclosure!SelectiveDisclosure:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `SelectiveDisclosure` class\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor();"
+                }
+              ],
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": []
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/selective-disclosure!SelectiveDisclosure#createProfilePresentation:member(1)",
+              "docComment": "/**\n * Creates profile credentials\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "createProfilePresentation(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ICreateProfileCredentialsArgs",
+                  "canonicalReference": "@veramo/selective-disclosure!ICreateProfileCredentialsArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IAgentContext",
+                  "canonicalReference": "@veramo/core-types!IAgentContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ICredentialIssuer",
+                  "canonicalReference": "@veramo/core-types!ICredentialIssuer:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": " & "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDIDManager",
+                  "canonicalReference": "@veramo/core-types!IDIDManager:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "VerifiablePresentation",
+                  "canonicalReference": "@veramo/core-types!VerifiablePresentation:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 10,
+                "endIndex": 14
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 9
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "createProfilePresentation"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/selective-disclosure!SelectiveDisclosure#createSelectiveDisclosureRequest:member(1)",
+              "docComment": "/**\n * Creates a Selective disclosure request, encoded as a JWT.\n *\n * @remarks\n *\n * See {@link https://github.com/uport-project/specs/blob/develop/flows/selectivedisclosure.md | Selective Disclosure}\n *\n * @param args - The param object with the properties necessary to create the request. See {@link ISelectiveDisclosureRequest}\n *\n * @param context - *RESERVED* This is filled by the framework when the method is called.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "createSelectiveDisclosureRequest(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ICreateSelectiveDisclosureRequestArgs",
+                  "canonicalReference": "@veramo/selective-disclosure!ICreateSelectiveDisclosureRequestArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IAgentContext",
+                  "canonicalReference": "@veramo/core-types!IAgentContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDIDManager",
+                  "canonicalReference": "@veramo/core-types!IDIDManager:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": " & "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyManager",
+                  "canonicalReference": "@veramo/core-types!IKeyManager:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 10,
+                "endIndex": 12
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 9
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "createSelectiveDisclosureRequest"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/selective-disclosure!SelectiveDisclosure#getVerifiableCredentialsForSdr:member(1)",
+              "docComment": "/**\n * Gathers the required credentials necessary to fulfill a Selective Disclosure Request. It uses a {@link @veramo/core-types#IDataStoreORM} plugin implementation to query the local database for the required credentials.\n *\n * @param args - Contains the Request to be fulfilled and the DID of the subject\n *\n * @param context - *RESERVED* This is filled by the framework when the method is called.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getVerifiableCredentialsForSdr(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IGetVerifiableCredentialsForSdrArgs",
+                  "canonicalReference": "@veramo/selective-disclosure!IGetVerifiableCredentialsForSdrArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IAgentContext",
+                  "canonicalReference": "@veramo/core-types!IAgentContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IDataStoreORM",
+                  "canonicalReference": "@veramo/core-types!IDataStoreORM:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ICredentialsForSdr",
+                  "canonicalReference": "@veramo/selective-disclosure!ICredentialsForSdr:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 12
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 7
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getVerifiableCredentialsForSdr"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@veramo/selective-disclosure!SelectiveDisclosure#methods:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly methods: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ISelectiveDisclosure",
+                  "canonicalReference": "@veramo/selective-disclosure!ISelectiveDisclosure:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "methods",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@veramo/selective-disclosure!SelectiveDisclosure#schema:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly schema: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        components: {\n            schemas: {\n                ICreateProfileCredentialsArgs: {\n                    type: string;\n                    properties: {\n                        holder: {\n                            type: string;\n                            description: string;\n                        };\n                        verifier: {\n                            type: string;\n                            description: string;\n                        };\n                        name: {\n                            type: string;\n                            description: string;\n                        };\n                        picture: {\n                            type: string;\n                            description: string;\n                        };\n                        url: {\n                            type: string;\n                            description: string;\n                        };\n                        save: {\n                            type: string; /**\n                             * This class adds support for creating\n                             * {@link https://github.com/uport-project/specs/blob/develop/flows/selectivedisclosure.md | Selective Disclosure}\n                             * requests and interpret the responses received.\n                             *\n                             * This implementation of the uPort protocol uses\n                             * {@link https://www.w3.org/TR/vc-data-model/#presentations | W3C Presentation}\n                             * as the response encoding instead of a `shareReq`.\n                             *\n                             * @beta This API may change without a BREAKING CHANGE notice.\n                             */\n                            description: string;\n                        };\n                        send: {\n                            type: string;\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                VerifiablePresentation: {\n                    type: string;\n                    properties: {\n                        proof: {\n                            $ref: string;\n                        };\n                        holder: {\n                            type: string;\n                        };\n                        verifiableCredential: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                        };\n                        type: {\n                            anyOf: ({\n                                type: string;\n                                items: {\n                                    type: string; /**\n                                     * Creates a Selective disclosure request, encoded as a JWT.\n                                     *\n                                     * @remarks See\n                                     *   {@link https://github.com/uport-project/specs/blob/develop/flows/selectivedisclosure.md | Selective Disclosure}\n                                     *\n                                     * @param args - The param object with the properties necessary to create the request. See\n                                     *   {@link ISelectiveDisclosureRequest}\n                                     * @param context - *RESERVED* This is filled by the framework when the method is called.\n                                     *\n                                     * @beta This API may change without a BREAKING CHANGE notice.\n                                     */\n                                };\n                            } | {\n                                type: string;\n                                items?: undefined;\n                            })[];\n                        };\n                        \"@context\": {\n                            $ref: string;\n                        };\n                        verifier: {\n                            type: string;\n                            items: {\n                                type: string;\n                            };\n                        };\n                        issuanceDate: {\n                            type: string;\n                        };\n                        expirationDate: {\n                            type: string;\n                        };\n                        id: {\n                            type: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                ProofType: {\n                    type: string;\n                    properties: {\n                        type: {\n                            type: string;\n                        };\n                    };\n                    description: string;\n                };\n                W3CVerifiableCredential: {\n                    anyOf: {\n                        $ref: string;\n                    }[];\n                    description: string;\n                };\n                VerifiableCredential: {\n                    type: string;\n                    properties: {\n                        proof: {\n                            $ref: string;\n                        };\n                        issuer: {\n                            $ref: string;\n                        };\n                        credentialSubject: {\n                            $ref: string;\n                        };\n                        type: {\n                            anyOf: ({\n                                type: string;\n                                items: {\n                                    type: string;\n                                };\n                            } | {\n                                type: string;\n                                items?: undefined;\n                            })[];\n                        };\n                        \"@context\": {\n                            $ref: string;\n                        };\n                        issuanceDate: {\n                            type: string;\n                        };\n                        expirationDate: {\n                            type: string;\n                        };\n                        credentialStatus: {\n                            $ref: string;\n                        };\n                        id: {\n                            type: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                IssuerType: {\n                    anyOf: ({\n                        type: string;\n                        properties: {\n                            id: {\n                                type: string;\n                            };\n                        };\n                        required: string[];\n                    } | {\n                        type: string;\n                        properties?: undefined;\n                        required?: undefined;\n                    })[];\n                    description: string;\n                };\n                CredentialSubject: {\n                    type: string;\n                    properties: {\n                        id: {\n                            type: string;\n                        };\n                    };\n                    description: string;\n                };\n                ContextType: {\n                    anyOf: ({\n                        type: string;\n                        items?: undefined;\n                    } | {\n                        type: string;\n                        items: {\n                            anyOf: {\n                                type: string;\n                            }[];\n                        };\n                    })[];\n                    description: string;\n                };\n                CredentialStatusReference: {\n                    type: string;\n                    properties: {\n                        id: {\n                            type: string;\n                        };\n                        type: {\n                            type: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                CompactJWT: {\n                    type: string;\n                    description: string;\n                };\n                ICreateSelectiveDisclosureRequestArgs: {\n                    type: string;\n                    properties: {\n                        data: {\n                            $ref: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                ISelectiveDisclosureRequest: {\n                    type: string;\n                    properties: {\n                        issuer: {\n                            type: string;\n                            description: string;\n                        };\n                        subject: {\n                            type: string;\n                            description: string;\n                        };\n                        replyUrl: {\n                            type: string;\n                            description: string;\n                        };\n                        tag: {\n                            type: string;\n                        };\n                        claims: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                            description: string;\n                        };\n                        credentials: {\n                            type: string;\n                            items: {\n                                type: string;\n                            };\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                ICredentialRequestInput: {\n                    type: string;\n                    properties: {\n                        reason: {\n                            type: string;\n                            description: string;\n                        };\n                        essential: {\n                            type: string;\n                            description: string;\n                        };\n                        credentialType: {\n                            type: string;\n                            description: string;\n                        };\n                        credentialContext: {\n                            type: string;\n                            description: string;\n                        };\n                        claimType: {\n                            type: string;\n                            description: string;\n                        };\n                        claimValue: {\n                            type: string;\n                            description: string;\n                        };\n                        issuers: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                Issuer: {\n                    type: string;\n                    properties: {\n                        did: {\n                            type: string;\n                            description: string;\n                        };\n                        url: {\n                            type: string;\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                IGetVerifiableCredentialsForSdrArgs: {\n                    type: string;\n                    properties: {\n                        sdr: {\n                            type: string;\n                            properties: {\n                                subject: {\n                                    type: string;\n                                    description: string;\n                                };\n                                replyUrl: {\n                                    type: string;\n                                    description: string;\n                                };\n                                tag: {\n                                    type: string;\n                                };\n                                claims: {\n                                    type: string;\n                                    items: {\n                                        $ref: string;\n                                    };\n                                    description: string;\n                                };\n                                credentials: {\n                                    type: string;\n                                    items: {\n                                        type: string;\n                                    };\n                                    description: string;\n                                };\n                            };\n                            required: string[];\n                            description: string;\n                        };\n                        did: {\n                            type: string;\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                ICredentialsForSdr: {\n                    type: string;\n                    properties: {\n                        reason: {\n                            type: string;\n                            description: string;\n                        };\n                        essential: {\n                            type: string;\n                            description: string;\n                        };\n                        credentialType: {\n                            type: string;\n                            description: string;\n                        };\n                        credentialContext: {\n                            type: string;\n                            description: string;\n                        };\n                        claimType: {\n                            type: string;\n                            description: string;\n                        };\n                        claimValue: {\n                            type: string;\n                            description: string;\n                        };\n                        issuers: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                            description: string;\n                        };\n                        credentials: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                UniqueVerifiableCredential: {\n                    type: string;\n                    properties: {\n                        hash: {\n                            type: string;\n                        };\n                        verifiableCredential: {\n                            $ref: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                IValidatePresentationAgainstSdrArgs: {\n                    type: string;\n                    properties: {\n                        presentation: {\n                            $ref: string;\n                        };\n                        sdr: {\n                            $ref: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                IPresentationValidationResult: {\n                    type: string;\n                    properties: {\n                        valid: {\n                            type: string;\n                        };\n                        claims: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n            };\n            methods: {\n                createProfilePresentation: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        $ref: string;\n                    };\n                };\n                createSelectiveDisclosureRequest: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        type: string;\n                    };\n                };\n                getVerifiableCredentialsForSdr: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        type: string;\n                        items: {\n                            $ref: string;\n                        };\n                    };\n                };\n                validatePresentationAgainstSdr: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        $ref: string;\n                    };\n                };\n            };\n        };\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "schema",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/selective-disclosure!SelectiveDisclosure#validatePresentationAgainstSdr:member(1)",
+              "docComment": "/**\n * Validates a {@link https://github.com/uport-project/specs/blob/develop/flows/selectivedisclosure.md | Selective Disclosure response} encoded as a `Presentation`\n *\n * @param args - Contains the request and the response `Presentation` that needs to be checked.\n *\n * @param context - *RESERVED* This is filled by the framework when the method is called.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "validatePresentationAgainstSdr(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IValidatePresentationAgainstSdrArgs",
+                  "canonicalReference": "@veramo/selective-disclosure!IValidatePresentationAgainstSdrArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IAgentContext",
+                  "canonicalReference": "@veramo/core-types!IAgentContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<{}>"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IPresentationValidationResult",
+                  "canonicalReference": "@veramo/selective-disclosure!IPresentationValidationResult:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 10
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "validatePresentationAgainstSdr"
+            }
+          ],
+          "implementsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

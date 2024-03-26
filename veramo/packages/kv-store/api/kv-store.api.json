@@ -1,0 +1,2879 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.36.3",
+    "schemaVersion": 1011,
+    "oldestForwardsCompatibleVersion": 1001,
+    "tsdocConfig": {
+      "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+      "noStandardTags": true,
+      "tagDefinitions": [
+        {
+          "tagName": "@alpha",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@beta",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@defaultValue",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@decorator",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@deprecated",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@eventProperty",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@example",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@experimental",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@inheritDoc",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@internal",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@label",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@link",
+          "syntaxKind": "inline",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@override",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@packageDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@param",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@privateRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@public",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@readonly",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@remarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@returns",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@sealed",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@see",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@throws",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@typeParam",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@virtual",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@betaDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@internalRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@preapproved",
+          "syntaxKind": "modifier"
+        }
+      ],
+      "supportForTags": {
+        "@alpha": true,
+        "@beta": true,
+        "@defaultValue": true,
+        "@decorator": true,
+        "@deprecated": true,
+        "@eventProperty": true,
+        "@example": true,
+        "@experimental": true,
+        "@inheritDoc": true,
+        "@internal": true,
+        "@label": true,
+        "@link": true,
+        "@override": true,
+        "@packageDocumentation": true,
+        "@param": true,
+        "@privateRemarks": true,
+        "@public": true,
+        "@readonly": true,
+        "@remarks": true,
+        "@returns": true,
+        "@sealed": true,
+        "@see": true,
+        "@throws": true,
+        "@typeParam": true,
+        "@virtual": true,
+        "@betaDocumentation": true,
+        "@internalRemarks": true,
+        "@preapproved": true
+      },
+      "reportUnsupportedHtmlElements": false
+    }
+  },
+  "kind": "Package",
+  "canonicalReference": "@veramo/kv-store!",
+  "docComment": "/**\n * Provides a {@link @veramo/did-manager#DIDManager | plugin} for the {@link @veramo/core#Agent} that implements {@link @veramo/core-types#IDIDManager} interface.\n *\n * @packageDocumentation\n */\n",
+  "name": "@veramo/kv-store",
+  "preserveMemberOrder": false,
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "@veramo/kv-store!",
+      "name": "",
+      "preserveMemberOrder": false,
+      "members": [
+        {
+          "kind": "Variable",
+          "canonicalReference": "@veramo/kv-store!Entities:var",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "Entities: "
+            },
+            {
+              "kind": "Content",
+              "text": "(typeof "
+            },
+            {
+              "kind": "Reference",
+              "text": "KeyValueStoreEntity",
+              "canonicalReference": "@veramo/kv-store!~KeyValueStoreEntity:class"
+            },
+            {
+              "kind": "Content",
+              "text": ")[]"
+            }
+          ],
+          "fileUrlPath": "src/store-adapters/typeorm/index.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "Entities",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/kv-store!IKeyValueStore:interface",
+          "docComment": "/**\n * A Key Value store is responsible for managing Values identified by keys.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IKeyValueStore<ValueType extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ValueStoreType",
+              "canonicalReference": "@veramo/kv-store!ValueStoreType:type"
+            },
+            {
+              "kind": "Content",
+              "text": "> "
+            }
+          ],
+          "fileUrlPath": "src/key-value-types.ts",
+          "releaseTag": "Beta",
+          "typeParameters": [
+            {
+              "typeParameterName": "ValueType",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "IKeyValueStore",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStore#clear:member(1)",
+              "docComment": "/**\n * Clear the whole store (delete all values)\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "clear(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyValueStore",
+                  "canonicalReference": "@veramo/kv-store!IKeyValueStore:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ValueType>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "clear"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStore#delete:member(1)",
+              "docComment": "/**\n * Delete a value from the store by key\n *\n * @param key - The key to delete the value for\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "delete(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "delete"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStore#deleteMany:member(1)",
+              "docComment": "/**\n * Delete multiple values by provided keys\n *\n * @param keys - The keys to delete the values for\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "deleteMany(keys: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean[]>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "keys",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "deleteMany"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStore#disconnect:member(1)",
+              "docComment": "/**\n * Disconnect the backing store. After this operation the store typically cannot be reused, unless the store object is re-instantiated\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "disconnect(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<void>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "disconnect"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStore#get:member(1)",
+              "docComment": "/**\n * Get a single value by key. Can be undefined as the underlying store typically will not throw an error for a non existing key\n *\n * @param key - Contains the key to search for\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ValueType | undefined>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "get"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStore#getAsValueData:member(1)",
+              "docComment": "/**\n * Get a single item as Value Data from the store. Will always return a Value Data Object, but the value in it can be undefined in case the actual store does not contain the value\n *\n * @param key - Contains the key to search for\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getAsValueData(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IValueData",
+                  "canonicalReference": "@veramo/kv-store!IValueData:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ValueType>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "getAsValueData"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStore#getIterator:member(1)",
+              "docComment": "/**\n * @remarks\n *\n * in order to consume the iterator, you need to use the for await syntax as follows:\n *\n * for await (const result of store.getIterator()) { console.log(result) }\n *\n * @returns An async iterator for all the keys in the store\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getIterator(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AsyncGenerator",
+                  "canonicalReference": "!AsyncGenerator:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<any, void>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "getIterator"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStore#getMany:member(1)",
+              "docComment": "/**\n * Get multiple values from the store. Will always return an array with values, but the values can be undefined in case the actual store does not contain the value for the respective key\n *\n * @param keys - Contains the keys to search for\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getMany(keys: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Array",
+                  "canonicalReference": "!Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ValueType | undefined>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "keys",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "getMany"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStore#getManyAsValueData:member(1)",
+              "docComment": "/**\n * Get multiple items as Value Data from the store. Will always return an array with Value Data Object, but the value in it can be undefined in case the actual store does not contain the value\n *\n * @param keys - Contains the keys to search for\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getManyAsValueData(keys: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Array",
+                  "canonicalReference": "!Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IValueData",
+                  "canonicalReference": "@veramo/kv-store!IValueData:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ValueType>>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 9
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "keys",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "getManyAsValueData"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStore#has:member(1)",
+              "docComment": "/**\n * Determine whether the store has the value belonging to the provided key\n *\n * @param key - The key to search for\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "has(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "has"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStore#set:member(1)",
+              "docComment": "/**\n * Store a single value\n *\n * @param key - The key\n *\n * @param value - The value\n *\n * @param ttl - An optional number how long to store the value in milliseconds. If not provided will be stored indefinitely\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "set(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", value: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ValueType"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", ttl?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IValueData",
+                  "canonicalReference": "@veramo/kv-store!IValueData:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ValueType>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 11
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "value",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "ttl",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
+                  },
+                  "isOptional": true
+                }
+              ],
+              "name": "set"
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/kv-store!IKeyValueStoreAdapter:interface",
+          "docComment": "/**\n * A store adapter implementation needs to provide namespace support\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IKeyValueStoreAdapter<ValueType> "
+            }
+          ],
+          "fileUrlPath": "src/key-value-types.ts",
+          "releaseTag": "Beta",
+          "typeParameters": [
+            {
+              "typeParameterName": "ValueType",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "IKeyValueStoreAdapter",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStoreAdapter#namespace:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "namespace?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "namespace",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/kv-store!IKeyValueStoreOnArgs:interface",
+          "docComment": "/**\n * Event listener arguments\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IKeyValueStoreOnArgs "
+            }
+          ],
+          "fileUrlPath": "src/key-value-types.ts",
+          "releaseTag": "Beta",
+          "name": "IKeyValueStoreOnArgs",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStoreOnArgs#eventName:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "eventName: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | symbol"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "eventName",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStoreOnArgs#listener:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "listener: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "(...args: any[]) => void"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "listener",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/kv-store!IKeyValueStoreOptions:interface",
+          "docComment": "/**\n * Options for the Key Value store\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IKeyValueStoreOptions<ValueType> "
+            }
+          ],
+          "fileUrlPath": "src/key-value-types.ts",
+          "releaseTag": "Beta",
+          "typeParameters": [
+            {
+              "typeParameterName": "ValueType",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "IKeyValueStoreOptions",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "IndexSignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStoreOptions:index(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "[key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "]: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "any"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ]
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStoreOptions#emitErrors:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "emitErrors?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "emitErrors",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStoreOptions#namespace:member",
+              "docComment": "/**\n * Namespace for the current instance.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "namespace?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "namespace",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStoreOptions#store:member",
+              "docComment": "/**\n * The storage adapter instance to be used by Keyv. or any other implementation\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "store: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyValueStoreAdapter",
+                  "canonicalReference": "@veramo/kv-store!IKeyValueStoreAdapter:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ValueType> | "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Map",
+                  "canonicalReference": "!Map:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, ValueType>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "store",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStoreOptions#ttl:member",
+              "docComment": "/**\n * Default TTL. Can be overridden by specifying a TTL on `.set()`.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "ttl?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "ttl",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStoreOptions#uri:member",
+              "docComment": "/**\n * The connection string URI.\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "uri?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "uri",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/kv-store!IValueData:interface",
+          "docComment": "/**\n * This is how the store will actually store the value. It contains an optional `expires` property, which indicates when the value would expire\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IValueData<ValueType> "
+            }
+          ],
+          "fileUrlPath": "src/key-value-types.ts",
+          "releaseTag": "Beta",
+          "typeParameters": [
+            {
+              "typeParameterName": "ValueType",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "IValueData",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/kv-store!IValueData#expires:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "expires?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "expires",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/kv-store!IValueData#value:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "value?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ValueType"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": true,
+              "releaseTag": "Beta",
+              "name": "value",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@veramo/kv-store!KeyValueStore:class",
+          "docComment": "/**\n * Class that implements the {@link @veramo/kv-store#IKeyValueStore} interface\n *\n * This class is a Key Value store that leverages a port of the keyv package internally. The store does not leak the types of the Keyv port, so it could be replaced with another implementations if we want to.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class KeyValueStore<ValueType extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "ValueStoreType",
+              "canonicalReference": "@veramo/kv-store!ValueStoreType:type"
+            },
+            {
+              "kind": "Content",
+              "text": "> implements "
+            },
+            {
+              "kind": "Reference",
+              "text": "IKeyValueStore",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStore:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<ValueType>"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/key-value-store.ts",
+          "releaseTag": "Public",
+          "typeParameters": [
+            {
+              "typeParameterName": "ValueType",
+              "constraintTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "isAbstract": false,
+          "name": "KeyValueStore",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "@veramo/kv-store!KeyValueStore:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `KeyValueStore` class\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(options: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyValueStoreOptions",
+                  "canonicalReference": "@veramo/kv-store!IKeyValueStoreOptions:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ValueType>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 3
+                  },
+                  "isOptional": false
+                }
+              ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueStore#clear:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "clear(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyValueStore",
+                  "canonicalReference": "@veramo/kv-store!IKeyValueStore:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ValueType>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "clear"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueStore#delete:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "delete(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "delete"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueStore#deleteMany:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "deleteMany(keys: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean[]>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "keys",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "deleteMany"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueStore#disconnect:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "disconnect(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<void>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "disconnect"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueStore#get:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ValueType | undefined>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "get"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueStore#getAsValueData:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getAsValueData(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IValueData",
+                  "canonicalReference": "@veramo/kv-store!IValueData:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ValueType>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getAsValueData"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueStore#getIterator:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getIterator(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AsyncGenerator",
+                  "canonicalReference": "!AsyncGenerator:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<[key: string, value: ValueType], void>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getIterator"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueStore#getMany:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getMany(keys?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Array",
+                  "canonicalReference": "!Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ValueType | undefined>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "keys",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getMany"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueStore#getManyAsValueData:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getManyAsValueData(keys: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Array",
+                  "canonicalReference": "!Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IValueData",
+                  "canonicalReference": "@veramo/kv-store!IValueData:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ValueType>>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 9
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "keys",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getManyAsValueData"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueStore#has:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "has(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "has"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueStore#kvStoreOn:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "kvStoreOn(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyValueStoreOnArgs",
+                  "canonicalReference": "@veramo/kv-store!IKeyValueStoreOnArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyValueStore",
+                  "canonicalReference": "@veramo/kv-store!IKeyValueStore:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ValueType>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "kvStoreOn"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueStore#set:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "set(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", value: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "ValueType"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", ttl?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IValueData",
+                  "canonicalReference": "@veramo/kv-store!IValueData:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<ValueType>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 11
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "value",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "ttl",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "set"
+            }
+          ],
+          "implementsTokenRanges": [
+            {
+              "startIndex": 3,
+              "endIndex": 5
+            }
+          ]
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@veramo/kv-store!KeyValueTypeORMOptions:type",
+          "docComment": "/**\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type KeyValueTypeORMOptions = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    dbConnection: "
+            },
+            {
+              "kind": "Reference",
+              "text": "OrPromise",
+              "canonicalReference": "@veramo/utils!OrPromise:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "DataSource",
+              "canonicalReference": "typeorm!DataSource:class"
+            },
+            {
+              "kind": "Content",
+              "text": ">;\n    namespace?: string;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/store-adapters/typeorm/types.ts",
+          "releaseTag": "Public",
+          "name": "KeyValueTypeORMOptions",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 6
+          }
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@veramo/kv-store!KeyValueTypeORMStoreAdapter:class",
+          "docComment": "/**\n * TypeORM based key value store adapter\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class KeyValueTypeORMStoreAdapter extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "EventEmitter",
+              "canonicalReference": "@veramo/kv-store!~EventEmitter"
+            },
+            {
+              "kind": "Content",
+              "text": " implements "
+            },
+            {
+              "kind": "Reference",
+              "text": "KeyvStore",
+              "canonicalReference": "@veramo/kv-store!~KeyvStore:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<string>"
+            },
+            {
+              "kind": "Content",
+              "text": ", "
+            },
+            {
+              "kind": "Reference",
+              "text": "IKeyValueStoreAdapter",
+              "canonicalReference": "@veramo/kv-store!IKeyValueStoreAdapter:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<string>"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/store-adapters/typeorm/index.ts",
+          "releaseTag": "Beta",
+          "isAbstract": false,
+          "name": "KeyValueTypeORMStoreAdapter",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "@veramo/kv-store!KeyValueTypeORMStoreAdapter:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `KeyValueTypeORMStoreAdapter` class\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(options: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "KeyValueTypeORMOptions",
+                  "canonicalReference": "@veramo/kv-store!KeyValueTypeORMOptions:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueTypeORMStoreAdapter#clear:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "clear(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<void>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "clear"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueTypeORMStoreAdapter#delete:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "delete(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "delete"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueTypeORMStoreAdapter#deleteMany:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "deleteMany(keys: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "keys",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "deleteMany"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueTypeORMStoreAdapter#disconnect:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "disconnect(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<void>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "disconnect"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueTypeORMStoreAdapter#get:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "get(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string | string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", options?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        raw?: boolean;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "KeyvStoredData",
+                  "canonicalReference": "@veramo/kv-store!~KeyvStoredData:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string> | "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Array",
+                  "canonicalReference": "!Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "KeyvStoredData",
+                  "canonicalReference": "@veramo/kv-store!~KeyvStoredData:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 13
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "get"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueTypeORMStoreAdapter#getMany:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getMany(keys: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string[]"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", options?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        raw?: boolean;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Array",
+                  "canonicalReference": "!Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "KeyvStoredData",
+                  "canonicalReference": "@veramo/kv-store!~KeyvStoredData:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 11
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "keys",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getMany"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueTypeORMStoreAdapter#has:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "has(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "has"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueTypeORMStoreAdapter#iterator:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "iterator(namespace?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AsyncGenerator",
+                  "canonicalReference": "!AsyncGenerator:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<any, void, unknown>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "namespace",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "iterator"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@veramo/kv-store!KeyValueTypeORMStoreAdapter#namespace:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly namespace: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "namespace",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@veramo/kv-store!KeyValueTypeORMStoreAdapter#opts:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "opts: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Options_",
+                  "canonicalReference": "@veramo/kv-store!~Options__2:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "opts",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/kv-store!KeyValueTypeORMStoreAdapter#set:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "set(key: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", value: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", ttl?: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "number"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "KeyvStoredData",
+                  "canonicalReference": "@veramo/kv-store!~KeyvStoredData:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 11
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "value",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "ttl",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
+                  },
+                  "isOptional": true
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "set"
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          },
+          "implementsTokenRanges": [
+            {
+              "startIndex": 3,
+              "endIndex": 5
+            },
+            {
+              "startIndex": 6,
+              "endIndex": 8
+            }
+          ]
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@veramo/kv-store!kvStoreMigrations:var",
+          "docComment": "/**\n * The migrations array that SHOULD be used when initializing a TypeORM database connection.\n *\n * These ensure the correct creation of tables and the proper migrations of data when tables change between versions.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "kvStoreMigrations: "
+            },
+            {
+              "kind": "Content",
+              "text": "(typeof "
+            },
+            {
+              "kind": "Reference",
+              "text": "CreateKVDatabaseMigration",
+              "canonicalReference": "@veramo/kv-store!~CreateKVDatabaseMigration:class"
+            },
+            {
+              "kind": "Content",
+              "text": ")[]"
+            }
+          ],
+          "fileUrlPath": "src/store-adapters/typeorm/migrations/index.ts",
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "kvStoreMigrations",
+          "variableTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@veramo/kv-store!ValueStoreType:type",
+          "docComment": "/**\n * The types that can be stored by a store adapter\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ValueStoreType = "
+            },
+            {
+              "kind": "Content",
+              "text": "object | string | number | boolean"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/key-value-types.ts",
+          "releaseTag": "Public",
+          "name": "ValueStoreType",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        }
+      ]
+    }
+  ]
+}

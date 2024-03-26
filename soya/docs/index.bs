@@ -1,0 +1,500 @@
+<style>
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: var(--bg);
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+
+
+<pre class="metadata">
+Boilerplate: idl-index no, property-index no
+</pre>
+
+<pre class='metadata'>
+Title: Semantic Overlay Architecture
+Shortname: soya-spec
+Level: 1
+Status: w3c/CG-DRAFT
+Group: w3c-ccg
+URL: https://ownyourdata.github.io/soya/
+
+Editor: Christoph Fabianek, OwnYourData https://OwnYourData.eu, christoph@ownyourdata.eu, https://www.linkedin.com/in/fabianek/
+Editor: Fajar J. Ekaputra, OwnYourData https://OwnYourData.eu, fajar.ekaputra@tuwien.ac.at
+Editor: Gabriel Unterholzer, OwnYourData https://OwnYourData.eu, gabriel.unterholzer@dec112.at
+
+Abstract: Draft recommendations for data model authoring and publishing platform
+Markup Shorthands: markdown yes
+</pre>
+
+<pre class="biblio">
+{
+    "JSON-LD": {
+        "authors": [ "Gregg Kellogg", "Pierre-Antoine Champin", "Dave Longley" ],
+        "href": "https://www.w3.org/TR/json-ld/",
+        "title": "JSON-LD 1.1",
+        "status": "W3C Recommendation",
+        "publisher": "W3C"
+    },
+    "MULTIBASE": {
+        "href": "https://tools.ietf.org/html/draft-multiformats-multibase",
+        "title": "IETF Multibase Data Format specification"
+    },
+    "MULTIHASH": {
+        "href": "https://github.com/multiformats/multihash",
+        "title": "Multihash - protocol for differentiating outputs from various well-established cryptographic hash functions"
+    }
+}
+</pre>
+
+This specification is not a W3C Standard nor is it on the W3C Standards Track. Learn more about [W3C Community and Business Groups](https://www.w3.org/community/). [GitHub Issues](https://github.com/OwnYourData/soya/issues) are preferred for discussion of this specification.
+
+Sections of this document have also been submitted to [ICoDSE 2023](https://icodse.org/) as part of a paper.
+
+## History ## {#history}
+
+* Version 0.1: 19 October 2021 (initial draft, [link](https://github.com/OwnYourData/soya/blob/main/docs/https://github.com/OwnYourData/soya/blob/main/docs/SOyA_WhitePaper_Nov21.pdf))
+* Version 0.2: 28 February 2022 (current version)
+
+
+Introduction {#intro}
+============
+
+SOyA is a data model authoring and publishing platform and also provides functionalities for validation and transformation. It includes a libray for integration in other projects, a command line tool for interactive data model management, and an online repository for hosting data models.
+
+<p align="center"> 
+  <img src="res/overview.png" width="800"><br>
+  <em>Figure 1: Building blocks in SOyA</em>
+</p>
+</div>
+
+
+## Terminology ## {#terminology}
+
+This document uses the following terms as defined in external specifications and defines terms specific to SOyA.
+
+<div dfn-for=terms export>
+    : <dfn lt=Attributes>Attribute</dfn>
+    :: in a [=terms/Base=] a single field with a name and associated type<br>
+            *in RDF:* a single data type or object property
+
+    : <dfn lt=base|bases|Bases>Base</dfn>
+    :: has a name and a list of [=terms/Attributes=] with associated type<br>
+            *in RDF:* an RDF Class with one or more properties
+
+    : <dfn lt=DRIs>DRI</dfn>
+    :: A **D**ecentralized **R**esource **I**dentifier represents a content based address for a [=terms/structure]. Within SOyA Multihash [[MULTIHASH]] (default: `sha2-256`) is used for hashing a JSON object and Multibase [[MULTIBASE]] (default: `base58-btc`) for encoding the hash value.
+
+    : <dfn>Instance</dfn>
+    :: is a data record (e.g. an data describing an employee) with a set of properties as defined in a [=terms/Base=] or [=terms/Structure=]<br>
+            *in RDF:* instance of an RDF Class
+
+    : <dfn lt=overlay|overlays|Overlays>Overlay</dfn>
+    :: additional information about a [=terms/Base=]<br>
+        *in RDF:* annotation properties attached to an RDF Class or Property
+
+    : <dfn>Repository</dfn>
+    :: online storage for [=terms/Structures=] with versioning capabilities
+
+    : <dfn lt=Structures|structure>Structure</dfn>
+    :: a combination of [=terms/Bases=] and [=terms/Overlays=]<br>
+        *in RDF:* an ontology
+</div>
+
+## Design Goals and Rationale ## {#goals}
+
+SOyA satisfies the following design goals:
+
+* **Open:** all components are open source, free to use (incl. commercially), and publicly accessible (Github, public Repository)    
+* **Extensible:** design is inherently supposed to be extended through own definitions, extensions, concepts    
+* **Compatible:** allow seamlessly switching between data formats to use the best technology for the given use case
+* **Ease of use:** make it as simple as possible (but not simpler!) through documentation (e.g., tutorials, examples), authoring tools (e.g., YAML for initial description), UI components (web form), and integration (e.g., Semantic Containers)
+* **Focus on Semantic Web:** build on top of and make use of the Semantic Web Stack
+* **Decentralised:** avoid any centralized components or addressing (i.e., use decentralized resource identifiers - [=terms/DRIs=] - where possible) 
+
+## Motivation ## {#motivation}
+
+The escalating significance of data in the past twenty years has propelled organizations in various sectors to shift towards data-centric operations. Traditionally, these entities relied on relational databases as their primary data repositories. Yet, the rapid surge in data volume has highlighted the drawbacks of such databases, notably their expensive adaptability requirements and the challenges in ensuring compatibility between different data sources.
+
+RDF, along with associated semantic web technologies, stands out as a neutral platform, offering graph data as a solution to the aforementioned relational database problems. Nevertheless, the perceived complexities in utilizing RDF have relegated it to a niche status, limiting its widespread adoption and diminishing its viability for many applications.
+
+To combat these issues, the Semantic Overlay Architecture (SOyA) has been introduced. This offers a nimble, semantic-web centric strategy for data amalgamation and exchange. At its heart lies the SOyA structure: a YAML-based data design that's compatible with RDF. This structure includes one or more soya:[=terms/Base=] entities, which denote RDF classes and attributes, and possibly several soya:[=terms/Overlay=] elements that add depth and context to the soya:Base while also defining processing guidelines. Additionally, to aid developers with routine graph data operations, predefined soya:Overlay types are available, like soya:AnnotationOverlay for data model elaboration and soya:ValidationOverlay for checks and balances.
+
+## Lifecycle of RDF Data Engineering ## {#lifecycle}
+
+A standard process for constructing and sustaining knowledge in knowledge graphs is segmented into four stages: (i) knowledge creation, (ii) knowledge hosting, (iii) knowledge curation, and (iv) knowledge deployment. This process is designed to overcome two primary obstacles: firstly, merging data from diverse sources in an efficient manner, and secondly, crafting a superior-quality resource tailored to specific applications. Alongside this process, there are three key roles evident in data-driven entities: Data Engineers, who primarily gather and manage data; Knowledge Scientists, whose goal is to ensure data reliability; and Data Scientists, who extract insights from the data.
+
+The Semantic Overlay Architecture (SOyA) strategy is intended to simplify the entry for those unfamiliar with semantic web expertise, enabling them to harness semantic web tools for their data compatibility and exchange requirements. Specifically, SOyA seeks to guide users through the stages of the Knowledge Graph process mentioned earlier.
+
+<p align="center">
+  <img src="res/concept.png" width="800"><br>
+  <em>Figure 2: Conceptual view of SOyA</em>
+</p>
+</div>
+
+A **Knowledge Scientist** is responsible for designing the data model for certain applications. This person has considerable experience in data modeling, however, does not necessarily have the knowledge of Semantic Web technologies. Unlike Data Engineers, the focus is mainly on the data model and does not concern with populating the data model with data instances. The following requirements are identified:
+
+* *Data Modeling and Constraint Definition:* In order to speed up the engineering process, its necessary to easily describe the structure and properties of a dataset to create a semantically well-defined model. This includes possibilities to define constraints on the data model.
+
+* *Data Model Alignment:* to achieve interoperability between data from heterogeneous data sources, it is paramount to be able to map data models to existing other data models, e.g., existing ontologies.
+
+* *Data Model Management:* to re-use existing data models it is beneficial to search and browse online repositories, as well as be ableto pull data models to a local repository. Furthermore, it is important to efficiently manage data models in respect to versioning and comparison between models.
+
+A **Data Engineer** works in a variety of settings to build systems that collect, manage, and convert raw data into usable information for other stakeholders to interpret and use.  The following requirements are identified:
+
+* *Data Acquisition and Validation*: includes acquiring data from legacy sources into a common data model used by the organization; furthermore, it should be possible to ensure that acquired data is valid according to certain validation rules.
+
+* *Data Instance Management:* ensure that the acquired data is stored and available for further use, i.e., a mechanism to store and retrieve data.
+
+* *Data Transformation and Serialization:* a common use case is to transform and serialize data from one data model to others, as well as export it in different formats. 
+
+
+
+Composition {#composition}
+===========
+
+The Semantic Overlay Architecture (SOyA) is built on the following core components to describe and manage data models. Those components are:
+
+* **Structures:** description of a data model using bases and overlays together with some meta attributes
+* **Ontologies:** OWL2 compliant representation of data models (that can be generated automatically from structures)
+* **SW Stack:** integration of established technologies to handle instances of data and data models - SHACL, jq, jolt, Semantic Container
+
+<p align="center">
+  <img src="res/components.png" width="800"><br>
+  <em>Figure 3: SOyA Components</em>
+</p>
+</div>
+
+
+Structures {#structure_element}
+----------
+
+All artefacts ([=terms/bases=] and [=terms/overlays=]) in SOyA are declared in a [=terms/structure=] and it holds the following information:
+* meta    
+    * name    
+    * context    
+    * namespace    
+* content    
+    * bases    
+    * overlays    
+
+<div class=example id=structure_example>
+An example structure.
+<pre class=include>
+path: examples/structure.html
+</pre>
+</div>
+
+
+### Meta ### {#meta_element}
+
+The `meta` section in a structure defines the name of the structure, specifies an optional context (default: https://ns.ownyourdata.eu/soya/soya-context.json), and allows to reference namespaces (exiting ontologies).
+
+### Base ### {#base_element}
+
+A [=terms/base=] declares a dataset and holds the following information:
+* name
+* subClassOf (optional)
+* list of attribute names and associated type
+
+When a base is represented in RDF it is a class with one or more properties. Each property itself is a single data type or an object property referencing another base. `subClassOf` optionally allows to inherit properties/attributes from other existing classes.  Multiple bases can be combined in a structure for related concepts.
+
+<div class=example id=base_example>
+An example base.
+<pre class=include>
+path: examples/base.html
+</pre>
+</div>
+
+
+### Overlay ### {#overlay_element}
+
+Overlays provide addtional information for a defined base. This information can either be directly included in a structure together with a base or is provided independently and linked to the relevant base. The following types of overlays are pre-defined in default `context` (https://ns.ownyourdata.eu/soya/soya-context.json):
+
+* **Alignment:** reference existing RDF definitions (e.g. foaf); this also includes declaring a derived base so that attributes can be pre-filled from a data store holding a record with that base (e.g.,  don't require first name, last name to be entered but filled out automatically)    
+* **Annotation:** translations in different languages for name and descriptions of base names, labels, and descriptions    
+* **Classification:** select a subset of the attributes (e.g., personally identifiable information - PII, configuring list views)    
+* **Encoding:** specify the character set encoding used in storing the data of an instance (e.g., UTF-8)    
+* **Form:** configure rendering HTML forms for visualizing and editing instances    
+* **Format:** defines how data is presented to the user    
+* **Transformation:** define a set of transformation rules for a data record    
+* **Validation:** predefined entries, range selection, any other validation incl. input methods    
+
+It is possible to create additional overlay types by using another context.
+
+<div class=example id=overlay_example>
+An overlay example.
+<pre class=include>
+path: examples/overlay.html
+</pre>
+</div>
+
+
+Semantic Web Standards Adoption {#semantic_web}
+-------------------------------
+
+### Data Model: RDFS/OWL ### {#rdfs_owl}
+
+A SOyA structure is designed to comply with the semantic web standards (i.e., RDFS/OWL) for data model representations. The goal is to ensure compatibility and reusability of SOyA data and data models with the established semantic web technology stack, e.g., SOLID and schema.org, as well as opening up the possibility to use relevant tools and methods, e.g., SHACL, RML, Triplestores. Furthermore, this decision would allow for higher interoperability with the currently available linked (open) data.
+
+
+### Data Serialization: JSON-LD ### {#jsonld}
+
+We chose [[JSON-LD]] as the default serialization in SOyA for the following reasons:    
+
+i) JSON-LD status as a W3C recommendation ensures a stable standard for the foreseeable future    
+ii) Rich supports of tools    
+iii) Ease of use by both developers and knowledge engineers    
+iv) Compatibility to RDF    
+
+Furthermore, tools supporting JSON data manipulation and visualizations are widely available.
+
+With the above stated it is also important to note that it is possible to support with SOyA also other serialization formats like Turtle, N-Quads, or even Labeled Property Graphs.
+
+
+SW Stack {#sw-stack}
+--------
+
+SOyA integrates with a number of established tools to provide its functionalities.
+
+### SHACL ### {#shacl}
+
+SHACL (Shapes Constraint Language) is a language for validating RDF graphs against a set of conditions - find [more information here](https://www.w3.org/TR/shacl/). It is used in Validation overlays.
+
+<em>Note: use the [online SHACL Playground](https://shacl-playground.zazuko.com/) to test your validations</em>
+
+<div class=example id=shacl_example>
+A validation overlay example with SHACL notation.
+<pre class=include>
+path: examples/shacl.html
+</pre>
+</div>
+
+
+### jq ### {#jq}
+
+`jq` is a lightweight and flexible command-line JSON processor - find [more information here](https://stedolan.github.io/jq/). It can be used in Transformation overlays.
+
+<em>Note: use the [online jq playground](https://jqplay.org/) to test your jq transformation</em>
+
+<div class=example id=jq_example>
+A transformation overlay example using jq.
+<pre class=include>
+path: examples/jq.html
+</pre>
+</div>
+
+
+### Jolt ### {#jolt}
+
+Jolt is a library for JSON to JSON transformation where the "specification" for the transform is itself a JSON document - find [more information here](https://github.com/bazaarvoice/jolt/#jolt). It can be used in Transformation overlays.
+
+<em>Note: use the [online Jolt Transformation Demo](http://jolt-demo.appspot.com/#inception) to test your jolt transformation</em>
+
+<div class=example id=jolt_example>
+A transformation overlay example using Jolt.
+<pre class=include>
+path: examples/jolt.html
+</pre>
+</div>
+
+
+### Semantic Container ### {#semcon}
+
+Semantic Container are transient data stores and provide interoperability and traceability features. For SOyA Semantic Containers provide the framework to store instances (data records associated with a structure through a schema DRI) and host the SOyA form feature for editing instances - find [more information here](https://www.OwnYourData.eu/semcon).
+
+
+Features {#features}
+========
+
+Authoring {#authoring}
+---------
+
+SOyA as authoring platform for data models allows to describe a dataset using a simple notation in YML. Listing attributes and data types in an easy and human-readable form and providing meta attributes defines a [=terms/base=] (data model). Additionally, a number of optionally associated [=terms/overlays=] can define specific behaviour. This input (YML) is then transformed using the [SOyA CLI](#cli) into JSON-LD for a standards-based representation.
+
+**Specific Authoring Functions:**    
+
+* predefined [=terms/Overlay=] types: alignment, annotation, classification, encoding, format, transformation, transformation, validation    
+* `subClassOf`: referencing base classes    
+* nesting: use intendation to implicitly use `subClassOf` property    
+
+
+Publishing {#publishing}
+----------
+
+An important aspect of SOyA is the collaboration on developing data models. A repository to host SOyA structures is an integral part of the workflow and the [SOyA CLI](#cli) provides a number of functions to interact with a repository. A default, public repository is hosted at `soya.ownyourdata.eu` with the [OpenAPI Specification available](https://api-docs.ownyourdata.eu/soya/). Private repositories can be hosted using [sources on Github](https://github.com/OwnYourData/soya/tree/main/repository) or [pre-built Docker images](https://hub.docker.com/r/oydeu/soya-base).
+
+**Specific Publishing Functions:**    
+
+* `soya push` reads a valid SOyA structure from STDIN and stores it in the repository    
+* every stored SOyA structure can be accessed through the defined human-readable name and is additionally available using a content-based address ([=terms/DRI=]); the human-readable version can be overwritten by a new version, while the version with the content-based address is kept unchanged and continues to be available for interoperability   
+* `soya pull` retrieves the specified SOyA structures and writes to STDOUT    
+* `soya similar` compares a valid SOyA structure read from STDIN with other structures in the repository and displays the top 20 matching structures in decreasing order of similarity    
+* `soya info` show detailed information (bases, overlays, history, DRI version) for a specifed SOyA structure    
+* search for structures based on parts of the name (only available via API)    
+
+
+Acquisition {#acquisition}
+----------
+
+The acquisition feature allows to transform flat JSON data into linked data (in JSON-LD) based on matching attribute names.
+
+<div class=example id=acquire_example>
+An acquisition example.
+<pre class=include>
+path: examples/acquire.html
+</pre>
+</div>
+
+
+Validation {#validation}
+----------
+
+Through validation a given JSON-LD record (or an array of records) can be validated against a SOyA structure that includes an validation [=terms/overlay=]. (Currently, [\SHACL](#shacl) (Shapes Constraint Language) is used in validation overlays.)
+
+<div class=example id=validation_feature_example>
+An example command to perform a validation.
+<pre>
+curl -s https://playground.data-container.net/cfa | soya acquire Employee | soya validate Employee
+</pre>
+</div>
+
+
+Transformation {#transformation}
+--------------
+
+Transformations allow to convert a JSON-LD record (or an array of records) with a well-defined data model (based on a SOyA structure) into another data model using information from a tranformation [=terms/overlay=]. (Currently, [jq](#jq) and [Jolt](#jolt) are available engines for transformation overlays.)
+
+<div class=example id=transformation_feature_example>
+An example command to perform a transformation.
+<pre>
+curl -s https://playground.data-container.net/PersonAinstance | soya transform PersonB
+</pre>
+</div>
+
+
+Forms {#forms}
+-----
+
+Based on SOyA structures forms can be generated automatically, allowing for visulization and editing of data records. While basic editing functionality relies on SOyA bases only, more complex forms can be achieved by providing additional overlays, like validation overlays for enhanced form validation. Furthermore, annotation overlays allow for internationalization of SOyA forms, providing multi-language display. Finally, a form overlay provides extensive configuraiton to fine-tune arranging and displaying controls.    
+
+SOyA forms are based on the [JSON-Forms framework](https://jsonforms.io/) and therefore come with adapters for different UI libraries and frameworks, allowing for easy integration in already existing projects.
+
+<div class=example id=forms_feature_example>
+An example command to generate a form for a SOyA structure.
+<pre>
+soya pull Employee | soya form
+</pre>
+</div>
+
+Tools {#tools}
+=====
+
+`soya-js` Library {#library}
+-----------------
+
+[soya-js](https://github.com/OwnYourData/soya/tree/main/lib) provides interfaces in JavaScript for handling SOyA structures and interacting with SOyA respositories.
+
+* Creation of SOyA JSON-LD structures using simple YAML files
+* Finding similarly shaped SOyA structures
+* Communication with [SOyA repositories](https://github.com/OwnYourData/soya/tree/main/repository) (e.g. for pushing and pulling SOyA structures and data)
+* Data validation through [\SHACL](https://www.w3.org/TR/shacl/)
+* Data acquisition (transforming flat JSON data into rich JSON-LD data)
+* Data transformation using popular [jq](https://stedolan.github.io/jq/) processor
+* Forms generation based on SOyA structures using [JSONForms](https://jsonforms.io/) (React, Angular, Vue, and other UI toolkits)
+
+
+Command Line Tool {#cli}
+-----------------
+
+The Command Line Tool provides a set of utilities for handling SOyA structures and interacting with SOyA respositories.
+
+[soya-cli](https://github.com/OwnYourData/soya/blob/main/cli/README.md) is built on top of [soya-js](https://github.com/OwnYourData/soya/tree/main/lib) and exposes most of its [features](https://github.com/OwnYourData/soya/blob/main/lib/README.md) as commands on the command line. In addition there are features like:
+
+* [=terms/DRI=] calculation for SOyA structures
+* Data transformation using     
+
+    * [jq](https://stedolan.github.io/jq/)    
+    * [jolt](https://github.com/bazaarvoice/jolt)    
+
+* Fast prototyping with quick links to [JSON-LD Playground](https://json-ld.org/playground/)
+
+
+
+Repository {#repository}
+----------
+
+The SOyA Repository is a storage for SOyA structures and provides the follwowing functionalities:
+
+* <strong>Read (`soya pull [name]`):</strong> retrieve the SOyA structure with the given name
+* <strong>Information (`soya info [name]`):</strong> retrieve information about a SOyA structure (history, included bases and overlays) for the given name
+* <strong>Query:</strong> get a list of all SOyA structure that include bases containing the given string    
+    (available as API endpoint `GET /api/soya/query?name=[string]`)
+* <strong>Write (`cat file.jsonld | soya push`):</strong> stores the provided SOyA structure in the repository    
+    a *frozen* version (duplicate) is also created and accessible via corresponding DRI
+* <strong>Find Similar (`cat file.jsonld | soya similar`):</strong> list similar entries in the SOyA repository for a given SOyA structure
+
+Further information:    
+
+* Swagger Informaiton: https://api-docs.ownyourdata.eu/soya/    
+* Docker Image: https://hub.docker.com/r/oydeu/soya-base
+
+
+Reference Implementation {#implementation}
+========================
+
+Work in progress as part of a research project funded by the “IKT der Zukunft” program from the Federal Ministry for Transport, Innovation and Technology in Austria – [FFG Projekt 887052](https://projekte.ffg.at/projekt/4125456). 
+
+The following implementation artefacts are available (published under the open source MIT License):
+* Command line tool `soya`: [https://github.com/OwnYourData/soya/tree/main/cli](https://github.com/OwnYourData/soya/tree/main/cli) 
+    * also available as Docker Image: [https://hub.docker.com/r/oydeu/soya-cli](https://hub.docker.com/r/oydeu/soya-cli)
+    * find example usage scenarios in this Tutorial: [https://github.com/OwnYourData/soya/tree/main/tutorial](https://github.com/OwnYourData/soya/tree/main/tutorial)
+* Repository for hosting: [https://github.com/OwnYourData/soya/tree/main/repository](https://github.com/OwnYourData/soya/tree/main/repository)
+    * API documentation in Swagger: [https://api-docs.ownyourdata.eu/soya/](https://api-docs.ownyourdata.eu/soya/)
+
+<script>
+function openTab(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script>

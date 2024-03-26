@@ -1,0 +1,2988 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.36.3",
+    "schemaVersion": 1011,
+    "oldestForwardsCompatibleVersion": 1001,
+    "tsdocConfig": {
+      "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+      "noStandardTags": true,
+      "tagDefinitions": [
+        {
+          "tagName": "@alpha",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@beta",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@defaultValue",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@decorator",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@deprecated",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@eventProperty",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@example",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@experimental",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@inheritDoc",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@internal",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@label",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@link",
+          "syntaxKind": "inline",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@override",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@packageDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@param",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@privateRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@public",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@readonly",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@remarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@returns",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@sealed",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@see",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@throws",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@typeParam",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@virtual",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@betaDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@internalRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@preapproved",
+          "syntaxKind": "modifier"
+        }
+      ],
+      "supportForTags": {
+        "@alpha": true,
+        "@beta": true,
+        "@defaultValue": true,
+        "@decorator": true,
+        "@deprecated": true,
+        "@eventProperty": true,
+        "@example": true,
+        "@experimental": true,
+        "@inheritDoc": true,
+        "@internal": true,
+        "@label": true,
+        "@link": true,
+        "@override": true,
+        "@packageDocumentation": true,
+        "@param": true,
+        "@privateRemarks": true,
+        "@public": true,
+        "@readonly": true,
+        "@remarks": true,
+        "@returns": true,
+        "@sealed": true,
+        "@see": true,
+        "@throws": true,
+        "@typeParam": true,
+        "@virtual": true,
+        "@betaDocumentation": true,
+        "@internalRemarks": true,
+        "@preapproved": true
+      },
+      "reportUnsupportedHtmlElements": false
+    }
+  },
+  "kind": "Package",
+  "canonicalReference": "@veramo/key-manager!",
+  "docComment": "/**\n * Provides a {@link @veramo/key-manager#KeyManager | plugin} for the {@link @veramo/core#Agent} that implements {@link @veramo/core-types#IKeyManager} interface\n *\n * @packageDocumentation\n */\n",
+  "name": "@veramo/key-manager",
+  "preserveMemberOrder": false,
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "@veramo/key-manager!",
+      "name": "",
+      "preserveMemberOrder": false,
+      "members": [
+        {
+          "kind": "Class",
+          "canonicalReference": "@veramo/key-manager!AbstractKeyManagementSystem:class",
+          "docComment": "/**\n * This base abstract class should be extended to provide cryptographic functions to other Veramo plugins.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare abstract class AbstractKeyManagementSystem "
+            }
+          ],
+          "fileUrlPath": "src/abstract-key-management-system.ts",
+          "releaseTag": "Public",
+          "isAbstract": true,
+          "name": "AbstractKeyManagementSystem",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!AbstractKeyManagementSystem#createKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract createKey(args: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        type: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "TKeyType",
+                  "canonicalReference": "@veramo/core-types!TKeyType:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n        meta?: any;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedKeyInfo",
+                  "canonicalReference": "@veramo/core-types!ManagedKeyInfo:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 9
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": true,
+              "name": "createKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!AbstractKeyManagementSystem#deleteKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract deleteKey(args: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        kid: string;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": true,
+              "name": "deleteKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!AbstractKeyManagementSystem#importKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract importKey(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Exclude",
+                  "canonicalReference": "!Exclude:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MinimalImportableKey",
+                  "canonicalReference": "@veramo/core-types!MinimalImportableKey:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", 'kms'>"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedKeyInfo",
+                  "canonicalReference": "@veramo/core-types!ManagedKeyInfo:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 10
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": true,
+              "name": "importKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!AbstractKeyManagementSystem#listKeys:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract listKeys(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Array",
+                  "canonicalReference": "!Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedKeyInfo",
+                  "canonicalReference": "@veramo/core-types!ManagedKeyInfo:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": true,
+              "name": "listKeys"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!AbstractKeyManagementSystem#sharedSecret:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract sharedSecret(args: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        myKeyRef: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Pick",
+                  "canonicalReference": "!Pick:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKey",
+                  "canonicalReference": "@veramo/core-types!IKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", 'kid'>;\n        theirKey: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Pick",
+                  "canonicalReference": "!Pick:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKey",
+                  "canonicalReference": "@veramo/core-types!IKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", 'publicKeyHex' | 'type'>;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 11,
+                "endIndex": 13
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 10
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": true,
+              "name": "sharedSecret"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!AbstractKeyManagementSystem#sign:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract sign(args: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        keyRef: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Pick",
+                  "canonicalReference": "!Pick:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKey",
+                  "canonicalReference": "@veramo/core-types!IKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", 'kid'>;\n        algorithm?: string;\n        data: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Uint8Array",
+                  "canonicalReference": "!Uint8Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n        [x: string]: any;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 9,
+                "endIndex": 11
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 8
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": true,
+              "name": "sign"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!AbstractKeyManagementSystem#signEthTX:member(1)",
+              "docComment": "/**\n * @deprecated\n *\n * please use `sign({key, alg: 'eth_signTransaction', data: arrayify(serialize(transaction))})` instead\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "signEthTX({ key, transaction }: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        key: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Pick",
+                  "canonicalReference": "!Pick:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKey",
+                  "canonicalReference": "@veramo/core-types!IKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", 'kid'>;\n        transaction: object;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 7,
+                "endIndex": 9
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ key, transaction }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 6
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "signEthTX"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!AbstractKeyManagementSystem#signJWT:member(1)",
+              "docComment": "/**\n * @deprecated\n *\n * please use `sign({key, data})` instead, with `Uint8Array` data\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "signJWT({ key, data }: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        key: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Pick",
+                  "canonicalReference": "!Pick:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKey",
+                  "canonicalReference": "@veramo/core-types!IKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", 'kid'>;\n        data: string | "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Uint8Array",
+                  "canonicalReference": "!Uint8Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 9,
+                "endIndex": 11
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ key, data }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 8
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "signJWT"
+            }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@veramo/key-manager!AbstractKeyStore:class",
+          "docComment": "/**\n * This base abstract class should be extended to provide platform specific implementations that are usable by {@link @veramo/key-manager#KeyManager | KeyManager}.\n *\n * Implementations of this class are used to store mappings between key IDs and their respective {@link @veramo/key-manager#AbstractKeyManagementSystem | AbstractKeyManagementSystem} implementations.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare abstract class AbstractKeyStore "
+            }
+          ],
+          "fileUrlPath": "src/abstract-key-store.ts",
+          "releaseTag": "Public",
+          "isAbstract": true,
+          "name": "AbstractKeyStore",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!AbstractKeyStore#deleteKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract deleteKey(args: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        kid: string;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": true,
+              "name": "deleteKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!AbstractKeyStore#getKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract getKey(args: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        kid: string;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKey",
+                  "canonicalReference": "@veramo/core-types!IKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": true,
+              "name": "getKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!AbstractKeyStore#importKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract importKey(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Partial",
+                  "canonicalReference": "!Partial:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKey",
+                  "canonicalReference": "@veramo/core-types!IKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 8
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 5
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": true,
+              "name": "importKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!AbstractKeyStore#listKeys:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract listKeys(args: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{}"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Array",
+                  "canonicalReference": "!Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedKeyInfo",
+                  "canonicalReference": "@veramo/core-types!ManagedKeyInfo:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 9
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": true,
+              "name": "listKeys"
+            }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@veramo/key-manager!AbstractPrivateKeyStore:class",
+          "docComment": "/**\n * This base abstract class should be extended to provide platform specific implementations that are usable by {@link @veramo/kms-local#KeyManagementSystem | kms-local}.\n *\n * Implementations of this class are used to store mappings between key aliases and key material.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare abstract class AbstractPrivateKeyStore "
+            }
+          ],
+          "fileUrlPath": "src/abstract-private-key-store.ts",
+          "releaseTag": "Public",
+          "isAbstract": true,
+          "name": "AbstractPrivateKeyStore",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!AbstractPrivateKeyStore#deleteKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract deleteKey(args: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        alias: string;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": true,
+              "name": "deleteKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!AbstractPrivateKeyStore#getKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract getKey(args: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        alias: string;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedPrivateKey",
+                  "canonicalReference": "@veramo/key-manager!ManagedPrivateKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": true,
+              "name": "getKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!AbstractPrivateKeyStore#importKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract importKey(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ImportablePrivateKey",
+                  "canonicalReference": "@veramo/key-manager!ImportablePrivateKey:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedPrivateKey",
+                  "canonicalReference": "@veramo/key-manager!ManagedPrivateKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": true,
+              "name": "importKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!AbstractPrivateKeyStore#listKeys:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract listKeys(args: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{}"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Array",
+                  "canonicalReference": "!Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedPrivateKey",
+                  "canonicalReference": "@veramo/key-manager!ManagedPrivateKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 9
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": true,
+              "name": "listKeys"
+            }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@veramo/key-manager!AbstractSecretBox:class",
+          "docComment": "/**\n * This simple abstract class can be extended by different implementations to provide encryption at rest for some implementations of {@link @veramo/key-manager#AbstractPrivateKeyStore | AbstractPrivateKeyStore}.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare abstract class AbstractSecretBox "
+            }
+          ],
+          "fileUrlPath": "src/abstract-secret-box.ts",
+          "releaseTag": "Public",
+          "isAbstract": true,
+          "name": "AbstractSecretBox",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!AbstractSecretBox#decrypt:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract decrypt(encryptedMessageHex: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "encryptedMessageHex",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": true,
+              "name": "decrypt"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!AbstractSecretBox#encrypt:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "abstract encrypt(message: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "message",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": true,
+              "name": "encrypt"
+            }
+          ],
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@veramo/key-manager!Eip712Payload:type",
+          "docComment": "/**\n * The payload that is sent to be signed according to EIP712\n *\n * @see\n *\n * {@link https://eips.ethereum.org/EIPS/eip-712}\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type Eip712Payload = "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    domain: "
+            },
+            {
+              "kind": "Reference",
+              "text": "TypedDataDomain",
+              "canonicalReference": "ethers!TypedDataDomain:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n    types: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<string, "
+            },
+            {
+              "kind": "Reference",
+              "text": "TypedDataField",
+              "canonicalReference": "ethers!TypedDataField:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "[]>;\n    primaryType: string;\n    message: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<string, any>;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/types.ts",
+          "releaseTag": "Beta",
+          "name": "Eip712Payload",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 10
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@veramo/key-manager!ImportablePrivateKey:type",
+          "docComment": "/**\n * Represents private key data that can be imported. This is a subset of {@link ManagedPrivateKey}.\n *\n * The `alias` of the resulting {@link ManagedPrivateKey} can be generated automatically if none is provided.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type ImportablePrivateKey = "
+            },
+            {
+              "kind": "Reference",
+              "text": "RequireOnly",
+              "canonicalReference": "@veramo/core-types!RequireOnly:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "ManagedPrivateKey",
+              "canonicalReference": "@veramo/key-manager!ManagedPrivateKey:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ", 'privateKeyHex' | 'type'>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/abstract-private-key-store.ts",
+          "releaseTag": "Public",
+          "name": "ImportablePrivateKey",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          }
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@veramo/key-manager!KeyManager:class",
+          "docComment": "/**\n * Agent plugin that implements {@link @veramo/core-types#IKeyManager} methods.\n *\n * This plugin orchestrates various implementations of {@link AbstractKeyManagementSystem}, using a KeyStore to remember the link between a key reference, its metadata, and the respective key management system that provides the actual cryptographic capabilities.\n *\n * The methods of this plugin are used automatically by other plugins, such as {@link @veramo/did-manager#DIDManager | DIDManager}, {@link @veramo/credential-w3c#CredentialPlugin | CredentialPlugin}, or {@link @veramo/did-comm#DIDComm | DIDComm} to perform their required cryptographic operations using the managed keys.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class KeyManager implements "
+            },
+            {
+              "kind": "Reference",
+              "text": "IAgentPlugin",
+              "canonicalReference": "@veramo/core-types!IAgentPlugin:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/key-manager.ts",
+          "releaseTag": "Public",
+          "isAbstract": false,
+          "name": "KeyManager",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "@veramo/key-manager!KeyManager:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `KeyManager` class\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(options: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        store: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AbstractKeyStore",
+                  "canonicalReference": "@veramo/key-manager!AbstractKeyStore:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n        kms: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "AbstractKeyManagementSystem",
+                  "canonicalReference": "@veramo/key-manager!AbstractKeyManagementSystem:class"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 8
+                  },
+                  "isOptional": false
+                }
+              ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!KeyManager#createX25519ECDH:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "createX25519ECDH(secretKeyRef: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ECDH",
+                  "canonicalReference": "did-jwt!ECDH:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "secretKeyRef",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "createX25519ECDH"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!KeyManager#keyManagerCreate:member(1)",
+              "docComment": "/**\n * {@inheritDoc @veramo/core-types#IKeyManager.keyManagerCreate}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "keyManagerCreate(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyManagerCreateArgs",
+                  "canonicalReference": "@veramo/core-types!IKeyManagerCreateArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedKeyInfo",
+                  "canonicalReference": "@veramo/core-types!ManagedKeyInfo:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "keyManagerCreate"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!KeyManager#keyManagerDecryptJWE:member(1)",
+              "docComment": "/**\n * {@inheritDoc @veramo/core-types#IKeyManager.keyManagerDecryptJWE}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "keyManagerDecryptJWE({ kid, data }: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyManagerDecryptJWEArgs",
+                  "canonicalReference": "@veramo/core-types!IKeyManagerDecryptJWEArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ kid, data }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "keyManagerDecryptJWE"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!KeyManager#keyManagerDelete:member(1)",
+              "docComment": "/**\n * {@inheritDoc @veramo/core-types#IKeyManager.keyManagerDelete}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "keyManagerDelete({ kid }: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyManagerDeleteArgs",
+                  "canonicalReference": "@veramo/core-types!IKeyManagerDeleteArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ kid }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "keyManagerDelete"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!KeyManager#keyManagerEncryptJWE:member(1)",
+              "docComment": "/**\n * {@inheritDoc @veramo/core-types#IKeyManager.keyManagerEncryptJWE}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "keyManagerEncryptJWE({ kid, to, data }: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyManagerEncryptJWEArgs",
+                  "canonicalReference": "@veramo/core-types!IKeyManagerEncryptJWEArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ kid, to, data }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "keyManagerEncryptJWE"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!KeyManager#keyManagerGet:member(1)",
+              "docComment": "/**\n * {@inheritDoc @veramo/core-types#IKeyManager.keyManagerGet}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "keyManagerGet({ kid }: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyManagerGetArgs",
+                  "canonicalReference": "@veramo/core-types!IKeyManagerGetArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKey",
+                  "canonicalReference": "@veramo/core-types!IKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ kid }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "keyManagerGet"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!KeyManager#keyManagerGetKeyManagementSystems:member(1)",
+              "docComment": "/**\n * {@inheritDoc @veramo/core-types#IKeyManager.keyManagerGetKeyManagementSystems}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "keyManagerGetKeyManagementSystems(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Array",
+                  "canonicalReference": "!Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "keyManagerGetKeyManagementSystems"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!KeyManager#keyManagerImport:member(1)",
+              "docComment": "/**\n * {@inheritDoc @veramo/core-types#IKeyManager.keyManagerImport}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "keyManagerImport(key: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MinimalImportableKey",
+                  "canonicalReference": "@veramo/core-types!MinimalImportableKey:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedKeyInfo",
+                  "canonicalReference": "@veramo/core-types!ManagedKeyInfo:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "key",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "keyManagerImport"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!KeyManager#keyManagerSharedSecret:member(1)",
+              "docComment": "/**\n * {@inheritDoc @veramo/core-types#IKeyManager.keyManagerSharedSecret}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "keyManagerSharedSecret(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyManagerSharedSecretArgs",
+                  "canonicalReference": "@veramo/core-types!IKeyManagerSharedSecretArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "keyManagerSharedSecret"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!KeyManager#keyManagerSign:member(1)",
+              "docComment": "/**\n * {@inheritDoc @veramo/core-types#IKeyManager.keyManagerSign}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "keyManagerSign(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyManagerSignArgs",
+                  "canonicalReference": "@veramo/core-types!IKeyManagerSignArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "keyManagerSign"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!KeyManager#keyManagerSignEthTX:member(1)",
+              "docComment": "/**\n * {@inheritDoc @veramo/core-types#IKeyManager.keyManagerSignEthTX}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "keyManagerSignEthTX({ kid, transaction }: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyManagerSignEthTXArgs",
+                  "canonicalReference": "@veramo/core-types!IKeyManagerSignEthTXArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ kid, transaction }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "keyManagerSignEthTX"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!KeyManager#keyManagerSignJWT:member(1)",
+              "docComment": "/**\n * {@inheritDoc @veramo/core-types#IKeyManager.keyManagerSignJWT}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "keyManagerSignJWT({ kid, data }: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyManagerSignJWTArgs",
+                  "canonicalReference": "@veramo/core-types!IKeyManagerSignJWTArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ kid, data }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "keyManagerSignJWT"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@veramo/key-manager!KeyManager#methods:member",
+              "docComment": "/**\n * Plugin methods\n *\n * @public\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly methods: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyManager",
+                  "canonicalReference": "@veramo/core-types!IKeyManager:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "methods",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@veramo/key-manager!KeyManager#schema:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly schema: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        components: {\n            schemas: {\n                IKeyManagerCreateArgs: {\n                    type: string;\n                    properties: {\n                        type: {\n                            $ref: string;\n                            description: string;\n                        };\n                        kms: {\n                            type: string;\n                            description: string;\n                        };\n                        meta: {\n                            $ref: string;\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                TKeyType: {\n                    type: string;\n                    enum: string[];\n                    description: string;\n                };\n                KeyMetadata: {\n                    type: string;\n                    properties: {\n                        algorithms: {\n                            type: string;\n                            items: {\n                                $ref: string;\n                            };\n                        };\n                    };\n                    description: string;\n                };\n                TAlg: {\n                    type: string;\n                    description: string;\n                };\n                ManagedKeyInfo: {\n                    type: string;\n                    properties: {\n                        kid: {\n                            type: string;\n                            description: string;\n                        };\n                        kms: {\n                            type: string;\n                            description: string;\n                        };\n                        type: {\n                            $ref: string;\n                            description: string;\n                        };\n                        publicKeyHex: {\n                            type: string;\n                            description: string;\n                        };\n                        meta: {\n                            anyOf: ({\n                                $ref: string;\n                                type?: undefined;\n                            } | {\n                                type: string;\n                                $ref?: undefined;\n                            })[];\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                IKeyManagerDecryptJWEArgs: {\n                    type: string;\n                    properties: {\n                        kid: {\n                            type: string;\n                            description: string;\n                        };\n                        data: {\n                            type: string;\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                IKeyManagerDeleteArgs: {\n                    type: string;\n                    properties: {\n                        kid: {\n                            type: string;\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                IKeyManagerEncryptJWEArgs: {\n                    type: string;\n                    properties: {\n                        kid: {\n                            type: string;\n                            description: string;\n                        };\n                        to: {\n                            type: string;\n                            properties: {\n                                kid: {\n                                    type: string;\n                                    description: string;\n                                };\n                                type: {\n                                    $ref: string;\n                                    description: string;\n                                };\n                                publicKeyHex: {\n                                    type: string;\n                                    description: string;\n                                };\n                                privateKeyHex: {\n                                    type: string;\n                                    description: string;\n                                };\n                                meta: {\n                                    anyOf: ({\n                                        $ref: string;\n                                        type?: undefined;\n                                    } | {\n                                        type: string;\n                                        $ref?: undefined;\n                                    })[];\n                                    description: string;\n                                };\n                            };\n                            required: string[];\n                            description: string;\n                        };\n                        data: {\n                            type: string;\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                IKeyManagerGetArgs: {\n                    type: string;\n                    properties: {\n                        kid: {\n                            type: string;\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                IKey: {\n                    type: string;\n                    properties: {\n                        kid: {\n                            type: string;\n                            description: string;\n                        };\n                        kms: {\n                            type: string;\n                            description: string;\n                        };\n                        type: {\n                            $ref: string;\n                            description: string;\n                        };\n                        publicKeyHex: {\n                            type: string;\n                            description: string;\n                        };\n                        privateKeyHex: {\n                            type: string;\n                            description: string;\n                        };\n                        meta: {\n                            anyOf: ({\n                                $ref: string;\n                                type?: undefined;\n                            } | {\n                                type: string;\n                                $ref?: undefined;\n                            })[];\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                MinimalImportableKey: {\n                    $ref: string;\n                    description: string;\n                };\n                \"RequireOnly<IKey,(\\\"privateKeyHex\\\"|\\\"type\\\"|\\\"kms\\\")>\": {\n                    type: string;\n                    properties: {\n                        kid: {\n                            type: string;\n                            description: string;\n                        };\n                        kms: {\n                            type: string;\n                            description: string;\n                        };\n                        type: {\n                            $ref: string;\n                            description: string;\n                        };\n                        publicKeyHex: {\n                            type: string;\n                            description: string;\n                        };\n                        privateKeyHex: {\n                            type: string;\n                            description: string;\n                        };\n                        meta: {\n                            anyOf: ({\n                                $ref: string;\n                                type?: undefined;\n                            } | {\n                                type: string;\n                                $ref?: undefined;\n                            })[];\n                            description: string;\n                        };\n                    };\n                    description: string;\n                };\n                IKeyManagerSharedSecretArgs: {\n                    type: string;\n                    properties: {\n                        secretKeyRef: {\n                            type: string;\n                            description: string;\n                        };\n                        publicKey: {\n                            type: string;\n                            properties: {\n                                publicKeyHex: {\n                                    type: string;\n                                    description: string;\n                                };\n                                type: {\n                                    $ref: string;\n                                    description: string;\n                                };\n                            };\n                            required: string[];\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                IKeyManagerSignArgs: {\n                    type: string;\n                    properties: {\n                        keyRef: {\n                            type: string;\n                            description: string;\n                        };\n                        algorithm: {\n                            type: string;\n                            description: string;\n                        };\n                        data: {\n                            type: string;\n                            description: string;\n                        };\n                        encoding: {\n                            type: string;\n                            enum: string[];\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                IKeyManagerSignEthTXArgs: {\n                    type: string;\n                    properties: {\n                        kid: {\n                            type: string;\n                            description: string;\n                        };\n                        transaction: {\n                            type: string;\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n                IKeyManagerSignJWTArgs: {\n                    type: string;\n                    properties: {\n                        kid: {\n                            type: string;\n                            description: string;\n                        };\n                        data: {\n                            anyOf: ({\n                                type: string;\n                                properties?: undefined;\n                                required?: undefined;\n                                additionalProperties?: undefined;\n                            } | {\n                                type: string;\n                                properties: {\n                                    BYTES_PER_ELEMENT: {\n                                        type: string;\n                                    };\n                                    buffer: {\n                                        anyOf: ({\n                                            type: string;\n                                            properties: {\n                                                byteLength: {\n                                                    type: string;\n                                                };\n                                            };\n                                            required: string[];\n                                        } | {\n                                            type?: undefined;\n                                            properties?: undefined;\n                                            required?: undefined;\n                                        })[];\n                                    };\n                                    byteLength: {\n                                        type: string;\n                                    };\n                                    byteOffset: {\n                                        type: string;\n                                    };\n                                    length: {\n                                        type: string;\n                                    };\n                                };\n                                required: string[];\n                                additionalProperties: {\n                                    type: string;\n                                };\n                            })[];\n                            description: string;\n                        };\n                    };\n                    required: string[];\n                    description: string;\n                };\n            };\n            methods: {\n                keyManagerCreate: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        $ref: string;\n                    };\n                };\n                keyManagerDecryptJWE: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        type: string;\n                    };\n                };\n                keyManagerDelete: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        type: string;\n                    };\n                };\n                keyManagerEncryptJWE: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        type: string;\n                    };\n                };\n                keyManagerGet: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        $ref: string;\n                    };\n                };\n                keyManagerGetKeyManagementSystems: {\n                    description: string;\n                    arguments: {\n                        type: string;\n                    };\n                    returnType: {\n                        type: string;\n                        items: {\n                            type: string;\n                        };\n                    };\n                };\n                keyManagerImport: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        $ref: string;\n                    };\n                };\n                keyManagerSharedSecret: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        type: string;\n                    };\n                };\n                keyManagerSign: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        type: string;\n                    };\n                };\n                keyManagerSignEthTX: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        type: string;\n                    };\n                };\n                keyManagerSignJWT: {\n                    description: string;\n                    arguments: {\n                        $ref: string;\n                    };\n                    returnType: {\n                        type: string;\n                    };\n                };\n            };\n        };\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "schema",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            }
+          ],
+          "implementsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/key-manager!ManagedPrivateKey:interface",
+          "docComment": "/**\n * Represents a private key.\n *\n * The `alias` is used to refer to the key material which is stored as the hex encoding of the raw byte array (`privateKeyHex`).\n *\n * The `type` refers to the type of key that is represented.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface ManagedPrivateKey "
+            }
+          ],
+          "fileUrlPath": "src/abstract-private-key-store.ts",
+          "releaseTag": "Public",
+          "name": "ManagedPrivateKey",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/key-manager!ManagedPrivateKey#alias:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "alias: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "alias",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/key-manager!ManagedPrivateKey#privateKeyHex:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "privateKeyHex: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "string"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "privateKeyHex",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/key-manager!ManagedPrivateKey#type:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "type: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "TKeyType",
+                  "canonicalReference": "@veramo/core-types!TKeyType:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Public",
+              "name": "type",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@veramo/key-manager!MemoryKeyStore:class",
+          "docComment": "/**\n * An implementation of {@link AbstractKeyStore} that holds everything in memory.\n *\n * This is usable by {@link @veramo/key-manager#KeyManager | KeyManager} to hold the key metadata and relationship to the KMS implementation.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class MemoryKeyStore extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "AbstractKeyStore",
+              "canonicalReference": "@veramo/key-manager!AbstractKeyStore:class"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/memory-key-store.ts",
+          "releaseTag": "Public",
+          "isAbstract": false,
+          "name": "MemoryKeyStore",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!MemoryKeyStore#deleteKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "deleteKey({ kid }: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        kid: string;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ kid }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "deleteKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!MemoryKeyStore#getKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getKey({ kid }: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        kid: string;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKey",
+                  "canonicalReference": "@veramo/core-types!IKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ kid }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!MemoryKeyStore#importKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "importKey(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKey",
+                  "canonicalReference": "@veramo/core-types!IKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "importKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!MemoryKeyStore#listKeys:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "listKeys(args: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{}"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Exclude",
+                  "canonicalReference": "!Exclude:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKey",
+                  "canonicalReference": "@veramo/core-types!IKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", 'privateKeyHex'>[]>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 9
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "listKeys"
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          },
+          "implementsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@veramo/key-manager!MemoryPrivateKeyStore:class",
+          "docComment": "/**\n * An implementation of {@link AbstractPrivateKeyStore} that holds everything in memory.\n *\n * This is usable by {@link @veramo/kms-local#KeyManagementSystem} to hold the private key data.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class MemoryPrivateKeyStore extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "AbstractPrivateKeyStore",
+              "canonicalReference": "@veramo/key-manager!AbstractPrivateKeyStore:class"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/memory-key-store.ts",
+          "releaseTag": "Public",
+          "isAbstract": false,
+          "name": "MemoryPrivateKeyStore",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!MemoryPrivateKeyStore#deleteKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "deleteKey({ alias }: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        alias: string;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ alias }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "deleteKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!MemoryPrivateKeyStore#getKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "getKey({ alias }: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        alias: string;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedPrivateKey",
+                  "canonicalReference": "@veramo/key-manager!ManagedPrivateKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ alias }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "getKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!MemoryPrivateKeyStore#importKey:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "importKey(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ImportablePrivateKey",
+                  "canonicalReference": "@veramo/key-manager!ImportablePrivateKey:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedPrivateKey",
+                  "canonicalReference": "@veramo/key-manager!ManagedPrivateKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "importKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/key-manager!MemoryPrivateKeyStore#listKeys:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "listKeys(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Array",
+                  "canonicalReference": "!Array:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ManagedPrivateKey",
+                  "canonicalReference": "@veramo/key-manager!ManagedPrivateKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "listKeys"
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          },
+          "implementsTokenRanges": []
+        }
+      ]
+    }
+  ]
+}

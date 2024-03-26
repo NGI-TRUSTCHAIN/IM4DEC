@@ -1,0 +1,3 @@
+import { AuthEncryptParams, ContentEncrypter, ECDH, Encrypter, KekCreator, KeyWrapper } from 'did-jwt';
+export declare function createFullEncrypter(recipientPublicKey: Uint8Array, senderSecret: Uint8Array | ECDH | undefined, options: Partial<AuthEncryptParams> | undefined, kekCreator: KekCreator, keyWrapper: KeyWrapper, contentEncrypter: ContentEncrypter): Encrypter;
+//# sourceMappingURL=createEncrypter.d.ts.map

@@ -1,0 +1,922 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.36.3",
+    "schemaVersion": 1011,
+    "oldestForwardsCompatibleVersion": 1001,
+    "tsdocConfig": {
+      "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+      "noStandardTags": true,
+      "tagDefinitions": [
+        {
+          "tagName": "@alpha",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@beta",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@defaultValue",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@decorator",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@deprecated",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@eventProperty",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@example",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@experimental",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@inheritDoc",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@internal",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@label",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@link",
+          "syntaxKind": "inline",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@override",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@packageDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@param",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@privateRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@public",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@readonly",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@remarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@returns",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@sealed",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@see",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@throws",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@typeParam",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@virtual",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@betaDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@internalRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@preapproved",
+          "syntaxKind": "modifier"
+        }
+      ],
+      "supportForTags": {
+        "@alpha": true,
+        "@beta": true,
+        "@defaultValue": true,
+        "@decorator": true,
+        "@deprecated": true,
+        "@eventProperty": true,
+        "@example": true,
+        "@experimental": true,
+        "@inheritDoc": true,
+        "@internal": true,
+        "@label": true,
+        "@link": true,
+        "@override": true,
+        "@packageDocumentation": true,
+        "@param": true,
+        "@privateRemarks": true,
+        "@public": true,
+        "@readonly": true,
+        "@remarks": true,
+        "@returns": true,
+        "@sealed": true,
+        "@see": true,
+        "@throws": true,
+        "@typeParam": true,
+        "@virtual": true,
+        "@betaDocumentation": true,
+        "@internalRemarks": true,
+        "@preapproved": true
+      },
+      "reportUnsupportedHtmlElements": false
+    }
+  },
+  "kind": "Package",
+  "canonicalReference": "@veramo/did-provider-ion!",
+  "docComment": "/**\n * Provides `did:ion` {@link @veramo/did-provider-ion#IonDIDProvider | identifier provider} for the {@link @veramo/did-manager#DIDManager}\n *\n * @packageDocumentation\n */\n",
+  "name": "@veramo/did-provider-ion",
+  "preserveMemberOrder": false,
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "@veramo/did-provider-ion!",
+      "name": "",
+      "preserveMemberOrder": false,
+      "members": [
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/did-provider-ion!getDidIonResolver:function(1)",
+          "docComment": "/**\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function getDidIonResolver(): "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    ion: "
+            },
+            {
+              "kind": "Reference",
+              "text": "DIDResolver",
+              "canonicalReference": "did-resolver!DIDResolver:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";\n}"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/ion-did-resolver.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [],
+          "name": "getDidIonResolver"
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@veramo/did-provider-ion!IonDIDProvider:class",
+          "docComment": "/**\n * {@link @veramo/did-manager#DIDManager} identifier provider for `did:ion` identifiers\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class IonDIDProvider extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "AbstractIdentifierProvider",
+              "canonicalReference": "@veramo/did-manager!AbstractIdentifierProvider:class"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/ion-did-provider.ts",
+          "releaseTag": "Public",
+          "isAbstract": false,
+          "name": "IonDIDProvider",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "@veramo/did-provider-ion!IonDIDProvider:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `IonDIDProvider` class\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(options: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        defaultKms: string;\n        challengeEnabled?: boolean;\n        challengeEndpoint?: string;\n        solutionEndpoint?: string;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "options",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/did-provider-ion!IonDIDProvider#addKey:member(1)",
+              "docComment": "/**\n * {@inheritDoc @veramo/core-types#IDIDManager.didManagerAddKey}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "addKey({ identifier, key, options }: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        identifier: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IIdentifier",
+                  "canonicalReference": "@veramo/core-types!IIdentifier:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n        key: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKey",
+                  "canonicalReference": "@veramo/core-types!IKey:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n        options?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IAddKeyOpts",
+                  "canonicalReference": "@veramo/did-provider-ion!~IAddKeyOpts:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IContext",
+                  "canonicalReference": "@veramo/did-provider-ion!~IContext:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<any>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 11,
+                "endIndex": 13
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ identifier, key, options }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 8
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 9,
+                    "endIndex": 10
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "addKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/did-provider-ion!IonDIDProvider#addService:member(1)",
+              "docComment": "/**\n * {@inheritDoc @veramo/core-types#IDIDManager.didManagerAddService}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "addService({ identifier, service, options }: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        identifier: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IIdentifier",
+                  "canonicalReference": "@veramo/core-types!IIdentifier:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n        service: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IService",
+                  "canonicalReference": "@veramo/core-types!IService:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n        options?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IUpdateOpts",
+                  "canonicalReference": "@veramo/did-provider-ion!~IUpdateOpts:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IContext",
+                  "canonicalReference": "@veramo/did-provider-ion!~IContext:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<any>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 11,
+                "endIndex": 13
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ identifier, service, options }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 8
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 9,
+                    "endIndex": 10
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "addService"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/did-provider-ion!IonDIDProvider#createIdentifier:member(1)",
+              "docComment": "/**\n * {@inheritDoc @veramo/core-types#IDIDManager.didManagerCreate}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "createIdentifier({ kms, options, alias }: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        kms?: string;\n        alias?: string;\n        options?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "ICreateIdentifierOpts",
+                  "canonicalReference": "@veramo/did-provider-ion!~ICreateIdentifierOpts:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IAgentContext",
+                  "canonicalReference": "@veramo/core-types!IAgentContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyManager",
+                  "canonicalReference": "@veramo/core-types!IKeyManager:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Omit",
+                  "canonicalReference": "!Omit:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IIdentifier",
+                  "canonicalReference": "@veramo/core-types!IIdentifier:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", 'provider'>>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 10,
+                "endIndex": 16
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ kms, options, alias }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 9
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "createIdentifier"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/did-provider-ion!IonDIDProvider#deleteIdentifier:member(1)",
+              "docComment": "/**\n * {@inheritDoc @veramo/core-types#IDIDManager.didManagerDelete}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "deleteIdentifier(identifier: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IIdentifier",
+                  "canonicalReference": "@veramo/core-types!IIdentifier:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IContext",
+                  "canonicalReference": "@veramo/did-provider-ion!~IContext:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 7
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "identifier",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "deleteIdentifier"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/did-provider-ion!IonDIDProvider#removeKey:member(1)",
+              "docComment": "/**\n * {@inheritDoc @veramo/core-types#IDIDManager.didManagerRemoveKey}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "removeKey({ identifier, kid, options }: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        identifier: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IIdentifier",
+                  "canonicalReference": "@veramo/core-types!IIdentifier:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n        kid: string;\n        options?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IUpdateOpts",
+                  "canonicalReference": "@veramo/did-provider-ion!~IUpdateOpts:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IContext",
+                  "canonicalReference": "@veramo/did-provider-ion!~IContext:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<any>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 9,
+                "endIndex": 11
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ identifier, kid, options }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 6
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 7,
+                    "endIndex": 8
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "removeKey"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/did-provider-ion!IonDIDProvider#removeService:member(1)",
+              "docComment": "/**\n * {@inheritDoc @veramo/core-types#IDIDManager.didManagerRemoveService}\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "removeService({ identifier, id, options }: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        identifier: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IIdentifier",
+                  "canonicalReference": "@veramo/core-types!IIdentifier:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n        id: string;\n        options?: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IUpdateOpts",
+                  "canonicalReference": "@veramo/did-provider-ion!~IUpdateOpts:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IContext",
+                  "canonicalReference": "@veramo/did-provider-ion!~IContext:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<any>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 9,
+                "endIndex": 11
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ identifier, id, options }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 6
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 7,
+                    "endIndex": 8
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "removeService"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/did-provider-ion!IonDIDProvider#updateIdentifier:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "updateIdentifier(args: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "{\n        did: string;\n        kms?: string | undefined;\n        alias?: string | undefined;\n        options?: any;\n    }"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", context: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IAgentContext",
+                  "canonicalReference": "@veramo/core-types!IAgentContext:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IKeyManager",
+                  "canonicalReference": "@veramo/core-types!IKeyManager:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IIdentifier",
+                  "canonicalReference": "@veramo/core-types!IIdentifier:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 8,
+                "endIndex": 12
+              },
+              "releaseTag": "Public",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "context",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 7
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "updateIdentifier"
+            }
+          ],
+          "extendsTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          },
+          "implementsTokenRanges": []
+        }
+      ]
+    }
+  ]
+}

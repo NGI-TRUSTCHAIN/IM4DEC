@@ -1,0 +1,82 @@
+{
+  "name": "@veramo/did-comm",
+  "description": "Veramo messaging plugin implementing DIDComm v2.",
+  "version": "5.5.3",
+  "main": "build/index.js",
+  "exports": {
+    ".": "./build/index.js",
+    "./build/plugin.schema.json": "./build/plugin.schema.json"
+  },
+  "types": "build/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "generate-plugin-schema": "node ../cli/bin/veramo.js dev generate-plugin-schema"
+  },
+  "veramo": {
+    "pluginInterfaces": {
+      "IDIDComm": "./src/types/IDIDComm.ts"
+    }
+  },
+  "dependencies": {
+    "@noble/curves": "^1.1.0",
+    "@stablelib/aes": "^1.0.1",
+    "@stablelib/aes-kw": "^1.0.1",
+    "@stablelib/gcm": "^1.0.2",
+    "@stablelib/xchacha20poly1305": "^1.0.1",
+    "@veramo/core-types": "workspace:^",
+    "@veramo/message-handler": "workspace:^",
+    "@veramo/utils": "workspace:^",
+    "@veramo/kv-store": "workspace:^",
+    "@veramo/mediation-manager": "workspace:^",
+    "cross-fetch": "^4.0.0",
+    "debug": "^4.3.3",
+    "did-jwt": "^7.4.1",
+    "did-resolver": "^4.1.0",
+    "isomorphic-webcrypto": "^2.3.8",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/debug": "4.1.8",
+    "@types/uuid": "9.0.2",
+    "typescript": "5.2.2"
+  },
+  "files": [
+    "build/**/*",
+    "src/**/*",
+    "plugin.schema.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/decentralized-identity/veramo.git",
+    "directory": "packages/did-comm"
+  },
+  "author": "Consensys Mesh R&D <hello@veramo.io>",
+  "contributors": [
+    "Simonas Karuzas <simonas.karuzas@mesh.xyz>",
+    "Mircea Nistor <mircea.nistor@mesh.xyz>",
+    "Nick Reynolds <nick.reynolds@mesh.xyz>",
+    "Oliver Terbu",
+    "Cody Hatfield"
+  ],
+  "keywords": [
+    "Veramo",
+    "DID",
+    "Verifiable Credential",
+    "DIDComm",
+    "veramo-plugin",
+    "DIDComm v2",
+    "DIDComm Messaging",
+    "JWE"
+  ],
+  "license": "Apache-2.0",
+  "type": "module",
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ]
+}

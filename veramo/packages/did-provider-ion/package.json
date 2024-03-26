@@ -1,0 +1,72 @@
+{
+  "name": "@veramo/did-provider-ion",
+  "description": "Veramo ion-did based identity controller plugin.",
+  "version": "5.5.3",
+  "main": "build/index.js",
+  "exports": "./build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "extract-api": "node ../cli/bin/veramo.js dev extract-api"
+  },
+  "dependencies": {
+    "@decentralized-identity/ion-sdk": "^1.0.1",
+    "@noble/curves": "^1.1.0",
+    "@noble/hashes": "^1.3.1",
+    "@sphereon/ion-pow": "^0.2.0",
+    "@sphereon/isomorphic-argon2": "^1.0.1",
+    "@trust/keyto": "^1.0.1",
+    "@veramo/core-types": "workspace:^",
+    "@veramo/did-manager": "workspace:^",
+    "@veramo/key-manager": "workspace:^",
+    "@veramo/kms-local": "workspace:^",
+    "@veramo/utils": "workspace:^",
+    "canonicalize": "^2.0.0",
+    "cross-fetch": "^4.0.0",
+    "debug": "^4.3.3",
+    "did-resolver": "^4.1.0",
+    "ethers": "^6.9.0",
+    "multihashes": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/debug": "4.1.8",
+    "typescript": "5.2.2"
+  },
+  "peerDependencies": {
+    "@sphereon/react-native-argon2": "^2.0.7"
+  },
+  "files": [
+    "build/**/*",
+    "src/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/decentralized-identity/veramo.git",
+    "directory": "packages/did-provider-ion"
+  },
+  "author": "Sphereon <dev@sphereon.com>",
+  "contributors": [
+    "Consensys Mesh R&D <hello@veramo.io>",
+    "Simonas Karuzas <simonas.karuzas@mesh.xyz>",
+    "Mircea Nistor <mircea.nistor@mesh.xyz>"
+  ],
+  "keywords": [
+    "Veramo",
+    "ION",
+    "DID",
+    "veramo-plugin",
+    "did:ion",
+    "Sidetree"
+  ],
+  "license": "Apache-2.0",
+  "type": "module",
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ]
+}

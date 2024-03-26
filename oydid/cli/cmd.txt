@@ -1,0 +1,51 @@
+# run pytest locally in oydid/cli/pytest
+export OYDIDCMD='../oydid.rb'
+pytest
+
+# run pytest in CLI image
+docker run -it --rm -w /usr/src/pytest -e OYDIDCMD=oydid oydeu/oydid-cli pytest
+
+
+# demonstrating update without passwords
+
+did_v1=`echo '{"state": "initial"}' | $OYDIDCMD create --doc-pwd pwd1 --rev-pwd pwd2 --return_secrets --json-output`
+created did:oyd:zQmViBbfvc9zkSv2L6UDGbvaHsb4mP17HPyURH6ajGF2Mkr
+
+echo '{"state": "new"}' | $OYDIDCMD update $(echo '{"state": "initial"}' | $OYDIDCMD create --doc-pwd pwd1 --rev-pwd pwd2 --timestamp 30 --return_secrets --json-output | jq -r '.did') --simulate --old-doc-pwd pwd1 --old-rev-pwd pwd2 --doc-pwd pwd3 --rev-pwd pwd4 --timestamp 31 | jq '{identifier: .did_old, options: {log_revoke: .log_revoke_old, log_update: .log_update, log_terminate: .log_terminate}, didDocument: .doc}' | curl -H "Content-Type: application/json" -d @- -X POST http://localhost:3000/1.0/update
+
+
+# Digest Agility Tests
+
+cat 04_input/a01_create_bl16.doc| $OYDIDCMD create --doc-pwd pwd1 --rev-pwd pwd2 --timestamp 1 --return_secrets --location did2.data-container.net --digest blake2b-16
+
+$OYDIDCMD did:oyd:z5y8Uej6i4L7o9fbc7w4Wjrbt%40did2.data-container.net
+
+cat 04_input/a03_update_bl16.doc | $OYDIDCMD update did:oyd:z5y8Uej6i4L7o9fbc7w4Wjrbt%40did2.data-container.net --old-doc-pwd pwd1 --doc-pwd pwd3 --old-rev-pwd pwd2 --rev-pwd pwd4 --timestamp 2 --return_secrets --location did2.data-container.net --digest blake2b-16
+
+$OYDIDCMD read --show-verification did:oyd:z5yEpGrAnNYXPNf8UK4rA5yZS%40did2.data-container.net
+
+$OYDIDCMD read --show-verification did:oyd:z5y8Uej6i4L7o9fbc7w4Wjrbt%40did2.data-container.net
+
+$OYDIDCMD delete did:oyd:z5y8Uej6i4L7o9fbc7w4Wjrbt%40did2.data-container.net --doc-pwd pwd1 --rev-pwd pwd2 --location did2.data-container.net
+
+$OYDIDCMD delete did:oyd:z5yEpGrAnNYXPNf8UK4rA5yZS%40did2.data-container.net --doc-pwd pwd3 --rev-pwd pwd4 --location did2.data-container.net
+
+
+### pytests
+$ cat 06_input/01_create_delegate.doc | $OYDIDCMD create --doc-pwd pwd1 --rev-pwd pwd2 -z 1 -s && $OYDIDCMD delegate --doc-pwd pwd3 -z 2 -s did:oyd:zQmSGdgg9jqBRZ6swpet9UK6bWxQfMoG9aQrqsmJpP4wA2A
+created did:oyd:zQmSGdgg9jqBRZ6swpet9UK6bWxQfMoG9aQrqsmJpP4wA2A
+delegate log record zQmQk6t9uYdARmwXERHpbGSTLJf9YmyQzMv36rMfJpZYs58
+
+$ $OYDIDCMD pubkeys did:oyd:zQmSGdgg9jqBRZ6swpet9UK6bWxQfMoG9aQrqsmJpP4wA2A
+authorized public keys: z6MuvWooepYBxXLdYggPjxfEZCW3DqDhapLCnYDxnQjkoShA
+
+$ cat 06_input/03_confirm_doc_delegate.doc | $OYDIDCMD confirm --old-doc-pwd pwd1 --old-rev-pwd pwd2 --doc-pwd pwd1 --rev-pwd pwd2 -z 3 -s did:oyd:zQmSGdgg9jqBRZ6swpet9UK6bWxQfMoG9aQrqsmJpP4wA2A
+updated did:oyd:zQmZDcGjnqmpTWuoszJsN5yDAKyCqYLzFom44FrbFuaZHsV (with 1 confirmation log entries)
+
+$ $OYDIDCMD delegate --rev-pwd pwd4 -z 4 -s did:oyd:zQmZDcGjnqmpTWuoszJsN5yDAKyCqYLzFom44FrbFuaZHsV
+delegate log record zQmYaxY9h1JKDJjZYHGCZhZf1AeGcprW5DKduBkQmeUz3Ng
+
+$ echo '["zQmQk6t9uYdARmwXERHpbGSTLJf9YmyQzMv36rMfJpZYs58", "zQmYaxY9h1JKDJjZYHGCZhZf1AeGcprW5DKduBkQmeUz3Ng"]' | $OYDIDCMD confirm --old-doc-pwd pwd1 --old-rev-pwd pwd2 --doc-pwd pwd1 --rev-pwd pwd2 -z 5 -s did:oyd:zQmZDcGjnqmpTWuoszJsN5yDAKyCqYLzFom44FrbFuaZHsV
+updated did:oyd:zQmVPv8DbLJNxsTpNDrMjEiMUREVh9AMX7M4cPtgecimXFs (with 2 confirmation log entries)
+
+$ echo '[1]' | $OYDIDCMD update did:oyd:zQmVPv8DbLJNxsTpNDrMjEiMUREVh9AMX7M4cPtgecimXFs --old-doc-pwd pwd3 --old-rev-pwd pwd4 --doc-pwd pwd5 --rev-pwd pwd6 -z 6 -s

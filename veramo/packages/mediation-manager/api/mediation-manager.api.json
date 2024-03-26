@@ -1,0 +1,2495 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.36.3",
+    "schemaVersion": 1011,
+    "oldestForwardsCompatibleVersion": 1001,
+    "tsdocConfig": {
+      "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+      "noStandardTags": true,
+      "tagDefinitions": [
+        {
+          "tagName": "@alpha",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@beta",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@defaultValue",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@decorator",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@deprecated",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@eventProperty",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@example",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@experimental",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@inheritDoc",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@internal",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@label",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@link",
+          "syntaxKind": "inline",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@override",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@packageDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@param",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@privateRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@public",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@readonly",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@remarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@returns",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@sealed",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@see",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@throws",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@typeParam",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@virtual",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@betaDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@internalRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@preapproved",
+          "syntaxKind": "modifier"
+        }
+      ],
+      "supportForTags": {
+        "@alpha": true,
+        "@beta": true,
+        "@defaultValue": true,
+        "@decorator": true,
+        "@deprecated": true,
+        "@eventProperty": true,
+        "@example": true,
+        "@experimental": true,
+        "@inheritDoc": true,
+        "@internal": true,
+        "@label": true,
+        "@link": true,
+        "@override": true,
+        "@packageDocumentation": true,
+        "@param": true,
+        "@privateRemarks": true,
+        "@public": true,
+        "@readonly": true,
+        "@remarks": true,
+        "@returns": true,
+        "@sealed": true,
+        "@see": true,
+        "@throws": true,
+        "@typeParam": true,
+        "@virtual": true,
+        "@betaDocumentation": true,
+        "@internalRemarks": true,
+        "@preapproved": true
+      },
+      "reportUnsupportedHtmlElements": false
+    }
+  },
+  "kind": "Package",
+  "canonicalReference": "@veramo/mediation-manager!",
+  "docComment": "/**\n * Provides a {@link @veramo/mediation-manager#MediationManager | plugin} for the {@link @veramo/core#Agent} that implements the {@link @veramo/mediation-manager#IMediationManager} interface.\n *\n * @packageDocumentation\n */\n",
+  "name": "@veramo/mediation-manager",
+  "preserveMemberOrder": false,
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "@veramo/mediation-manager!",
+      "name": "",
+      "preserveMemberOrder": false,
+      "members": [
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/mediation-manager!IMediationGetArgs:interface",
+          "docComment": "/**\n * The input to the {@link IMediationManager.mediationManagerGetMediation} method.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IMediationGetArgs "
+            }
+          ],
+          "fileUrlPath": "src/types/IMediationManager.ts",
+          "releaseTag": "Beta",
+          "name": "IMediationGetArgs",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationGetArgs#requesterDid:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "requesterDid: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RequesterDid",
+                  "canonicalReference": "@veramo/mediation-manager!RequesterDid:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "requesterDid",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/mediation-manager!IMediationManager:interface",
+          "docComment": "/**\n * MediationManager plugin interface for {@link @veramo/core#Agent}\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IMediationManager extends "
+            },
+            {
+              "kind": "Reference",
+              "text": "IPluginMethodMap",
+              "canonicalReference": "@veramo/core-types!IPluginMethodMap:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/types/IMediationManager.ts",
+          "releaseTag": "Beta",
+          "name": "IMediationManager",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManager#isMediateDefaultGrantAll:member(1)",
+              "docComment": "/**\n * Returns a boolean indicating whether the agent is configured to \"ALLOW\" or \"DENY\" all mediation requests as the default policy.\n *\n * @returns - a Promise that resolves to a boolean\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "isMediateDefaultGrantAll(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "isMediateDefaultGrantAll"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManager#mediationManagerAddRecipientDid:member(1)",
+              "docComment": "/**\n * Takes a {@link RecipientDid} and its owning {@link RequesterDid} and adds it to the store.\n *\n * @remarks\n *\n * the {@link RecipientDid} is used as the key and the {@link RequesterDid} is the value.\n *\n * @param args - an object {@link IMediationManagerAddRecipientDidArgs}\n *\n * @returns - a Promise that resolves to a {@link RequesterDid}. This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerAddRecipientDid(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationManagerAddRecipientDidArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationManagerAddRecipientDidArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RequesterDid",
+                  "canonicalReference": "@veramo/mediation-manager!RequesterDid:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "mediationManagerAddRecipientDid"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManager#mediationManagerGetAllMediations:member(1)",
+              "docComment": "/**\n * Returns a record of all {@link RequesterDid} and their associated {@link MediationResponse}.\n *\n * @returns - a Promise that resolves to a list of {@link RequesterDid} saved to the store. This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerGetAllMediations(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RequesterDid",
+                  "canonicalReference": "@veramo/mediation-manager!RequesterDid:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MediationResponse",
+                  "canonicalReference": "@veramo/mediation-manager!MediationResponse:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 9
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "mediationManagerGetAllMediations"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManager#mediationManagerGetMediation:member(1)",
+              "docComment": "/**\n * Takes a Requester Did and returns the {@link MediationResponse} associated with it from the store.\n *\n * @param args - an object {@link IMediationGetArgs}\n *\n * @returns - a Promise that resolves to the {@link MediationResponse} associated with the Requester Did or null if no {@link MediationResponse} exists This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerGetMediation(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationGetArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationGetArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MediationResponse",
+                  "canonicalReference": "@veramo/mediation-manager!MediationResponse:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | null>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "mediationManagerGetMediation"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManager#mediationManagerGetMediationPolicy:member(1)",
+              "docComment": "/**\n * Takes a Requester Did and returns the {@link PreMediationRequestPolicy} associated with it from the store.\n *\n * @param args - an object {@link IMediationManagerRemoveMediationPolicyArgs}\n *\n * @returns - a Promise that resolves to the {@link PreMediationRequestPolicy} associated with the Requester Did or null if no policy exists This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerGetMediationPolicy(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationManagerGetMediationPolicyArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationManagerGetMediationPolicyArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PreMediationRequestPolicy",
+                  "canonicalReference": "@veramo/mediation-manager!PreMediationRequestPolicy:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | null>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "mediationManagerGetMediationPolicy"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManager#mediationManagerGetRecipientDid:member(1)",
+              "docComment": "/**\n * Takes a {@link RecipientDid} and returns its associated value {@link RequesterDid}.\n *\n * @param args - an object {@link IMediationManagerRecipientDidArgs}\n *\n * @returns - a Promise that resolves string which is the {@link RequesterDid} This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerGetRecipientDid(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationManagerRecipientDidArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationManagerRecipientDidArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RequesterDid",
+                  "canonicalReference": "@veramo/mediation-manager!RequesterDid:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | null>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "mediationManagerGetRecipientDid"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManager#mediationManagerIsMediationGranted:member(1)",
+              "docComment": "/**\n * Takes a {@link RecipientDid} and returns a boolean indicating whether it has been granted mediation.\n *\n * @param args - an object {@link IMediationManagerRecipientDidArgs}\n *\n * @returns - a Promise that resolves to a boolean indicating whether mediation has been granted. This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerIsMediationGranted(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationManagerRecipientDidArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationManagerRecipientDidArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "mediationManagerIsMediationGranted"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManager#mediationManagerListMediationPolicies:member(1)",
+              "docComment": "/**\n * Returns an object of keys and their associated {@link PreMediationRequestPolicy} it from the store.\n *\n * @returns - a Promise that resolves to an object {@link PreMediationRequestPolicy}. This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerListMediationPolicies(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PreMediationRequestPolicy",
+                  "canonicalReference": "@veramo/mediation-manager!PreMediationRequestPolicy:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [],
+              "name": "mediationManagerListMediationPolicies"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManager#mediationManagerListRecipientDids:member(1)",
+              "docComment": "/**\n * Takes a {@link RequesterDid} and returns all associated {@link RecipientDid}.\n *\n * @param args - an object {@link IMediationManagerListRecipientDidsArgs}\n *\n * @returns - a Promise that resolves to an array of {@link RecipientDid} This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerListRecipientDids(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationManagerListRecipientDidsArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationManagerListRecipientDidsArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RecipientDid",
+                  "canonicalReference": "@veramo/mediation-manager!RecipientDid:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "mediationManagerListRecipientDids"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManager#mediationManagerRemoveMediation:member(1)",
+              "docComment": "/**\n * Takes a Requester Did and removes the {@link MediationResponse} associated with it from the store.\n *\n * @param args - an object {@link IMediationGetArgs}\n *\n * @returns - a Promise that resolves to a boolean indicating success or failure. or null if no {@link MediationResponse} exists This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerRemoveMediation(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationGetArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationGetArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "mediationManagerRemoveMediation"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManager#mediationManagerRemoveMediationPolicy:member(1)",
+              "docComment": "/**\n * Takes a Requester Did and removes the {@link PreMediationRequestPolicy} associated with it from the store.\n *\n * @param args - an object {@link IMediationManagerRemoveMediationPolicyArgs}\n *\n * @returns - a Promise that resolves to a boolean indicating whether the policy was successfully removed This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerRemoveMediationPolicy(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationManagerRemoveMediationPolicyArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationManagerRemoveMediationPolicyArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "mediationManagerRemoveMediationPolicy"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManager#mediationManagerRemoveRecipientDid:member(1)",
+              "docComment": "/**\n * Takes a {@link RecipientDid} and removes it from the store.\n *\n * @param args - an object {@link IMediationManagerRecipientDidArgs}\n *\n * @returns - a Promise that resolves to a boolean indicating success or failure. This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerRemoveRecipientDid(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationManagerRecipientDidArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationManagerRecipientDidArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "mediationManagerRemoveRecipientDid"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManager#mediationManagerSaveMediation:member(1)",
+              "docComment": "/**\n * Takes a Requester Did and saves the {@link MediationResponse} associated with it to the store.\n *\n * @param args - an object {@link IMediationManagerSaveMediationArgs}\n *\n * @returns - a Promise that resolves to a {@link RequesterDid} saved to the store. This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerSaveMediation(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationManagerSaveMediationArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationManagerSaveMediationArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RequesterDid",
+                  "canonicalReference": "@veramo/mediation-manager!RequesterDid:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "mediationManagerSaveMediation"
+            },
+            {
+              "kind": "MethodSignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManager#mediationManagerSaveMediationPolicy:member(1)",
+              "docComment": "/**\n * Takes a Requester Did and a {@link PreMediationRequestPolicy} and saves it to the store.\n *\n * @param args - an object {@link IMediationManagerSaveMediationPolicyArgs}\n *\n * @returns - a Promise that resolves to the saved Requester Did This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerSaveMediationPolicy(args: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationManagerSaveMediationPolicyArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationManagerSaveMediationPolicyArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RequesterDid",
+                  "canonicalReference": "@veramo/mediation-manager!RequesterDid:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isOptional": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "args",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "name": "mediationManagerSaveMediationPolicy"
+            }
+          ],
+          "extendsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/mediation-manager!IMediationManagerAddRecipientDidArgs:interface",
+          "docComment": "/**\n * The input to the {@link IMediationManager.mediationManagerAddRecipientDid} method.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IMediationManagerAddRecipientDidArgs "
+            }
+          ],
+          "fileUrlPath": "src/types/IMediationManager.ts",
+          "releaseTag": "Beta",
+          "name": "IMediationManagerAddRecipientDidArgs",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManagerAddRecipientDidArgs#recipientDid:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "recipientDid: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RecipientDid",
+                  "canonicalReference": "@veramo/mediation-manager!RecipientDid:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "recipientDid",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManagerAddRecipientDidArgs#requesterDid:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "requesterDid: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RequesterDid",
+                  "canonicalReference": "@veramo/mediation-manager!RequesterDid:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "requesterDid",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/mediation-manager!IMediationManagerGetMediationPolicyArgs:interface",
+          "docComment": "/**\n * The input to the {@link IMediationManager.mediationManagerGetMediationPolicy} method.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IMediationManagerGetMediationPolicyArgs "
+            }
+          ],
+          "fileUrlPath": "src/types/IMediationManager.ts",
+          "releaseTag": "Beta",
+          "name": "IMediationManagerGetMediationPolicyArgs",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManagerGetMediationPolicyArgs#requesterDid:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "requesterDid: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RequesterDid",
+                  "canonicalReference": "@veramo/mediation-manager!RequesterDid:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "requesterDid",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/mediation-manager!IMediationManagerListRecipientDidsArgs:interface",
+          "docComment": "/**\n * The input to the {@link IMediationManager.mediationManagerListRecipientDids} method.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IMediationManagerListRecipientDidsArgs "
+            }
+          ],
+          "fileUrlPath": "src/types/IMediationManager.ts",
+          "releaseTag": "Beta",
+          "name": "IMediationManagerListRecipientDidsArgs",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManagerListRecipientDidsArgs#requesterDid:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "requesterDid: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RequesterDid",
+                  "canonicalReference": "@veramo/mediation-manager!RequesterDid:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "requesterDid",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/mediation-manager!IMediationManagerRecipientDidArgs:interface",
+          "docComment": "/**\n * The input to the {@link IMediationManager.mediationManagerGetRecipientDid} method.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IMediationManagerRecipientDidArgs "
+            }
+          ],
+          "fileUrlPath": "src/types/IMediationManager.ts",
+          "releaseTag": "Beta",
+          "name": "IMediationManagerRecipientDidArgs",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManagerRecipientDidArgs#recipientDid:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "recipientDid: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RecipientDid",
+                  "canonicalReference": "@veramo/mediation-manager!RecipientDid:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "recipientDid",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/mediation-manager!IMediationManagerRemoveMediationPolicyArgs:interface",
+          "docComment": "/**\n * The input to the {@link IMediationManager.mediationManagerRemoveMediationPolicy} method.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IMediationManagerRemoveMediationPolicyArgs "
+            }
+          ],
+          "fileUrlPath": "src/types/IMediationManager.ts",
+          "releaseTag": "Beta",
+          "name": "IMediationManagerRemoveMediationPolicyArgs",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManagerRemoveMediationPolicyArgs#requesterDid:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "requesterDid: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RequesterDid",
+                  "canonicalReference": "@veramo/mediation-manager!RequesterDid:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "requesterDid",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/mediation-manager!IMediationManagerSaveMediationArgs:interface",
+          "docComment": "/**\n * The input to the {@link IMediationManager.mediationManagerSaveMediation} method.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IMediationManagerSaveMediationArgs "
+            }
+          ],
+          "fileUrlPath": "src/types/IMediationManager.ts",
+          "releaseTag": "Beta",
+          "name": "IMediationManagerSaveMediationArgs",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManagerSaveMediationArgs#requesterDid:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "requesterDid: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RequesterDid",
+                  "canonicalReference": "@veramo/mediation-manager!RequesterDid:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "requesterDid",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManagerSaveMediationArgs#status:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "status: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MediationResponse",
+                  "canonicalReference": "@veramo/mediation-manager!MediationResponse:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "status",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Interface",
+          "canonicalReference": "@veramo/mediation-manager!IMediationManagerSaveMediationPolicyArgs:interface",
+          "docComment": "/**\n * The input to the {@link IMediationManager.mediationManagerSaveMediationPolicy} method.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export interface IMediationManagerSaveMediationPolicyArgs "
+            }
+          ],
+          "fileUrlPath": "src/types/IMediationManager.ts",
+          "releaseTag": "Beta",
+          "name": "IMediationManagerSaveMediationPolicyArgs",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManagerSaveMediationPolicyArgs#policy:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "policy: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PreMediationRequestPolicy",
+                  "canonicalReference": "@veramo/mediation-manager!PreMediationRequestPolicy:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "policy",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            },
+            {
+              "kind": "PropertySignature",
+              "canonicalReference": "@veramo/mediation-manager!IMediationManagerSaveMediationPolicyArgs#requesterDid:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "requesterDid: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RequesterDid",
+                  "canonicalReference": "@veramo/mediation-manager!RequesterDid:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": false,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "requesterDid",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              }
+            }
+          ],
+          "extendsTokenRanges": []
+        },
+        {
+          "kind": "Class",
+          "canonicalReference": "@veramo/mediation-manager!MediationManagerPlugin:class",
+          "docComment": "/**\n * Mediation Manager Plugin for {@link @veramo/core#Agent}\n *\n * This plugin exposes methods pertaining to the {@link @veramo/core-types#IMediationManager} interface.\n *\n * @remarks\n *\n * be advised that the {@link @veramo/mediation-manager#IMediationManager} interface is for use with {@link @veramo/did-comm#DIDComm | DIDCOmm} and specifically the V3 Coordinate Mediation Protocol implementation.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare class MediationManagerPlugin implements "
+            },
+            {
+              "kind": "Reference",
+              "text": "IAgentPlugin",
+              "canonicalReference": "@veramo/core-types!IAgentPlugin:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " "
+            }
+          ],
+          "fileUrlPath": "src/mediation-manager.ts",
+          "releaseTag": "Beta",
+          "isAbstract": false,
+          "name": "MediationManagerPlugin",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "Constructor",
+              "canonicalReference": "@veramo/mediation-manager!MediationManagerPlugin:constructor(1)",
+              "docComment": "/**\n * Constructs a new instance of the `MediationManagerPlugin` class\n */\n",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "constructor(isMediateDefaultGrantAll: "
+                },
+                {
+                  "kind": "Content",
+                  "text": "boolean | undefined"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", preRequestPolicyStore: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PreRequestPolicyStore",
+                  "canonicalReference": "@veramo/mediation-manager!~PreRequestPolicyStore:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", mediationResponseStore: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MediationResponseStore",
+                  "canonicalReference": "@veramo/mediation-manager!~MediationResponseStore:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ", recipientDidStore: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RecipientDidStore",
+                  "canonicalReference": "@veramo/mediation-manager!~RecipientDidStore:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ");"
+                }
+              ],
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "isMediateDefaultGrantAll",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "preRequestPolicyStore",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 3,
+                    "endIndex": 4
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "mediationResponseStore",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 5,
+                    "endIndex": 6
+                  },
+                  "isOptional": false
+                },
+                {
+                  "parameterName": "recipientDidStore",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 7,
+                    "endIndex": 8
+                  },
+                  "isOptional": false
+                }
+              ]
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/mediation-manager!MediationManagerPlugin#mediationManagerAddRecipientDid:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerAddRecipientDid({ recipientDid, requesterDid, }: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationManagerAddRecipientDidArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationManagerAddRecipientDidArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RequesterDid",
+                  "canonicalReference": "@veramo/mediation-manager!RequesterDid:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ recipientDid, requesterDid, }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "mediationManagerAddRecipientDid"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/mediation-manager!MediationManagerPlugin#mediationManagerGetAllMediations:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerGetAllMediations(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MediationResponse",
+                  "canonicalReference": "@veramo/mediation-manager!MediationResponse:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "mediationManagerGetAllMediations"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/mediation-manager!MediationManagerPlugin#mediationManagerGetMediation:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerGetMediation({ requesterDid, }: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationGetArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationGetArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MediationResponse",
+                  "canonicalReference": "@veramo/mediation-manager!MediationResponse:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | null>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ requesterDid, }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "mediationManagerGetMediation"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/mediation-manager!MediationManagerPlugin#mediationManagerGetMediationPolicy:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerGetMediationPolicy({ requesterDid, }: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationManagerGetMediationPolicyArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationManagerGetMediationPolicyArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PreMediationRequestPolicy",
+                  "canonicalReference": "@veramo/mediation-manager!PreMediationRequestPolicy:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | null>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ requesterDid, }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "mediationManagerGetMediationPolicy"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/mediation-manager!MediationManagerPlugin#mediationManagerGetRecipientDid:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerGetRecipientDid({ recipientDid, }: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationManagerRecipientDidArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationManagerRecipientDidArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RequesterDid",
+                  "canonicalReference": "@veramo/mediation-manager!RequesterDid:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": " | null>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ recipientDid, }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "mediationManagerGetRecipientDid"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/mediation-manager!MediationManagerPlugin#mediationManagerIsMediationGranted:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerIsMediationGranted({ recipientDid, }: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationManagerRecipientDidArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationManagerRecipientDidArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ recipientDid, }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "mediationManagerIsMediationGranted"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/mediation-manager!MediationManagerPlugin#mediationManagerListMediationPolicies:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerListMediationPolicies(): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Record",
+                  "canonicalReference": "!Record:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<string, "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "PreMediationRequestPolicy",
+                  "canonicalReference": "@veramo/mediation-manager!PreMediationRequestPolicy:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "mediationManagerListMediationPolicies"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/mediation-manager!MediationManagerPlugin#mediationManagerListRecipientDids:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerListRecipientDids({ requesterDid, }: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationManagerListRecipientDidsArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationManagerListRecipientDidsArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RecipientDid",
+                  "canonicalReference": "@veramo/mediation-manager!RecipientDid:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": "[]>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ requesterDid, }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "mediationManagerListRecipientDids"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/mediation-manager!MediationManagerPlugin#mediationManagerRemoveMediation:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerRemoveMediation({ requesterDid }: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationGetArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationGetArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ requesterDid }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "mediationManagerRemoveMediation"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/mediation-manager!MediationManagerPlugin#mediationManagerRemoveMediationPolicy:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerRemoveMediationPolicy({ requesterDid, }: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationManagerRemoveMediationPolicyArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationManagerRemoveMediationPolicyArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ requesterDid, }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "mediationManagerRemoveMediationPolicy"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/mediation-manager!MediationManagerPlugin#mediationManagerRemoveRecipientDid:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerRemoveRecipientDid({ recipientDid, }: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationManagerRecipientDidArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationManagerRecipientDidArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<boolean>"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ recipientDid, }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "mediationManagerRemoveRecipientDid"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/mediation-manager!MediationManagerPlugin#mediationManagerSaveMediation:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerSaveMediation({ requesterDid, status, }: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationManagerSaveMediationArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationManagerSaveMediationArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "MediationResponse",
+                  "canonicalReference": "@veramo/mediation-manager!MediationResponse:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ requesterDid, status, }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "mediationManagerSaveMediation"
+            },
+            {
+              "kind": "Method",
+              "canonicalReference": "@veramo/mediation-manager!MediationManagerPlugin#mediationManagerSaveMediationPolicy:member(1)",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "mediationManagerSaveMediationPolicy({ requesterDid, policy, }: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationManagerSaveMediationPolicyArgs",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationManagerSaveMediationPolicyArgs:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "): "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "Promise",
+                  "canonicalReference": "!Promise:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": "<"
+                },
+                {
+                  "kind": "Reference",
+                  "text": "RequesterDid",
+                  "canonicalReference": "@veramo/mediation-manager!RequesterDid:type"
+                },
+                {
+                  "kind": "Content",
+                  "text": ">"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isStatic": false,
+              "returnTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "releaseTag": "Beta",
+              "isProtected": false,
+              "overloadIndex": 1,
+              "parameters": [
+                {
+                  "parameterName": "{ requesterDid, policy, }",
+                  "parameterTypeTokenRange": {
+                    "startIndex": 1,
+                    "endIndex": 2
+                  },
+                  "isOptional": false
+                }
+              ],
+              "isOptional": false,
+              "isAbstract": false,
+              "name": "mediationManagerSaveMediationPolicy"
+            },
+            {
+              "kind": "Property",
+              "canonicalReference": "@veramo/mediation-manager!MediationManagerPlugin#methods:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "readonly methods: "
+                },
+                {
+                  "kind": "Reference",
+                  "text": "IMediationManager",
+                  "canonicalReference": "@veramo/mediation-manager!IMediationManager:interface"
+                },
+                {
+                  "kind": "Content",
+                  "text": ";"
+                }
+              ],
+              "isReadonly": true,
+              "isOptional": false,
+              "releaseTag": "Beta",
+              "name": "methods",
+              "propertyTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isStatic": false,
+              "isProtected": false,
+              "isAbstract": false
+            }
+          ],
+          "implementsTokenRanges": [
+            {
+              "startIndex": 1,
+              "endIndex": 2
+            }
+          ]
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@veramo/mediation-manager!MediationResponse:type",
+          "docComment": "/**\n * Can be \"GRANTED\" or \"DENIED\" and is used to record whether a mediation response for a specific {@link RequesterDid} has been granted or denied.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type MediationResponse = "
+            },
+            {
+              "kind": "Content",
+              "text": "'GRANTED' | 'DENIED'"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/types/IMediationManager.ts",
+          "releaseTag": "Beta",
+          "name": "MediationResponse",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@veramo/mediation-manager!Mediations:type",
+          "docComment": "/**\n * An object of keys and their associated {@link PreMediationRequestPolicy}\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type Mediations = "
+            },
+            {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "RequesterDid",
+              "canonicalReference": "@veramo/mediation-manager!RequesterDid:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", "
+            },
+            {
+              "kind": "Reference",
+              "text": "MediationResponse",
+              "canonicalReference": "@veramo/mediation-manager!MediationResponse:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/types/IMediationManager.ts",
+          "releaseTag": "Beta",
+          "name": "Mediations",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 7
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@veramo/mediation-manager!PreMediationRequestPolicy:type",
+          "docComment": "/**\n * Can be \"ALLOW\" or \"DENY\" and is used to determine whether a mediation request for a specific {@link RequesterDid} should be ALLOW or DENY.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type PreMediationRequestPolicy = "
+            },
+            {
+              "kind": "Content",
+              "text": "'ALLOW' | 'DENY'"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/types/IMediationManager.ts",
+          "releaseTag": "Beta",
+          "name": "PreMediationRequestPolicy",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@veramo/mediation-manager!RecipientDid:type",
+          "docComment": "/**\n * A string representing the Recipient Did\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type RecipientDid = "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/types/IMediationManager.ts",
+          "releaseTag": "Beta",
+          "name": "RecipientDid",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@veramo/mediation-manager!RequesterDid:type",
+          "docComment": "/**\n * A string representing the Requester Did\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type RequesterDid = "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/types/IMediationManager.ts",
+          "releaseTag": "Beta",
+          "name": "RequesterDid",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        }
+      ]
+    }
+  ]
+}

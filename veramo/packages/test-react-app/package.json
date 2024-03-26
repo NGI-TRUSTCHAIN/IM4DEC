@@ -1,0 +1,96 @@
+{
+  "name": "@veramo/test-react-app",
+  "description": "This package is only meant for testing that veramo core dependencies function in a react environment.",
+  "version": "5.5.3",
+  "private": true,
+  "dependencies": {
+    "@veramo/core": "workspace:*",
+    "@veramo/core-types": "workspace:*",
+    "@veramo/credential-ld": "workspace:*",
+    "@veramo/credential-w3c": "workspace:*",
+    "@veramo/data-store": "workspace:*",
+    "@veramo/data-store-json": "workspace:*",
+    "@veramo/did-comm": "workspace:*",
+    "@veramo/did-jwt": "workspace:*",
+    "@veramo/did-manager": "workspace:*",
+    "@veramo/did-provider-ethr": "workspace:*",
+    "@veramo/did-provider-jwk": "workspace:*",
+    "@veramo/did-provider-key": "workspace:*",
+    "@veramo/did-provider-peer": "workspace:^",
+    "@veramo/did-provider-pkh": "workspace:*",
+    "@veramo/did-provider-web": "workspace:*",
+    "@veramo/did-resolver": "workspace:*",
+    "@veramo/key-manager": "workspace:*",
+    "@veramo/kms-local": "workspace:*",
+    "@veramo/kms-web3": "workspace:*",
+    "@veramo/message-handler": "workspace:*",
+    "@veramo/selective-disclosure": "workspace:*",
+    "@veramo/test-utils": "workspace:*",
+    "@veramo/url-handler": "workspace:*",
+    "@veramo/utils": "workspace:*",
+    "buffer": "npm:buffer",
+    "crypto": "npm:crypto-browserify",
+    "did-resolver": "^4.1.0",
+    "ethr-did-resolver": "^10.1.0",
+    "path": "npm:path-browserify",
+    "process": "npm:process",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "stream": "npm:stream-browserify",
+    "typeorm": "^0.3.17",
+    "util": "npm:util",
+    "web-did-resolver": "^2.0.27",
+    "web-vitals": "^3.4.0"
+  },
+  "scripts": {
+    "start": "craco start",
+    "buildz": "craco build",
+    "ejectz": "react-scripts eject",
+    "test:browser": "cross-env NODE_OPTIONS=\"--experimental-vm-modules --experimental-json-modules\" GENERATE_SOURCEMAP=false JEST_PUPPETEER_CONFIG=jest-puppeteer.config.cjs pnpm jest -c jest-integration.config.cjs"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-import-assertions": "7.22.5",
+    "@babel/preset-typescript": "7.23.0",
+    "@craco/craco": "7.1.0",
+    "@types/eslint": "8.44.2",
+    "@types/eslint-scope": "3.7.4",
+    "@types/expect-puppeteer": "5.0.3",
+    "@types/jest": "29.5.3",
+    "@types/jest-environment-puppeteer": "5.0.3",
+    "@types/node": "20.8.2",
+    "@types/react": "18.2.20",
+    "@types/react-dom": "18.2.7",
+    "babel-jest": "29.7.0",
+    "babel-preset-react-app": "10.0.1",
+    "cross-env": "7.0.3",
+    "jest": "29.7.0",
+    "jest-config": "29.7.0",
+    "jest-environment-puppeteer": "9.0.0",
+    "jest-environment-puppeteer-jsdom": "6.0.0",
+    "jest-jasmine2": "29.7.0",
+    "jest-puppeteer": "9.0.0",
+    "puppeteer": "21.3.4",
+    "react-scripts": "5.0.1",
+    "ts-jest": "29.1.1",
+    "typescript": "5.2.2"
+  },
+  "type": "module"
+}

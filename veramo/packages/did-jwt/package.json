@@ -1,0 +1,57 @@
+{
+  "name": "@veramo/did-jwt",
+  "description": "Veramo message validator plugin for decoding and verifying JWT payloads.",
+  "version": "5.5.3",
+  "main": "build/index.js",
+  "exports": "./build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "extract-api": "node ../cli/bin/veramo.js dev extract-api"
+  },
+  "dependencies": {
+    "@veramo/core-types": "workspace:^",
+    "@veramo/message-handler": "workspace:^",
+    "debug": "^4.3.3",
+    "did-jwt": "^7.4.1",
+    "did-resolver": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/debug": "4.1.8",
+    "typescript": "5.2.2"
+  },
+  "files": [
+    "build/**/*",
+    "src/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/decentralized-identity/veramo.git",
+    "directory": "packages/did-jwt"
+  },
+  "author": "Consensys Mesh R&D <hello@veramo.io>",
+  "contributors": [
+    "Simonas Karuzas <simonas.karuzas@mesh.xyz>",
+    "Mircea Nistor <mircea.nistor@mesh.xyz>"
+  ],
+  "keywords": [
+    "Veramo",
+    "DID",
+    "Verifiable Credential",
+    "veramo-plugin",
+    "vc-jwt",
+    "JWT",
+    "DID-JWT"
+  ],
+  "license": "Apache-2.0",
+  "type": "module",
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ]
+}

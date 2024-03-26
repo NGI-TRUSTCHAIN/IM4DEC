@@ -1,0 +1,240 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "SOyA web-cli",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "basePath": "/api/v1",
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/form/{schemaDri}": {
+      "get": {
+        "summary": "Generates a JSON-Forms form",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "schemaDri",
+            "in": "path",
+            "description": "Schema DRI of the SOyA structure",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "required": false
+          },
+          {
+            "name": "tag",
+            "in": "query",
+            "required": false
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/validate/jsonld": {
+      "post": {
+        "summary": "Validates data against JSON-LD v1.1",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "content",
+            "in": "body",
+            "description": "Content to validate",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GenericObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/validate/{schemaDri}": {
+      "post": {
+        "summary": "Validates data against a schema",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "schemaDri",
+            "in": "path",
+            "description": "Schema DRI of the SOyA structure",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "content",
+            "in": "body",
+            "description": "Content to validate",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GenericObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/transform/{schemaDri}": {
+      "post": {
+        "summary": "Transforms data according to a SOyA schema",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "schemaDri",
+            "in": "path",
+            "description": "Schema DRI of the SOyA structure",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "content",
+            "in": "body",
+            "description": "Content to transform",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GenericObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/acquire/{schemaDri}": {
+      "post": {
+        "summary": "Acquires data according to a SOyA schema",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "schemaDri",
+            "in": "path",
+            "description": "Schema DRI of the SOyA structure",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "content",
+            "in": "body",
+            "description": "Content to acquire",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/GenericObject"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/map/{from}/{to}": {
+      "get": {
+        "summary": "Maps from one SOyA schema to another one",
+        "description": "",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "from",
+            "in": "path",
+            "description": "Schema DRI of a SOyA structure",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "to",
+            "in": "path",
+            "description": "Schema DRI of a SOyA structure",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    },
+    "/version": {
+      "get": {
+        "summary": "Returns version information",
+        "description": "",
+        "consumes": [],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful operation"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "GenericObject": {
+      "type": "object"
+    }
+  }
+}

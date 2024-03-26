@@ -1,0 +1,62 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@import": "https://ns.ownyourdata.eu/ns/soya-context.json",
+    "@base": "https://soya.ownyourdata.eu/Employee/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "Employee",
+      "@type": "owl:Class",
+      "subClassOf": "soya:Base"
+    },
+    {
+      "@id": "name",
+      "@type": "owl:DatatypeProperty",
+      "domain": "Employee",
+      "range": "xsd:string"
+    },
+    {
+      "@id": "management",
+      "@type": "owl:DatatypeProperty",
+      "domain": "Employee",
+      "range": "xsd:boolean"
+    },
+    {
+      "@id": "salary",
+      "@type": "owl:DatatypeProperty",
+      "domain": "Employee",
+      "range": "xsd:float"
+    },
+    {
+      "@id": "employer",
+      "@type": "owl:ObjectProperty",
+      "domain": "Employee",
+      "range": "Organisation"
+    },
+    {
+      "@id": "Organisation",
+      "@type": "owl:Class",
+      "subClassOf": "soya:Base"
+    },
+    {
+      "@id": "name",
+      "@type": "owl:DatatypeProperty",
+      "domain": "Organisation",
+      "range": "xsd:string"
+    },
+    {
+      "@id": "founded",
+      "@type": "owl:DatatypeProperty",
+      "domain": "Organisation",
+      "range": "xsd:date"
+    },
+    {
+      "@id": "staff_count",
+      "@type": "owl:DatatypeProperty",
+      "domain": "Organisation",
+      "range": "xsd:integer"
+    }
+  ]
+}

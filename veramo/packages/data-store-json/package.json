@@ -1,0 +1,65 @@
+{
+  "name": "@veramo/data-store-json",
+  "description": "Veramo data storage based on a JSON tree",
+  "version": "5.5.3",
+  "main": "build/index.js",
+  "exports": "./build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "extract-api": "node ../cli/bin/veramo.js dev extract-api"
+  },
+  "dependencies": {
+    "@ungap/structured-clone": "^1.2.0",
+    "@veramo/core-types": "workspace:^",
+    "@veramo/did-manager": "workspace:^",
+    "@veramo/key-manager": "workspace:^",
+    "@veramo/utils": "workspace:^",
+    "debug": "^4.3.3",
+    "did-jwt-vc": "^3.2.10",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/debug": "4.1.8",
+    "@types/ungap__structured-clone": "0.3.0",
+    "@types/uuid": "9.0.2",
+    "typescript": "5.2.2"
+  },
+  "files": [
+    "build/**/*",
+    "src/**/*",
+    "plugin.schema.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/decentralized-identity/veramo.git",
+    "directory": "packages/data-store-json"
+  },
+  "author": "Consensys Mesh R&D <hello@veramo.io>",
+  "contributors": [
+    "Mircea Nistor <mircea.nistor@mesh.xyz>",
+    "Simonas Karuzas <simonas.karuzas@mesh.xyz>"
+  ],
+  "keywords": [
+    "Veramo",
+    "DID",
+    "Verifiable Credential",
+    "data store",
+    "database",
+    "JSON",
+    "veramo-plugin",
+    "local-storage",
+    "session-storage"
+  ],
+  "license": "Apache-2.0",
+  "type": "module",
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ]
+}

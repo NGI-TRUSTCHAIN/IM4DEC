@@ -1,0 +1,60 @@
+{
+  "name": "@veramo/did-provider-jwk",
+  "version": "5.5.3",
+  "description": "Veramo plugin that can enable creation and control of did:jwk identifiers.",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "exports": "./build/index.js",
+  "scripts": {
+    "build": "tsc",
+    "extract-api": "node ../cli/bin/veramo.js dev extract-api"
+  },
+  "dependencies": {
+    "@noble/curves": "^1.1.0",
+    "@veramo/core-types": "workspace:^",
+    "@veramo/did-manager": "workspace:^",
+    "@veramo/utils": "workspace:^",
+    "debug": "^4.3.3",
+    "did-resolver": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/debug": "4.1.8",
+    "@veramo/core": "workspace:*",
+    "@veramo/key-manager": "workspace:*",
+    "@veramo/kms-local": "workspace:*",
+    "typescript": "5.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/decentralized-identity/veramo.git",
+    "directory": "packages/did-provider-jwk"
+  },
+  "author": "Tadej Podrekar",
+  "contributors": [
+    "Consensys Mesh R&D <hello@veramo.io>",
+    "Mircea Nistor <mircea.nistor@mesh.xyz>"
+  ],
+  "keywords": [
+    "Veramo",
+    "DID",
+    "Verifiable Credential",
+    "veramo-plugin",
+    "did:jwk",
+    "JWK"
+  ],
+  "license": "Apache-2.0",
+  "files": [
+    "build/**/*",
+    "src/**/*",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "module",
+  "moduleDirectories": [
+    "node_modules",
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

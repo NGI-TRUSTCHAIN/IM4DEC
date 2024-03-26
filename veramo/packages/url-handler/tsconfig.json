@@ -1,0 +1,16 @@
+{
+  "extends": "../tsconfig.settings.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "build",
+    "declarationDir": "build",
+    "lib": [
+      "dom",
+      "esnext"
+    ]
+  },
+  "references": [
+    {"path": "../core-types"},
+    {"path": "../message-handler"}
+  ]
+}

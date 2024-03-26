@@ -1,0 +1,1 @@
+{"version":3,"file":"message-handler.d.ts","sourceRoot":"","sources":["../src/message-handler.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,aAAa,EAAE,MAAM,oBAAoB,CAAA;AAClD,OAAO,EAAE,OAAO,EAAE,sBAAsB,EAAE,MAAM,yBAAyB,CAAA;AAOzE;;;;;GAKG;AACH,qBAAa,iBAAkB,SAAQ,sBAAsB;IACrD,MAAM,CAAC,OAAO,EAAE,OAAO,EAAE,OAAO,EAAE,aAAa,CAAC,EAAE,CAAC,GAAG,OAAO,CAAC,OAAO,CAAC;CAkC7E"}

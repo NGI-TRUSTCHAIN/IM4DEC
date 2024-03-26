@@ -1,0 +1,66 @@
+import { resolve } from '@aviarytech/did-peer';
+/**
+ * Creates a DID Resolver that can resolve Peer DIDs (for the 0 and 2 num_algo values)
+ *
+ * @public
+ */
+export function getResolver() {
+    async function resolveInner(did, parsed) {
+        const didDocumentMetadata = {};
+        let didDocument = null;
+        let err = '';
+        do {
+            try {
+                const doc = await resolve(did);
+                didDocument = {
+                    '@context': doc['@context'],
+                    id: doc.id,
+                    verificationMethod: doc.verificationMethod,
+                    keyAgreement: doc.keyAgreement,
+                    authentication: doc.authentication,
+                    assertionMethod: doc.assertionMethod,
+                    capabilityInvocation: doc.capabilityInvocation,
+                    capabilityDelegation: doc.capabilityDelegation,
+                    service: doc.service,
+                };
+                if (doc.alsoKnownAs) {
+                    didDocument.alsoKnownAs = [doc.alsoKnownAs];
+                }
+                if (doc.controller) {
+                    didDocument.controller = doc.controller;
+                }
+            }
+            catch (error) {
+                err = `resolver_error: DID must resolve to a valid https URL containing a JSON document: ${error}`;
+                break;
+            }
+            // TODO: this excludes the use of query params
+            const docIdMatchesDid = didDocument?.id === did;
+            if (!docIdMatchesDid) {
+                err = 'resolver_error: DID document id does not match requested did';
+                // break // uncomment this when adding more checks
+            }
+            // eslint-disable-next-line no-constant-condition
+        } while (false);
+        const contentType = typeof didDocument?.['@context'] !== 'undefined' ? 'application/did+ld+json' : 'application/did+json';
+        if (err) {
+            return {
+                didDocument,
+                didDocumentMetadata,
+                didResolutionMetadata: {
+                    error: 'notFound',
+                    message: err,
+                },
+            };
+        }
+        else {
+            return {
+                didDocument,
+                didDocumentMetadata,
+                didResolutionMetadata: { contentType },
+            };
+        }
+    }
+    return { peer: resolveInner };
+}
+//# sourceMappingURL=resolver.js.map

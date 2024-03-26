@@ -1,0 +1,10 @@
+{
+  "isValid": false,
+  "results": [],
+  "classChecks": [
+    {
+      "message": "Missing class",
+      "name": "https://soya.ownyourdata.eu/Person_Test/Person"
+    }
+  ]
+}

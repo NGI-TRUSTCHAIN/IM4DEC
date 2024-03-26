@@ -1,0 +1,2407 @@
+{
+  "metadata": {
+    "toolPackage": "@microsoft/api-extractor",
+    "toolVersion": "7.36.3",
+    "schemaVersion": 1011,
+    "oldestForwardsCompatibleVersion": 1001,
+    "tsdocConfig": {
+      "$schema": "https://developer.microsoft.com/json-schemas/tsdoc/v0/tsdoc.schema.json",
+      "noStandardTags": true,
+      "tagDefinitions": [
+        {
+          "tagName": "@alpha",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@beta",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@defaultValue",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@decorator",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@deprecated",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@eventProperty",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@example",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@experimental",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@inheritDoc",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@internal",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@label",
+          "syntaxKind": "inline"
+        },
+        {
+          "tagName": "@link",
+          "syntaxKind": "inline",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@override",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@packageDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@param",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@privateRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@public",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@readonly",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@remarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@returns",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@sealed",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@see",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@throws",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@typeParam",
+          "syntaxKind": "block",
+          "allowMultiple": true
+        },
+        {
+          "tagName": "@virtual",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@betaDocumentation",
+          "syntaxKind": "modifier"
+        },
+        {
+          "tagName": "@internalRemarks",
+          "syntaxKind": "block"
+        },
+        {
+          "tagName": "@preapproved",
+          "syntaxKind": "modifier"
+        }
+      ],
+      "supportForTags": {
+        "@alpha": true,
+        "@beta": true,
+        "@defaultValue": true,
+        "@decorator": true,
+        "@deprecated": true,
+        "@eventProperty": true,
+        "@example": true,
+        "@experimental": true,
+        "@inheritDoc": true,
+        "@internal": true,
+        "@label": true,
+        "@link": true,
+        "@override": true,
+        "@packageDocumentation": true,
+        "@param": true,
+        "@privateRemarks": true,
+        "@public": true,
+        "@readonly": true,
+        "@remarks": true,
+        "@returns": true,
+        "@sealed": true,
+        "@see": true,
+        "@throws": true,
+        "@typeParam": true,
+        "@virtual": true,
+        "@betaDocumentation": true,
+        "@internalRemarks": true,
+        "@preapproved": true
+      },
+      "reportUnsupportedHtmlElements": false
+    }
+  },
+  "kind": "Package",
+  "canonicalReference": "@veramo/utils!",
+  "docComment": "/**\n * Contains helper methods for Veramo plugins.\n *\n * @packageDocumentation\n */\n",
+  "name": "@veramo/utils",
+  "preserveMemberOrder": false,
+  "members": [
+    {
+      "kind": "EntryPoint",
+      "canonicalReference": "@veramo/utils!",
+      "name": "",
+      "preserveMemberOrder": false,
+      "members": [
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!asArray:function(1)",
+          "docComment": "/**\n * Ensures that a given input is an array. If the input is a single item, it is converted to an array with a single entry.\n *\n * @param arg - a variable that needs to be converted to array\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function asArray<T>(arg?: "
+            },
+            {
+              "kind": "Content",
+              "text": "T | T[] | any"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "(T | any)[]"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/type-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "arg",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": true
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "asArray"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!bytesToBase64:function(1)",
+          "docComment": "/**\n * Encodes a Uint8Array to a base64 string representation with padding.\n *\n * @param b - the byte array to convert\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function bytesToBase64(b: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Uint8Array",
+              "canonicalReference": "!Uint8Array:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/encodings.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "b",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "bytesToBase64"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!bytesToHex:function(1)",
+          "docComment": "/**\n * Converts a Uint8Array input to a hex string\n *\n * @param byteArray - The array to be converted\n *\n * @param prefix - If this is set to true, the resulting hex string will be prefixed with 0x\n *\n * @returns the hex encoding of the input byte array\n *\n * @throws\n *\n * `illegal_argument` error if the input is not a Uint8Array\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function bytesToHex(byteArray: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Uint8Array",
+              "canonicalReference": "!Uint8Array:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ", prefix?: "
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/encodings.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "byteArray",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "prefix",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "bytesToHex"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!bytesToUtf8String:function(1)",
+          "docComment": "/**\n * Builds a string from a Uint8Array using the utf-8 encoding.\n *\n * @param b - the array to be converted\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function bytesToUtf8String(b: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Uint8Array",
+              "canonicalReference": "!Uint8Array:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/encodings.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "b",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "bytesToUtf8String"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!compressIdentifierSecp256k1Keys:function(1)",
+          "docComment": "/**\n * Converts any Secp256k1 public keys of an {@link @veramo/core-types#IIdentifier | IIdentifier} to their compressed form.\n *\n * @param identifier - the identifier with keys\n *\n * @returns the array of keys where the Secp256k1 entries are compressed.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function compressIdentifierSecp256k1Keys(identifier: "
+            },
+            {
+              "kind": "Reference",
+              "text": "IIdentifier",
+              "canonicalReference": "@veramo/core-types!IIdentifier:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "IKey",
+              "canonicalReference": "@veramo/core-types!IKey:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "[]"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/did-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "identifier",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "compressIdentifierSecp256k1Keys"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!computeEntryHash:function(1)",
+          "docComment": "/**\n * Computes a hash for a given credential or presentation. This hash is usable as an internal ID for database indexing\n *\n * @param input - the Credential or Presentation whose hash is neeeded\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function computeEntryHash(input: "
+            },
+            {
+              "kind": "Reference",
+              "text": "W3CVerifiableCredential",
+              "canonicalReference": "@veramo/core-types!W3CVerifiableCredential:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "W3CVerifiablePresentation",
+              "canonicalReference": "@veramo/core-types!W3CVerifiablePresentation:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "IMessage",
+              "canonicalReference": "@veramo/core-types!IMessage:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/credential-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 7,
+            "endIndex": 8
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "input",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 6
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "computeEntryHash"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!concat:function(1)",
+          "docComment": "/**\n * Concatenates a bunch of arrays into one Uint8Array\n *\n * @param arrays - the arrays to be concatenated\n *\n * @param length - the maximum length of the resulting array\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function concat(arrays: "
+            },
+            {
+              "kind": "Reference",
+              "text": "ArrayLike",
+              "canonicalReference": "!ArrayLike:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<number>[]"
+            },
+            {
+              "kind": "Content",
+              "text": ", length?: "
+            },
+            {
+              "kind": "Content",
+              "text": "number"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Uint8Array",
+              "canonicalReference": "!Uint8Array:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/encodings.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 6,
+            "endIndex": 7
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "arrays",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 3
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "length",
+              "parameterTypeTokenRange": {
+                "startIndex": 4,
+                "endIndex": 5
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "concat"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!convertEd25519PrivateKeyToX25519:function(1)",
+          "docComment": "/**\n * Converts Ed25519 private keys to X25519\n *\n * @param privateKey - The bytes of an Ed25519P private key\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function convertEd25519PrivateKeyToX25519(privateKey: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Uint8Array",
+              "canonicalReference": "!Uint8Array:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Uint8Array",
+              "canonicalReference": "!Uint8Array:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/did-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "privateKey",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "convertEd25519PrivateKeyToX25519"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!convertEd25519PublicKeyToX25519:function(1)",
+          "docComment": "/**\n * Converts Ed25519 public keys to X25519\n *\n * @param publicKey - The bytes of an Ed25519P public key\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function convertEd25519PublicKeyToX25519(publicKey: "
+            },
+            {
+              "kind": "Reference",
+              "text": "Uint8Array",
+              "canonicalReference": "!Uint8Array:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Uint8Array",
+              "canonicalReference": "!Uint8Array:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/did-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "publicKey",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "convertEd25519PublicKeyToX25519"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!convertIdentifierEncryptionKeys:function(1)",
+          "docComment": "/**\n * Converts any Ed25519 keys of an {@link @veramo/core-types#IIdentifier | IIdentifier} to X25519 to be usable for encryption.\n *\n * @param identifier - the identifier with keys\n *\n * @returns the array of converted keys filtered to contain only those usable for encryption.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function convertIdentifierEncryptionKeys(identifier: "
+            },
+            {
+              "kind": "Reference",
+              "text": "IIdentifier",
+              "canonicalReference": "@veramo/core-types!IIdentifier:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "IKey",
+              "canonicalReference": "@veramo/core-types!IKey:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "[]"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/did-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 5
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "identifier",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "convertIdentifierEncryptionKeys"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!decodeBase64url:function(1)",
+          "docComment": "/**\n * Decodes a base64url string to a utf8 string represented by the same bytes.\n *\n * @param s - the base64url string to be decoded\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function decodeBase64url(s: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/encodings.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "s",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "decodeBase64url"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!decodeCredentialToObject:function(1)",
+          "docComment": "/**\n * Parses a {@link @veramo/core-types#W3CVerifiableCredential | W3CVerifiableCredential} and converts it to a {@link @veramo/core-types#VerifiableCredential | VerifiableCredential} so it is easier to use programmatically.\n *\n * @param input - the raw credential to be transformed This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function decodeCredentialToObject(input: "
+            },
+            {
+              "kind": "Reference",
+              "text": "W3CVerifiableCredential",
+              "canonicalReference": "@veramo/core-types!W3CVerifiableCredential:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "VerifiableCredential",
+              "canonicalReference": "@veramo/core-types!VerifiableCredential:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/credential-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "input",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "decodeCredentialToObject"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!decodeJoseBlob:function(1)",
+          "docComment": "/**\n * Decodes a base64url string representing stringified JSON to a JSON object.\n *\n * @param blob - The base64url encoded stringified JSON to be decoded\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function decodeJoseBlob(blob: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/encodings.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "blob",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "decodeJoseBlob"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!decodePresentationToObject:function(1)",
+          "docComment": "/**\n * Parses a {@link @veramo/core-types#W3CVerifiablePresentation | W3CVerifiablePresentation} and converts it to a {@link @veramo/core-types#VerifiablePresentation | VerifiablePresentation} so it is easier to use programmatically.\n *\n * @param input - the raw presentation to be transformed.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function decodePresentationToObject(input: "
+            },
+            {
+              "kind": "Reference",
+              "text": "W3CVerifiablePresentation",
+              "canonicalReference": "@veramo/core-types!W3CVerifiablePresentation:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "VerifiablePresentation",
+              "canonicalReference": "@veramo/core-types!VerifiablePresentation:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/credential-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "input",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "decodePresentationToObject"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!dereferenceDidKeys:function(1)",
+          "docComment": "/**\n * Dereferences keys from DID document and normalizes them for easy comparison.\n *\n * When dereferencing keyAgreement keys, only Ed25519 and X25519 curves are supported. Other key types are omitted from the result and Ed25519 keys are converted to X25519\n *\n * @returns a Promise that resolves to the list of dereferenced keys.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function dereferenceDidKeys(didDocument: "
+            },
+            {
+              "kind": "Reference",
+              "text": "DIDDocument",
+              "canonicalReference": "did-resolver!DIDDocument:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", section: "
+            },
+            {
+              "kind": "Reference",
+              "text": "DIDDocumentSection",
+              "canonicalReference": "@veramo/core-types!DIDDocumentSection:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | undefined"
+            },
+            {
+              "kind": "Content",
+              "text": ", context: "
+            },
+            {
+              "kind": "Reference",
+              "text": "IAgentContext",
+              "canonicalReference": "@veramo/core-types!IAgentContext:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "IResolver",
+              "canonicalReference": "@veramo/core-types!IResolver:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "_NormalizedVerificationMethod",
+              "canonicalReference": "@veramo/utils!_NormalizedVerificationMethod:type"
+            },
+            {
+              "kind": "Content",
+              "text": "[]>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/did-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 11,
+            "endIndex": 15
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "didDocument",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "section",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "context",
+              "parameterTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 10
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "dereferenceDidKeys"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!encodeBase64url:function(1)",
+          "docComment": "/**\n * Encodes the bytes of an input string to base64url\n *\n * @param s - the original string\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function encodeBase64url(s: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/encodings.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "s",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "encodeBase64url"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!encodeJoseBlob:function(1)",
+          "docComment": "/**\n * Stringifies a JSON object and encodes the bytes of the resulting string to a base64url representation.\n *\n * @param payload - the object to be encoded\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function encodeJoseBlob(payload: "
+            },
+            {
+              "kind": "Content",
+              "text": "{}"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/encodings.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "payload",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "encodeJoseBlob"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!extractIssuer:function(1)",
+          "docComment": "/**\n * Decodes a credential or presentation and returns the issuer ID `iss` from a JWT or `issuer`/`issuer.id` from a VC or `holder` from a VP\n *\n * @param input - the credential or presentation whose issuer/holder needs to be extracted.\n *\n * @param options - options for the extraction removeParameters - Remove all DID parameters from the issuer ID\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function extractIssuer(input?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "W3CVerifiableCredential",
+              "canonicalReference": "@veramo/core-types!W3CVerifiableCredential:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "W3CVerifiablePresentation",
+              "canonicalReference": "@veramo/core-types!W3CVerifiablePresentation:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "CredentialPayload",
+              "canonicalReference": "@veramo/core-types!CredentialPayload:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | "
+            },
+            {
+              "kind": "Reference",
+              "text": "PresentationPayload",
+              "canonicalReference": "@veramo/core-types!PresentationPayload:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | null"
+            },
+            {
+              "kind": "Content",
+              "text": ", options?: "
+            },
+            {
+              "kind": "Content",
+              "text": "{\n    removeParameters?: boolean;\n}"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/credential-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 12,
+            "endIndex": 13
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "input",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 9
+              },
+              "isOptional": true
+            },
+            {
+              "parameterName": "options",
+              "parameterTypeTokenRange": {
+                "startIndex": 10,
+                "endIndex": 11
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "extractIssuer"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!extractPublicKeyHex:function(1)",
+          "docComment": "/**\n * Converts the publicKey of a VerificationMethod to hex encoding (publicKeyHex)\n *\n * @param pk - the VerificationMethod to be converted\n *\n * @param convert - when this flag is set to true, Ed25519 keys are converted to their X25519 pairs\n *\n * @returns the hex encoding of the public key\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function extractPublicKeyHex(pk: "
+            },
+            {
+              "kind": "Reference",
+              "text": "_ExtendedVerificationMethod",
+              "canonicalReference": "@veramo/utils!_ExtendedVerificationMethod:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", convert?: "
+            },
+            {
+              "kind": "Content",
+              "text": "boolean"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/did-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "pk",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "convert",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "extractPublicKeyHex"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!generateJwkFromVerificationMethod:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function generateJwkFromVerificationMethod(keyType: "
+            },
+            {
+              "kind": "Reference",
+              "text": "JwkDidSupportedKeyTypes",
+              "canonicalReference": "@veramo/utils!JwkDidSupportedKeyTypes:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", key: "
+            },
+            {
+              "kind": "Reference",
+              "text": "VerificationMethod",
+              "canonicalReference": "did-resolver!VerificationMethod:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ", keyUse?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "KeyUse",
+              "canonicalReference": "@veramo/utils!KeyUse:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "JsonWebKey",
+              "canonicalReference": "did-resolver!JsonWebKey:interface"
+            },
+            {
+              "kind": "Content",
+              "text": " | undefined"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/jwk-did-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 7,
+            "endIndex": 9
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "keyType",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "key",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "keyUse",
+              "parameterTypeTokenRange": {
+                "startIndex": 5,
+                "endIndex": 6
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "generateJwkFromVerificationMethod"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!getChainIdForDidEthr:function(1)",
+          "docComment": "/**\n * Extracts the chain ID from a {@link did-resolver#VerificationMethod | verification method} supporting legacy representations as well.\n *\n * @param verificationMethod - the VerificationMethod object (from a DID document)\n *\n * @returns a chain ID `number` or `undefined` if none could be extracted.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function getChainIdForDidEthr(verificationMethod: "
+            },
+            {
+              "kind": "Reference",
+              "text": "_NormalizedVerificationMethod",
+              "canonicalReference": "@veramo/utils!_NormalizedVerificationMethod:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "number"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/did-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "verificationMethod",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "getChainIdForDidEthr"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!getEthereumAddress:function(1)",
+          "docComment": "/**\n * Extracts an ethereum address from a {@link did-resolver#VerificationMethod | verification method} supporting legacy representations.\n *\n * @param verificationMethod - the VerificationMethod object (from a DID document)\n *\n * @returns an ethereum address `string` or `undefined` if none could be extracted\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function getEthereumAddress(verificationMethod: "
+            },
+            {
+              "kind": "Reference",
+              "text": "VerificationMethod",
+              "canonicalReference": "did-resolver!VerificationMethod:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string | undefined"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/did-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "verificationMethod",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "getEthereumAddress"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!getKeyUse:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function getKeyUse(keyType: "
+            },
+            {
+              "kind": "Reference",
+              "text": "JwkDidSupportedKeyTypes",
+              "canonicalReference": "@veramo/utils!JwkDidSupportedKeyTypes:type"
+            },
+            {
+              "kind": "Content",
+              "text": ", passedKeyUse?: "
+            },
+            {
+              "kind": "Reference",
+              "text": "KeyUse",
+              "canonicalReference": "@veramo/utils!KeyUse:type"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "KeyUse",
+              "canonicalReference": "@veramo/utils!KeyUse:type"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/jwk-did-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "keyType",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "passedKeyUse",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "getKeyUse"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!hexToBytes:function(1)",
+          "docComment": "/**\n * Converts a hex string (with or without prefix) to a byte array (Uint8Array)\n *\n * @param hexString - The string representing the encoding\n *\n * @returns the `Uint8Array` represented by the given string\n *\n * @throws\n *\n * `illegal_argument` error if the parameter is not a string\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function hexToBytes(hexString: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Uint8Array",
+              "canonicalReference": "!Uint8Array:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/encodings.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "hexString",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "hexToBytes"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!intersect:function(1)",
+          "docComment": "/**\n * Compute the intersection of two arrays Elements are compared by reference so object types will appear as unique even if they contain the same data.\n *\n * @param a - first array\n *\n * @param b - second array\n *\n * @returns The intersection of the two arrays.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function intersect<T>(a: "
+            },
+            {
+              "kind": "Content",
+              "text": "T[] | any"
+            },
+            {
+              "kind": "Content",
+              "text": ", b: "
+            },
+            {
+              "kind": "Content",
+              "text": "any[] | any"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "T[]"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/type-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "a",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "b",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "intersect"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!isDefined:function(1)",
+          "docComment": "/**\n * Checks if a variable is defined and not null. After this check, typescript sees the variable as defined.\n *\n * @param arg - The input to be verified\n *\n * @returns true if the input variable is defined.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function isDefined<T>(arg: "
+            },
+            {
+              "kind": "Content",
+              "text": "T"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "arg",
+              "canonicalReference": "@veramo/utils!~arg"
+            },
+            {
+              "kind": "Content",
+              "text": " is "
+            },
+            {
+              "kind": "Reference",
+              "text": "Exclude",
+              "canonicalReference": "!Exclude:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<T, null | undefined>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/type-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 7
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "arg",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "isDefined"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!isIterable:function(1)",
+          "docComment": "/**\n * Checks if an object is iterable (can be used for `for..of`)\n *\n * @param obj - the variable to be checked\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function isIterable<T>(obj: "
+            },
+            {
+              "kind": "Content",
+              "text": "any"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "obj",
+              "canonicalReference": "@veramo/utils!~obj"
+            },
+            {
+              "kind": "Content",
+              "text": " is "
+            },
+            {
+              "kind": "Reference",
+              "text": "Iterable",
+              "canonicalReference": "!Iterable:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<T>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/type-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 7
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "obj",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "name": "isIterable"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!isJWK:function(1)",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function isJWK(data: "
+            },
+            {
+              "kind": "Content",
+              "text": "unknown"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "data",
+              "canonicalReference": "@veramo/utils!~data"
+            },
+            {
+              "kind": "Content",
+              "text": " is "
+            },
+            {
+              "kind": "Reference",
+              "text": "JsonWebKey",
+              "canonicalReference": "did-resolver!JsonWebKey:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/jwk-did-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 6
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "data",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "isJWK"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@veramo/utils!JwkDidSupportedKeyTypes:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type JwkDidSupportedKeyTypes = "
+            },
+            {
+              "kind": "Content",
+              "text": "keyof typeof "
+            },
+            {
+              "kind": "Reference",
+              "text": "SupportedKeyTypes",
+              "canonicalReference": "@veramo/utils!SupportedKeyTypes:enum"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/types/utility-types.ts",
+          "releaseTag": "Public",
+          "name": "JwkDidSupportedKeyTypes",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 3
+          }
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@veramo/utils!KeyUse:type",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type KeyUse = "
+            },
+            {
+              "kind": "Content",
+              "text": "'sig' | 'enc'"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/types/utility-types.ts",
+          "releaseTag": "Public",
+          "name": "KeyUse",
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          }
+        },
+        {
+          "kind": "Variable",
+          "canonicalReference": "@veramo/utils!MANDATORY_CREDENTIAL_CONTEXT:var",
+          "docComment": "/**\n * Every Verifiable Credential `@context` property must contain this.\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "MANDATORY_CREDENTIAL_CONTEXT = "
+            },
+            {
+              "kind": "Content",
+              "text": "\"https://www.w3.org/2018/credentials/v1\""
+            }
+          ],
+          "fileUrlPath": "src/credential-utils.ts",
+          "initializerTokenRange": {
+            "startIndex": 1,
+            "endIndex": 2
+          },
+          "isReadonly": true,
+          "releaseTag": "Public",
+          "name": "MANDATORY_CREDENTIAL_CONTEXT",
+          "variableTypeTokenRange": {
+            "startIndex": 0,
+            "endIndex": 0
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!mapIdentifierKeysToDoc:function(1)",
+          "docComment": "/**\n * Maps the keys of a locally managed {@link @veramo/core-types#IIdentifier | IIdentifier} to the corresponding {@link did-resolver#VerificationMethod | VerificationMethod} entries from the DID document.\n *\n * @param identifier - the identifier to be mapped\n *\n * @param section - the section of the DID document to be mapped (see {@link https://www.w3.org/TR/did-core/#verification-relationships | verification relationships}), but can also be `verificationMethod` to map all the keys.\n *\n * @param context - the veramo agent context, which must contain a {@link @veramo/core-types#IResolver | IResolver} implementation that can resolve the DID document of the identifier.\n *\n * @returns an array of mapped keys. The corresponding verification method is added to the `meta.verificationMethod` property of the key.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function mapIdentifierKeysToDoc(identifier: "
+            },
+            {
+              "kind": "Reference",
+              "text": "IIdentifier",
+              "canonicalReference": "@veramo/core-types!IIdentifier:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ", section: "
+            },
+            {
+              "kind": "Reference",
+              "text": "DIDDocumentSection",
+              "canonicalReference": "@veramo/core-types!DIDDocumentSection:type"
+            },
+            {
+              "kind": "Content",
+              "text": " | undefined"
+            },
+            {
+              "kind": "Content",
+              "text": ", context: "
+            },
+            {
+              "kind": "Reference",
+              "text": "IAgentContext",
+              "canonicalReference": "@veramo/core-types!IAgentContext:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "IResolver",
+              "canonicalReference": "@veramo/core-types!IResolver:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "_ExtendedIKey",
+              "canonicalReference": "@veramo/utils!_ExtendedIKey:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "[]>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/did-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 11,
+            "endIndex": 15
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "identifier",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "section",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 5
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "context",
+              "parameterTypeTokenRange": {
+                "startIndex": 6,
+                "endIndex": 10
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "mapIdentifierKeysToDoc"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!processEntryToArray:function(1)",
+          "docComment": "/**\n * Processes an entry or an array of entries into an array of entries. If a `startWithEntry` param is provided, it is set as the first item in the result array.\n *\n * @param inputEntryOrArray - The input that needs to be transformed to an array.\n *\n * @param startWithEntry - If this is provided, this element will be the first in the resulting array.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function processEntryToArray(inputEntryOrArray?: "
+            },
+            {
+              "kind": "Content",
+              "text": "string | string[] | any"
+            },
+            {
+              "kind": "Content",
+              "text": ", startWithEntry?: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string[]"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/credential-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 5,
+            "endIndex": 6
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "inputEntryOrArray",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": true
+            },
+            {
+              "parameterName": "startWithEntry",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 4
+              },
+              "isOptional": true
+            }
+          ],
+          "name": "processEntryToArray"
+        },
+        {
+          "kind": "TypeAlias",
+          "canonicalReference": "@veramo/utils!RecordLike:type",
+          "docComment": "/**\n * A mapping of string to another type. Both Map and Record are accepted.\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export type RecordLike<T> = "
+            },
+            {
+              "kind": "Reference",
+              "text": "Map",
+              "canonicalReference": "!Map:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<string, T> | "
+            },
+            {
+              "kind": "Reference",
+              "text": "Record",
+              "canonicalReference": "!Record:type"
+            },
+            {
+              "kind": "Content",
+              "text": "<string, T>"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/types/utility-types.ts",
+          "releaseTag": "Beta",
+          "name": "RecordLike",
+          "typeParameters": [
+            {
+              "typeParameterName": "T",
+              "constraintTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              },
+              "defaultTypeTokenRange": {
+                "startIndex": 0,
+                "endIndex": 0
+              }
+            }
+          ],
+          "typeTokenRange": {
+            "startIndex": 1,
+            "endIndex": 5
+          }
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!removeDIDParameters:function(1)",
+          "docComment": "/**\n * Remove all DID parameters from a DID url\n *\n * @param did - the DID URL\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function removeDIDParameters(did: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/credential-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "did",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "removeDIDParameters"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!resolveDidOrThrow:function(1)",
+          "docComment": "/**\n * Resolve a DID document or throw an error if the resolution fails.\n *\n * @param didUrl - the DID to be resolved\n *\n * @param context - the veramo agent context, which must contain a {@link @veramo/core-types#IResolver | IResolver} implementation that can resolve the DID document of the `didUrl`.\n *\n * @returns a {@link did-resolver#DIDDocument | DIDDocument} if resolution is successful\n *\n * @throws\n *\n * if the resolution fails\n *\n * This API may change without a BREAKING CHANGE notice.\n *\n * @beta\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function resolveDidOrThrow(didUrl: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": ", context: "
+            },
+            {
+              "kind": "Reference",
+              "text": "IAgentContext",
+              "canonicalReference": "@veramo/core-types!IAgentContext:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "IResolver",
+              "canonicalReference": "@veramo/core-types!IResolver:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ">"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Promise",
+              "canonicalReference": "!Promise:interface"
+            },
+            {
+              "kind": "Content",
+              "text": "<"
+            },
+            {
+              "kind": "Reference",
+              "text": "DIDDocument",
+              "canonicalReference": "did-resolver!DIDDocument:type"
+            },
+            {
+              "kind": "Content",
+              "text": ">"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/did-utils.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 8,
+            "endIndex": 12
+          },
+          "releaseTag": "Beta",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "didUrl",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            },
+            {
+              "parameterName": "context",
+              "parameterTypeTokenRange": {
+                "startIndex": 3,
+                "endIndex": 7
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "resolveDidOrThrow"
+        },
+        {
+          "kind": "Function",
+          "canonicalReference": "@veramo/utils!stringToUtf8Bytes:function(1)",
+          "docComment": "/**\n * Encodes a string to a Uint8Array using the utf-8 encoding.\n *\n * @param s - the string to be encoded\n *\n * @public\n */\n",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare function stringToUtf8Bytes(s: "
+            },
+            {
+              "kind": "Content",
+              "text": "string"
+            },
+            {
+              "kind": "Content",
+              "text": "): "
+            },
+            {
+              "kind": "Reference",
+              "text": "Uint8Array",
+              "canonicalReference": "!Uint8Array:interface"
+            },
+            {
+              "kind": "Content",
+              "text": ";"
+            }
+          ],
+          "fileUrlPath": "src/encodings.ts",
+          "returnTypeTokenRange": {
+            "startIndex": 3,
+            "endIndex": 4
+          },
+          "releaseTag": "Public",
+          "overloadIndex": 1,
+          "parameters": [
+            {
+              "parameterName": "s",
+              "parameterTypeTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "isOptional": false
+            }
+          ],
+          "name": "stringToUtf8Bytes"
+        },
+        {
+          "kind": "Enum",
+          "canonicalReference": "@veramo/utils!SupportedKeyTypes:enum",
+          "docComment": "",
+          "excerptTokens": [
+            {
+              "kind": "Content",
+              "text": "export declare enum SupportedKeyTypes "
+            }
+          ],
+          "fileUrlPath": "src/types/utility-types.ts",
+          "releaseTag": "Public",
+          "name": "SupportedKeyTypes",
+          "preserveMemberOrder": false,
+          "members": [
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@veramo/utils!SupportedKeyTypes.Ed25519:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Ed25519 = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"Ed25519\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Ed25519"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@veramo/utils!SupportedKeyTypes.Secp256k1:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Secp256k1 = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"Secp256k1\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Secp256k1"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@veramo/utils!SupportedKeyTypes.Secp256r1:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "Secp256r1 = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"Secp256r1\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "Secp256r1"
+            },
+            {
+              "kind": "EnumMember",
+              "canonicalReference": "@veramo/utils!SupportedKeyTypes.X25519:member",
+              "docComment": "",
+              "excerptTokens": [
+                {
+                  "kind": "Content",
+                  "text": "X25519 = "
+                },
+                {
+                  "kind": "Content",
+                  "text": "\"X25519\""
+                }
+              ],
+              "initializerTokenRange": {
+                "startIndex": 1,
+                "endIndex": 2
+              },
+              "releaseTag": "Public",
+              "name": "X25519"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

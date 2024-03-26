@@ -1,0 +1,1 @@
+{"version":3,"file":"2.simplifyRelations.d.ts","sourceRoot":"","sources":["../../src/migrations/2.simplifyRelations.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,kBAAkB,EAAE,WAAW,EAAe,MAAM,SAAS,CAAA;AAItE;;;;GAIG;AACH,qBAAa,8BAA+B,YAAW,kBAAkB;IAEvE,IAAI,SAAmC;IAEjC,EAAE,CAAC,WAAW,EAAE,WAAW,GAAG,OAAO,CAAC,IAAI,CAAC;IAc3C,IAAI,CAAC,WAAW,EAAE,WAAW,GAAG,OAAO,CAAC,IAAI,CAAC;CAGpD"}
