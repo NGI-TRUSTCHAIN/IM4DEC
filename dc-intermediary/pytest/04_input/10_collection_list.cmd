@@ -1,0 +1,1 @@
+curl -s -H "Authorization: Bearer $USER_TOKEN" $GW_HOST/collection/list | jq '[type == "array" and length > 2] | any'

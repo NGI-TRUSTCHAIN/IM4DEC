@@ -1,0 +1,128 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ida-live-plugin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ida-live-plugin
+  template:
+    metadata:
+      name: ida-live-plugin
+      labels:
+        app: ida-live-plugin
+    spec:
+      containers:
+      - name: ida-live-plugin
+        image: oydeu/dc-decida:latest
+        ports:
+        - containerPort: 3000
+        env:
+          - name: LANG
+            value: C.UTF-8
+          - name: RAILS_LOG_TO_STDOUT
+            value: "TRUE"
+          - name: RAILS_SERVE_STATIC_FILES
+            value: "TRUE"
+          - name: RAILS_ENV
+            value: production
+          - name: REDIS_HOST
+            value: redis-0.redis.redis.svc.cluster.local
+          - name: REDIS_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: general-secrets
+                key: redis-passwd
+          - name: DC_DB
+            value: kubernetes
+          - name: DB2_HOST
+            value: postgres
+          - name: DB2_NAME
+            value: ida-live-plugin
+          - name: DB2_USER
+            value: postgres
+          - name: POSTGRES2_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: general-secrets
+                key: db2-passwd
+          - name: RAILS_CONFIG_HOSTS
+            value: "idaustria.dec112.eu"
+          - name: DEFAULT_DID_OAUTH_APP
+            value: oydid
+          - name: AUTH
+            value: "true"
+          - name: IDA_SERVICE_URL
+            value: "https://eid.oesterreich.gv.at"
+          - name: EID_ENDPOINT
+            value: "https://eid.oesterreich.gv.at/auth/idp/profile/oidc/token"
+          - name: DEC_IDA_URL
+            value: "https://idaustria.dec112.eu/connect"
+          - name: DEC_CLIENT_ID
+            value: "https://idaustria.dec112.eu"
+          - name: IDA_CLIENT_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: regapi-secrets
+                key: ida-live-oidc-secret
+          - name: DID_ISSUER
+            value: "did:oyd:zQmefAYBcTqEizzQ1k4F7NYDjyPVqhmKWC1JBUqy5XEjKnQ"
+          - name: ISSUER_PRIVATEKEY
+            valueFrom:
+              secretKeyRef:
+                name: regapi-secrets
+                key: issuer-privatekey-secret
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: ida-live-plugin
+spec:
+  selector:
+    app: ida-live-plugin
+  type: NodePort
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 3000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ida-live-plugin
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    certmanager.io/issuer: "letsencrypt-prod"
+spec:
+  tls:
+  - hosts:
+    - idaustria.dec112.eu
+    secretName: ida-live-plugin-tls
+  rules:
+  - host: idaustria.dec112.eu
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: ida-live-plugin
+            port:
+              number: 80
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ida-live-plugin-tls
+  annotations:
+    cert-manager.io/issuer: "letsencrypt-prod"
+spec:
+  secretName: ida-live-plugin-tls
+  issuerRef:
+    group: cert-manager.io
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+  - 'idaustria.dec112.eu'

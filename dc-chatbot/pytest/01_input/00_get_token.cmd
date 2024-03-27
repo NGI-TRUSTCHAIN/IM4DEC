@@ -1,0 +1,1 @@
+export TOKEN=`curl -s -d grant_type=client_credentials -d client_id=$APP_KEY -d client_secret=$APP_SECRET -d scope=admin -X POST $SC_HOST/oauth/token | jq -r '.access_token'`

@@ -1,0 +1,1 @@
+curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer $MASTER_TOKEN" $GW_HOST/organization/99999

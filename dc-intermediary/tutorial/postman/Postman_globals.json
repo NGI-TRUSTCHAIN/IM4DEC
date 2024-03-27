@@ -1,0 +1,121 @@
+{
+	"id": "48a105e7-5bb5-48b2-8873-b2208410146f",
+	"values": [
+		{
+			"key": "APP_KEY",
+			"value": "rkgYEN5QXmsFcwbH-awWoo9Q5BJd6vdGoyzRHI0lOZs",
+			"enabled": true
+		},
+		{
+			"key": "APP_SECRET",
+			"value": "AoaoR9-Aj7woafUW7hnARWVbNqaBxINiqteyMDMuBoA",
+			"enabled": true
+		},
+		{
+			"key": "GW_HOST",
+			"value": "https://babelfish.data-container.net",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "user_dri",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "disp_dri",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "USER_KEY",
+			"value": "CT4ZGJTFCyfWFjO7XxnCE77Hl2RjGxVK3Al4-2CndrI",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "USER_SECRET",
+			"value": "wpQFkeT4O7VUNfZQY4IdkVeq8-hUIb8eplYYw6hU6bo",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "DISP_KEY",
+			"value": "-KuMFN5Qqbf-Ls6w2Y6Tr50Ob5F5NOpogsHHvWWdoCU",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "DISP_SECRET",
+			"value": "YE4PDxX1mpYq-xlk8HnMBozzLrBLe3qCZLYb27qGikU",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "organization-id",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "organisation-dri",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "user-id",
+			"value": "58",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "service-id",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "service-name",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "collection-id",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "object-id",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "enable_auto_refresh_access_token",
+			"value": "true",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "admin-id",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "admin-secret",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2023-06-08T08:37:00.892Z",
+	"_postman_exported_using": "Postman/10.14.6"
+}

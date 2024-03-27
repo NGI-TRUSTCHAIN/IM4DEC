@@ -1,0 +1,73 @@
+01_Organisations
+^^^^^^^^^^^^^^^^
+02 Read Organisation
+03 List all Organisations
+01 Create Organisation
+04 Update Organisation
+05 Delete Organisation
+06 Retrieve User List for Organisation
+
+
+02_Users
+^^^^^^^^
+01 Read User
+02 Create user
+03 Wallet
+04 Update User
+05 Delete User
+
+
+03_Services
+^^^^^^^^^^^
+01 Create Service
+02 Read Service
+03 Service Catlaogue
+04 Query Services
+05 Update Service
+06 Delete Service
+
+
+04_Storage
+^^^^^^^^^^
+10  retrieve collection list
+11  read collection
+01  create collection
+12  update collection
+13  delete collection
+06  check object access
+14  list objects
+05a read object metadata
+07  read payload
+02  create object (metadata)
+04  write object (payload)
+03  update object
+08  delete object
+
+
+09_Alignment
+^^^^^^^^^^^^
+01 create soya
+02 create handlebar
+
+
+10_Transformation
+^^^^^^^^^^^^^^^^^
+01 create soya
+02 manual transform
+03 automatic transform
+
+
+11_SCM Data Provisioning
+^^^^^^^^^^^^^^^^^^^^^^^^
+01 create d2a
+02 sign d2a
+03 setup intermediary
+04 write data
+
+
+12_SCM Data Disclosure
+^^^^^^^^^^^^^^^^^^^^^^
+01 create d3a
+02 sign d3a
+03 validate DAs
+04 read data

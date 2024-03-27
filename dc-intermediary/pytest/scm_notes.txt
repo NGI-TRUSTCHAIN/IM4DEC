@@ -1,0 +1,160 @@
+# signature Beekeeper
+cat 11_input/01_create_d2a.doc | oydid vc-proof --issuer did:oyd:zQmcHfufF5xtjhgqDbXmWeSSd2WKoncQC1S4dajk8eNnPM5%40babelfish.data-container.net --doc-pwd honey-pwd
+
+# signature DISP
+cat 11_input/02_sign_d2a.doc | oydid vc-proof --issuer did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net --doc-pwd disp-pwd
+
+# create VC
+echo '{
+    "credentialSubject": {
+        "id": "did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net",
+        "purposes": [{
+            "purpose": ["scdv:GreenClaim", "scdv:SupplyChainFacilitation"],
+            "service": "Honey Production",
+            "recipient": ["scdv:Authority", "scdv:DataSpace"],
+            "processing": ["scdv:Store", "scdv:Query"],
+            "data_source": [{
+                "name": "Imkerei Hans Huber",
+                "address": "Street 1, A-1010 Vienna",
+                "party_type": "Ministry of Agriculture",
+                "organization_id": "did:oyd:zQmcHfufF5xtjhgqDbXmWeSSd2WKoncQC1S4dajk8eNnPM5%40babelfish.data-container.net"
+            }],
+            "jurisdiction": "Vienna, Austria",
+            "authority_party": "Austrian Chamber of Commerce",
+            "cii_information": [{
+                "sensitivity": "none",
+                "attribute_id": "https://soya.ownyourdata.eu/Honey:Honey.beekeeper_did",
+                "attribute_type": ["scdv:Identity"]
+            }, {
+                "sensitivity": "csi",
+                "attribute_id": "https://soya.ownyourdata.eu/Honey:Honey.Volume",
+                "attribute_type": ["scdv:Agricultural"]
+            }, {
+                "sensitivity": "csi",
+                "attribute_id": "https://soya.ownyourdata.eu/Honey:BeeMigration.location",
+                "data_optional": true,
+                "attribute_type": ["scdv:Agricultural"]
+            }],
+            "retention_period": "6 months",
+            "storage_location": ["scdv:EU"],
+            "data_intermediary": [{
+                "name": "DISP",
+                "address": "Street 2, A-1010 Vienna",
+                "party_type": "Chamber of Commerce",
+                "organization_id": "did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net"
+            }],
+            "withdrawal_method": "contact via email",
+            "purpose_description": "Beekeeper Data Sharing",
+            "geographic_restriction": "EEA"
+        }]
+    },
+    "proof": [{
+          "type": "Ed25519Signature2020",
+          "verificationMethod": "did:oyd:zQmcHfufF5xtjhgqDbXmWeSSd2WKoncQC1S4dajk8eNnPM5%40babelfish.data-container.net",
+          "proofPurpose": "assertionMethod",
+          "proofValue": "z4yav6s7XKU81RK1qrxnWRJ3YSw6RiitfPzLPDuhDP81EFTx764BqHav5ZqQEzhNhxqBJ3kYk54B9Nph1HhYW8meo"
+        },
+        {
+          "type": "Ed25519Signature2020",
+          "verificationMethod": "did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net",
+          "proofPurpose": "assertionMethod",
+          "proofValue": "z3y5WJZaAhyyDUw5yNohV1m6ZL2zWTf5DMEcVPth2UjGJfhJ2S7HdYGC8266JU1gZd6JqnLmycRbddQRRc3chnXBi"
+        }
+    ]
+}' | oydid vc-push --issuer did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net --holder did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net --doc-pwd disp-pwd --location https://babelfish.data-container.net
+# created https://babelfish.data-container.net/credentials/zQmabw7KGCVLsEmnZNGPvpLpgjjQ7cJFxkQ6sewtaehgSUY
+
+# create VP
+echo '{"@context":["https://www.w3.org/ns/credentials/v2"],"type":["VerifiableCredential"],"issuer":"did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net","issuanceDate":"2023-05-30T21:26:05Z","credentialSubject":{"id":"did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net","purposes":[{"purpose":["scdv:GreenClaim","scdv:SupplyChainFacilitation"],"service":"Honey Production","recipient":["scdv:Authority","scdv:DataSpace"],"processing":["scdv:Store","scdv:Query"],"data_source":[{"name":"Imkerei Hans Huber","address":"Street 1, A-1010 Vienna","party_type":"Ministry of Agriculture","organization_id":"did:oyd:zQmcHfufF5xtjhgqDbXmWeSSd2WKoncQC1S4dajk8eNnPM5%40babelfish.data-container.net"}],"jurisdiction":"Vienna, Austria","authority_party":"Austrian Chamber of Commerce","cii_information":[{"sensitivity":"none","attribute_id":"https://soya.ownyourdata.eu/Honey:Honey.beekeeper_did","attribute_type":["scdv:Identity"]},{"sensitivity":"csi","attribute_id":"https://soya.ownyourdata.eu/Honey:Honey.Volume","attribute_type":["scdv:Agricultural"]},{"sensitivity":"csi","attribute_id":"https://soya.ownyourdata.eu/Honey:BeeMigration.location","data_optional":true,"attribute_type":["scdv:Agricultural"]}],"retention_period":"6 months","storage_location":["scdv:EU"],"data_intermediary":[{"name":"DISP","address":"Street 2, A-1010 Vienna","party_type":"Chamber of Commerce","organization_id":"did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net"}],"withdrawal_method":"contact via email","purpose_description":"Beekeeper Data Sharing","geographic_restriction":"EEA"}]},"proof":[{"type":"Ed25519Signature2020","verificationMethod":"did:oyd:zQmcHfufF5xtjhgqDbXmWeSSd2WKoncQC1S4dajk8eNnPM5%40babelfish.data-container.net","proofPurpose":"assertionMethod","proofValue":"z4yav6s7XKU81RK1qrxnWRJ3YSw6RiitfPzLPDuhDP81EFTx764BqHav5ZqQEzhNhxqBJ3kYk54B9Nph1HhYW8meo"},{"type":"Ed25519Signature2020","verificationMethod":"did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net","proofPurpose":"assertionMethod","proofValue":"z3y5WJZaAhyyDUw5yNohV1m6ZL2zWTf5DMEcVPth2UjGJfhJ2S7HdYGC8266JU1gZd6JqnLmycRbddQRRc3chnXBi"}],"identifier":"https://babelfish.data-container.net/credentials/zQmabw7KGCVLsEmnZNGPvpLpgjjQ7cJFxkQ6sewtaehgSUY"}' | oydid vp-push --holder did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net --doc-pwd disp-pwd --location https://babelfish.data-container.net
+# created https://babelfish.data-container.net/presentations/zQmWYRF68J9hzmAoczQC6Pj6CmwpCjMFy1rhXdJbWjX7FK1
+
+
+# create beekeeper user in DISP organisation
+export GW_HOST="https://babelfish.data-container.net"
+export DISP_KEY="des1QdHDgS4w9zGLacQs_fuAY_po8iSxVXfKQyvdpDI"
+export DISP_SECRET="b2_iytO7JddGIMduDdlfiEgrUKZKEZQa_CntcvDsbeE"
+export DISP_TOKEN=`curl -s -d grant_type=client_credentials -d client_id=$DISP_KEY -d client_secret=$DISP_SECRET -d scope=write -X POST https://babelfish.data-container.net/oauth/token | jq -r '.access_token'`
+echo '{"name": "Beekeeper+Data+Sharing+user", "organization-id":95}' | curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $DISP_TOKEN" -d @- -X POST $GW_HOST/user/
+
+# create collection for Honey data
+echo '{"name":"Beekeeper+Data+Sharing+Collection","meta":{"D2A-VP":"https://babelfish.data-container.net/presentations/zQmWYRF68J9hzmAoczQC6Pj6CmwpCjMFy1rhXdJbWjX7FK1"}}' | curl -H "Content-Type: application/json" -H "Authorization: Bearer $DISP_TOKEN" -d @- -X PUT $GW_HOST/collection/448
+#{"collection-id":448,"name":"Beekeeper+Data+Sharing+Collection"}
+
+
+
+### D3A ### ------------
+
+# signature Market
+cat 12_input/01_create_d3a.doc | oydid vc-proof --issuer did:oyd:zQmZzphAYNtaatPHTSFM9TQgxGkUbdLuFNAcsWLYif2WSdH%40babelfish.data-container.net --doc-pwd shop-pwd
+
+# signature DISP
+cat 12_input/01_create_d3a.doc | oydid vc-proof --issuer did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net --doc-pwd disp-pwd
+
+# create VC for D3A
+echo '{
+    "credentialSubject": {
+        "id": "did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net",
+        "purposes": [{
+          "purpose_description": "Agricultural Data Sharing",
+          "purpose": [
+            "scdv:GreenClaim",
+            "scdv:SupplyChainFacilitation"
+          ],
+          "processing": [
+            "scdv:Query",
+            "scdv:Store"
+          ],
+          "recipient": [
+            "scdv:Authority",
+            "scdv:DataSpace"
+          ],
+          "storage_location": [
+            "scdv:EU"
+          ],
+          "retention_period": "6 months",
+          "service": "Distribution of Agricultural Products",
+          "geographic_restriction": "EEA",
+          "jurisdiction": "Vienna, Austria",
+          "withdrawal_method": "contact via email",
+          "authority_party": "Austrian Chamber of Commerce",
+          "data_user": [{
+            "organization_id": "Market_Maker",
+            "name": "City Shop",
+            "address": "Street 3, A-1010 Vienna",
+            "party_type": "Chamber of Commerce"
+          }],
+          "data_intermediary": [{
+            "organization_id": "did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp@babelfish.data-container.net",
+            "name": "DISP",
+            "address": "Street 2, A-1010 Vienna",
+            "party_type": "Chamber of Commerce"
+          }]
+        }]
+    },
+    "proof": [{
+          "type": "Ed25519Signature2020",
+          "verificationMethod": "did:oyd:zQmZzphAYNtaatPHTSFM9TQgxGkUbdLuFNAcsWLYif2WSdH%40babelfish.data-container.net",
+          "proofPurpose": "assertionMethod",
+          "proofValue": "z37o6X5faNcBEeESb87M6PfRXET45aAsjXYVgRqhpeSiGh49CXE3dCaxrgUWhCNdHuZNA4L3brJdhyxCicb18YAGT"
+        },
+        {
+          "type": "Ed25519Signature2020",
+          "verificationMethod": "did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net",
+          "proofPurpose": "assertionMethod",
+          "proofValue": "z2ZfGtCruzneDUYCf6GJUUWxdEVKVfgYRVMJA2ectTSotCgNGFVPmDrss66qKFrDLuff5Tmw3fYRv1u4PdGmZq8QG"
+        }
+    ]
+}' | oydid vc-push --issuer did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net --holder did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net --doc-pwd disp-pwd --location https://babelfish.data-container.net
+# created https://babelfish.data-container.net/credentials/zQmQZzeCdwGednzUnqYD4f9NyWJ4VR5HbXy7ALRjxyh7t61
+
+# create VP
+echo '{"@context":["https://www.w3.org/ns/credentials/v2"],"type":["VerifiableCredential"],"issuer":"did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net","issuanceDate":"2023-05-30T22:15:44Z","credentialSubject":{"id":"did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net","purposes":[{"purpose_description":"Agricultural Data Sharing","purpose":["scdv:GreenClaim","scdv:SupplyChainFacilitation"],"processing":["scdv:Query","scdv:Store"],"recipient":["scdv:Authority","scdv:DataSpace"],"storage_location":["scdv:EU"],"retention_period":"6 months","service":"Distribution of Agricultural Products","geographic_restriction":"EEA","jurisdiction":"Vienna, Austria","withdrawal_method":"contact via email","authority_party":"Austrian Chamber of Commerce","data_user":[{"organization_id":"Market_Maker","name":"City Shop","address":"Street 3, A-1010 Vienna","party_type":"Chamber of Commerce"}],"data_intermediary":[{"organization_id":"did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp@babelfish.data-container.net","name":"DISP","address":"Street 2, A-1010 Vienna","party_type":"Chamber of Commerce"}]}]},"proof":[{"type":"Ed25519Signature2020","verificationMethod":"did:oyd:zQmZzphAYNtaatPHTSFM9TQgxGkUbdLuFNAcsWLYif2WSdH%40babelfish.data-container.net","proofPurpose":"assertionMethod","proofValue":"z37o6X5faNcBEeESb87M6PfRXET45aAsjXYVgRqhpeSiGh49CXE3dCaxrgUWhCNdHuZNA4L3brJdhyxCicb18YAGT"},{"type":"Ed25519Signature2020","verificationMethod":"did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net","proofPurpose":"assertionMethod","proofValue":"z2ZfGtCruzneDUYCf6GJUUWxdEVKVfgYRVMJA2ectTSotCgNGFVPmDrss66qKFrDLuff5Tmw3fYRv1u4PdGmZq8QG"}],"identifier":"https://babelfish.data-container.net/credentials/zQmQZzeCdwGednzUnqYD4f9NyWJ4VR5HbXy7ALRjxyh7t61"}' | oydid vp-push --holder did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net --doc-pwd disp-pwd --location https://babelfish.data-container.net
+# created https://babelfish.data-container.net/presentations/zQmdGUm8HCAT7Vv8Tv9VyTxXmgj1Que89UjkLsLkRqYXC7f
+
+# create shop user in DISP organisation
+export GW_HOST="https://babelfish.data-container.net"
+export DISP_KEY="des1QdHDgS4w9zGLacQs_fuAY_po8iSxVXfKQyvdpDI"
+export DISP_SECRET="b2_iytO7JddGIMduDdlfiEgrUKZKEZQa_CntcvDsbeE"
+export DISP_TOKEN=`curl -s -d grant_type=client_credentials -d client_id=$DISP_KEY -d client_secret=$DISP_SECRET -d scope=write -X POST https://babelfish.data-container.net/oauth/token | jq -r '.access_token'`
+echo '{"name": "Agricultural+Data+Sharing+user", "organization-id":95}' | curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $DISP_TOKEN" -d @- -X POST $GW_HOST/user/
+# {"user-id":474,"name":"Agricultural+Data+Sharing+user","organization-id":95,"oauth":{"client-id":"S0zmwl_s_GrnY2K88bLIyd5VDA3iKwFocm3BIYA0z-U","client-secret":"m0x6fmvtpv5Hyy_bG2OFKoEs_MxG9b5lYHsP0FxlcDE"}}

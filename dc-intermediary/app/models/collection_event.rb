@@ -1,0 +1,2 @@
+class CollectionEvent < ApplicationRecord
+end

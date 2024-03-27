@@ -1,0 +1,16 @@
+FROM oydeu/dc-base:arm64v8
+MAINTAINER "Christoph Fabianek" christoph@ownyourdata.eu
+
+RUN apt-get update && \
+	apt-get install -y \
+		curl  && \
+	rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
+	gem install websocket
+COPY Gemfile.extend .
+RUN bundle install && bundle update
+
+COPY . .
+
+CMD ["./script/chat.sh"]
+
+EXPOSE 3000

@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: babelfish
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: babelfish
+  template:
+    metadata:
+      labels:
+        app: babelfish
+    spec:
+      containers:
+      - name: babelfish
+        image: oydeu/dc-babelfish:latest
+        ports:
+        - containerPort: 3000
+        env:
+          - name: LANG
+            value: C.UTF-8
+          - name: RAILS_LOG_TO_STDOUT
+            value: "TRUE"
+          - name: RAILS_SERVE_STATIC_FILES
+            value: "TRUE"
+          - name: RAILS_ENV
+            value: production
+          - name: AUTH
+            value: "TRUE"
+          - name: AUTH_SCOPE
+            value: '"admin","write","read"'
+          - name: AWS_S3_KEY
+            value: "INSERT-AWS-S3-KEY"
+          - name: AWS_S3_SECRET
+            value: "Insert+AWS+S3+Secret"
+          - name: BELLECOUR_PRIVATE_KEY
+            value: 0x123-insert-bellecour-private-key-456
+          - name: DC_DB
+            value: kubernetes
+          - name: DB2_HOST
+            value: pod_name.default.svc.cluster.local
+          - name: DB2_NAME
+            value: babelfish
+          - name: DB2_USER
+            value: postgres
+          - name: POSTGRES2_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: general-secrets
+                key: db-passwd
+          - name: RAILS_CONFIG_HOSTS
+            value: "babelfish.data-container.net"
+          - name: DEFAULT_DID_OAUTH_APP
+            value: "oydid"
+          - name: DEFAULT_VC_OAUTH_APP
+            value: "oydid-vc"

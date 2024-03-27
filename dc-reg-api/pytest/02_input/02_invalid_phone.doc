@@ -1,0 +1,1 @@
+{"header": {"method": "sms","action": "init"}, "payload":{"phone_number": "1234567"}}

@@ -1,0 +1,1 @@
+curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $USER_TOKEN" -d @- -X POST $GW_HOST/object/ | jq -r '."collection-id"'

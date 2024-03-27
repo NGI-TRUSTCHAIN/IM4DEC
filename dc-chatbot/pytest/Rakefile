@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+$:.unshift(File.expand_path(File.join(File.dirname(__FILE__), 'lib')))
+require 'rubygems'
+
+namespace :test do
+  test_script = "date > report.txt; pytest -qx --show-capture=no /usr/src/app/pytest/%s >> report.txt; if [ $? -ne 0 ]; then cat report.txt | jq --raw-input --slurp '{text: .}' | curl -X POST -H 'Content-type: application/json' -d @- $SLACK_WEBHOOK; fi"
+
+  desc "Run data container tests"
+  task :data_container do
+    sh test_script % "test_general.py"
+  end
+
+  desc "Run ng112-tester-js tests"
+  task :ng112_tester do
+    sh test_script % "test_ng112tester.py"
+  end
+end
+
+task all: ['test:data_container', 'test:ng112_tester']

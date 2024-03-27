@@ -1,0 +1,59 @@
+meta:
+  name: Demo
+
+content:
+  bases:
+    - name: Demo
+      attributes:
+        name: string
+        date: date
+        check: boolean
+        choose: set<string>
+
+  overlays:
+    - type: OverlayValidation
+      base: Demo
+      name: DemoValiationOverlay
+      attributes:
+        name: 
+          cardinality: "1..1"
+        choose:
+          valueOption:
+            - Option 1
+            - Option 2
+    - type: OverlayForm
+      base: Demo
+      name: DemoFormOverlay
+      schema:
+        type: object
+        properties:
+          name:
+            type: string
+          date:
+            type: string
+            format: date
+          check:
+            type: boolean
+          choose:
+            type: string
+            oneOf:
+              - const: Option 1
+                title: Option 1
+              - const: Option 2
+                title: Option 2
+        required:
+          - name
+      ui:
+        type: VerticalLayout
+        elements:
+          - type: Group
+            label: Demo
+            elements:
+              - type: Control
+                scope: '#/properties/name'
+              - type: Control
+                scope: '#/properties/date'
+              - type: Control
+                scope: '#/properties/check'
+              - type: Control
+                scope: '#/properties/choose'

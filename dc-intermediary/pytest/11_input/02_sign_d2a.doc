@@ -1,0 +1,42 @@
+{
+    "id": "did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net",
+    "purposes": [{
+        "purpose": ["scdv:GreenClaim", "scdv:SupplyChainFacilitation"],
+        "service": "Honey Production",
+        "recipient": ["scdv:Authority", "scdv:DataSpace"],
+        "processing": ["scdv:Store", "scdv:Query"],
+        "data_source": [{
+            "name": "Imkerei Hans Huber",
+            "address": "Street 1, A-1010 Vienna",
+            "party_type": "Ministry of Agriculture",
+            "organization_id": "did:oyd:zQmcHfufF5xtjhgqDbXmWeSSd2WKoncQC1S4dajk8eNnPM5%40babelfish.data-container.net"
+        }],
+        "jurisdiction": "Vienna, Austria",
+        "authority_party": "Austrian Chamber of Commerce",
+        "cii_information": [{
+            "sensitivity": "none",
+            "attribute_id": "https://soya.ownyourdata.eu/Honey:Honey.beekeeper_did",
+            "attribute_type": ["scdv:Identity"]
+        }, {
+            "sensitivity": "csi",
+            "attribute_id": "https://soya.ownyourdata.eu/Honey:Honey.Volume",
+            "attribute_type": ["scdv:Agricultural"]
+        }, {
+            "sensitivity": "csi",
+            "attribute_id": "https://soya.ownyourdata.eu/Honey:BeeMigration.location",
+            "data_optional": true,
+            "attribute_type": ["scdv:Agricultural"]
+        }],
+        "retention_period": "6 months",
+        "storage_location": ["scdv:EU"],
+        "data_intermediary": [{
+            "name": "DISP",
+            "address": "Street 2, A-1010 Vienna",
+            "party_type": "Chamber of Commerce",
+            "organization_id": "did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net"
+        }],
+        "withdrawal_method": "contact via email",
+        "purpose_description": "Beekeeper Data Sharing",
+        "geographic_restriction": "EEA"
+    }]
+}

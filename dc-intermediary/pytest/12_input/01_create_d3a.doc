@@ -1,0 +1,44 @@
+{
+  "data": {
+    "id": "did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp%40babelfish.data-container.net",
+    "purposes": [{
+      "purpose_description": "Agricultural Data Sharing",
+      "purpose": [
+        "scdv:GreenClaim",
+        "scdv:SupplyChainFacilitation"
+      ],
+      "processing": [
+        "scdv:Query",
+        "scdv:Store"
+      ],
+      "recipient": [
+        "scdv:Authority",
+        "scdv:DataSpace"
+      ],
+      "storage_location": [
+        "scdv:EU"
+      ],
+      "retention_period": "6 months",
+      "service": "Distribution of Agricultural Products",
+      "geographic_restriction": "EEA",
+      "jurisdiction": "Vienna, Austria",
+      "withdrawal_method": "contact via email",
+      "authority_party": "Austrian Chamber of Commerce",
+      "data_user": [{
+        "organization_id": "Market_Maker",
+        "name": "City Shop",
+        "address": "Street 3, A-1010 Vienna",
+        "party_type": "Chamber of Commerce"
+      }],
+      "data_intermediary": [{
+        "organization_id": "did:oyd:zQmbp9vm7VszVUj1gwGrsvZX5uHiXeFw2jsCbTRwDd5SYxp@babelfish.data-container.net",
+        "name": "DISP",
+        "address": "Street 2, A-1010 Vienna",
+        "party_type": "Chamber of Commerce"
+      }]
+    }]
+  },
+  "meta": {
+    "schema": "zQmQfh7Gkdmr7fzeViiR2i99ZgBo9BxArMiVC6FcbXjC6VG"
+  }
+}

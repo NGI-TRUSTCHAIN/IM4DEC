@@ -1,0 +1,12 @@
+{
+  "collection-id": 448,
+  "unit": "oz (ounce)",
+  "volume": 20,
+  "migration": {
+    "location": {
+      "address": "Vienna, 1st District"
+    }
+  },
+  "produced_at": "2023-05-30",
+  "beekeeper_did": "did:oyd:zQmcHfufF5xtjhgqDbXmWeSSd2WKoncQC1S4dajk8eNnPM5%40babelfish.data-container.net"
+}

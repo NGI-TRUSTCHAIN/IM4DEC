@@ -1,0 +1,1 @@
+curl -H "Content-Type: application/json" -H "Authorization: Bearer $USER_TOKEN" -d @- -X PUT $GW_HOST/user/`curl -s -H "Authorization: Bearer $USER_TOKEN" $GW_HOST/user/current | jq -r '."user-id"'` > /dev/null

@@ -1,0 +1,7 @@
+{
+  "name": "John Doe",
+  "email": "john@doe.com",
+  "phone": "(555) 123 4567",
+  "organization-id": $ORG_ID,
+  "dlt": ["Convex"]
+}

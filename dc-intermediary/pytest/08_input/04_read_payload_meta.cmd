@@ -1,0 +1,1 @@
+curl -s -H "Authorization: Bearer $USER_TOKEN" $GW_HOST/object/$CV_OBJECT_ID/read/meta  | jq -r 'if (."dlt-response"."convex-sequence" | tonumber? | not) == false then "yes" else "" end'

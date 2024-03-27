@@ -1,0 +1,7 @@
+You wrote: 
+Phone  has initiated an emergency chat from
+Das ist ein TEST-Notruf von der automatischen DEC112 Systemüberwachung.
+App went to the foreground.
+App went to the background.
+App wurde in den Hintergrund gelegt.
+App wurde aus dem Hintergrund geholt.

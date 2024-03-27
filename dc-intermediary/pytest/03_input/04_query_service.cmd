@@ -1,0 +1,1 @@
+ curl -s "$GW_HOST/service/search?title=dummy" | jq '[type == "array" and length > 0] | any'

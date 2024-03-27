@@ -1,0 +1,88 @@
+version: "3"
+volumes:
+  certs:
+  vhost-d:
+  html:
+
+services:
+  postgres:
+    image: docker.io/library/postgres:15-alpine
+    container_name: postgres
+    restart: unless-stopped
+    networks:
+      - babelfish-net
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
+
+  babelfish:
+    image: oydeu/dc-babelfish:latest
+    container_name: babelfish
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    networks:
+      - babelfish-net
+      - reverse-proxy-net
+    environment:
+      VIRTUAL_HOST: babelfish.ngi.eu
+      VIRTUAL_PORT: 3000
+      LETSENCRYPT_HOST: babelfish.ngi.eu
+      LANG: C.UTF-8
+      RAILS_LOG_TO_STDOUT: "TRUE"
+      RAILS_SERVE_STATIC_FILES: "TRUE"
+      RAILS_ENV: production
+      AUTH: "TRUE"
+      AUTH_SCOPE: '"admin","write","read"'
+      AWS_S3_KEY: "INSERT-AWS-S3-KEY"
+      AWS_S3_SECRET: "Insert+AWS+S3+Secret"
+      BELLECOUR_PRIVATE_KEY: 0x123-insert-bellecour-private-key-456
+      DC_DB: postgres
+      DB_HOST: postgres
+      DB_NAME: babelfish
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      RAILS_CONFIG_HOSTS: "babelfish.ngi.eu"
+      DEFAULT_DID_OAUTH_APP: "oydid"
+      DEFAULT_VC_OAUTH_APP: "oydid-vc"
+
+  reverse-proxy:
+    image: jwilder/nginx-proxy:alpine
+    container_name: reverse-proxy
+    restart: always
+    environment:
+      DEFAULT_HOST: default.vhost
+    networks:
+      - reverse-proxy-net
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./reverse-proxy/config/proxy.conf:/etc/nginx/proxy.conf
+      - certs:/etc/nginx/certs
+      - vhost-d:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+  reverse-proxy-lesencrypt-companion:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    container_name: letsencrypt-companion
+    restart: always
+    networks:
+      - reverse-proxy-net
+    volumes:
+      - certs:/etc/nginx/certs
+      - vhost-d:/etc/nginx/vhost.d
+      - html:/usr/share/nginx/html
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      DEFAULT_EMAIL: office@ownyourdata.eu
+      NGINX_PROXY_CONTAINER: reverse-proxy
+
+networks:
+  babelfish-net:
+  reverse-proxy-net:

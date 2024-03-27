@@ -1,0 +1,2 @@
+CONFIG_ITEM_SCHEMA = ["zQmVXrH8ZwrKKTKXeZVjAprWhwMNHn2q6SiwBwvbdXj2sTz", "ConfigurationItem"]
+ACTION_WAIT = ENV["ACTION_WAIT"] || 1

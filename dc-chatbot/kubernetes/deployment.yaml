@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dec112-chatbot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chatbot
+  template:
+    metadata:
+      labels:
+        app: chatbot
+    spec:
+      containers:
+      - name: chatbot
+        image: oydeu/dc-chatbot
+        ports:
+        - containerPort: 3000
+        env:
+          - name: LANG
+            value: C.UTF-8
+          - name: RAILS_LOG_TO_STDOUT
+            value: "TRUE"
+          - name: RAILS_SERVE_STATIC_FILES
+            value: "TRUE"
+          - name: RAILS_ENV
+            value: production
+          - name: RAILS_CONFIG_HOSTS
+            value: "xxx"
+          - name: AUTH
+            value: "true"
+          - name: WS_ENDPOINT
+            value: "wss://xxx:8080/api/v1?api_key=xxx"
+          - name: OAI_ACCESS_TOKEN
+            value: "xxx"
+          - name: DC_DB
+            value: kubernetes
+          - name: DB2_HOST
+            value: xxx
+          - name: DB2_NAME
+            value: dec112_chatbot
+          - name: DB2_USER
+            value: postgres
+          - name: POSTGRES2_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: chatbot-secrets
+                key: db2-passwd
+          - name: APP_KEY
+            valueFrom:
+              secretKeyRef:
+                name: chatbot-secrets
+                key: app-key
+          - name: APP_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: chatbot-secrets
+                key: app-secret

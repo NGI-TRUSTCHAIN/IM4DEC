@@ -1,0 +1,7 @@
+{
+  "registered_name": "{{legalName}}",
+  "contact": {
+    "number": "{{phone}}"
+  },
+  "location": "{{address}}"
+}

@@ -1,0 +1,423 @@
+{
+	"info": {
+		"_postman_id": "9342dddd-c6d1-4487-983c-8a2e7ba2f92a",
+		"name": "3-Storage Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25973585",
+		"_collection_link": "https://www.postman.com/martian-meadow-132758/workspace/babelfish-workspace/collection/14061274-9342dddd-c6d1-4487-983c-8a2e7ba2f92a?action=share&creator=25973585&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Create Collection",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsondata = pm.response.json();\r",
+							"pm.globals.set(\"collection-id\", jsondata['collection-id']);\r",
+							"console.log(jsondata)\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"My Repository\",\r\n  \"storage\": {\r\n    \"type\": \"Semantic Container\",\r\n    \"url\": \"https://ontochain.data-container.net\" },\r\n  \"dlt\": {\r\n    \"type\": \"Convex\",\r\n    \"user-id\": 1 }\r\n}  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GW_HOST}}/collection",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"collection"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Collection",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/collection/{{collection-id}}",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"collection",
+						"{{collection-id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Collection List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsondata = pm.response.json();\r",
+							"pm.globals.set(\"collection-id\", jsondata[0][\"collection-id\"]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/collection/list",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"collection",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Collection",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"My Repository\",\r\n  \"storage\": {\r\n    \"type\": \"Semantic Container\",\r\n    \"url\": \"https://ontochain.data-container.net\" },\r\n  \"dlt\": {\r\n    \"type\": \"Convex\",\r\n    \"user-id\": 2 }\r\n}  ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GW_HOST}}/collection/{{collection-id}}",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"collection",
+						"{{collection-id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Object",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsondata = pm.response.json();\r",
+							"pm.globals.set(\"object-id\", jsondata['object-id']);\r",
+							"pm.globals.set(\"collection-id\", jsondata['collection-id']);\r",
+							"console.log(jsondata)\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"My Object\",\r\n  \"collection-id\": {{collection-id}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GW_HOST}}/object",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"object"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Write object (object itself)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\"payload\"]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GW_HOST}}/object/{{object-id}}/write",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"object",
+						"{{object-id}}",
+						"write"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Object",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/object/{{object-id}}",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"object",
+						"{{object-id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Object (metadata)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/object/{{object-id}}/read",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"object",
+						"{{object-id}}",
+						"read"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Objelst List in Collection",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/collection/{{collection-id}}/objects",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"collection",
+						"{{collection-id}}",
+						"objects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update object (metadata)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"My Object 2\",\r\n  \"collection-id\": {{collection-id}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GW_HOST}}/object/{{object-id}}",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"object",
+						"{{object-id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Object",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/object/{{object-id}}",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"object",
+						"{{object-id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Collection",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/collection/{{collection-id}}",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"collection",
+						"{{collection-id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "clientSecret",
+				"value": "{{admin-secret}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{admin-id}}",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "{{GW_HOST}}/oauth/token",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "write",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

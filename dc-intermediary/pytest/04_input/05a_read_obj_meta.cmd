@@ -1,0 +1,1 @@
+curl -s -H "Authorization: Bearer $USER_TOKEN" $GW_HOST/object/7/meta | jq -rc '{"object-id":."object-id", "type":.type}'

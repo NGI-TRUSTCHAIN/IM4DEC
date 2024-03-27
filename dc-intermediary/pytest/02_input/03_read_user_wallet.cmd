@@ -1,0 +1,1 @@
+curl -s -H "Authorization: Bearer $MASTER_TOKEN" $GW_HOST/user/`echo '{"name":"ACME Inc.","description":"information about organisation","address":"street number, zip code, city, country"}' | curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $MASTER_TOKEN" -d @- -X POST $GW_HOST/organization/ | jq -r '."admin-user-id"'`/wallet | jq 'has("oauth")'

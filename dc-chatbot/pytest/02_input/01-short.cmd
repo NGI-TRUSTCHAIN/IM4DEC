@@ -1,0 +1,1 @@
+NODE_ENV=development node ../ng112-js-tester/dist/index.js dec112.test.chatgpt >/dev/null && echo $?

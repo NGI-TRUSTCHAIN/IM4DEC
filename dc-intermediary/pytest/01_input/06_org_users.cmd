@@ -1,0 +1,1 @@
+curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $MASTER_TOKEN" $GW_HOST/organization/`echo "{\"name\":\"New Org\"}" | curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $MASTER_TOKEN" -d @- -X POST $GW_HOST/organization/ | jq -r '."organization-id"'`/list | jq '[type == "array" and length > 0] | any'

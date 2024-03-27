@@ -1,0 +1,10 @@
+{
+  "name": "Demo Object",
+  "date": "2023-04-01",
+  "check": true,
+  "choose": "Option 1",
+  "meta": {
+    "collection-id":99,
+    "schema": "Demo"
+  }
+}

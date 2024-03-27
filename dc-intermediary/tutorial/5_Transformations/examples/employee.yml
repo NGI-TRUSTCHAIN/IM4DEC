@@ -1,0 +1,16 @@
+meta:
+  name: Employee
+
+content:
+  bases:
+    - name: Employee
+      attributes:
+        name: String
+        management: Boolean
+        salary: Float
+        employer: Organisation
+    - name: Organisation 
+      attributes:
+        name: String
+        founded: Date
+        staff_count: Integer

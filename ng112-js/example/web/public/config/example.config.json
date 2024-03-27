@@ -1,0 +1,21 @@
+{
+  "endpoint": "ws://example.com:8080",
+  "domain": "example.com",
+  "user": "bob",
+  "password": "mysupersecretpassword",
+
+  "from": "sip:bob@example.com:5071;transport=tls",
+
+  "latitude": 43.6121235527826,
+  "longitude": 7.04820156097412,
+
+  "call": "sip:112@example.com",
+  "isTest": true,
+  "isActive": true,
+
+  "vcard": {
+    "fn": "Alice Smith",
+    "tel": "004366412345678",
+    "email": "alice.smith@example.com"
+  }
+}

@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "1fa569e0-14a0-4b5c-a0eb-b4f52587888c",
+		"name": "2-Service Discovery",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25973585",
+		"_collection_link": "https://www.postman.com/martian-meadow-132758/workspace/babelfish-workspace/collection/14061274-1fa569e0-14a0-4b5c-a0eb-b4f52587888c?action=share&creator=25973585&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Create Service Description",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsondata = pm.response.json();\r",
+							"pm.globals.set(\"service-id\", jsondata[\"service-id\"]);\r",
+							"pm.globals.set(\"service-name\", jsondata[\"name\"]);\r",
+							"console.log(jsondata)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"interface\": {\r\n    \"info\": { \"title\": \"DID Lint\" },\r\n    \"servers\": [{\"url\": \"https://didlint.ownyourdata.eu\"}],\r\n    \"party\": \"data_consumer\",\r\n    \"paths\": {\r\n      \"/api/validate\": {\r\n        \"post\": {\r\n          \"requestBody\": {\r\n            \"content\": {\r\n              \"application/json\": {\r\n               \"schema\": {} \r\n              }\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  },\r\n  \"data\": null,\r\n  \"governance\": {\r\n    \"dpv:hasProcessing\": [\"dpv:Use\"],\r\n    \"dpv:hasPurpose\": \"dpv:Purpose\",\r\n    \"dpv:hasExpiryTime\": \"6 months\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GW_HOST}}/service/",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"service",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve Service Catalogue List",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/list",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Query Service Catalogue List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/service/search?title={{service-name}}",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"service",
+						"search"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "{{service-name}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Service Catalogue using current",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/organization/current",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"organization",
+						"current"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read Service Description",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/service/{{service-id}}",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"service",
+						"{{service-id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Service Description",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"interface\": {\r\n    \"info\": { \"title\": \"DID Lint\" },\r\n    \"servers\": [{\"url\": \"https://didlint.ownyourdata.eu\"}],\r\n    \"party\": \"data_provider\",\r\n    \"paths\": {\r\n      \"/api/validate\": {\r\n        \"post\": {\r\n          \"requestBody\": {\r\n            \"content\": {\r\n              \"application/json\": {\r\n               \"schema\": {} \r\n              }\r\n            }\r\n          }\r\n        }\r\n      }\r\n    }\r\n  },\r\n  \"data\": null,\r\n  \"governance\": {\r\n    \"dpv:hasProcessing\": [\"dpv:Use\"],\r\n    \"dpv:hasPurpose\": \"dpv:Purpose\",\r\n    \"dpv:hasExpiryTime\": \"3 months\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GW_HOST}}/service/{{service-id}}",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"service",
+						"{{service-id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Service Description",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/service/{{service-id}}",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"service",
+						"{{service-id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "clientSecret",
+				"value": "{{admin-secret}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{admin-id}}",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "write",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "{{GW_HOST}}/oauth/token",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

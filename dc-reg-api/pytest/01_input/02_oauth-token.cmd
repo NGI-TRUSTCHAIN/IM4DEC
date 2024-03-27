@@ -1,0 +1,1 @@
+TOKEN=`oydid auth $DID $REGAPI --json | jq -r '.access_token'` && [[ -z "$TOKEN" || $TOKEN == "null" ]] && echo "invalid token" || echo "valid token" 

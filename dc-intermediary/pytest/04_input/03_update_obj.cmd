@@ -1,0 +1,1 @@
+curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $USER_TOKEN" -d @- -X PUT $GW_HOST/object/$OBJECT_ID | jq -r '."object-id"'

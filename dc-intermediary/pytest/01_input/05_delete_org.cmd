@@ -1,0 +1,1 @@
+curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $MASTER_TOKEN" -X DELETE $GW_HOST/organization/`echo "{\"name\":\"Delete Org\", \"now\":\"$(date)\"}" | curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $MASTER_TOKEN" -d @- -X POST $GW_HOST/organization/ | jq -r '."organization-id"'` | jq -r '.name'

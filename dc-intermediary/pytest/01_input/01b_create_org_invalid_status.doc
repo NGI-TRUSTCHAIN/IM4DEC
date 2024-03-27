@@ -1,0 +1,5 @@
+{
+  "name": "ACME Inc." ,
+  "description": "information about organisation",
+  "address": "street number, zip code, city, country" 
+}

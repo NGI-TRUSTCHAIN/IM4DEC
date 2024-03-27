@@ -1,0 +1,5 @@
+ISSUER_HOST = "https://onboarding.test-feb24.dec112.eu"
+CREDENTIAL_PATH = "/dec112"
+CREDENTIAL_TYPE = "DEC112Credential"
+AUTH_REQUEST_URI="/agent/siop/definitions/sphereonWallet/auth-requests/"
+REGAPI_URL="https://regapi.test-feb24.dec112.eu"

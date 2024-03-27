@@ -1,0 +1,1 @@
+curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $USER_TOKEN" -X DELETE $GW_HOST/service/`echo '{"interface":{"info":{"title":"Delete Service"}},"data":null,"governance":{}}' | curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $USER_TOKEN" -d @- -X POST $GW_HOST/service | jq -r '."service-id"'` | jq 'has("service-id")'

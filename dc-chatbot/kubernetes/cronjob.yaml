@@ -1,0 +1,31 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: test-chatbot
+spec:
+  schedule: "5 */3 * * *"
+  startingDeadlineSeconds: 40
+  concurrencyPolicy: Allow
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+          - name: dec112-chatbot-tests
+            image: oydeu/dc-chatbot_test:latest
+            command: ["rake"]
+            args: ["-f", "/usr/src/app/Rakefile", "all"]
+            env:
+              - name: LANG
+                value: C.UTF-8
+              - name: SC_HOST
+                value: https://dec112-chatbot.data-container.net
+              - name: APP_KEY
+                value: "xxx"
+              - name: APP_SECRET
+                value: "xxx"
+              - name: SLACK_WEBHOOK
+                value: https://hooks.slack.com/services/xxx/xxx/xxx

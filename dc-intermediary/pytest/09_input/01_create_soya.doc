@@ -1,0 +1,40 @@
+meta:
+  name: OYD_Company
+  namespace:
+    schema: "https://schema.org/"
+    oyd_organisation: "https://soya.ownyourdata.eu/OYD_Organisation/"
+
+content:    
+  bases:
+    - name: Company
+      attributes:
+        registered_name: string
+        location: string
+        contact: Phonebook
+    - name: Phonebook
+      attributes:
+        number: string
+
+  overlays: 
+    - type: OverlayAlignment
+      base: Company
+      name: CompanyAlignmentOverlay
+      attributes:
+        registered_name: 
+          - schema:legalName
+    - type: OverlayAlignment
+      base: Phonebook
+      name: PhonebookAlignmentOverlay
+      attributes:
+        number:
+          - oyd_organisation:phone
+
+    - type: OverlayTransformation
+      name: TransformationOverlay
+      base: OYD_Organisation
+      engine: handlebars
+      value:
+        registered_name: "{{name}}" 
+        location: "{{address}}"
+        contact:
+          number: "{{phone}}"

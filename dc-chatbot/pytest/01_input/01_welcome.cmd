@@ -1,0 +1,1 @@
+curl -H "Content-Type: application/json" -H "Authorization: Bearer $TOKEN" -d @- -X POST "$SC_HOST/api/chatbot/welcome"

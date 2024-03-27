@@ -1,0 +1,1 @@
+TOKEN=`oydid auth $DID $REGAPI --json | jq -r '.access_token'` && curl -H "Authorization: Bearer $TOKEN" $REGAPI/api/v3/config/user

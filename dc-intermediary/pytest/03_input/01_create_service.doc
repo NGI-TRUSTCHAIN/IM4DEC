@@ -1,0 +1,9 @@
+{
+  "interface": {
+    "info": { "title": "dummy" }
+  },
+  "data": null,
+  "governance": {
+    "processing": ["any"]
+  }
+}

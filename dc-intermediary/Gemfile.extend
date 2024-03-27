@@ -1,0 +1,3 @@
+# Storage Provder
+gem "semcon"
+gem "aws-sdk-s3", require: false

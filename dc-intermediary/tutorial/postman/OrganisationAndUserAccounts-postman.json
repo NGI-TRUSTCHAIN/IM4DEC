@@ -1,0 +1,535 @@
+{
+	"info": {
+		"_postman_id": "735af03f-1471-48a3-9b05-d09d47057465",
+		"name": "1-Organisation and User Accounts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25973585",
+		"_collection_link": "https://www.postman.com/martian-meadow-132758/workspace/babelfish-workspace/collection/14061274-735af03f-1471-48a3-9b05-d09d47057465?action=share&creator=25973585&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Create Organisation",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsondata = pm.response.json();\r",
+							"pm.globals.set(\"organization-id\", jsondata[\"organization-id\"]);\r",
+							"console.log(jsondata)\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"ACME Inc.\" ,\r\n  \"description\": \"information about organisation\",\r\n  \"address\": \"street number, zip code, city, country\" \r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GW_HOST}}/organization/",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"organization",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read organisation",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/organization/{{organization-id}}",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"organization",
+						"{{organization-id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read organisation list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/organization/",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"organization",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update organisation",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"ACME Inc. 2\" ,\r\n  \"description\": \"information about organisation\",\r\n  \"address\": \"street number, zip code, city, country\" \r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GW_HOST}}/organization/{{organization-id}}",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"organization",
+						"{{organization-id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read organisation meta",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsondata = pm.response.json();\r",
+							"pm.globals.set(\"organisation-dri\", jsondata[\"dri\"])"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/organization/{{organization-id}}/meta",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"organization",
+						"{{organization-id}}",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read organisation DRI",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/api/data?dri={{organisation-dri}}",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"api",
+						"data"
+					],
+					"query": [
+						{
+							"key": "dri",
+							"value": "{{organisation-dri}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read organisation user list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsondata = pm.response.json();\r",
+							"pm.globals.set(\"user-id\", jsondata[0][\"user-id\"]);\r",
+							"console.log(jsondata)\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/organization/{{organization-id}}/list",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"organization",
+						"{{organization-id}}",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read user (meta)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/user/{{user-id}}/meta",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"user",
+						"{{user-id}}",
+						"meta"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read user wallet [READ OATH2]",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsondata = pm.response.json();\r",
+							"pm.globals.set(\"admin-id\", jsondata[\"oauth\"][\"client-id\"]);\r",
+							"pm.globals.set(\"admin-secret\", jsondata[\"oauth\"][\"client-secret\"]);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/user/{{user-id}}/wallet",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"user",
+						"{{user-id}}",
+						"wallet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateUser [ADD OATH2]",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsondata = pm.response.json();\r",
+							"pm.globals.set(\"user-id\", jsondata['user-id']);\r",
+							"console.log(jsondata)\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "accessTokenUrl",
+							"value": "{{GW_HOST}}/oauth/token",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "{{admin-secret}}",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "{{admin-id}}",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "write",
+							"type": "string"
+						},
+						{
+							"key": "client_authentication",
+							"value": "header",
+							"type": "string"
+						},
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john@doe.com\",\r\n  \"phone\": \"(555) 123 4567\",\r\n  \"organization-id\": {{organization-id}},\r\n  \"dlt\": [\"Convex\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GW_HOST}}/user/",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Read organisation user [CHECK]",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsondata = pm.response.json();\r",
+							"pm.globals.set(\"user-id\", jsondata[0][\"user-id\"]);\r",
+							"console.log(jsondata)\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/organization/{{organization-id}}/list",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"organization",
+						"{{organization-id}}",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsondata = pm.response.json();\r",
+							"pm.globals.set(\"organization-id\", jsondata['organization-id']);\r",
+							"console.log(jsondata)\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john@doe.com\",\r\n  \"phone\": \"(555) 123 4567\",\r\n  \"organization-id\": {{organization-id}},\r\n  \"dlt\": [\"Convex\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GW_HOST}}/user/{{user-id}}",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"user",
+						"{{user-id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{GW_HOST}}/user/{{user-id}}",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"user",
+						"{{user-id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Organisation",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"ACME Inc.\" ,\r\n  \"description\": \"information about organisation\",\r\n  \"address\": \"street number, zip code, city, country\" \r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{GW_HOST}}/organization/",
+					"host": [
+						"{{GW_HOST}}"
+					],
+					"path": [
+						"organization",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "tokenName",
+				"value": "oydGateway",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "{{APP_SECRET}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{APP_KEY}}",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "admin",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "{{GW_HOST}}/oauth/token",
+				"type": "string"
+			},
+			{
+				"key": "tokenType",
+				"value": "Bearer",
+				"type": "string"
+			},
+			{
+				"key": "accessToken",
+				"value": "N1cwv4vB-B89cLSRyC2U4yvxdEY33NNMSngFCWoJ1qM",
+				"type": "string"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,1 @@
+jq ".interface += {now: \"$(date)\"}" | curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $USER_TOKEN" -d @- -X PUT $GW_HOST/collection/`echo '{"name": "New Repo"}' | curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $USER_TOKEN" -d @- -X POST $GW_HOST/collection | jq -r '."collection-id"'` | jq 'has("collection-id")'

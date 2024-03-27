@@ -1,0 +1,1 @@
+curl -s -d grant_type=client_credentials -d client_id=123 -d client_secret=abc -d scope=admin -X POST $GW_HOST/oauth/token

@@ -1,0 +1,3 @@
+export DID="did:oyd:zQme9kivg2biykkgkqEfAKcDH4Fi1UWjZQAPyooYQy8Xhfo"
+echo -n 'z1S5g1m6pB1tqP8yF1jkzXCoj2Zub4g57ErpXxSm8SWvRUJV' \
+  > zQme9kivg2_private_key.enc

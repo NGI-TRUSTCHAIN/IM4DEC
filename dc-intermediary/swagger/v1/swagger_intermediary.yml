@@ -1,0 +1,24 @@
+openapi: 3.0.1
+info:
+  title: NGI ONTOCHAIN GatewayAPI V1 Docs
+  description: >-
+    API Endpoints for GatewayAPI component (project "Babelfish") in NGI ONTOCHAIN environment.
+  contact:
+    email: office@ownyourdata.eu
+  license:
+    name: MIT License
+    url: 'https://opensource.org/licenses/MIT'
+  version: v1
+servers:
+  - url: /
+paths:
+  /list:
+    get:
+      summary: obtain a list of all available services
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+        '500':
+          description: Server error

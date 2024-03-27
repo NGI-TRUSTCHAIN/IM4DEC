@@ -1,0 +1,1 @@
+SC_HOST=https://chatbot.data-container.net pytest

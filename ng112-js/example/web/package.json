@@ -1,0 +1,30 @@
+{
+  "name": "ng112-js-web",
+  "version": "0.5.0",
+  "license": "AGPL-3.0-only",
+  "author": "Gabriel Unterholzer <gabriel.unterholzer@dec112.at> (https://www.dec112.at)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dec112/ng112-js.git"
+  },
+  "scripts": {
+    "start": "webpack-cli serve",
+    "build": "NODE_ENV=production sh scripts/build.sh",
+    "docker": "npm run build && docker build -t ghcr.io/dec112/ng112-js-web .",
+    "deploy": "sh scripts/deploy.sh"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.6.0"
+  },
+  "dependencies": {
+    "@dec112/cap-ts": "^0.3.1",
+    "buffer": "^6.0.3",
+    "ng112-js": "file:../..",
+    "ng112-js-sip-adapter-jssip": "^0.6.4",
+    "ng112-js-sip-adapter-sipjs": "^0.5.2",
+    "stream-browserify": "^3.0.0",
+    "timers-browserify": "^2.0.12"
+  }
+}

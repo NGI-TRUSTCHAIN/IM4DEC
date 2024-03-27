@@ -1,0 +1,1 @@
+curl -H "Content-Type: application/json" -d @- -X POST $MK_HOST/api/data

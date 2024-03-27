@@ -1,0 +1,67 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sip-plugin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sip-plugin
+  template:
+    metadata:
+      name: sip-plugin
+      labels:
+        app: sip-plugin
+    spec:
+      containers:
+      - name: sip-plugin
+        image: oydeu/dc-decsip:latest
+        ports:
+        - containerPort: 3000
+        env:
+          - name: LANG
+            value: C.UTF-8
+          - name: RAILS_LOG_TO_STDOUT
+            value: "TRUE"
+          - name: RAILS_SERVE_STATIC_FILES
+            value: "TRUE"
+          - name: RAILS_ENV
+            value: production
+          - name: REDIS_HOST
+            value: redis-0.redis.redis.svc.cluster.local
+          - name: REDIS_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: general-secrets
+                key: redis-passwd
+          - name: DC_DB
+            value: kubernetes
+          - name: DB2_HOST
+            value: postgres
+          - name: DB2_NAME
+            value: sip-plugin
+          - name: DB2_USER
+            value: postgres
+          - name: POSTGRES2_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: general-secrets
+                key: db2-passwd
+          - name: DB_KAMAILIO_HOST
+            value: postgres
+          - name: DB_KAMAILIO_NAME
+            value: kamailio
+          - name: DB_KAMAILIO_USER
+            value: postgres
+          - name: DB_KAMAILIO_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: general-secrets
+                key: db2-passwd
+          - name: DEFAULT_DID_OAUTH_APP
+            value: oydid
+          - name: SIP_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: regapi-secrets
+                key: sip-secret

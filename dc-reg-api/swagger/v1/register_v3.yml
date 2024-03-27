@@ -1,0 +1,192 @@
+openapi: '3.0.2'
+info:
+  title: DEC112 RegAPI
+  version: '3.0'
+servers:
+  - url: https://regapi.staging.dec112.eu
+tags:
+  - name: Register
+    description: device registration
+  - name: Configuration
+    description: static configuration
+paths:
+  /api/v3/register:
+    get:
+      tags:
+        - Register
+      summary: check status
+      parameters:
+        - name: reg_id
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registerResponse'
+    post:
+      tags:
+        - Register
+      summary: RegAPI request 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/registerPostRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registerResponse'
+    put:
+      tags:
+        - Register
+      summary: RegAPI request 
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/registerPutRequest'
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/registerResponse'
+  /api/v3/config/root:
+    get:
+      tags:
+        - Configuration
+      summary: Root Configuration
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                {}
+              example:
+                {}
+  /api/v3/config/user:
+    get:
+      tags:
+        - Configuration
+      summary: User Configuration
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                {}
+              example:
+                {}
+components:
+  schemas:
+    registerPostRequest:
+      title: register POST request message
+      type: object
+      properties:
+        header:
+          type: object
+          properties:
+            method:
+              type: string
+              example: "sms"
+            action:
+              type: string
+              example: "init"
+          required:
+            - method
+            - action
+        payload:
+          type: object
+          properties:
+            phone_number:
+              type: string
+              example: "+436641234567"
+            model:
+              type: string
+              example: "iPhone"
+            lang:
+              type: string
+              example: "de"
+            purpose:
+              type: string
+              example: "chat"
+            application:
+              type: string
+              example: "dec112"
+          required:
+            - phone_number
+    registerPutRequest:
+      title: register PUT request message
+      type: object
+      properties:
+        header:
+          type: object
+          properties:
+            reg_id:
+              type: string
+              example: null
+            method:
+              type: string
+              example: "sms"
+            action:
+              type: string
+              example: "init"
+          required:
+            - method
+            - action
+        payload:
+          type: object
+          properties:
+            phone_number:
+              type: string
+              example: "+436641234567"
+            model:
+              type: string
+              example: "iPhone"
+            lang:
+              type: string
+              example: "de"
+            purpose:
+              type: string
+              example: "chat"
+            application:
+              type: string
+              example: "dec112"
+            sms_code:
+              type: string
+          required:
+            - phone_number
+    registerResponse:
+      title: register response message
+      type: object
+      properties:
+        reg_id:
+          type: string
+          example: "cb29028e-f459-3844-01bc-fb2d38af3c93"
+        status:
+          type: integer
+          example: 1000
+        status_text:
+          type: string
+          example: "SIP credentials created"
+        sip_credentials:
+          type: object
+          properties:
+            value:
+              type: string
+            nonce:
+              type: string
+      required:
+        - reg_id
+        - status

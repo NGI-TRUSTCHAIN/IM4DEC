@@ -1,0 +1,120 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wallet-onboarding
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wallet-onboarding
+  template:
+    metadata:
+      name: wallet-onboarding
+      labels:
+        app: wallet-onboarding
+    spec:
+      containers:
+      - name: wallet-onboarding
+        image: oydeu/dc-dec_onboarding:latest
+        ports:
+        - containerPort: 3000
+        env:
+          - name: LANG
+            value: C.UTF-8
+          - name: RAILS_LOG_TO_STDOUT
+            value: "TRUE"
+          - name: RAILS_SERVE_STATIC_FILES
+            value: "TRUE"
+          - name: RAILS_ENV
+            value: production
+          - name: AUTH
+            value: "TRUE"
+          - name: DC_DB
+            value: kubernetes
+          - name: DB2_HOST
+            value: postgres
+          - name: DB2_NAME
+            value: wallet
+          - name: DB2_USER
+            value: postgres
+          - name: POSTGRES2_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: general-secrets
+                key: db2-passwd
+          - name: RAILS_CONFIG_HOSTS
+            value: "onboarding.staging.dec112.eu"
+          - name: DEFAULT_DID_OAUTH_APP
+            value: oydid
+          - name: DEFAULT_VC_OAUTH_APP
+            value: oydid-vc
+          - name: ISSUER_DID
+            value: "did:oyd:zQmX7WYhQCdHcdzfCLRj9tAUgRYar6pqAf2GXS7NQfoX6aE"
+          - name: ISSUER_PWD
+            valueFrom:
+              secretKeyRef:
+                name: onboarding-secrets
+                key: issuer-passwd
+          - name: REGAPI_APPKEY
+            valueFrom:
+              secretKeyRef:
+                name: onboarding-secrets
+                key: regapi-appkey
+          - name: REGAPI_APPSECRET
+            valueFrom:
+              secretKeyRef:
+                name: onboarding-secrets
+                key: regapi-appsecret
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: wallet-onboarding
+spec:
+  selector:
+    app: wallet-onboarding
+  type: NodePort
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 3000
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: wallet-onboarding
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    certmanager.io/issuer: "letsencrypt-prod"
+spec:
+  tls:
+  - hosts:
+    - onboarding.staging.dec112.eu
+    secretName: wallet-onboarding-tls
+  rules:
+  - host: onboarding.staging.dec112.eu
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: wallet-onboarding
+            port:
+              number: 80
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: wallet-onboarding-tls
+  annotations:
+    cert-manager.io/issuer: "letsencrypt-prod"
+spec:
+  secretName: wallet-onboarding-tls
+  issuerRef:
+    group: cert-manager.io
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+  - 'onboarding.staging.dec112.eu'

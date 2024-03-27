@@ -1,0 +1,1 @@
+curl -s -H "Authorization: Bearer $MASTER_TOKEN" $GW_HOST/organization/$ORG_ID | jq -r '."organization-id"'

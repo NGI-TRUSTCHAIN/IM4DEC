@@ -1,0 +1,1 @@
+ curl -s $GW_HOST/list | jq '[type == "array" and length > 4] | any'

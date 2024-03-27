@@ -1,0 +1,21 @@
+<div class="text-center">
+  <h1 class="mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">Connect with your Wallet</h1>
+  <div class="flex flex-row justify-center pt-10 pb-4">
+    <div class="rounded border-2 p-5 border-indigo-200" style="width: 300px;">
+      <img src="<%= "data:image/png;base64," + Base64.strict_encode64(
+          Barby::QrCode.new(@onboard_url, level: :q, size: 12).to_png({ xdim: 8 })
+      ).html_safe %>">
+      <p>Scan me</p>
+    </div>
+  </div>
+  <p class="pb-4">OR</p>
+  <a href="<%= @onboard_url %>" class="bg-indigo-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+    Open from wallet...
+  </a>
+  <p>&nbsp;</p>
+  Continue after scanning the QR code and the wallet displays "Successfully shared"
+  <%= form_with url: step2_path do |form| %>
+      <%= hidden_field_tag :session_id, @session_id %>
+      <%= form.button "Next", class: "mt-4 bg-indigo-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+  <% end %>
+</div>

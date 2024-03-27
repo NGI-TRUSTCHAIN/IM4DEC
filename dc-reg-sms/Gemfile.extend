@@ -1,0 +1,2 @@
+gem 'redis'
+gem 'string_pattern'

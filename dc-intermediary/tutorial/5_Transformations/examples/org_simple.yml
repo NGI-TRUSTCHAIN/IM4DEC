@@ -1,0 +1,9 @@
+meta:
+  name: Organisation
+
+content:
+  bases:
+    - name: Organisation 
+      attributes:
+        name: String
+        founded: Date

@@ -1,0 +1,1 @@
+oydid vc-proof --issuer did:oyd:zQmcHfufF5xtjhgqDbXmWeSSd2WKoncQC1S4dajk8eNnPM5%40babelfish.data-container.net --doc-pwd honey-pwd | curl -H "Content-Type: application/json" -d @- -X POST $BK_HOST/api/data

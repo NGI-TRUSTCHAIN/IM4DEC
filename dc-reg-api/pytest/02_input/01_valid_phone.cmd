@@ -1,0 +1,1 @@
+curl -H "Authorization: Bearer `oydid auth $DID $REGAPI --json | jq -r '.access_token'`" -H "Content-Type: application/json" -d @- -s -X PUT $REGAPI/api/v3/register | jq -c '{status, status_text}'

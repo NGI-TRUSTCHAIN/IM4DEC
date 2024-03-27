@@ -1,0 +1,261 @@
+meta:
+  name: D3A_conversation
+  
+content:
+  bases:
+    - name: DataAgreement
+      attributes:
+        purposes: set<DApurpose>
+    - name: DApurpose
+      attributes:
+        purpose_description: String
+        purpose_type: String
+        lawful_basis: String
+        content: Content
+        processing_method: String
+        retention_period: String
+        storage_location: String
+        geographic_restriction: String
+        recipient_third_party: set<DataSubject>
+        service: String
+        jurisdiction: String
+        privacy_policy: String
+        withdrawal_method: String
+        data_user: DataSubject
+        data_intermediary: DataSubject
+    - name: Content
+      attributes:
+        attribute_id: String
+        attribute_type: String
+        sensitivity: Boolean
+        data_optional: Boolean
+    - name: DataSubject
+      attributes:
+        party_id: String
+        party_name: String
+        party_address: String
+        party_type: String
+        party_role: String
+        
+  overlays:
+    - type: OverlayValidation
+      base: DataAgreement
+      name: DataAgreementValidationOverlay
+      attributes:
+        purposes:
+          cardinality: "1..*"
+    - type: OverlayValidation
+      base: DApurpose
+      name: DApurposeValidationOverlay
+      attributes:
+        processing_method: 
+          valueOption:
+            - id: analyse
+              label: 
+                en: analyse
+                de: analysieren
+            - id: anonymise
+              label: 
+                en: anonymise
+                de: anonymisieren
+            - id: classify
+              label:
+                en: classify
+                de: klassifizieren
+            - id: query
+              label:
+                en: query
+                de: abfragen
+            - id: store
+              label:
+                en: store
+                de: speichern
+    - type: OverlayValidation
+      base: PII
+      name: PiiValidationOverlay
+      attributes:
+        sensitivity:
+          valueOption:
+            - pii
+            - none
+    - type: OverlayForm
+      base: DataAgreement
+      name: DataAgreementFormOverlay
+      schema:
+        type: object
+        properties:
+          purposes:
+            type: array
+            items:
+              type: object
+              properties:
+                purpose_description:
+                  type: string
+                purpose_type:
+                  type: string
+                lawful_basis:
+                  type: string
+                content:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      attribute_id:
+                        type: string
+                        title: Attribute
+                      attribute_type:
+                        type: string
+                        title: Type
+                      sensitivity:
+                        type: string
+                        enum:
+                          - pii
+                          - none
+                      data_optional:
+                        type: boolean
+                        title: optional
+                processing_method:
+                  type: string
+                retention_period:
+                  type: string
+                storage_location:
+                  type: string
+                geographic_restriction:
+                  type: string
+                recipient_third_party:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      party_role:
+                        type: string
+                        title: Role
+                      party_id:
+                        type: string
+                        title: Identifier
+                      party_name:
+                        type: string
+                        title: Name
+                      party_address:
+                        type: string
+                        title: Address
+                      party_type:
+                        type: string
+                        title: Type
+                service:
+                  type: string
+                jurisdiction:
+                  type: string
+                privacy_policy:
+                  type: string
+                withdrawal_method:
+                  type: string
+                data_user:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      party_id:
+                        type: string
+                        title: Identifier
+                      party_name:
+                        type: string
+                        title: Name
+                      party_address:
+                        type: string
+                        title: Address
+                      party_type:
+                        type: string
+                        title: Type
+                data_intermediary:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      party_id:
+                        type: string
+                        title: Identifier
+                      party_name:
+                        type: string
+                        title: Name
+                      party_address:
+                        type: string
+                        title: Address
+                      party_type:
+                        type: string
+                        title: Type
+      ui:
+        type: VerticalLayout
+        elements:
+        - type: Control
+          scope: "#/properties/purposes"
+          label: "Purposes (click + to add a new purpose)"
+          options:
+            showSortButtons: true
+            elementLabelProp: purpose_description
+            detail:
+              type: VerticalLayout
+              elements:
+                - type: Group
+                  label: Purpose
+                  elements: 
+                  - type: Control
+                    scope: "#/properties/purpose_description"
+                    label: Description
+                    options:
+                      multi: true
+                  - type: Control
+                    scope: "#/properties/purpose_type"
+                    label: Purpose Type
+                  - type: Control
+                    scope: "#/properties/lawful_basis"
+                  - type: Control
+                    scope: "#/properties/content"
+                    label: "Content (click + to add an entry)"
+                    options:
+                      detail:
+                          type: HorizontalLayout
+                          elements:
+                            - type: Control
+                              scope: "#/properties/attribute_id"
+                              label: Attribute
+                            - type: Control
+                              scope: "#/properties/attribute_type"
+                              label: Type
+                            - type: Control
+                              scope: "#/properties/sensitivity"
+                              label: Sensitivity
+                            - type: Control
+                              scope: "#/properties/data_optional"
+                              label: optional
+                - type: Group
+                  label: Processing
+                  elements:
+                  - type: Control
+                    scope: "#/properties/processing_method"
+                    label: Method
+                  - type: Control
+                    scope: "#/properties/retention_period"
+                  - type: Control
+                    scope: "#/properties/storage_location"
+                    label: "Storage Location"
+                  - type: Control
+                    scope: "#/properties/geographic_restriction"
+                    label: "Geographic Restriction"
+                  - type: Control
+                    scope: "#/properties/recipient_third_party"
+                    label: "Recipient Third Party (click + to add an entry)"
+                  - type: Control
+                    scope: "#/properties/service"
+                  - type: Control
+                    scope: "#/properties/jurisdiction"
+                  - type: Control
+                    scope: "#/properties/privacy_policy"
+                - type: Control
+                  scope: "#/properties/withdrawal_method"
+                - type: Control
+                  scope: "#/properties/data_user"
+                  label: "Data User (click + to add an entry)"
+                - type: Control
+                  scope: "#/properties/data_intermediary"
+                  label: "Data Intermediary (click + to add an entry)"

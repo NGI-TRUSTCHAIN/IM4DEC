@@ -1,0 +1,1 @@
+curl -s $GW_HOST/service/`cat 03_input/02_read_service.doc | curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $USER_TOKEN" -d @- -X POST $GW_HOST/service/ | jq -r '."service-id"'` | jq -rc '.interface'

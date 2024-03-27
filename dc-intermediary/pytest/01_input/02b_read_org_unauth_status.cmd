@@ -1,0 +1,1 @@
+curl -s -o /dev/null -w "%{http_code}" $GW_HOST/organization/1

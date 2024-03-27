@@ -1,0 +1,1 @@
+curl -s -H "Authorization: Bearer $USER_TOKEN" $GW_HOST/object/$SC_OBJECT_ID/read

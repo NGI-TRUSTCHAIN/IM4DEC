@@ -1,0 +1,1 @@
+curl -s -o /dev/null -w "%{http_code}" -H "Authorization: Bearer $USER_TOKEN" -X DELETE $GW_HOST/object/$(echo '{"name":"test_DEL", "collection-id":$COLLECTION_ID}' | envsubst | curl -s -H "Content-Type: application/json" -H "Authorization: Bearer $USER_TOKEN" -d @- -X POST $GW_HOST/object/ | jq -r '."object-id"')
