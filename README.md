@@ -65,7 +65,7 @@ The key deliverables of the project are as given. The table summarises the relea
 | D1         | 08-Sep-2023 | State Of The Art Overview, Use Case Analysis And Preliminary Technical Specification Of The Solution ([internal link to SharePoint](https://eurodyn.sharepoint.com/:b:/r/sites/TRUSTCHAIN/Shared%20Documents/OC1-Decentralised%20digital%20identity/OC1%20IM4DEC/3-Deliverables/TrustChain_OC1_D1_IM4DEC.pdf?csf=1&web=1&e=uc4J6q)) |
 | D2         | 03-Nov-2023 | Detailed Technical Specification Of The Solution, Software Implementation Work Plan, Demo Scenarios, The Number Of End Users That Will Be Involved In Any Pilots, And Preliminary Business Plan ([internal link to SharePoint](https://eurodyn.sharepoint.com/:b:/r/sites/TRUSTCHAIN/Shared%20Documents/OC1-Decentralised%20digital%20identity/OC1%20IM4DEC/3-Deliverables/TrustChain_OC1_D2_IM4DEC.pdf?csf=1&web=1&e=sY2FQH)) |
 | D3         | 26-Jan-2024 | Implementation, Deployment In An Appropriate Trustchain Platform, Testing, Demonstration And Validation Roadmap In A Real-Life Application ([internal link to SharePoint](https://eurodyn.sharepoint.com/:b:/r/sites/TRUSTCHAIN/Shared%20Documents/OC1-Decentralised%20digital%20identity/OC1%20IM4DEC/3-Deliverables/TrustChain_OC1_D3_IM4DEC.pdf?csf=1&web=1&e=EfSIXK)) |
-| D4         | March 2024 | will be updated |
+| D4         | March 2024 | Modularized Software Components Ready for Distribution, Full Documentation for Developers/Users, Final Business Plan, and Result of the Validation Process (internal link to SharePoint](https://eurodyn.sharepoint.com/:b:/r/sites/TRUSTCHAIN/Shared%20Documents/OC1-Decentralised%20digital%20identity/OC1%20IM4DEC/3-Deliverables/TrustChain_OC1_D4_IM4DEC.pdf?csf=1&web=1&e=Vb9tLP)) |
 
 ### Sourcecode Deliverables
 
